@@ -362,7 +362,7 @@
         "tag": "Friseursalon",
         "title": "Hairlounge Beispiel",
         "text": "Moderner Auftritt für einen Salon — mit Leistungsübersicht, Preisliste und direkter Online-Terminbuchung.",
-        "preview_url": "https://tygar.de/showcase/friseur",
+        "preview_url": "https://tygar-website.vercel.app/showcase/friseur",
         "cta": "Live ansehen →"
       },
       {
@@ -371,7 +371,7 @@
         "tag": "Café",
         "title": "Café Beispiel",
         "text": "Einladender Auftritt für ein Café — mit Speisekarte, Öffnungszeiten und Tisch-Reservierung.",
-        "preview_url": "https://tygar.de/showcase/cafe",
+        "preview_url": "https://tygar-website.vercel.app/showcase/cafe",
         "cta": "Live ansehen →"
       },
       {
@@ -380,7 +380,7 @@
         "tag": "Physiopraxis",
         "title": "Physiopraxis Beispiel",
         "text": "Vertrauenswürdiger Auftritt für eine Praxis — mit Behandlungsangeboten, Team-Vorstellung und Online-Terminbuchung.",
-        "preview_url": "https://tygar.de/showcase/physio",
+        "preview_url": "https://tygar-website.vercel.app/showcase/physio",
         "cta": "Live ansehen →"
       }
     ]
