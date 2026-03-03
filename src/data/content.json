@@ -399,26 +399,9 @@
         "onetime": {
           "heading": "Einmalig",
           "base": {
-            "label": "Rundum-sorglos",
-            "price": "890 €"
-          },
-          "discounts": [
-            {
-              "label": "Eigenes Logo mitgebracht",
-              "amount": "−100 €"
-            },
-            {
-              "label": "Eigene Texte & Inhalte",
-              "amount": "−100 €"
-            }
-          ],
-          "extras": [
-            {
-              "label": "Foto-Termin vor Ort",
-              "amount": "+200 €"
-            }
-          ],
-          "min_note": "ab 690 € · alles zzgl. MwSt."
+            "label": "Deine Website",
+            "price": "490 €"
+          }
         },
         "monthly": {
           "heading": "Monatlich",
@@ -471,7 +454,7 @@
         }
       }
     ],
-    "note": "Alle Preise zzgl. MwSt. · Monatliche Zusatzkosten entstehen nur bei gebuchten Add-ons."
+    "note": "Alle Preise zzgl. MwSt."
   },
   "faq": {
     "label": "FAQ",
