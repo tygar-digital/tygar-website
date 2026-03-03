@@ -2,7 +2,7 @@
   "_comment": "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
   "_comment2": "  TYGAR WEBSITE – CONTENT FILE                                           ",
   "_comment3": "  Ändere hier Text, Projekte, Leistungen usw.                              ",
-  "_comment4": "  Logo austauschen: assets/logo.svg ersetzen (oder PNG → logo_svg ändern) ",
+  "_comment4": "  Logo austauschen: public/logo.svg ersetzen (oder PNG → logo_svg ändern)  ",
   "_comment5": "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
   "meta": {
     "title": "Tygar – Webdesign & Digitalisierung für kleine Betriebe",
@@ -12,7 +12,7 @@
   },
   "brand": {
     "name": "Tygar",
-    "logo_svg": "assets/logo.svg",
+    "logo_svg": "/logo.svg",
     "tagline": "Webdesign & Prozessoptimierung",
     "email": "tygar-digital@gmail.com",
     "phone": "",
@@ -95,18 +95,21 @@
       {
         "accent": "emerald",
         "icon": "zap",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
         "title": "Sofort einsatzbereit",
         "text": "Keine monatelangen Projekte. Ihr seid in kürzester Zeit live — und spürt den Unterschied vom ersten Tag an."
       },
       {
         "accent": "cyan",
         "icon": "check",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>",
         "title": "Fokus auf euer Kerngeschäft",
         "text": "Ihr kennt euer Handwerk. Wir kümmern uns um die digitale Infrastruktur. So könnt ihr eure Zeit dort investieren, wo ihr wirklich gut seid."
       },
       {
         "accent": "violet",
         "icon": "brain",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2a5 5 0 0 1 4.5 7.2A5 5 0 0 1 19 14a5 5 0 0 1-3 4.6V22h-2v-3.4A5 5 0 0 1 8 14a5 5 0 0 1 2.5-4.3A5 5 0 0 1 12 2Z'/></svg>",
         "title": "Faire Preise, große Wirkung",
         "text": "Professionelle Digitallösungen müssen keine Konzernbudgets voraussetzen. Wir bringen euch auf Augenhöhe mit der Konkurrenz — zu Konditionen, die Sinn ergeben."
       }
@@ -141,15 +144,21 @@
   },
   "services": {
     "label": "Leistungen",
-    "heading": "Was wir für dich tun",
+    "heading": ["Was wir", "für dich tun"],
     "subtext": "Von der ersten Idee bis zum fertigen Produkt — wir begleiten dich durch jeden Schritt.",
     "items": [
       {
         "number": "01",
         "accent": "emerald",
         "icon": "monitor",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>",
         "title": "Webdesign & Development",
         "text": "Performante Websites und Web-Apps — optimiert für Conversions, SEO und eine hervorragende User Experience. Gebaut mit modernem Tech-Stack.",
+        "features": [
+          "Responsive Design für alle Geräte",
+          "SEO-optimiert für Google-Sichtbarkeit",
+          "Blitzschnelle Ladezeiten (Lighthouse 90+)"
+        ],
         "tags": [
           "Astro",
           "React",
@@ -160,10 +169,16 @@
         "number": "02",
         "accent": "cyan",
         "icon": "zap",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
         "title": "Buchungstools & Automation",
         "text": "Maßgeschneiderte Buchungssysteme und automatisierte Workflows, die Zeit sparen, Fehler eliminieren und dein Team entlasten.",
+        "features": [
+          "Online-Terminbuchung mit Kalender-Sync",
+          "Automatische E-Mail-Bestätigungen",
+          "Nahtlose CRM-Integration"
+        ],
         "tags": [
-          "Calendly",
+          "Cal.com",
           "n8n",
           "Make"
         ]
@@ -172,8 +187,15 @@
         "number": "03",
         "accent": "violet",
         "icon": "brain",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2a5 5 0 0 1 4.5 7.2A5 5 0 0 1 19 14a5 5 0 0 1-3 4.6V22h-2v-3.4A5 5 0 0 1 8 14a5 5 0 0 1 2.5-4.3A5 5 0 0 1 12 2Z'/></svg>",
         "title": "KI-Integration & Beratung",
         "text": "Wir integrieren KI intelligent in deine Prozesse — von Chatbots über Content-Automation bis zu smarten Analyse-Dashboards.",
+        "coming_soon": true,
+        "features": [
+          "Chatbots für 24/7-Kundenservice",
+          "Automatisierte Content-Erstellung",
+          "Intelligente Datenanalyse"
+        ],
         "tags": [
           "ChatGPT",
           "Claude API",
@@ -184,37 +206,42 @@
   },
   "process": {
     "label": "Prozess",
-    "heading": "So arbeiten wir",
+    "heading": ["So arbeiten", "wir"],
+    "subtext": "Vier klare Schritte — von der ersten Idee bis zum erfolgreichen Launch.",
     "steps": [
       {
         "number": "01",
         "phase": "ENTDECKEN",
         "title": "Analyse & Ziele",
-        "text": "Wir tauchen tief in dein Business ein, verstehen deine Ziele und identifizieren die größten Hebel."
+        "text": "Wir tauchen tief in dein Business ein, verstehen deine Ziele und identifizieren die größten Hebel.",
+        "duration": "Woche 1"
       },
       {
         "number": "02",
         "phase": "PLANEN",
         "title": "Konzept & Strategie",
-        "text": "Klare Roadmap, definiertes Ergebnis, realistischer Zeitplan. Keine Überraschungen."
+        "text": "Klare Roadmap, definiertes Ergebnis, realistischer Zeitplan. Keine Überraschungen.",
+        "duration": "Woche 1–2"
       },
       {
         "number": "03",
         "phase": "BAUEN",
         "title": "Design & Entwicklung",
-        "text": "Wir bauen schnell, iterativ und mit konstantem Feedback — du siehst Fortschritt von Tag 1."
+        "text": "Wir bauen schnell, iterativ und mit konstantem Feedback — du siehst Fortschritt von Tag 1.",
+        "duration": "Woche 2–3"
       },
       {
         "number": "04",
         "phase": "STARTEN",
         "title": "Launch & Betreuung",
-        "text": "Reibungsloser Rollout und proaktive Betreuung nach Launch. Wir sind dabei, wenn es zählt."
+        "text": "Reibungsloser Rollout und proaktive Betreuung nach Launch. Wir sind dabei, wenn es zählt.",
+        "duration": "Woche 3+"
       }
     ]
   },
   "portfolio": {
     "label": "Portfolio",
-    "heading": "Ausgewählte Projekte",
+    "heading": ["Ausgewählte", "Projekte"],
     "cta": {
       "label": "Alle Projekte →",
       "href": "#kontakt"
@@ -223,6 +250,7 @@
       {
         "accent": "emerald",
         "icon": "monitor",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>",
         "bg_label": "WEB",
         "tags": [
           "Webdesign",
@@ -237,6 +265,7 @@
       {
         "accent": "cyan",
         "icon": "zap",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
         "bg_label": "AUTO",
         "tags": [
           "Buchungssystem",
@@ -251,6 +280,7 @@
       {
         "accent": "violet",
         "icon": "brain",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2a5 5 0 0 1 4.5 7.2A5 5 0 0 1 19 14a5 5 0 0 1-3 4.6V22h-2v-3.4A5 5 0 0 1 8 14a5 5 0 0 1 2.5-4.3A5 5 0 0 1 12 2Z'/></svg>",
         "bg_label": "KI",
         "tags": [
           "KI",
@@ -276,21 +306,25 @@
     "features": [
       {
         "icon": "clock",
+        "icon_svg": "<svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>",
         "text": "30 Minuten – fokussiert & effizient",
         "accent": "cyan"
       },
       {
         "icon": "zap",
+        "icon_svg": "<svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
         "text": "Konkrete nächste Schritte für dein Projekt",
         "accent": "emerald"
       },
       {
         "icon": "check",
+        "icon_svg": "<svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>",
         "text": "Keine Verpflichtung, kein Verkaufsdruck",
         "accent": "violet"
       },
       {
         "icon": "monitor",
+        "icon_svg": "<svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>",
         "text": "Remote via Google Meet oder Zoom",
         "accent": "cyan"
       }
@@ -441,7 +475,7 @@
   },
   "faq": {
     "label": "FAQ",
-    "heading": "Häufige Fragen",
+    "heading": ["Häufige", "Fragen"],
     "items": [
       {
         "q": "Wie lange dauert ein Projekt?",
@@ -479,6 +513,7 @@
     "info_boxes": [
       {
         "icon": "mail",
+        "icon_svg": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='4' width='20' height='16' rx='2'/><path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/></svg>",
         "label": "E-Mail",
         "value": "tygar-digital@gmail.com",
         "href": "mailto:tygar-digital@gmail.com",
@@ -486,18 +521,25 @@
       },
       {
         "icon": "clock",
+        "icon_svg": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>",
         "label": "Antwortzeit",
         "value": "Innerhalb von 24 Stunden",
         "accent": "cyan"
       },
       {
         "icon": "map-pin",
+        "icon_svg": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z'/><circle cx='12' cy='10' r='3'/></svg>",
         "label": "Standort",
         "value": "Köln / Bonn",
         "accent": "violet"
       }
     ],
     "form": {
+      "label_firstname": "Vorname",
+      "label_lastname": "Nachname",
+      "label_email": "E-Mail",
+      "label_service": "Leistung",
+      "label_message": "Dein Projekt",
       "service_options": [
         "Webdesign & Development",
         "Buchungssystem / Automation",
@@ -513,11 +555,11 @@
     "legal_links": [
       {
         "label": "Impressum",
-        "href": "impressum.html"
+        "href": "/impressum"
       },
       {
         "label": "Datenschutz",
-        "href": "datenschutz.html"
+        "href": "/datenschutz"
       }
     ],
     "copyright": "© 2026 Tygar"

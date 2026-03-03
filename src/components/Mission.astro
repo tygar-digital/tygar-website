@@ -1,0 +1,48 @@
+---
+const { data } = Astro.props;
+---
+<section id="mission" class="border-t border-brand-border">
+  <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
+
+    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-secondary mb-3">
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)"></span>
+      {data.label}
+    </div>
+    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.03em] mb-4"
+      style="font-size:clamp(2rem,4.5vw,3.25rem)">
+      {data.headline[0]}<br/>
+      <span class="bg-clip-text text-transparent"
+        style="background-image:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)">{data.headline[1]}</span>
+    </h2>
+    <p class="text-brand-secondary leading-[1.75] mb-12 max-w-[700px]">{data.statement}</p>
+
+    <!-- Values -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      {data.values.map((val: any) => (
+        <div class="rounded-card border border-brand-border p-7 flex flex-col gap-4"
+          style="background:rgba(39,39,42,0.55);backdrop-filter:blur(12px)">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+            style={`background:${val.accent === 'emerald' ? 'rgba(52,211,153,.12)' : val.accent === 'cyan' ? 'rgba(34,211,238,.12)' : 'rgba(167,139,250,.12)'};
+                    color:${val.accent === 'emerald' ? '#34D399' : val.accent === 'cyan' ? '#22D3EE' : '#A78BFA'}`}
+            set:html={val.icon_svg}>
+          </div>
+          <h3 class="font-heading font-bold text-brand-heading">{val.title}</h3>
+          <p class="text-brand-secondary text-sm leading-relaxed">{val.text}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Audience -->
+    <div class="text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-secondary mb-4">
+      {data.audience_label}
+    </div>
+    <div class="flex flex-wrap gap-3">
+      {data.audience.map((a: any) => (
+        <span class="inline-flex items-center gap-2 text-sm font-body text-brand-text px-4 py-2 rounded-full border border-brand-border"
+          style="background:rgba(39,39,42,0.55)">
+          <span>{a.icon}</span> {a.label}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

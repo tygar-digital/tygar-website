@@ -17,25 +17,42 @@ const { data } = Astro.props;
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {data.items.map((item: any) => (
-        <div class="rounded-card border p-8 flex flex-col gap-4 transition-all duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] hover:-translate-y-1.5 hover:shadow-card group"
+        <div class={`rounded-card border p-8 flex flex-col gap-4 transition-all duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] ${item.coming_soon ? 'opacity-50 pointer-events-none' : 'hover:-translate-y-1.5 hover:shadow-card'} group relative`}
           style={`background:rgba(39,39,42,0.55);backdrop-filter:blur(12px);
-                  border-color:${item.accent === 'emerald' ? 'rgba(52,211,153,.3)' : item.accent === 'cyan' ? 'rgba(34,211,238,.3)' : 'rgba(167,139,250,.3)'}`}>
+                  border-color:${item.coming_soon ? 'rgba(113,113,122,.3)' : item.accent === 'emerald' ? 'rgba(52,211,153,.3)' : item.accent === 'cyan' ? 'rgba(34,211,238,.3)' : 'rgba(167,139,250,.3)'}`}>
+          {item.coming_soon && (
+            <span class="absolute top-4 right-4 text-[0.65rem] font-heading font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full border border-zinc-600 text-zinc-400 bg-zinc-800/60">
+              Coming Soon
+            </span>
+          )}
           <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-            style={`background:${item.accent === 'emerald' ? 'rgba(52,211,153,.12)' : item.accent === 'cyan' ? 'rgba(34,211,238,.12)' : 'rgba(167,139,250,.12)'};
-                    color:${item.accent === 'emerald' ? '#34D399' : item.accent === 'cyan' ? '#22D3EE' : '#A78BFA'}`}
+            style={`background:${item.coming_soon ? 'rgba(113,113,122,.12)' : item.accent === 'emerald' ? 'rgba(52,211,153,.12)' : item.accent === 'cyan' ? 'rgba(34,211,238,.12)' : 'rgba(167,139,250,.12)'};
+                    color:${item.coming_soon ? '#71717A' : item.accent === 'emerald' ? '#34D399' : item.accent === 'cyan' ? '#22D3EE' : '#A78BFA'}`}
             set:html={item.icon_svg}>
           </div>
-          <h3 class="font-heading font-bold text-brand-heading text-lg">{item.title}</h3>
-          <p class="text-brand-secondary text-sm leading-relaxed flex-1">{item.text}</p>
+          <h3 class={`font-heading font-bold text-lg ${item.coming_soon ? 'text-zinc-500' : 'text-brand-heading'}`}>{item.title}</h3>
+          <p class={`text-sm leading-relaxed flex-1 ${item.coming_soon ? 'text-zinc-600' : 'text-brand-secondary'}`}>{item.text}</p>
           {item.features && (
             <ul class="flex flex-col gap-2 mt-1">
               {item.features.map((f: string) => (
-                <li class="flex items-start gap-2 text-sm text-brand-text">
-                  <span style={`color:${item.accent === 'emerald' ? '#34D399' : item.accent === 'cyan' ? '#22D3EE' : '#A78BFA'}`}>✓</span>
+                <li class={`flex items-start gap-2 text-sm ${item.coming_soon ? 'text-zinc-600' : 'text-brand-text'}`}>
+                  <span style={`color:${item.coming_soon ? '#52525B' : item.accent === 'emerald' ? '#34D399' : item.accent === 'cyan' ? '#22D3EE' : '#A78BFA'}`}>✓</span>
                   {f}
                 </li>
               ))}
             </ul>
+          )}
+          {item.tags && (
+            <div class="flex flex-wrap gap-1.5 mt-2">
+              {item.tags.map((tag: string) => (
+                <span class="text-[0.68rem] font-heading font-semibold px-2.5 py-1 rounded-full border"
+                  style={`background:${item.coming_soon ? 'rgba(113,113,122,0.08)' : item.accent === 'emerald' ? 'rgba(52,211,153,0.08)' : item.accent === 'cyan' ? 'rgba(34,211,238,0.08)' : 'rgba(167,139,250,0.08)'};
+                          border-color:${item.coming_soon ? 'rgba(113,113,122,0.2)' : item.accent === 'emerald' ? 'rgba(52,211,153,0.2)' : item.accent === 'cyan' ? 'rgba(34,211,238,0.2)' : 'rgba(167,139,250,0.2)'};
+                          color:${item.coming_soon ? '#52525B' : item.accent === 'emerald' ? '#34D399' : item.accent === 'cyan' ? '#22D3EE' : '#A78BFA'}`}>
+                  {tag}
+                </span>
+              ))}
+            </div>
           )}
         </div>
       ))}

@@ -16,6 +16,22 @@ const { data } = Astro.props;
     </h2>
     <p class="text-brand-secondary leading-[1.75] mb-10 max-w-[560px]">{data.subtext}</p>
 
+    {data.features && data.features.length > 0 && (
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+        {data.features.map((feat: any) => (
+          <div class="flex items-center gap-3 rounded-card border border-brand-border p-4"
+            style="background:rgba(39,39,42,0.55);backdrop-filter:blur(12px)">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+              style={`background:${feat.accent === 'emerald' ? 'rgba(52,211,153,.12)' : feat.accent === 'cyan' ? 'rgba(34,211,238,.12)' : 'rgba(167,139,250,.12)'};
+                      color:${feat.accent === 'emerald' ? '#34D399' : feat.accent === 'cyan' ? '#22D3EE' : '#A78BFA'}`}
+              set:html={feat.icon_svg}>
+            </div>
+            <span class="text-sm text-brand-text font-body">{feat.text}</span>
+          </div>
+        ))}
+      </div>
+    )}
+
     <!-- Cal.com Inline Embed -->
     <div class="rounded-card border border-brand-border overflow-hidden"
       style="background:rgba(39,39,42,0.55)">

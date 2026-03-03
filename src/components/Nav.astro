@@ -23,10 +23,10 @@ const { brand, nav } = Astro.props;
         </li>
       ))}
       <li>
-        <a href="#kontakt"
+        <a href={nav.cta.href}
           class="font-heading font-bold text-sm px-6 py-3 rounded-full text-white transition-all hover:-translate-y-0.5"
           style="background: linear-gradient(135deg,#0e9488,#0e7490,#6d28d9); background-size:200%">
-          {nav.cta}
+          {nav.cta.label}
         </a>
       </li>
     </ul>
@@ -55,10 +55,10 @@ const { brand, nav } = Astro.props;
     ))}
   </ul>
   <div class="mt-8">
-    <a href="#kontakt"
+    <a href={nav.cta.href}
       class="block w-full text-center font-heading font-bold text-base px-6 py-4 rounded-full text-white"
       style="background: linear-gradient(135deg,#0e9488,#0e7490,#6d28d9)">
-      {nav.cta}
+      {nav.cta.label}
     </a>
   </div>
 </div>

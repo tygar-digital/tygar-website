@@ -1,0 +1,81 @@
+---
+const { data } = Astro.props;
+const accentBg: Record<string,string> = {
+  emerald: 'rgba(52,211,153,.12)', cyan: 'rgba(34,211,238,.12)', violet: 'rgba(167,139,250,.12)',
+};
+const accentColor: Record<string,string> = {
+  emerald: '#34D399', cyan: '#22D3EE', violet: '#A78BFA',
+};
+const accentBorder: Record<string,string> = {
+  emerald: 'rgba(52,211,153,.3)', cyan: 'rgba(34,211,238,.3)', violet: 'rgba(167,139,250,.3)',
+};
+const accentGlow: Record<string,string> = {
+  emerald: '0 12px 48px rgba(52,211,153,.20),0 0 0 1px rgba(52,211,153,.2)',
+  cyan:    '0 12px 48px rgba(34,211,238,.20),0 0 0 1px rgba(34,211,238,.2)',
+  violet:  '0 12px 48px rgba(167,139,250,.20),0 0 0 1px rgba(167,139,250,.2)',
+};
+---
+<section id="portfolio" class="border-t border-brand-border">
+  <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
+
+    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-secondary mb-3">
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)"></span>
+      {data.label}
+    </div>
+    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.03em] mb-4"
+      style="font-size:clamp(2rem,4.5vw,3.25rem)">
+      {data.heading[0]} <span class="bg-clip-text text-transparent"
+        style="background-image:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)">{data.heading[1]}</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+      {data.items.map((item: any) => (
+        <div class="rounded-card border p-8 flex flex-col gap-4 relative overflow-hidden transition-all duration-[280ms] hover:-translate-y-1.5 hover:shadow-card"
+          style={`background:rgba(39,39,42,0.55);backdrop-filter:blur(12px);border-color:${accentBorder[item.accent]}`}
+          onmouseenter={`this.style.boxShadow='${accentGlow[item.accent]}'`}
+          onmouseleave={`this.style.boxShadow='none'`}>
+
+          <!-- Background label -->
+          <span class="absolute top-4 right-4 text-5xl font-heading font-black opacity-[0.04] select-none pointer-events-none"
+            style={`color:${accentColor[item.accent]}`}>
+            {item.bg_label}
+          </span>
+
+          <!-- Icon -->
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+            style={`background:${accentBg[item.accent]};color:${accentColor[item.accent]}`}
+            set:html={item.icon_svg}>
+          </div>
+
+          <!-- Tags -->
+          <div class="flex gap-1.5">
+            {item.tags.map((tag: string) => (
+              <span class="text-[0.68rem] font-heading font-semibold px-2.5 py-1 rounded-full border"
+                style={`background:${accentBg[item.tag_color]};border-color:${accentBorder[item.tag_color]};color:${accentColor[item.tag_color]}`}>
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <h3 class="font-heading font-bold text-brand-heading text-lg">{item.title}</h3>
+          <p class="text-brand-secondary text-sm leading-relaxed flex-1">{item.text}</p>
+
+          <!-- Result -->
+          <div class="text-sm font-heading font-semibold" style={`color:${accentColor[item.result_color]}`}>
+            {item.result}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {data.cta && (
+      <div class="text-center mt-10">
+        <a href={data.cta.href}
+          class="font-heading font-bold text-sm transition-colors hover:underline"
+          style={`color:#22D3EE`}>
+          {data.cta.label}
+        </a>
+      </div>
+    )}
+  </div>
+</section>

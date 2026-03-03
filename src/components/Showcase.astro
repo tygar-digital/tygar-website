@@ -57,8 +57,21 @@ const tagColor: Record<string,string> = {
                 <span class="text-[0.6rem] text-brand-muted truncate">{item.preview_url}</span>
               </div>
             </div>
+            <!-- Fallback placeholder -->
+            <div class="absolute inset-0 top-[33px] flex items-center justify-center bg-brand-bg">
+              <div class="text-center">
+                <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center"
+                  style={`background:${tagBg[item.accent]};border:1px solid ${tagBorder[item.accent]}`}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    style={`stroke:${tagColor[item.accent]}`}>
+                    <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                  </svg>
+                </div>
+                <p class="text-xs text-brand-muted">Vorschau demnächst verfügbar</p>
+              </div>
+            </div>
             <iframe src={item.preview_url} loading="lazy" tabindex="-1" title={item.title}
-              class="w-full border-0 pointer-events-none"
+              class="w-full border-0 pointer-events-none relative z-10"
               style="height:400px;transform:scale(0.5);transform-origin:top left;width:200%">
             </iframe>
           </div>

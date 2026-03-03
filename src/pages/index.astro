@@ -3,9 +3,11 @@ import Base    from '../layouts/Base.astro';
 import Nav     from '../components/Nav.astro';
 import Hero    from '../components/Hero.astro';
 import Marquee from '../components/Marquee.astro';
+import Mission   from '../components/Mission.astro';
 import Services  from '../components/Services.astro';
 import Process   from '../components/Process.astro';
 import Showcase  from '../components/Showcase.astro';
+
 import Pricing   from '../components/Pricing.astro';
 import FAQ       from '../components/FAQ.astro';
 import About     from '../components/About.astro';
@@ -24,16 +26,18 @@ import data from '../data/content.json';
 >
   <Nav brand={data.brand} nav={data.nav} />
   <main>
-    <Hero     data={data.hero} />
+    <Hero      data={data.hero} />
     <Marquee />
-    <Services data={data.services} />
-    <Process  data={data.process} />
-    <Showcase data={data.showcase} />
-    <Pricing  data={data.pricing} />
-    <FAQ      data={data.faq} />
-    <About    data={data.about} />
-    <Booking  data={data.booking} />
-    <Contact  data={data.contact} />
+    <Mission   data={data.mission} />
+    <Services  data={data.services} />
+    <Process   data={data.process} />
+    <Showcase  data={data.showcase} />
+
+    <Pricing   data={data.pricing} />
+    <FAQ       data={data.faq} />
+    <About     data={data.about} />
+    <Booking   data={data.booking} />
+    <Contact   data={data.contact} />
   </main>
   <Footer brand={data.brand} footer={data.footer} />
 </Base>
