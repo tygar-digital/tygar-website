@@ -13,7 +13,7 @@ npm run dev        # → http://localhost:4321
 git init
 git add .
 git commit -m "feat: initial setup"
-git remote add origin git@github.com:tygar-web/tygar-website.git
+git remote add origin git@github.com:tygar-digital/tygar-website.git
 git push -u origin main
 # → Vercel deployt automatisch
 ```
