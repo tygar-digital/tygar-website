@@ -30,48 +30,33 @@ const { data } = Astro.props;
               <div class="text-[0.68rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-muted mb-5">
                 {sec.onetime.heading}
               </div>
-              <ul class="flex flex-col gap-3 list-none">
-                {sec.onetime.base && (
-                  <>
-                    <li class="flex justify-between items-center gap-3 pb-3 border-b border-brand-border font-semibold text-brand-heading">
-                      <span>{sec.onetime.base.label}</span>
-                      <span class="font-heading font-black text-2xl text-brand-cyan whitespace-nowrap">{sec.onetime.base.price}</span>
+              {sec.onetime.base ? (
+                <>
+                  <div class="font-heading font-black text-brand-heading leading-none mb-1"
+                    style="font-size:2.8rem">
+                    {sec.onetime.base.price}<span class="text-base font-normal text-brand-muted"> einmalig</span>
+                  </div>
+                  <div class="text-xs text-brand-muted mb-5">{sec.onetime.base.label}</div>
+                  {sec.onetime.includes && (
+                    <ul class="flex flex-col gap-2.5 list-none">
+                      {sec.onetime.includes.map((f: string) => (
+                        <li class="flex items-center gap-2 text-sm text-brand-text">
+                          <span class="text-brand-cyan text-xs">✓</span>{f}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </>
+              ) : (
+                <ul class="flex flex-col gap-3 list-none">
+                  {sec.onetime.items?.map((item: any) => (
+                    <li class="flex justify-between items-center gap-3 text-sm text-brand-text">
+                      <span>{item.label}</span>
+                      <span class="font-semibold text-brand-text whitespace-nowrap">{item.amount}</span>
                     </li>
-                    {sec.onetime.discounts?.map((d: any) => (
-                      <li class="flex justify-between items-center gap-3 text-sm text-brand-text">
-                        <span>{d.label}</span>
-                        <span class="font-semibold text-brand-emerald whitespace-nowrap">{d.amount}</span>
-                      </li>
-                    ))}
-                    {sec.onetime.extras?.map((e: any) => (
-                      <li class="flex justify-between items-center gap-3 text-sm text-brand-text">
-                        <span>{e.label}</span>
-                        <span class="font-semibold text-brand-muted whitespace-nowrap">{e.amount}</span>
-                      </li>
-                    ))}
-                    {sec.onetime.includes && (
-                      <li class="pt-3 border-t border-brand-border">
-                        <ul class="flex flex-col gap-2.5 list-none">
-                          {sec.onetime.includes.map((f: string) => (
-                            <li class="flex items-center gap-2 text-sm text-brand-text">
-                              <span class="text-brand-cyan text-xs">✓</span>{f}
-                            </li>
-                          ))}
-                        </ul>
-                      </li>
-                    )}
-                    {sec.onetime.min_note && (
-                      <li class="text-xs text-brand-muted pt-2 border-t border-brand-border">{sec.onetime.min_note}</li>
-                    )}
-                  </>
-                )}
-                {sec.onetime.items?.map((item: any) => (
-                  <li class="flex justify-between items-center gap-3 text-sm text-brand-text">
-                    <span>{item.label}</span>
-                    <span class="font-semibold text-brand-text whitespace-nowrap">{item.amount}</span>
-                  </li>
-                ))}
-              </ul>
+                  ))}
+                </ul>
+              )}
             </div>
 
             <!-- Divider -->
