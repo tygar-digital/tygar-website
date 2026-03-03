@@ -429,26 +429,22 @@
           "heading": "Einmalig",
           "items": [
             {
-              "label": "Kontaktformular",
-              "amount": "+90 €"
-            },
-            {
               "label": "Buchungssystem / Terminkalender",
               "amount": "+190 €"
             },
             {
               "label": "Blog / News-Bereich",
               "amount": "+290 €"
-            },
-            {
-              "label": "Zusätzliche Korrekturschleife",
-              "amount": "+90 €"
             }
           ]
         },
         "monthly": {
           "heading": "Monatlich",
           "items": [
+            {
+              "label": "Kontaktformular",
+              "amount": "+10 €/Monat"
+            },
             {
               "label": "Buchungssystem",
               "amount": "+20 €/Monat"
