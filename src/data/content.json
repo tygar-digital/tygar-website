@@ -395,7 +395,7 @@
     "sections": [
       {
         "name": "Online Auftritt",
-        "description": "Deine professionelle Website. Fertig in 1–2 Wochen.",
+        "description": "Deine professionelle Website. Fertig in 3 Wochen.",
         "onetime": {
           "heading": "Einmalig",
           "base": {
@@ -423,7 +423,7 @@
         "monthly": {
           "heading": "Monatlich",
           "price": "49 €",
-          "note": "Pflichtpauschale",
+          "note": "Pflicht — im Paket enthalten",
           "features": [
             "Hosting & Domain",
             "Sicherheit & Updates",
@@ -478,28 +478,24 @@
     "heading": ["Häufige", "Fragen"],
     "items": [
       {
-        "q": "Wie lange dauert ein Projekt?",
-        "a": "Eine einfache Website ist meist in 2–3 Wochen fertig. Komplexere Projekte mit Buchungssystem oder KI-Integration dauern 4–8 Wochen. Im ersten Gespräch gebe ich dir eine konkrete Einschätzung."
+        "q": "Wie lange dauert es, bis meine Website online ist?",
+        "a": "Deine Website ist in 3 Wochen live. Nach dem Erstgespräch starten wir direkt — du bekommst regelmäßig Zwischenstände und kannst jederzeit Feedback geben."
       },
       {
         "q": "Brauche ich technisches Know-how?",
-        "a": "Gar keines. Du bekommst eine fertige Lösung, die du selbst bedienen kannst — ohne Programmierkenntnisse. Wenn mal was ist, bin ich da."
+        "a": "Gar keines. Du bekommst eine komplett fertige Website. Um Technik, Hosting und Updates kümmern wir uns — du konzentrierst dich auf dein Business."
       },
       {
-        "q": "Was passiert nach dem Launch?",
-        "a": "Alle Pakete beinhalten Support-Zeit nach dem Launch. Du bist nie auf dich allein gestellt. Für laufende Betreuung biete ich auch Wartungspakete an."
+        "q": "Muss ich ein Wartungspaket dazu buchen?",
+        "a": "Ja — jede Website kommt mit einem Service-Paket. So stellen wir sicher, dass deine Seite dauerhaft schnell, sicher und aktuell bleibt. Hosting, Updates und Support sind inklusive."
       },
       {
         "q": "Kann ich Inhalte selbst ändern?",
-        "a": "Ja. Je nach Paket bekommst du entweder ein CMS (z.B. Sanity oder Contentful) oder eine einfache JSON-Datei, in der du Texte, Bilder und Inhalte selbst anpassen kannst."
+        "a": "Inhaltsänderungen laufen über uns — so stellen wir sicher, dass Design und Qualität deiner Website immer stimmen. Bis zu 3 Änderungen pro Monat sind in deinem Service-Paket enthalten."
       },
       {
-        "q": "Was kostet laufende Wartung?",
-        "a": "Wartungspakete ab ca. 49 €/Monat — inkl. Updates, Backups und kleiner Anpassungen. Nicht verpflichtend, aber empfohlen."
-      },
-      {
-        "q": "Arbeitest du nur remote?",
-        "a": "Hauptsächlich ja, was auch ein großer Kostenvorteil für dich ist. Bei Bedarf bin ich auch für persönliche Termine im Raum Köln/Bonn verfügbar."
+        "q": "Was ist im monatlichen Service-Paket enthalten?",
+        "a": "Hosting, Domain, Sicherheitsupdates, Support per E-Mail und bis zu 3 Inhaltsänderungen pro Monat. Alles für 49 € monatlich — keine versteckten Kosten."
       }
     ]
   },
@@ -541,10 +537,9 @@
       "label_service": "Leistung",
       "label_message": "Dein Projekt",
       "service_options": [
-        "Webdesign & Development",
-        "Buchungssystem / Automation",
-        "KI-Integration",
-        "Komplettpaket",
+        "Neue Website",
+        "Website-Relaunch",
+        "Komplettpaket mit Design",
         "Etwas anderes"
       ],
       "submit_label": "Nachricht senden →",
