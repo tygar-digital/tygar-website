@@ -1,4 +1,16 @@
 ---
+// Fonts via @fontsource – lokal gehostet, DSGVO-konform (kein Google-CDN-Request zur Laufzeit)
+import '@fontsource/outfit/300.css';
+import '@fontsource/outfit/400.css';
+import '@fontsource/outfit/500.css';
+import '@fontsource/outfit/600.css';
+import '@fontsource/outfit/700.css';
+import '@fontsource/outfit/800.css';
+import '@fontsource/inter/300.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+
 export interface Props {
   title:       string;
   description: string;
@@ -32,40 +44,6 @@ const { title, description, canonical, ogImage = '/images/og-image.jpg' } = Astr
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-  <!-- Fonts (lokal gehostet – DSGVO-konform) -->
-  <style>
-    @font-face {
-      font-family: 'Outfit';
-      src: url('/fonts/Outfit-Bold.woff2')    format('woff2');
-      font-weight: 700; font-style: normal; font-display: swap;
-    }
-    @font-face {
-      font-family: 'Outfit';
-      src: url('/fonts/Outfit-ExtraBold.woff2') format('woff2');
-      font-weight: 800; font-style: normal; font-display: swap;
-    }
-    @font-face {
-      font-family: 'Outfit';
-      src: url('/fonts/Outfit-Black.woff2')   format('woff2');
-      font-weight: 900; font-style: normal; font-display: swap;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('/fonts/Inter-Regular.woff2')  format('woff2');
-      font-weight: 400; font-style: normal; font-display: swap;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('/fonts/Inter-Medium.woff2')   format('woff2');
-      font-weight: 500; font-style: normal; font-display: swap;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
-      font-weight: 600; font-style: normal; font-display: swap;
-    }
-  </style>
 
   <!-- Schema.org: Organization -->
   <script type="application/ld+json">
