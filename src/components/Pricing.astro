@@ -49,6 +49,17 @@ const { data } = Astro.props;
                         <span class="font-semibold text-brand-muted whitespace-nowrap">{e.amount}</span>
                       </li>
                     ))}
+                    {sec.onetime.includes && (
+                      <li class="pt-3 border-t border-brand-border">
+                        <ul class="flex flex-col gap-2.5 list-none">
+                          {sec.onetime.includes.map((f: string) => (
+                            <li class="flex items-center gap-2 text-sm text-brand-text">
+                              <span class="text-brand-cyan text-xs">✓</span>{f}
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    )}
                     {sec.onetime.min_note && (
                       <li class="text-xs text-brand-muted pt-2 border-t border-brand-border">{sec.onetime.min_note}</li>
                     )}
