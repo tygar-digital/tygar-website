@@ -406,8 +406,7 @@
             "Individuelles Design",
             "Responsive (Mobile + Desktop)",
             "SEO-Grundoptimierung",
-            "Impressum & Datenschutz",
-            "Kontaktformular"
+            "Impressum & Datenschutz"
           ]
         },
         "monthly": {
@@ -428,6 +427,10 @@
         "onetime": {
           "heading": "Einmalig",
           "items": [
+            {
+              "label": "Kontaktformular",
+              "amount": "+90 €"
+            },
             {
               "label": "Buchungssystem / Terminkalender",
               "amount": "+190 €"
