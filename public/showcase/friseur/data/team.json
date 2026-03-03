@@ -1,0 +1,52 @@
+{
+  "_kommentar": "Teammitglieder — bei Personalwechsel anpassen. Fotos als /assets/team/name.jpg",
+  "label": "Das Team",
+  "headline": "Lerne uns kennen",
+  "subline": "Hinter jedem guten Schnitt steckt ein Mensch, der zuhört.",
+  "mitglieder": [
+    {
+      "id": "bella",
+      "name": "Bella Rossi",
+      "rolle": "Inhaberin & Master-Stylistin",
+      "bild": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=800&fit=crop&q=80",
+      "bio": "Bella eröffnete den Salon 2019 nach 12 Jahren in der Branche. Ihre Leidenschaft: natürliche Colorationen und das Gespräch mit Kundinnen, die Veränderung wagen wollen.",
+      "spezialgebiete": ["Balayage", "Naturfarben", "Brautfrisuren"],
+      "zertifikate": ["Wella Master Colorist", "Olaplex Specialist"],
+      "instagram": "@bella.hairstyle",
+      "buchbar": true
+    },
+    {
+      "id": "lena",
+      "name": "Lena König",
+      "rolle": "Senior Stylistin",
+      "bild": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=800&fit=crop&q=80",
+      "bio": "Lena liebt mutige Transformationen. Ihr Spezialgebiet sind kreative Schnitte und Vivid Colors – wenn Kunden wirklich etwas wagen möchten.",
+      "spezialgebiete": ["Pixie-Cuts", "Vivid Colors", "Curtain Bangs"],
+      "zertifikate": ["Kérastase Specialist"],
+      "instagram": "@lena.cuts.style",
+      "buchbar": true
+    },
+    {
+      "id": "marco",
+      "name": "Marco Weber",
+      "rolle": "Herrenstylist & Bartexperte",
+      "bild": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&q=80",
+      "bio": "Marco ist unser Mann für Männer. Präzise Schnitte, perfekte Konturen und der Blick fürs Detail – bei ihm fühlen sich Herren bestens aufgehoben.",
+      "spezialgebiete": ["Herrenschnitte", "Bartpflege", "Fade-Techniken"],
+      "zertifikate": ["American Crew Certified"],
+      "instagram": "@marco_barber",
+      "buchbar": true
+    },
+    {
+      "id": "sofia",
+      "name": "Sofia Gruber",
+      "rolle": "Junior Stylistin",
+      "bild": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=800&fit=crop&q=80",
+      "bio": "Sofia hat ihre Ausbildung mit Auszeichnung abgeschlossen und bringt frischen Wind ins Team. Ihr Fokus: Haarpflege-Behandlungen und entspannte Kundengespräche.",
+      "spezialgebiete": ["Haarpflege", "Föhnstyling", "Kopfhautmassage"],
+      "zertifikate": ["Olaplex Specialist"],
+      "instagram": "@sofia.hair",
+      "buchbar": true
+    }
+  ]
+}

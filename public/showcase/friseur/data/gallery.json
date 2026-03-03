@@ -1,0 +1,86 @@
+{
+  "_kommentar": "Portfolio-Bilder — häufig aktualisieren mit neuen Arbeiten. Alt-Texte für SEO wichtig!",
+  "label": "Portfolio",
+  "headline": "Unsere Arbeiten",
+  "subline": "Jedes Bild erzählt eine Geschichte — und das Beste kommt noch.",
+  "kategorien_filter": ["Alle", "Balayage", "Schnitt", "Farbe", "Braut", "Herren"],
+  "bilder": [
+    {
+      "id": "gal-001",
+      "src": "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&h=600&fit=crop&q=80",
+      "alt": "Warmes Balayage mit natürlichem Farbverlauf",
+      "kategorie": "Balayage",
+      "stylist_id": "bella",
+      "vorher_nachher": false
+    },
+    {
+      "id": "gal-002",
+      "src": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop&q=80",
+      "alt": "Professionelle Haarcoloration im Salon",
+      "kategorie": "Farbe",
+      "stylist_id": "bella",
+      "vorher_nachher": false
+    },
+    {
+      "id": "gal-003",
+      "src": "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&h=600&fit=crop&q=80",
+      "alt": "Moderner Damenschnitt mit Volumen",
+      "kategorie": "Schnitt",
+      "stylist_id": "lena",
+      "vorher_nachher": false
+    },
+    {
+      "id": "gal-004",
+      "src": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=600&fit=crop&q=80",
+      "alt": "Hochzeit Brautfrisur Hochsteckfrisur elegant",
+      "kategorie": "Braut",
+      "stylist_id": "bella",
+      "vorher_nachher": false
+    },
+    {
+      "id": "gal-005",
+      "src": "https://images.unsplash.com/photo-1519735777090-ec97162dc266?w=600&h=600&fit=crop&q=80",
+      "alt": "Herrenschnitt klassisch mit Fade",
+      "kategorie": "Herren",
+      "stylist_id": "marco",
+      "vorher_nachher": false
+    },
+    {
+      "id": "gal-006",
+      "src": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=600&fit=crop&q=80",
+      "alt": "Haarfarbe Behandlung kupferrot natürlich",
+      "kategorie": "Farbe",
+      "stylist_id": "bella",
+      "vorher_nachher": false
+    },
+    {
+      "id": "gal-007",
+      "src": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop&crop=faces&q=80",
+      "alt": "Blondes Balayage mit Highlights sonnenverwöhnt",
+      "kategorie": "Balayage",
+      "stylist_id": "bella",
+      "vorher_nachher": false
+    },
+    {
+      "id": "gal-008",
+      "src": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&h=600&fit=crop&q=80",
+      "alt": "Kurzer Bob Damenschnitt frisch und modern",
+      "kategorie": "Schnitt",
+      "stylist_id": "lena",
+      "vorher_nachher": false
+    },
+    {
+      "id": "gal-009",
+      "src": "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=600&fit=crop&q=80",
+      "alt": "Salonatmosphäre Innenraum Schwabing",
+      "kategorie": "Salon",
+      "stylist_id": null,
+      "vorher_nachher": false
+    }
+  ],
+  "instagram_feed": {
+    "aktiv": false,
+    "handle": "@salon.bella",
+    "max_posts": 6
+  }
+}

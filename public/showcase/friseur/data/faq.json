@@ -1,0 +1,41 @@
+{
+  "_kommentar": "FAQ — selten ändern. schema_markup: true sorgt für Google Rich Snippets!",
+  "label": "FAQ",
+  "headline": "Häufige Fragen",
+  "subline": "Alles, was du vor deinem Besuch wissen möchtest.",
+  "schema_markup": true,
+  "fragen": [
+    {
+      "frage": "Brauche ich einen Termin oder gibt es Walk-ins?",
+      "antwort": "Wir empfehlen immer eine Terminbuchung, damit wir genug Zeit und Sorgfalt in deinen Besuch stecken können. Walk-ins sind bei freien Kapazitäten herzlich willkommen – am besten kurz vorher anrufen."
+    },
+    {
+      "frage": "Wie lange im Voraus sollte ich buchen?",
+      "antwort": "Für einfache Schnitte reicht oft eine Woche. Bei Colorationen, Balayage oder der Brautfrisur empfehlen wir 3–6 Wochen Vorlauf, da unsere Expertinnen sehr gefragt sind."
+    },
+    {
+      "frage": "Kann ich meinen Termin kostenlos stornieren?",
+      "antwort": "Ja, bis 24 Stunden vor dem Termin ist die Stornierung kostenlos. Bei kurzfristigen Absagen (unter 24h) berechnen wir 50% des Servicepreises, da wir den Zeitslot für andere Kunden freihalten müssen."
+    },
+    {
+      "frage": "Was kostet eine Coloration bei euch?",
+      "antwort": "Unsere Colorationen starten ab 89€ – der genaue Preis hängt von Haarlänge, Technik und Aufwand ab. Bei einem persönlichen Beratungsgespräch (kostenlos!) geben wir dir immer einen konkreten Preis vorab."
+    },
+    {
+      "frage": "Welche Produkte verwendet ihr?",
+      "antwort": "Wir arbeiten ausschließlich mit premium, nachhaltigen Marken: Kérastase, Olaplex, Wella Professionals und Davines. Alle unsere Produkte sind tierversuchsfrei und wo möglich vegan."
+    },
+    {
+      "frage": "Bietet ihr auch Gutscheine an?",
+      "antwort": "Ja! Geschenkgutscheine gibt es ab 25€ direkt im Salon oder auf Anfrage per E-Mail. Der ideale Anlass für Geburtstage, Weihnachten oder einfach als Dankeschön."
+    },
+    {
+      "frage": "Gibt es Parkmöglichkeiten in der Nähe?",
+      "antwort": "Ja, in unserem Hinterhof stehen 3 Parkplätze zur Verfügung – einfach am Eingang klingeln. Alternativ ist der Salon gut mit der U-Bahn erreichbar: Münchner Freiheit (U3/U6), 3 Minuten zu Fuß."
+    },
+    {
+      "frage": "Seid ihr barrierefrei?",
+      "antwort": "Ja, unser Salon ist ebenerdig erreichbar und vollständig barrierefrei. Bei besonderen Bedürfnissen ruft uns gerne vorab an – wir bereiten uns gerne auf euren Besuch vor."
+    }
+  ]
+}

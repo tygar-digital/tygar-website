@@ -1,0 +1,167 @@
+{
+  "_kommentar": "Leistungen & Preisliste — bei Preisänderungen oder neuen Services anpassen",
+  "label": "Leistungen",
+  "headline": "Unsere Leistungen",
+  "subline": "Alle Preise inklusive Waschen, Schnitt und Styling",
+  "hinweis": "Preise können je nach Haarlänge und Aufwand variieren. Gerne beraten wir dich kostenlos.",
+  "kategorien": [
+    {
+      "name": "Damen",
+      "icon": "scissors",
+      "leistungen": [
+        {
+          "id": "damen-schnitt",
+          "name": "Waschen, Schneiden & Föhnen",
+          "preis": 58,
+          "preis_typ": "ab",
+          "dauer_min": 60,
+          "beschreibung": "Inkl. Beratung, individuellem Schnitt und Styling-Tipps für zuhause.",
+          "bild": null,
+          "buchbar": true
+        },
+        {
+          "id": "damen-foehn",
+          "name": "Waschen & Föhnen",
+          "preis": 38,
+          "preis_typ": "ab",
+          "dauer_min": 45,
+          "beschreibung": "Professionelles Föhnen mit Volumen-Finish oder Glättung.",
+          "bild": null,
+          "buchbar": true
+        },
+        {
+          "id": "damen-farbe",
+          "name": "Coloration komplett",
+          "preis": 89,
+          "preis_typ": "ab",
+          "dauer_min": 120,
+          "beschreibung": "Farbberatung, Ansatz oder komplette Längen mit Farbpflege.",
+          "bild": null,
+          "buchbar": true
+        },
+        {
+          "id": "damen-balayage",
+          "name": "Balayage / Ombré",
+          "preis": 125,
+          "preis_typ": "ab",
+          "dauer_min": 180,
+          "beschreibung": "Natürlicher Farbverlauf, handgemalt. Ergebnis: sonnenverwöhntes Haar.",
+          "bild": null,
+          "buchbar": true
+        },
+        {
+          "id": "damen-straehnen",
+          "name": "Strähnchen",
+          "preis": 75,
+          "preis_typ": "ab",
+          "dauer_min": 90,
+          "beschreibung": "Feine oder breite Strähnchen für natürliche Highlights.",
+          "bild": null,
+          "buchbar": true
+        },
+        {
+          "id": "damen-glossing",
+          "name": "Glossing / Toning",
+          "preis": 45,
+          "preis_typ": "ab",
+          "dauer_min": 60,
+          "beschreibung": "Intensiver Glanz und Farbauffrischung ohne Aufhellen.",
+          "bild": null,
+          "buchbar": true
+        }
+      ]
+    },
+    {
+      "name": "Herren",
+      "icon": "user",
+      "leistungen": [
+        {
+          "id": "herren-schnitt",
+          "name": "Herrenschnitt",
+          "preis": 34,
+          "preis_typ": "fest",
+          "dauer_min": 30,
+          "beschreibung": "Waschen, individueller Schnitt und Styling.",
+          "bild": null,
+          "buchbar": true
+        },
+        {
+          "id": "herren-bart",
+          "name": "Bartpflege & Kontur",
+          "preis": 22,
+          "preis_typ": "fest",
+          "dauer_min": 20,
+          "beschreibung": "Trimmen, Konturieren und Pflege für den perfekten Bart.",
+          "bild": null,
+          "buchbar": true
+        },
+        {
+          "id": "herren-kombi",
+          "name": "Schnitt + Bart Kombi",
+          "preis": 52,
+          "preis_typ": "fest",
+          "dauer_min": 50,
+          "beschreibung": "Herrenschnitt und Bartpflege zum Vorteilspreis.",
+          "bild": null,
+          "buchbar": true
+        },
+        {
+          "id": "herren-grau",
+          "name": "Grauabdeckung Herren",
+          "preis": 45,
+          "preis_typ": "ab",
+          "dauer_min": 60,
+          "beschreibung": "Dezente, natürlich wirkende Grauabdeckung.",
+          "bild": null,
+          "buchbar": true
+        }
+      ]
+    },
+    {
+      "name": "Specials",
+      "icon": "sparkles",
+      "leistungen": [
+        {
+          "id": "braut",
+          "name": "Brautfrisur & Probe",
+          "preis": 190,
+          "preis_typ": "pauschal",
+          "dauer_min": 90,
+          "beschreibung": "Persönliche Beratung, Probe-Termin und Styling am großen Tag.",
+          "bild": null,
+          "buchbar": true
+        },
+        {
+          "id": "olaplex",
+          "name": "Olaplex Behandlung",
+          "preis": 65,
+          "preis_typ": "ab",
+          "dauer_min": 60,
+          "beschreibung": "Intensive Haarreparatur für strapaziertes und geschädigtes Haar.",
+          "bild": null,
+          "buchbar": true
+        },
+        {
+          "id": "keratinbehandlung",
+          "name": "Keratin-Glättung",
+          "preis": 180,
+          "preis_typ": "ab",
+          "dauer_min": 180,
+          "beschreibung": "Dauerhaft glattes, pflegeleichtes Haar für bis zu 6 Monate.",
+          "bild": null,
+          "buchbar": true
+        },
+        {
+          "id": "kopfhaut",
+          "name": "Kopfhaut-Behandlung",
+          "preis": 45,
+          "preis_typ": "ab",
+          "dauer_min": 45,
+          "beschreibung": "Pflegende Massage und Behandlung für eine gesunde Kopfhaut.",
+          "bild": null,
+          "buchbar": true
+        }
+      ]
+    }
+  ]
+}

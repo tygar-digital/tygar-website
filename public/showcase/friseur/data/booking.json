@@ -1,0 +1,26 @@
+{
+  "_kommentar": "Buchungssystem-Konfiguration — Provider und Embed-URL eintragen",
+  "headline": "Termin vereinbaren",
+  "subline": "Online buchen – rund um die Uhr, ohne Warteschleife.",
+  "provider": "treatwell",
+  "_provider_optionen": ["treatwell", "shore", "fresha", "timify", "calendly", "acuity", "direkt"],
+  "embed_url": "https://www.treatwell.de/ort/salon-bella/buchen/",
+  "embed_type": "link",
+  "_embed_typ_info": "link = neues Tab öffnen | iframe = direkt einbetten",
+  "fallback_telefon": "+49 89 123 456 78",
+  "fallback_text": "Du buchst lieber telefonisch? Kein Problem – wir freuen uns auf deinen Anruf!",
+  "stornierung": {
+    "frist_stunden": 24,
+    "text": "Kostenlose Stornierung bis 24 Stunden vorher. Bei kurzfristigen Absagen berechnen wir 50 % des Servicepreises."
+  },
+  "anzahlung": {
+    "aktiv": false,
+    "services": ["braut", "keratinbehandlung"],
+    "betrag_prozent": 30
+  },
+  "erinnerung": {
+    "aktiv": true,
+    "stunden_vorher": 24,
+    "kanal": "email_sms"
+  }
+}

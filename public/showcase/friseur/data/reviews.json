@@ -1,0 +1,66 @@
+{
+  "_kommentar": "Kundenbewertungen — regelmäßig neue Google-Reviews ergänzen",
+  "label": "Bewertungen",
+  "headline": "Das sagen unsere Kunden",
+  "google_rating": {
+    "durchschnitt": 4.9,
+    "anzahl": 148,
+    "link": "https://g.page/salon-bella/review"
+  },
+  "testimonials": [
+    {
+      "name": "Sarah M.",
+      "sterne": 5,
+      "text": "Endlich ein Salon, der wirklich zuhört! Mein Balayage sieht aus wie auf Pinterest – nur besser. Bella hat genau verstanden, was ich wollte, und das Ergebnis hat meine Erwartungen übertroffen.",
+      "datum": "2026-01-18",
+      "quelle": "google"
+    },
+    {
+      "name": "Michael K.",
+      "sterne": 5,
+      "text": "Super entspannte Atmosphäre, herzliche Beratung und immer ein tolles Ergebnis. Marco macht den besten Herrenschnitt, den ich je hatte – und das nach 20 Jahren Suche!",
+      "datum": "2026-02-04",
+      "quelle": "google"
+    },
+    {
+      "name": "Julia B.",
+      "sterne": 5,
+      "text": "Ich hatte großes Vertrauen für meine Hochzeitsfrisur – und Bella hat es nicht enttäuscht. Traumhaft, stundenlang haltbar. Alle Gäste haben gefragt, wer die Frisur gemacht hat.",
+      "datum": "2025-10-22",
+      "quelle": "google"
+    },
+    {
+      "name": "Thomas R.",
+      "sterne": 5,
+      "text": "Die Olaplex-Behandlung hat mein strapaziertes Haar gerettet. Sofia hat alles genau erklärt und ich bin rausgegangen wie mit neuem Haar. Werde definitiv wiederkommen!",
+      "datum": "2025-12-14",
+      "quelle": "treatwell"
+    },
+    {
+      "name": "Anna L.",
+      "sterne": 5,
+      "text": "Von der Beratung bis zum Ergebnis absolut top. Lena hat meine Locken endlich verstanden und einen Schnitt gemacht, der sie wirklich zur Geltung bringt. Danke!",
+      "datum": "2026-01-29",
+      "quelle": "google"
+    },
+    {
+      "name": "Felix W.",
+      "sterne": 4,
+      "text": "Sehr professionelles Team und angenehme Atmosphäre. Hab meinen ersten Termin ohne Empfehlung gebucht und bleibe jetzt dabei. Preis-Leistung stimmt.",
+      "datum": "2025-11-08",
+      "quelle": "google"
+    }
+  ],
+  "presse": [
+    {
+      "name": "Münchner Magazin",
+      "logo": null,
+      "zitat": "Einer der besten Salons in Schwabing"
+    },
+    {
+      "name": "Friseur.com",
+      "logo": null,
+      "zitat": "Top Salon München 2025"
+    }
+  ]
+}

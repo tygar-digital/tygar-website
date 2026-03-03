@@ -1,0 +1,32 @@
+{
+  "_kommentar": "Rechtliche Pflichtangaben — Impressum & Datenschutz. WICHTIG: Texte von eRecht24 generieren lassen!",
+  "impressum": {
+    "_hinweis": "Pflichtangaben gem. §5 TMG — mit echten Daten ersetzen!",
+    "inhaber": "Bella Rossi",
+    "firma": "Salon Bella",
+    "rechtsform": "Einzelunternehmen",
+    "adresse": "Leopoldstraße 42, 80802 München",
+    "telefon": "+49 89 123 456 78",
+    "email": "hallo@salon-bella.de",
+    "ust_id": "DE123456789",
+    "handwerkskammer": "Handwerkskammer für München und Oberbayern, Betriebsnr. 12345",
+    "berufsbezeichnung": "Friseurmeisterin",
+    "berufsrecht": "Handwerksordnung (HwO)"
+  },
+  "datenschutz": {
+    "_hinweis": "Datenschutzerklärung von eRecht24.de oder IT-Recht Kanzlei generieren — KEIN KI-Text!",
+    "anbieter": "erecht24",
+    "text_url": "/datenschutz-text.html",
+    "auftragsverarbeiter": ["Netlify (Hosting)", "Google Maps (Karten)", "Treatwell (Buchungssystem)"]
+  },
+  "cookie_consent": {
+    "_hinweis": "Cookiebot oder Usercentrics für TTDSG-konformen Cookie-Banner nutzen",
+    "anbieter": "cookiebot",
+    "id": "DEINE-COOKIEBOT-ID-HIER",
+    "kategorien": ["notwendig", "analyse", "marketing"]
+  },
+  "ssl": {
+    "aktiv": true,
+    "anbieter": "Netlify (automatisch Let's Encrypt)"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "_kommentar": "Globale Konfiguration — Name, Kontakt, Theme, Navigation, Social",
+  "business_name": "Salon Bella",
+  "logo": "assets/logo.svg",
+  "telefon": "+49 89 123 456 78",
+  "domain": "salon-bella.de",
+  "sprache": "de",
+  "branche": "friseur",
+  "favicon": "assets/logo.svg",
+
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "primary": "#c8956c",
+      "secondary": "#2c1810",
+      "accent": "#f5ede5",
+      "background": "#faf8f5",
+      "text": "#2d2420",
+      "text_muted": "#6b6560"
+    },
+    "fonts": {
+      "display": "Playfair Display",
+      "body": "DM Sans"
+    },
+    "border_radius": "12px",
+    "spacing_scale": "generous"
+  },
+
+  "navigation": [
+    { "label": "Start",       "href": "#start" },
+    { "label": "Leistungen",  "href": "#leistungen" },
+    { "label": "Team",        "href": "#team" },
+    { "label": "Galerie",     "href": "#galerie" },
+    { "label": "Über Uns",    "href": "#ueber-uns" },
+    { "label": "Kontakt",     "href": "#kontakt" }
+  ],
+
+  "cta_button": {
+    "label": "Termin buchen",
+    "href": "#termin",
+    "style": "primary"
+  },
+
+  "social": {
+    "instagram": "https://instagram.com/salon.bella",
+    "facebook":  "https://facebook.com/salonbella",
+    "tiktok":    null
+  },
+
+  "kontakt": {
+    "adresse": {
+      "strasse": "Leopoldstraße 42",
+      "plz": "80802",
+      "stadt": "München",
+      "land": "Deutschland"
+    },
+    "geo": {
+      "lat": 48.1615,
+      "lng": 11.5865
+    },
+    "telefon":   "+49 89 123 456 78",
+    "email":     "hallo@salon-bella.de",
+    "whatsapp":  "+4989123456789",
+    "anfahrt":   "U-Bahn: Münchner Freiheit (U3/U6), 3 Min. Fußweg. Parkplätze im Hof.",
+    "barrierefrei": true,
+    "kontaktformular": true
+  },
+
+  "footer": {
+    "tagline": "Dein Salon in Schwabing. Seit 2019.",
+    "quick_links": [
+      { "label": "Leistungen",  "href": "#leistungen" },
+      { "label": "Team",        "href": "#team" },
+      { "label": "Galerie",     "href": "#galerie" },
+      { "label": "Kontakt",     "href": "#kontakt" }
+    ],
+    "legal_links": [
+      { "label": "Impressum",   "href": "impressum.html" },
+      { "label": "Datenschutz", "href": "datenschutz.html" }
+    ],
+    "newsletter": {
+      "aktiv": false,
+      "text": "Trends & Angebote direkt in dein Postfach"
+    },
+    "copyright": "© {year} Salon Bella. Alle Rechte vorbehalten."
+  }
+}

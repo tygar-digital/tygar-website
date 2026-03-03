@@ -1,0 +1,50 @@
+{
+  "_kommentar": "Hero-Texte, Über-Uns, Philosophie, Marken — selten ändern (1-2× / Jahr)",
+
+  "hero": {
+    "badge": "✦ Salon Bella · Schwabing",
+    "headline": "Dein Haar. Deine Persönlichkeit.",
+    "subline": "Seit 2019 begleiten wir dich mit ehrlicher Beratung, natürlichen Ergebnissen und einem Team, das zuhört. Weil gutes Haar kein Zufall ist.",
+    "background_type": "image",
+    "background_image": "https://images.unsplash.com/photo-1561710990-1ad16e64c0f5?w=1920&q=80",
+    "background_video": null,
+    "overlay_opacity": 0.45,
+    "cta_primary": {
+      "label": "Jetzt Termin buchen",
+      "href": "#termin"
+    },
+    "cta_secondary": {
+      "label": "Leistungen entdecken",
+      "href": "#leistungen"
+    },
+    "trust_badges": [
+      "★ 4.9 auf Google (148 Bewertungen)",
+      "Ausgezeichnet · Top Salon München 2025",
+      "Kostenlose Beratung inklusive"
+    ]
+  },
+
+  "about": {
+    "label": "Über Uns",
+    "headline": "Über Salon Bella",
+    "text": "Bella eröffnete den Salon 2019 mit einer klaren Vision: Ehrliche Beratung, natürliche Ergebnisse und eine Atmosphäre, in der man sich wirklich wohlfühlt. Kein Stress, kein Massentakt – sondern echtes Handwerk mit Leidenschaft und Zeit für jeden Kunden.",
+    "bild": "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80",
+    "philosophie": "Wir glauben: Das beste Ergebnis entsteht, wenn wir zuerst zuhören. Jeder Besuch beginnt bei uns mit einer persönlichen Beratung – kostenlos und ohne Zeitdruck.",
+    "besonderheiten": [
+      "Nachhaltige & vegane Produkte",
+      "Klimabewusster Salon",
+      "Tierversuchsfreie Colorationen",
+      "Persönliche Beratung inklusive"
+    ],
+    "marken": [
+      { "name": "Kérastase",  "logo": null },
+      { "name": "Olaplex",    "logo": null },
+      { "name": "Wella",      "logo": null },
+      { "name": "Davines",    "logo": null }
+    ],
+    "auszeichnungen": [
+      { "jahr": 2025, "titel": "Top Salon München – Friseur.com" },
+      { "jahr": 2024, "titel": "Wella Master Colorist Award" }
+    ]
+  }
+}

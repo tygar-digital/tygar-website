@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Salon | Friseur</title>
+  <meta name="description" id="page-description" content="">
+  <meta property="og:title" id="og-title" content="">
+  <meta property="og:description" id="og-description" content="">
+  <meta property="og:image" id="og-image" content="">
+  <meta property="og:type" content="website">
+  <link rel="icon" id="site-favicon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <!-- ══ NAVIGATION ══ -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-inner container">
+      <a href="#start" class="nav-logo" id="nav-logo">
+        <img id="logo-img" src="assets/logo.svg" alt="Logo" width="36" height="36">
+        <span id="logo-name" class="logo-name"></span>
+      </a>
+      <ul class="nav-links" id="nav-links" role="list"></ul>
+      <div class="nav-actions">
+        <a href="tel:" id="nav-phone" class="nav-phone"></a>
+        <a href="#termin" id="nav-cta" class="btn btn-primary btn-sm"></a>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul id="mobile-nav-links" role="list"></ul>
+      <div class="mobile-menu-actions">
+        <a href="#termin" id="mobile-cta" class="btn btn-primary btn-full"></a>
+        <a href="tel:" id="mobile-phone" class="mobile-phone-link"></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══ HERO ══ -->
+    <section class="hero" id="start">
+      <div class="hero-bg" id="hero-bg"></div>
+      <div class="hero-overlay" id="hero-overlay"></div>
+      <div class="hero-content container">
+        <span class="hero-badge" id="hero-badge"></span>
+        <h1 class="hero-headline" id="hero-headline"></h1>
+        <p class="hero-subline" id="hero-subline"></p>
+        <div class="hero-ctas" id="hero-ctas"></div>
+        <div class="hero-trust" id="hero-trust"></div>
+      </div>
+      <a href="#leistungen" class="hero-scroll" aria-label="Scrollen">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </section>
+
+    <!-- ══ LEISTUNGEN ══ -->
+    <section class="section section-services" id="leistungen">
+      <div class="container">
+        <div id="services-header" class="section-label-group"></div>
+        <div class="services-tabs" id="services-tabs" role="tablist"></div>
+        <div class="services-grid" id="services-grid" role="tabpanel"></div>
+        <p class="services-note" id="services-note"></p>
+        <div class="section-cta">
+          <a href="leistungen.html" class="btn btn-outline">Alle Leistungen & Preisliste →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ TEAM ══ -->
+    <section class="section section-team section-alt" id="team">
+      <div class="container">
+        <div id="team-header" class="section-label-group"></div>
+        <div class="team-grid" id="team-grid"></div>
+      </div>
+    </section>
+
+    <!-- ══ GALERIE ══ -->
+    <section class="section section-gallery" id="galerie">
+      <div class="container">
+        <div id="gallery-header" class="section-label-group"></div>
+        <div class="gallery-filter" id="gallery-filter" role="group" aria-label="Galerie filtern"></div>
+        <div class="gallery-grid" id="gallery-grid"></div>
+        <div class="section-cta">
+          <a href="galerie.html" class="btn btn-outline">Alle Arbeiten ansehen →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ BEWERTUNGEN ══ -->
+    <section class="section section-reviews section-alt" id="bewertungen">
+      <div class="container">
+        <div id="reviews-header" class="section-label-group center"></div>
+        <div id="google-rating" class="google-rating"></div>
+        <div class="reviews-grid" id="reviews-grid"></div>
+        <div class="presse-logos" id="presse-logos"></div>
+      </div>
+    </section>
+
+    <!-- ══ ÜBER UNS ══ -->
+    <section class="section section-about" id="ueber-uns">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image" id="about-image"></div>
+          <div class="about-content" id="about-content"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ÖFFNUNGSZEITEN + KONTAKT ══ -->
+    <section class="section section-hours-contact section-alt" id="kontakt">
+      <div class="container">
+        <div id="hours-contact-header" class="section-label-group"></div>
+        <div class="hours-contact-grid">
+          <div class="hours-block" id="hours-block"></div>
+          <div class="contact-block" id="contact-block"></div>
+          <div class="map-block" id="map-block"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FAQ ══ -->
+    <section class="section section-faq" id="faq">
+      <div class="container container-narrow">
+        <div id="faq-header" class="section-label-group center"></div>
+        <div class="faq-list" id="faq-list"></div>
+      </div>
+    </section>
+
+    <!-- ══ TERMIN CTA BANNER ══ -->
+    <section class="section-booking-cta" id="termin">
+      <div class="container">
+        <div class="booking-cta-inner" id="booking-cta-inner"></div>
+      </div>
+    </section>
+
+    <!-- ══ NEWS / BLOG ══ -->
+    <section class="section section-news" id="news">
+      <div class="container">
+        <div id="news-header" class="section-label-group"></div>
+        <div class="news-grid" id="news-grid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+      <div class="footer-grid" id="footer-grid"></div>
+      <div class="footer-bottom" id="footer-bottom"></div>
+    </div>
+  </footer>
+
+  <!-- ══ LIGHTBOX ══ -->
+  <div class="lightbox-overlay" id="lightbox-overlay"></div>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildanzeige">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Schließen">×</button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Vorheriges Bild">&#8249;</button>
+    <button class="lightbox-next" id="lightbox-next" aria-label="Nächstes Bild">&#8250;</button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-img" src="" alt="">
+      <figcaption id="lightbox-caption" class="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

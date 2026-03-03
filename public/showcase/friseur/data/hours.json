@@ -1,0 +1,42 @@
+{
+  "_kommentar": "Öffnungszeiten — saisonal und bei Feiertagen aktualisieren",
+  "regulaer": {
+    "montag":     "geschlossen",
+    "dienstag":   "09:00–18:00",
+    "mittwoch":   "09:00–18:00",
+    "donnerstag": "09:00–20:00",
+    "freitag":    "09:00–18:00",
+    "samstag":    "09:00–15:00",
+    "sonntag":    "geschlossen"
+  },
+  "hinweis": "Donnerstags Abendtermine bis 20 Uhr! 🌙",
+  "feiertage": [
+    {
+      "datum": "2026-12-24",
+      "name": "Heiligabend",
+      "status": "geschlossen"
+    },
+    {
+      "datum": "2026-12-25",
+      "name": "1. Weihnachtstag",
+      "status": "geschlossen"
+    },
+    {
+      "datum": "2026-12-31",
+      "name": "Silvester",
+      "status": "09:00–13:00"
+    },
+    {
+      "datum": "2027-01-01",
+      "name": "Neujahr",
+      "status": "geschlossen"
+    }
+  ],
+  "betriebsferien": [
+    {
+      "von": "2026-08-10",
+      "bis": "2026-08-21",
+      "hinweis": "Sommerurlaub — wir freuen uns auf dich ab dem 24. August!"
+    }
+  ]
+}

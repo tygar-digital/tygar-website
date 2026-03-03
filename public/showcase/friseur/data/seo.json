@@ -1,0 +1,46 @@
+{
+  "_kommentar": "SEO-Konfiguration — Meta-Tags, Schema Markup, OG-Tags pro Seite",
+  "global": {
+    "site_title": "Salon Bella | Friseur in München Schwabing",
+    "site_description": "Dein Friseur in München Schwabing. Schnitt, Farbe, Balayage & Brautfrisuren. Persönliche Beratung inklusive. Online Termin buchen!",
+    "og_image": "/assets/og-image.jpg",
+    "locale": "de_DE",
+    "google_business_url": "https://g.page/salon-bella"
+  },
+  "seiten": {
+    "/": {
+      "title": "Salon Bella | Friseur München Schwabing",
+      "description": "Dein Friseur in München Schwabing. Schnitt, Farbe, Balayage. Persönliche Beratung inklusive. Online buchen!"
+    },
+    "/leistungen": {
+      "title": "Leistungen & Preise | Salon Bella München",
+      "description": "Alle Friseur-Leistungen und Preise: Damen, Herren, Specials. Schnitt ab 34€, Balayage ab 125€. Salon Bella Schwabing."
+    },
+    "/team": {
+      "title": "Unser Team | Salon Bella München Schwabing",
+      "description": "Lerne das Team von Salon Bella kennen: Master-Stylistin Bella Rossi und ihr Team aus Schwabing. Persönlich, kompetent, leidenschaftlich."
+    },
+    "/galerie": {
+      "title": "Galerie & Portfolio | Salon Bella München",
+      "description": "Unsere Arbeiten: Balayage, Colorationen, Schnitte und Brautfrisuren aus Salon Bella München Schwabing."
+    },
+    "/kontakt": {
+      "title": "Kontakt & Anfahrt | Salon Bella München",
+      "description": "Salon Bella, Leopoldstraße 42, 80802 München. Tel: +49 89 123 456 78. Mo Ruhetag, Di–Fr 9–18 Uhr."
+    }
+  },
+  "schema": {
+    "type": "HairSalon",
+    "priceRange": "€€",
+    "paymentAccepted": ["Barzahlung", "Kreditkarte", "EC-Karte"],
+    "currenciesAccepted": "EUR"
+  },
+  "lokale_keywords": [
+    "Friseur München Schwabing",
+    "Friseur Leopoldstraße",
+    "Balayage München",
+    "Brautfrisur München",
+    "Herrenschnitt Schwabing",
+    "Olaplex München"
+  ]
+}

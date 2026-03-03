@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physiotherapie Nebel – Ihre Praxis in Gangelt</title>
+  <meta name="description" content="Physiotherapie Nebel in Gangelt – Kompetente Behandlung, individuelle Therapie und Medical Wellness. Jetzt Termin vereinbaren." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+  <!-- Styles → assets/styles.css anpassen für Corporate Design -->
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<!-- ─── Navigation ─────────────────────────────────────────────────────── -->
+<nav class="nav" id="nav" aria-label="Hauptnavigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Startseite">
+        <span class="nav-logo-name" id="nav-logo-name"></span>
+        <span class="nav-logo-sub"  id="nav-logo-sub"></span>
+      </a>
+      <ul class="nav-links" id="nav-links" role="list"></ul>
+      <div class="nav-cta">
+        <a id="nav-phone" class="btn btn-outline" style="padding:.6rem 1.25rem;font-size:.85rem;"></a>
+        <a id="nav-cta-btn" class="btn btn-primary" style="padding:.6rem 1.25rem;font-size:.85rem;"></a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation"></div>
+
+<main>
+<!-- ─── Hero ────────────────────────────────────────────────────────────── -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow" id="hero-badge"></div>
+        <h1 class="hero-title" id="hero-title"></h1>
+        <p class="hero-lead" id="hero-lead"></p>
+        <div class="hero-actions">
+          <a id="hero-cta-primary"   class="btn btn-white"></a>
+          <a id="hero-cta-secondary" class="btn btn-outline-white"></a>
+        </div>
+        <div class="hero-stats" id="hero-stats"></div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-avatar" id="hero-card-initial"></div>
+            <div>
+              <div class="hero-card-name" id="hero-card-name"></div>
+              <div class="hero-card-role" id="hero-card-role"></div>
+            </div>
+          </div>
+          <div class="hero-card-services" id="hero-card-services"></div>
+          <div class="hero-card-badge">
+            <div class="hero-card-badge-icon">📍</div>
+            <div class="hero-card-badge-text">
+              <strong id="hero-card-city"></strong>
+              <span id="hero-card-address"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Values Strip ─────────────────────────────────────────────────────── -->
+<div class="values-strip" aria-label="Unsere Leitgedanken">
+  <div class="container">
+    <div class="values-grid" id="values-grid"></div>
+  </div>
+</div>
+
+<!-- ─── Leistungen ──────────────────────────────────────────────────────── -->
+<section class="section" id="leistungen" aria-labelledby="services-title">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="eyebrow" id="services-eyebrow"></span>
+      <h2 class="section-title" id="services-title"></h2>
+      <p class="section-lead"   id="services-lead"></p>
+    </div>
+    <div class="services-grid" id="services-grid"></div>
+  </div>
+</section>
+
+<!-- ─── Über die Praxis ──────────────────────────────────────────────────── -->
+<section class="section section--alt" id="praxis" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-image-box" aria-hidden="true">
+          <div class="about-image-placeholder">
+            <div class="icon">🏥</div>
+            <p>Praxisfoto</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="eyebrow" id="about-eyebrow"></span>
+        <h2 class="section-title" id="about-title"></h2>
+        <p  class="section-lead"  id="about-lead"></p>
+        <div class="about-features" id="about-features"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Wellness ─────────────────────────────────────────────────────────── -->
+<section class="section" id="wellness" aria-labelledby="wellness-title">
+  <div class="container">
+    <div class="wellness-grid">
+      <div class="wellness-text-col">
+        <span class="eyebrow" id="wellness-eyebrow"></span>
+        <h2 class="section-title" id="wellness-title"></h2>
+        <p  class="section-lead"  id="wellness-lead" style="margin-bottom:2rem;"></p>
+        <p  id="wellness-text" style="font-size:.9rem;color:var(--color-text-sec);line-height:1.7;margin-bottom:2rem;"></p>
+        <a  id="wellness-cta" class="btn btn-primary"></a>
+      </div>
+      <div class="wellness-right-col">
+        <div id="wellness-img-box" class="wellness-img-box"></div>
+        <div class="wellness-features" id="wellness-grid-items"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Galerie ──────────────────────────────────────────────────────────── -->
+<section class="section gallery-section" id="gallery-strip" aria-label="Impressionen aus der Praxis">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="eyebrow" id="gallery-eyebrow"></span>
+      <h2 class="section-title" id="gallery-title"></h2>
+    </div>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </div>
+</section>
+
+<!-- ─── Öffnungszeiten ───────────────────────────────────────────────────── -->
+<section style="background:var(--color-surface);padding-block:4rem;" aria-label="Öffnungszeiten">
+  <div class="container">
+    <div class="section-header section-header--center" style="margin-bottom:2rem;">
+      <span class="eyebrow" id="hours-eyebrow"></span>
+      <h2 class="section-title" id="hours-title"></h2>
+    </div>
+    <div class="hours-banner" id="hours-banner"></div>
+  </div>
+</section>
+
+<!-- ─── Kontakt ──────────────────────────────────────────────────────────── -->
+<section class="section" id="kontakt" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow" id="contact-eyebrow"></span>
+      <h2 class="section-title" id="contact-title"></h2>
+      <p  class="section-lead"  id="contact-lead"></p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info" id="contact-info"></div>
+      <div class="contact-form">
+        <div id="form-content">
+          <h3 class="form-title" id="form-title"></h3>
+          <p  class="form-lead"  id="form-lead"></p>
+          <form id="contact-form" name="kontakt" method="POST" data-netlify="true" novalidate>
+            <input type="hidden" name="form-name" value="kontakt" />
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="f-vorname">Vorname *</label>
+                <input type="text" id="f-vorname" name="vorname" class="form-input" required autocomplete="given-name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-nachname">Nachname *</label>
+                <input type="text" id="f-nachname" name="nachname" class="form-input" required autocomplete="family-name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-telefon">Telefon</label>
+              <input type="tel" id="f-telefon" name="telefon" class="form-input" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-email">E-Mail *</label>
+              <input type="email" id="f-email" name="email" class="form-input" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="form-anliegen">Anliegen</label>
+              <select id="form-anliegen" name="anliegen" class="form-select"></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-nachricht">Nachricht</label>
+              <textarea id="f-nachricht" name="nachricht" class="form-textarea" placeholder="Beschreiben Sie kurz Ihr Anliegen…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Nachricht senden &rarr;</button>
+            <p class="form-note">* Pflichtfelder. Ihre Daten werden vertraulich behandelt. Hinweise zur Verarbeitung finden Sie in unserer <a href="datenschutz.html" style="color:var(--accent-text);text-decoration:underline;">Datenschutzerkl&auml;rung</a>.</p>
+          </form>
+        </div>
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">✅</div>
+          <h3>Vielen Dank!</h3>
+          <p>Ihre Nachricht wurde gesendet. Wir melden uns innerhalb eines Werktages bei Ihnen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ─── Footer ───────────────────────────────────────────────────────────── -->
+<footer class="footer" aria-label="Seitenfuß">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name" id="footer-brand-name"></div>
+        <div class="footer-brand-sub"  id="footer-brand-sub"></div>
+        <p   class="footer-brand-desc" id="footer-brand-desc"></p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links" id="footer-nav-links" role="list"></ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Kontakt</div>
+        <ul class="footer-links" id="footer-contact-info" role="list"></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p  class="footer-copy"  id="footer-copyright"></p>
+      <nav class="footer-legal" id="footer-legal" aria-label="Rechtliches"></nav>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scroll-top" aria-label="Zurück nach oben">↑</button>
+
+<!-- Rendering-Engine → fetcht data/content.json und baut den DOM auf -->
+<script src="js/app.js" defer></script>
+</body>
+</html>

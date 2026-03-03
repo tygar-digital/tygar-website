@@ -1,0 +1,57 @@
+{
+  "_kommentar": "Blog-Posts, Angebote, Stellenangebote — laufend aktualisieren (SEO-Gold!)",
+  "beitraege": [
+    {
+      "id": "fruehling-trends-2026",
+      "typ": "blog",
+      "titel": "Die 5 Frisuren-Trends für Frühling 2026",
+      "datum": "2026-02-15",
+      "bild": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&h=450&fit=crop&q=80",
+      "text": "Von butterblondem Balayage bis zum cleanen Bixie-Cut: Diese Frühjahrsschnitte und Farben dominieren 2026 die Laufstege und Salons. Hier erfahrst du, was wirklich funktioniert und welcher Trend zu dir passen könnte...",
+      "gueltig_bis": null,
+      "cta": {
+        "label": "Jetzt lesen",
+        "href": "#news"
+      }
+    },
+    {
+      "id": "olaplex-aktion-februar",
+      "typ": "angebot",
+      "titel": "Olaplex-Behandlung im Februar: -20% Rabatt",
+      "datum": "2026-02-01",
+      "bild": null,
+      "text": "Dein Haar leidet unter trockener Winterluft und Heizungswärme? Im Februar bekommst du jede Olaplex-Behandlung mit 20% Rabatt. Nur solange der Aktionszeitraum läuft – jetzt Termin sichern!",
+      "gueltig_bis": "2026-02-28",
+      "cta": {
+        "label": "Jetzt buchen",
+        "href": "#termin"
+      }
+    },
+    {
+      "id": "azubi-2026",
+      "typ": "stellenangebot",
+      "titel": "Wir suchen Auszubildende ab September 2026!",
+      "datum": "2026-01-15",
+      "bild": null,
+      "text": "Du liebst Haare, Menschen und kreative Arbeit? Bei Salon Bella lernst du das Handwerk von Grund auf – mit Zeit, Mentoring und echter Wertschätzung. Bewerbungsstart ab sofort!",
+      "gueltig_bis": "2026-05-31",
+      "cta": {
+        "label": "Jetzt bewerben",
+        "href": "mailto:jobs@salon-bella.de"
+      }
+    },
+    {
+      "id": "neue-produkte",
+      "typ": "news",
+      "titel": "Neu im Salon: Davines-Pflegeserie",
+      "datum": "2026-01-08",
+      "bild": null,
+      "text": "Wir haben unser Produktsortiment erweitert: Ab sofort ist die preisgekrönte Davines-Serie bei uns erhältlich – vegan, nachhaltig und unglaublich wirksam für coloriertes Haar.",
+      "gueltig_bis": null,
+      "cta": {
+        "label": "Mehr erfahren",
+        "href": "#ueber-uns"
+      }
+    }
+  ]
+}

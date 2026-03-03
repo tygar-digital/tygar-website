@@ -1,0 +1,39 @@
+{
+  "_kommentar": "Produkt-Empfehlungen (optional, Phase 2+). aktiv: false = Section wird ausgeblendet",
+  "aktiv": false,
+  "headline": "Unsere Produktempfehlungen",
+  "subline": "Die Produkte, die wir täglich selbst verwenden – jetzt auch für zuhause.",
+  "shop_link": null,
+  "produkte": [
+    {
+      "id": "olaplex-3",
+      "name": "Olaplex No. 3",
+      "marke": "Olaplex",
+      "preis": 28.90,
+      "bild": null,
+      "beschreibung": "Hair Perfector – perfekt für strapaziertes und coloriertes Haar",
+      "link": null,
+      "empfohlen_fuer": ["coloriertes Haar", "strapaziertes Haar"]
+    },
+    {
+      "id": "kerastase-nutritive",
+      "name": "Nutritive Masquintense",
+      "marke": "Kérastase",
+      "preis": 36.50,
+      "bild": null,
+      "beschreibung": "Intensive Pflegemaske für trockenes Haar",
+      "link": null,
+      "empfohlen_fuer": ["trockenes Haar", "krauses Haar"]
+    },
+    {
+      "id": "davines-oi",
+      "name": "OI Oil",
+      "marke": "Davines",
+      "preis": 32.00,
+      "bild": null,
+      "beschreibung": "Luxuriöses Haaröl für Glanz und Geschmeidigkeit",
+      "link": null,
+      "empfohlen_fuer": ["alle Haartypen", "Glanz-Finish"]
+    }
+  ]
+}
