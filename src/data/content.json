@@ -4,6 +4,12 @@
   "_comment3": "  Ändere hier Text, Projekte, Leistungen usw.                              ",
   "_comment4": "  Logo austauschen: assets/logo.svg ersetzen (oder PNG → logo_svg ändern) ",
   "_comment5": "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+  "meta": {
+    "title": "Tygar – Webdesign & Digitalisierung für kleine Betriebe",
+    "description": "Professionelle Websites, Buchungstools und KI-Lösungen für Handwerker, Gastronomen und Freiberufler im Raum Köln/Bonn. Fertig in 2–3 Wochen, faire Festpreise.",
+    "og_image": "/images/og-image.jpg",
+    "canonical": "https://tygar-digital.de"
+  },
   "brand": {
     "name": "Tygar",
     "logo_svg": "assets/logo.svg",
