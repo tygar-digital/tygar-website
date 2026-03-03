@@ -1,0 +1,44 @@
+---
+const { data } = Astro.props;
+---
+<section id="leistungen" class="border-t border-brand-border">
+  <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
+
+    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-secondary mb-3">
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)"></span>
+      {data.label}
+    </div>
+    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.03em] mb-4"
+      style="font-size:clamp(2rem,4.5vw,3.25rem)">
+      {data.heading[0]} <span class="bg-clip-text text-transparent"
+        style="background-image:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)">{data.heading[1]}</span>
+    </h2>
+    <p class="text-brand-secondary leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {data.items.map((item: any) => (
+        <div class="rounded-card border p-8 flex flex-col gap-4 transition-all duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] hover:-translate-y-1.5 hover:shadow-card group"
+          style={`background:rgba(39,39,42,0.55);backdrop-filter:blur(12px);
+                  border-color:${item.accent === 'emerald' ? 'rgba(52,211,153,.3)' : item.accent === 'cyan' ? 'rgba(34,211,238,.3)' : 'rgba(167,139,250,.3)'}`}>
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+            style={`background:${item.accent === 'emerald' ? 'rgba(52,211,153,.12)' : item.accent === 'cyan' ? 'rgba(34,211,238,.12)' : 'rgba(167,139,250,.12)'};
+                    color:${item.accent === 'emerald' ? '#34D399' : item.accent === 'cyan' ? '#22D3EE' : '#A78BFA'}`}
+            set:html={item.icon_svg}>
+          </div>
+          <h3 class="font-heading font-bold text-brand-heading text-lg">{item.title}</h3>
+          <p class="text-brand-secondary text-sm leading-relaxed flex-1">{item.text}</p>
+          {item.features && (
+            <ul class="flex flex-col gap-2 mt-1">
+              {item.features.map((f: string) => (
+                <li class="flex items-start gap-2 text-sm text-brand-text">
+                  <span style={`color:${item.accent === 'emerald' ? '#34D399' : item.accent === 'cyan' ? '#22D3EE' : '#A78BFA'}`}>✓</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

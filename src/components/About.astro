@@ -1,0 +1,47 @@
+---
+const { data } = Astro.props;
+---
+<section id="ueber-mich" class="border-t border-brand-border">
+  <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
+
+    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-secondary mb-3">
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)"></span>
+      {data.label}
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 items-start">
+      <div>
+        <h2 class="font-heading font-black leading-[1.08] tracking-[-0.03em] mb-6"
+          style="font-size:clamp(2rem,4.5vw,3.25rem)">
+          {data.headline[0]}<br/>
+          <span class="bg-clip-text text-transparent"
+            style="background-image:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)">{data.headline[1]}</span>
+        </h2>
+        <p class="text-brand-secondary leading-[1.75] mb-5">{data.bio}</p>
+        <p class="text-brand-secondary leading-[1.75] mb-8">{data.bio2}</p>
+        <div class="flex flex-wrap gap-2">
+          {data.tags.map((tag: string) => (
+            <span class="text-xs font-heading font-semibold px-3 py-1.5 rounded-full border"
+              style="background:rgba(34,211,238,0.08);border-color:rgba(34,211,238,0.2);color:#22D3EE">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div class="rounded-card overflow-hidden aspect-[3/4] flex items-center justify-center border border-brand-border"
+        style="background:rgba(39,39,42,0.55);backdrop-filter:blur(12px)">
+        <div class="text-center p-8">
+          <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
+            style="background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.2)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <p class="text-brand-muted text-sm font-body">Foto folgt</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

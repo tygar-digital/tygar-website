@@ -1,0 +1,33 @@
+---
+const { brand, footer } = Astro.props;
+---
+<footer class="border-t border-brand-border">
+  <div class="max-w-[1160px] mx-auto px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+
+    <a href="#" class="flex items-center gap-2 no-underline">
+      <img src={brand.logo_svg} alt={brand.name + ' Logo'} class="h-7 w-auto" />
+    </a>
+
+    <span class="text-brand-muted text-xs font-body">{footer.copyright}</span>
+
+    <div class="flex gap-6 items-center">
+      {footer.legal_links.map((l: any) => (
+        <a href={l.href} class="text-xs text-brand-muted hover:text-brand-text transition-colors font-body">
+          {l.label}
+        </a>
+      ))}
+      {brand.social?.linkedin && brand.social.linkedin !== '#' && (
+        <a href={brand.social.linkedin} target="_blank" rel="noopener noreferrer"
+          class="text-xs text-brand-muted hover:text-brand-text transition-colors font-body">
+          LinkedIn
+        </a>
+      )}
+      {brand.social?.instagram && brand.social.instagram !== '#' && (
+        <a href={brand.social.instagram} target="_blank" rel="noopener noreferrer"
+          class="text-xs text-brand-muted hover:text-brand-text transition-colors font-body">
+          Instagram
+        </a>
+      )}
+    </div>
+  </div>
+</footer>

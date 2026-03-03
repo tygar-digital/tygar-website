@@ -1,0 +1,78 @@
+---
+const { data } = Astro.props;
+const { badge, headline, subtext, cta_primary, cta_secondary, kpis } = data;
+---
+
+<section id="hero" class="relative overflow-hidden pt-[calc(72px+100px)] pb-[120px]">
+
+  <!-- Dot-grid overlay -->
+  <div class="absolute inset-0 pointer-events-none z-0"
+    style="background-image: radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px);
+           background-size: 36px 36px;
+           -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+           mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);">
+  </div>
+
+  <!-- Animated Orbs -->
+  <div class="absolute w-[700px] h-[700px] rounded-full pointer-events-none will-change-transform animate-orb-1"
+    style="top:-200px;right:-80px;filter:blur(80px);background:radial-gradient(circle,rgba(34,211,238,0.10) 0%,transparent 70%)"></div>
+  <div class="absolute w-[500px] h-[500px] rounded-full pointer-events-none will-change-transform animate-orb-2"
+    style="bottom:-100px;left:-80px;filter:blur(80px);background:radial-gradient(circle,rgba(52,211,153,0.09) 0%,transparent 70%)"></div>
+  <div class="absolute w-[400px] h-[400px] rounded-full pointer-events-none will-change-transform animate-orb-3"
+    style="top:30%;left:40%;filter:blur(80px);background:radial-gradient(circle,rgba(167,139,250,0.07) 0%,transparent 70%)"></div>
+
+  <div class="max-w-[1160px] mx-auto px-8 relative z-10">
+    <div class="max-w-[780px]">
+
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 border rounded-full px-4 py-1.5 text-sm font-medium text-brand-cyan mb-7 animate-badge-in"
+        style="background:rgba(34,211,238,0.08);border-color:rgba(34,211,238,0.25)">
+        <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse-dot"
+          style="box-shadow:0 0 8px #22D3EE"></span>
+        {badge}
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-heading font-black leading-[1.04] tracking-[-0.035em] mb-7"
+        style="font-size: clamp(2.8rem, 7vw, 5.25rem)">
+        {headline.map((line: string, i: number) => (
+          i === 0
+            ? <span>{line} </span>
+            : <span class="bg-clip-text text-transparent"
+                style="background-image: linear-gradient(90deg, #34D399, #22D3EE, #A78BFA)">{line}</span>
+        ))}
+      </h1>
+
+      <p class="text-brand-secondary leading-[1.8] mb-10 max-w-[560px]"
+        style="font-size: clamp(1rem, 2vw, 1.125rem)">
+        {subtext}
+      </p>
+
+      <div class="flex gap-4 flex-wrap">
+        <a href={cta_primary.href}
+          class="font-heading font-bold text-sm px-8 py-3.5 rounded-full text-white transition-all hover:-translate-y-0.5 hover:shadow-glow-cyan"
+          style="background:linear-gradient(135deg,#0e9488,#0e7490,#6d28d9);background-size:200%">
+          {cta_primary.label}
+        </a>
+        <a href={cta_secondary.href}
+          class="font-heading font-semibold text-sm px-8 py-3.5 rounded-full text-brand-text border transition-all hover:border-brand-cyan hover:text-brand-cyan hover:bg-cyan-500/10"
+          style="border-color:rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);backdrop-filter:blur(4px)">
+          {cta_secondary.label}
+        </a>
+      </div>
+
+      <!-- KPIs -->
+      <div class="flex mt-14 border border-brand-border rounded-card overflow-hidden">
+        {kpis.map((k: any, i: number) => (
+          <div class:list={['flex-1 px-6 py-5 text-center', i < kpis.length - 1 ? 'border-r border-brand-border' : '']}>
+            <div class:list={['font-heading font-black text-2xl', k.color === 'emerald' ? 'text-brand-emerald' : k.color === 'cyan' ? 'text-brand-cyan' : 'text-brand-violet']}>
+              {k.value}
+            </div>
+            <div class="text-xs text-brand-muted font-body mt-1">{k.label}</div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

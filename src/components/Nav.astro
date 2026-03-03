@@ -1,0 +1,97 @@
+---
+const { brand, nav } = Astro.props;
+---
+<div id="sidebar-accent" class="fixed left-0 top-0 w-[3px] h-screen z-[300] pointer-events-none"
+  style="background: linear-gradient(180deg, #34D399, #22D3EE, #A78BFA)"></div>
+
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-[200] h-[72px] border-b border-brand-border"
+  style="background: rgba(24,24,27,0.92); backdrop-filter: blur(16px);">
+  <div class="max-w-[1160px] mx-auto px-8 h-full flex justify-between items-center">
+
+    <a href="#" class="flex items-center gap-2.5 no-underline">
+      <img src={brand.logo_svg} alt={brand.name + ' Logo'} class="h-8 w-auto" />
+      <span class="font-heading font-black text-xl tracking-tight text-brand-text">{brand.name}</span>
+    </a>
+
+    <ul class="hidden md:flex gap-8 items-center list-none">
+      {nav.links.map((link: any) => (
+        <li>
+          <a href={link.href}
+            class="text-sm text-brand-secondary font-body transition-colors hover:text-brand-heading nav-link">
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a href="#kontakt"
+          class="font-heading font-bold text-sm px-6 py-3 rounded-full text-white transition-all hover:-translate-y-0.5"
+          style="background: linear-gradient(135deg,#0e9488,#0e7490,#6d28d9); background-size:200%">
+          {nav.cta}
+        </a>
+      </li>
+    </ul>
+
+    <button id="hamburger" aria-label="Menü öffnen"
+      class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[5px] p-2 rounded-md transition-colors hover:bg-white/5">
+      <span class="block w-[22px] h-[2px] bg-brand-heading rounded transition-all origin-center"></span>
+      <span class="block w-[22px] h-[2px] bg-brand-heading rounded transition-all origin-center"></span>
+      <span class="block w-[22px] h-[2px] bg-brand-heading rounded transition-all origin-center"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile overlay -->
+<div id="mobile-overlay"
+  class="hidden fixed inset-0 bg-brand-bg z-[150] flex-col px-8 overflow-y-auto"
+  style="padding-top: calc(72px + 32px); padding-bottom: 48px;">
+  <ul class="list-none flex flex-col gap-1 flex-1">
+    {nav.links.map((link: any) => (
+      <li>
+        <a href={link.href}
+          class="flex items-center py-4 font-heading font-bold text-2xl text-brand-secondary border-b border-brand-border transition-colors hover:text-brand-heading nav-link">
+          {link.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+  <div class="mt-8">
+    <a href="#kontakt"
+      class="block w-full text-center font-heading font-bold text-base px-6 py-4 rounded-full text-white"
+      style="background: linear-gradient(135deg,#0e9488,#0e7490,#6d28d9)">
+      {nav.cta}
+    </a>
+  </div>
+</div>
+
+<script>
+  const hamburger   = document.getElementById('hamburger')!;
+  const overlay     = document.getElementById('mobile-overlay')!;
+  const navLinks    = document.querySelectorAll('.nav-link');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = overlay.classList.contains('is-open');
+    overlay.classList.toggle('is-open', !isOpen);
+    overlay.style.display = isOpen ? 'none' : 'flex';
+    hamburger.classList.toggle('is-open', !isOpen);
+  });
+
+  navLinks.forEach(l => l.addEventListener('click', () => {
+    overlay.classList.remove('is-open');
+    overlay.style.display = 'none';
+    hamburger.classList.remove('is-open');
+  }));
+
+  // Scroll spy
+  const sections = document.querySelectorAll('section[id]');
+  function updateActive() {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= (s as HTMLElement).offsetTop - 130) current = s.id;
+    });
+    navLinks.forEach(l => {
+      l.classList.toggle('text-brand-heading', l.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+</script>

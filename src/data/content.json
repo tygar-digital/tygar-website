@@ -1,0 +1,519 @@
+{
+  "_comment": "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+  "_comment2": "  TYGAR WEBSITE – CONTENT FILE                                           ",
+  "_comment3": "  Ändere hier Text, Projekte, Leistungen usw.                              ",
+  "_comment4": "  Logo austauschen: assets/logo.svg ersetzen (oder PNG → logo_svg ändern) ",
+  "_comment5": "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+  "brand": {
+    "name": "Tygar",
+    "logo_svg": "assets/logo.svg",
+    "tagline": "Webdesign & Prozessoptimierung",
+    "email": "tygar-digital@gmail.com",
+    "phone": "",
+    "location": "Köln / Bonn",
+    "social": {
+      "linkedin": "#",
+      "instagram": "#"
+    }
+  },
+  "nav": {
+    "links": [
+      {
+        "label": "Leistungen",
+        "href": "#leistungen"
+      },
+      {
+        "label": "Beispiele",
+        "href": "#beispiele"
+      },
+      {
+        "label": "Preise",
+        "href": "#preise"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      },
+      {
+        "label": "Termin",
+        "href": "#termin"
+      }
+    ],
+    "cta": {
+      "label": "Projekt starten →",
+      "href": "#kontakt"
+    }
+  },
+  "hero": {
+    "badge": "Webdesign & Prozessoptimierung",
+    "headline": [
+      "Digitale Lösungen,",
+      "die wirklich",
+      "funktionieren."
+    ],
+    "subtext": "Moderne Websites, smarte Buchungstools und KI-gestützte Prozesse — damit dein Business effizienter, schneller und professioneller läuft.",
+    "cta_primary": {
+      "label": "Projekt starten →",
+      "href": "#kontakt"
+    },
+    "cta_secondary": {
+      "label": "Beispiel ansehen",
+      "href": "#beispiele"
+    },
+    "kpis": [
+      {
+        "value": "2–3",
+        "label": "Wochen bis live",
+        "color": "emerald"
+      },
+      {
+        "value": "1:1",
+        "label": "Persönliche Betreuung",
+        "color": "cyan"
+      },
+      {
+        "value": "Fix",
+        "label": "Preise, keine Extras",
+        "color": "violet"
+      }
+    ]
+  },
+  "mission": {
+    "label": "Unsere Mission",
+    "headline": [
+      "Digitalisierung für alle —",
+      "nicht nur für die Großen."
+    ],
+    "statement": "Deutschland digitalisiert sich — aber nicht überall gleich schnell. Während große Unternehmen Millionen in digitale Infrastruktur stecken, fehlen kleinen Betrieben oft Ressourcen, Zeit und Know-how. Wir schließen diese Lücke: mit Lösungen, die sofort wirken, kein technisches Vorwissen brauchen und Preise haben, die sich auch für den Mittelstand rechnen.",
+    "values": [
+      {
+        "accent": "emerald",
+        "icon": "zap",
+        "title": "Sofort einsatzbereit",
+        "text": "Keine monatelangen Projekte. Ihr seid in kürzester Zeit live — und spürt den Unterschied vom ersten Tag an."
+      },
+      {
+        "accent": "cyan",
+        "icon": "check",
+        "title": "Fokus auf euer Kerngeschäft",
+        "text": "Ihr kennt euer Handwerk. Wir kümmern uns um die digitale Infrastruktur. So könnt ihr eure Zeit dort investieren, wo ihr wirklich gut seid."
+      },
+      {
+        "accent": "violet",
+        "icon": "brain",
+        "title": "Faire Preise, große Wirkung",
+        "text": "Professionelle Digitallösungen müssen keine Konzernbudgets voraussetzen. Wir bringen euch auf Augenhöhe mit der Konkurrenz — zu Konditionen, die Sinn ergeben."
+      }
+    ],
+    "audience_label": "Für wen wir arbeiten",
+    "audience": [
+      {
+        "icon": "🔨",
+        "label": "Handwerk & Gewerbe"
+      },
+      {
+        "icon": "🛍️",
+        "label": "Einzelhandel & Gastronomie"
+      },
+      {
+        "icon": "💼",
+        "label": "Freiberufler & Berater"
+      },
+      {
+        "icon": "🏥",
+        "label": "Ärzte & Therapeuten"
+      },
+      {
+        "icon": "🏗️",
+        "label": "Dienstleister & Agenturen"
+      },
+      {
+        "icon": "🌱",
+        "label": "Startups & Gründer"
+      }
+    ]
+  },
+  "services": {
+    "label": "Leistungen",
+    "heading": "Was wir für dich tun",
+    "subtext": "Von der ersten Idee bis zum fertigen Produkt — wir begleiten dich durch jeden Schritt.",
+    "items": [
+      {
+        "number": "01",
+        "accent": "emerald",
+        "icon": "monitor",
+        "title": "Webdesign & Development",
+        "text": "Performante Websites und Web-Apps — optimiert für Conversions, SEO und eine hervorragende User Experience. Gebaut mit modernem Tech-Stack.",
+        "tags": [
+          "Astro",
+          "React",
+          "Tailwind"
+        ]
+      },
+      {
+        "number": "02",
+        "accent": "cyan",
+        "icon": "zap",
+        "title": "Buchungstools & Automation",
+        "text": "Maßgeschneiderte Buchungssysteme und automatisierte Workflows, die Zeit sparen, Fehler eliminieren und dein Team entlasten.",
+        "tags": [
+          "Calendly",
+          "n8n",
+          "Make"
+        ]
+      },
+      {
+        "number": "03",
+        "accent": "violet",
+        "icon": "brain",
+        "title": "KI-Integration & Beratung",
+        "text": "Wir integrieren KI intelligent in deine Prozesse — von Chatbots über Content-Automation bis zu smarten Analyse-Dashboards.",
+        "tags": [
+          "ChatGPT",
+          "Claude API",
+          "Pipedream"
+        ]
+      }
+    ]
+  },
+  "process": {
+    "label": "Prozess",
+    "heading": "So arbeiten wir",
+    "steps": [
+      {
+        "number": "01",
+        "phase": "ENTDECKEN",
+        "title": "Analyse & Ziele",
+        "text": "Wir tauchen tief in dein Business ein, verstehen deine Ziele und identifizieren die größten Hebel."
+      },
+      {
+        "number": "02",
+        "phase": "PLANEN",
+        "title": "Konzept & Strategie",
+        "text": "Klare Roadmap, definiertes Ergebnis, realistischer Zeitplan. Keine Überraschungen."
+      },
+      {
+        "number": "03",
+        "phase": "BAUEN",
+        "title": "Design & Entwicklung",
+        "text": "Wir bauen schnell, iterativ und mit konstantem Feedback — du siehst Fortschritt von Tag 1."
+      },
+      {
+        "number": "04",
+        "phase": "STARTEN",
+        "title": "Launch & Betreuung",
+        "text": "Reibungsloser Rollout und proaktive Betreuung nach Launch. Wir sind dabei, wenn es zählt."
+      }
+    ]
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "heading": "Ausgewählte Projekte",
+    "cta": {
+      "label": "Alle Projekte →",
+      "href": "#kontakt"
+    },
+    "items": [
+      {
+        "accent": "emerald",
+        "icon": "monitor",
+        "bg_label": "WEB",
+        "tags": [
+          "Webdesign",
+          "Astro"
+        ],
+        "tag_color": "emerald",
+        "title": "Corporate Website Redesign",
+        "text": "Kompletter Relaunch einer B2B-Website mit fokussiertem Messaging und optimiertem Conversion-Funnel.",
+        "result": "↑ +180% mehr Anfragen nach Launch",
+        "result_color": "emerald"
+      },
+      {
+        "accent": "cyan",
+        "icon": "zap",
+        "bg_label": "AUTO",
+        "tags": [
+          "Buchungssystem",
+          "n8n"
+        ],
+        "tag_color": "cyan",
+        "title": "Automatisiertes Buchungssystem",
+        "text": "Vollautomatische Terminverwaltung inklusive Reminder, CRM-Sync und Rechnungsstellung.",
+        "result": "⚡ 0 manuelle Schritte im gesamten Prozess",
+        "result_color": "cyan"
+      },
+      {
+        "accent": "violet",
+        "icon": "brain",
+        "bg_label": "KI",
+        "tags": [
+          "KI",
+          "Claude API"
+        ],
+        "tag_color": "violet",
+        "title": "KI-Kundenservice Bot",
+        "text": "Intelligenter 24/7-Support-Chatbot mit Wissensbasis, Eskalationslogik und CRM-Anbindung.",
+        "result": "◈ –60% Support-Anfragen ans Team",
+        "result_color": "violet"
+      }
+    ]
+  },
+  "booking": {
+    "label": "Kostenloses Erstgespräch",
+    "heading": [
+      "Lass uns reden —",
+      "unverbindlich & kostenlos."
+    ],
+    "subtext": "In 30 Minuten analysieren wir gemeinsam dein Projekt und du weißt danach genau, was der nächste Schritt ist.",
+    "cal_link": "tygar/erstgesprach",
+    "_cal_hint": "↑ Nur Username/Event eintragen, z.B. jan/erstgespraech – kein https://",
+    "features": [
+      {
+        "icon": "clock",
+        "text": "30 Minuten – fokussiert & effizient",
+        "accent": "cyan"
+      },
+      {
+        "icon": "zap",
+        "text": "Konkrete nächste Schritte für dein Projekt",
+        "accent": "emerald"
+      },
+      {
+        "icon": "check",
+        "text": "Keine Verpflichtung, kein Verkaufsdruck",
+        "accent": "violet"
+      },
+      {
+        "icon": "monitor",
+        "text": "Remote via Google Meet oder Zoom",
+        "accent": "cyan"
+      }
+    ]
+  },
+  "about": {
+    "label": "Über Tygar",
+    "headline": [
+      "Digitalisierung,",
+      "die wirklich ankommt."
+    ],
+    "bio": "Tygar steht für unkomplizierte Digitalisierung — mit akademischem Hintergrund in Wirtschaftsinformatik und Digital Consulting, aber ohne Agentur-Overhead und ohne unnötige Komplexität. Der Fokus liegt auf dem, was für kleine Betriebe wirklich zählt: ein professioneller Auftritt, der Kunden überzeugt.",
+    "bio2": "Viele kleine Betriebe werden von klassischen Agenturen nicht gut bedient — zu teuer, zu träge, zu weit weg von der Praxis. Tygar schließt diese Lücke: direkte Kommunikation, faire Preise und Ergebnisse, die in 1–2 Wochen live gehen. Für Handwerker, Gastronomen, Freiberufler und lokale Betriebe im Raum Köln/Bonn und darüber hinaus.",
+    "photo_placeholder": true,
+    "tags": [
+      "Wirtschaftsinformatik",
+      "Digital Consulting",
+      "Webdesign",
+      "Prozessautomatisierung",
+      "KI-Anwendungen"
+    ],
+    "stats": []
+  },
+  "showcase": {
+    "label": "Live-Beispiele",
+    "heading": [
+      "Schau selbst —",
+      "so sieht das Ergebnis aus."
+    ],
+    "subtext": "Keine Mockups, keine Screenshots. Echte Websites, die du direkt ausprobieren kannst.",
+    "items": [
+      {
+        "accent": "emerald",
+        "type": "website",
+        "tag": "Friseursalon",
+        "title": "Hairlounge Beispiel",
+        "text": "Moderner Auftritt für einen Salon — mit Leistungsübersicht, Preisliste und direkter Online-Terminbuchung.",
+        "preview_url": "https://tygar.de/showcase/friseur",
+        "cta": "Live ansehen →"
+      },
+      {
+        "accent": "cyan",
+        "type": "website",
+        "tag": "Café",
+        "title": "Café Beispiel",
+        "text": "Einladender Auftritt für ein Café — mit Speisekarte, Öffnungszeiten und Tisch-Reservierung.",
+        "preview_url": "https://tygar.de/showcase/cafe",
+        "cta": "Live ansehen →"
+      },
+      {
+        "accent": "violet",
+        "type": "website",
+        "tag": "Physiopraxis",
+        "title": "Physiopraxis Beispiel",
+        "text": "Vertrauenswürdiger Auftritt für eine Praxis — mit Behandlungsangeboten, Team-Vorstellung und Online-Terminbuchung.",
+        "preview_url": "https://tygar.de/showcase/physio",
+        "cta": "Live ansehen →"
+      }
+    ]
+  },
+  "pricing": {
+    "label": "Preise",
+    "heading": [
+      "Transparent.",
+      "Keine Überraschungen."
+    ],
+    "subtext": "Ein Paket, klare Preise — du weißt von Anfang an, was dich was kostet.",
+    "sections": [
+      {
+        "name": "Online Auftritt",
+        "description": "Deine professionelle Website. Fertig in 1–2 Wochen.",
+        "onetime": {
+          "heading": "Einmalig",
+          "base": {
+            "label": "Rundum-sorglos",
+            "price": "890 €"
+          },
+          "discounts": [
+            {
+              "label": "Eigenes Logo mitgebracht",
+              "amount": "−100 €"
+            },
+            {
+              "label": "Eigene Texte & Inhalte",
+              "amount": "−100 €"
+            }
+          ],
+          "extras": [
+            {
+              "label": "Foto-Termin vor Ort",
+              "amount": "+200 €"
+            }
+          ],
+          "min_note": "ab 690 € · alles zzgl. MwSt."
+        },
+        "monthly": {
+          "heading": "Monatlich",
+          "price": "49 €",
+          "note": "Pflichtpauschale",
+          "features": [
+            "Hosting & Domain",
+            "Sicherheit & Updates",
+            "Bis zu 3 Änderungen/Monat",
+            "Support per E-Mail"
+          ]
+        }
+      },
+      {
+        "name": "Add-ons",
+        "description": "Optionale Erweiterungen — buchbar bei Auftragsstellung.",
+        "onetime": {
+          "heading": "Einmalig",
+          "items": [
+            {
+              "label": "Kontaktformular",
+              "amount": "+90 €"
+            },
+            {
+              "label": "Buchungssystem / Terminkalender",
+              "amount": "+190 €"
+            },
+            {
+              "label": "Blog / News-Bereich",
+              "amount": "+290 €"
+            },
+            {
+              "label": "Zusätzliche Korrekturschleife",
+              "amount": "+90 €"
+            }
+          ]
+        },
+        "monthly": {
+          "heading": "Monatlich",
+          "items": [
+            {
+              "label": "Buchungssystem",
+              "amount": "+20 €/Monat"
+            },
+            {
+              "label": "Blog / CMS",
+              "amount": "+20 €/Monat"
+            }
+          ]
+        }
+      }
+    ],
+    "note": "Alle Preise zzgl. MwSt. · Monatliche Zusatzkosten entstehen nur bei gebuchten Add-ons."
+  },
+  "faq": {
+    "label": "FAQ",
+    "heading": "Häufige Fragen",
+    "items": [
+      {
+        "q": "Wie lange dauert ein Projekt?",
+        "a": "Eine einfache Website ist meist in 2–3 Wochen fertig. Komplexere Projekte mit Buchungssystem oder KI-Integration dauern 4–8 Wochen. Im ersten Gespräch gebe ich dir eine konkrete Einschätzung."
+      },
+      {
+        "q": "Brauche ich technisches Know-how?",
+        "a": "Gar keines. Du bekommst eine fertige Lösung, die du selbst bedienen kannst — ohne Programmierkenntnisse. Wenn mal was ist, bin ich da."
+      },
+      {
+        "q": "Was passiert nach dem Launch?",
+        "a": "Alle Pakete beinhalten Support-Zeit nach dem Launch. Du bist nie auf dich allein gestellt. Für laufende Betreuung biete ich auch Wartungspakete an."
+      },
+      {
+        "q": "Kann ich Inhalte selbst ändern?",
+        "a": "Ja. Je nach Paket bekommst du entweder ein CMS (z.B. Sanity oder Contentful) oder eine einfache JSON-Datei, in der du Texte, Bilder und Inhalte selbst anpassen kannst."
+      },
+      {
+        "q": "Was kostet laufende Wartung?",
+        "a": "Wartungspakete ab ca. 49 €/Monat — inkl. Updates, Backups und kleiner Anpassungen. Nicht verpflichtend, aber empfohlen."
+      },
+      {
+        "q": "Arbeitest du nur remote?",
+        "a": "Hauptsächlich ja, was auch ein großer Kostenvorteil für dich ist. Bei Bedarf bin ich auch für persönliche Termine im Raum Köln/Bonn verfügbar."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Kontakt",
+    "heading": [
+      "Bereit für dein",
+      "nächstes Projekt?"
+    ],
+    "subtext": "Erzähl uns von deiner Idee. Wir melden uns innerhalb von 24 Stunden — unkompliziert und auf Augenhöhe.",
+    "info_boxes": [
+      {
+        "icon": "mail",
+        "label": "E-Mail",
+        "value": "tygar-digital@gmail.com",
+        "href": "mailto:tygar-digital@gmail.com",
+        "accent": "emerald"
+      },
+      {
+        "icon": "clock",
+        "label": "Antwortzeit",
+        "value": "Innerhalb von 24 Stunden",
+        "accent": "cyan"
+      },
+      {
+        "icon": "map-pin",
+        "label": "Standort",
+        "value": "Köln / Bonn",
+        "accent": "violet"
+      }
+    ],
+    "form": {
+      "service_options": [
+        "Webdesign & Development",
+        "Buchungssystem / Automation",
+        "KI-Integration",
+        "Komplettpaket",
+        "Etwas anderes"
+      ],
+      "submit_label": "Nachricht senden →",
+      "success_label": "✓ Nachricht gesendet!"
+    }
+  },
+  "footer": {
+    "legal_links": [
+      {
+        "label": "Impressum",
+        "href": "impressum.html"
+      },
+      {
+        "label": "Datenschutz",
+        "href": "datenschutz.html"
+      }
+    ],
+    "copyright": "© 2026 Tygar"
+  }
+}
