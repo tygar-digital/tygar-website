@@ -89,7 +89,11 @@
       "Minimaler Aufwand für dich",
       "In 3 Wochen online",
       "Langfristige Betreuung"
-    ]
+    ],
+    "image": {
+      "src": "/images/google-suche.jpg",
+      "alt": "Hand hält Smartphone mit Google-Suchergebnis für lokale Unternehmen in einer deutschen Innenstadt"
+    }
   },
   "marquee_items": [
     "Professionelle Website",
@@ -107,6 +111,10 @@
   ],
   "mission": {
     "label": "Warum Tygar",
+    "image": {
+      "src": "/images/handwerker.jpg",
+      "alt": "Handwerker in seiner Werkstatt schaut auf sein Smartphone bei einer Tasse Kaffee"
+    },
     "headline": [
       "Professionell online —",
       "ohne den ganzen Stress."
@@ -360,7 +368,11 @@
     ],
     "bio": "Ich weiß, wie stressig der Alltag als lokaler Unternehmer ist — da bleibt die eigene Website oft auf der Strecke. Genau deshalb habe ich Tygar gegründet: um Cafés, Friseuren, Handwerkern und Dienstleistern den Online-Auftritt zu geben, den sie verdienen. Ohne Technik-Stress, ohne Agentur-Bürokratie.",
     "bio2": "Mit Hintergrund in Wirtschaftsinformatik und Digital Consulting bringe ich das technische Know-how mit — aber mein Fokus liegt immer auf dem, was für dich als Unternehmer zählt: mehr Sichtbarkeit, mehr Anfragen, weniger Aufwand. Persönlich, direkt und fair. Aus Köln/Bonn für die ganze Region.",
-    "photo_placeholder": true,
+    "image": {
+      "src": "/images/jan.jpg",
+      "alt": "Jan de Martin, Gründer von Tygar"
+    },
+    "photo_placeholder": false,
     "tags": [
       "Webdesign",
       "Lokale Unternehmen",

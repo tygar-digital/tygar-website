@@ -4,17 +4,37 @@ const { data } = Astro.props;
 <section id="mission" class="border-t border-brand-border">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-secondary mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)"></span>
-      {data.label}
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 items-center mb-12">
+      <!-- Text Column -->
+      <div>
+        <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-secondary mb-3">
+          <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)"></span>
+          {data.label}
+        </div>
+        <h2 class="font-heading font-black leading-[1.08] tracking-[-0.03em] mb-4"
+          style="font-size:clamp(2rem,4.5vw,3.25rem)">
+          {data.headline[0]}<br/>
+          <span class="bg-clip-text text-transparent"
+            style="background-image:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)">{data.headline[1]}</span>
+        </h2>
+        <p class="text-brand-secondary leading-[1.75]">{data.statement}</p>
+      </div>
+
+      <!-- Image Column (Desktop only) -->
+      {data.image && (
+        <div class="hidden lg:block rounded-card overflow-hidden border border-brand-border relative"
+          style="aspect-ratio:4/5">
+          <img
+            src={data.image.src}
+            alt={data.image.alt}
+            class="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0F]/60 via-transparent to-[#0A0A0F]/20 pointer-events-none"></div>
+        </div>
+      )}
     </div>
-    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.03em] mb-4"
-      style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.headline[0]}<br/>
-      <span class="bg-clip-text text-transparent"
-        style="background-image:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)">{data.headline[1]}</span>
-    </h2>
-    <p class="text-brand-secondary leading-[1.75] mb-12 max-w-[700px]">{data.statement}</p>
 
     <!-- Values -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
