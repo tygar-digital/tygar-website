@@ -4,7 +4,7 @@ const { data } = Astro.props;
 <section id="mission" class="border-t border-brand-border">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
-    <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 items-center mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-12 items-center mb-12">
       <!-- Text Column -->
       <div>
         <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-secondary mb-3">
@@ -23,7 +23,7 @@ const { data } = Astro.props;
       <!-- Image Column (Desktop only) -->
       {data.image && (
         <div class="hidden lg:block rounded-card overflow-hidden border border-brand-border relative"
-          style="aspect-ratio:4/5">
+          style="aspect-ratio:4/3">
           <img
             src={data.image.src}
             alt={data.image.alt}

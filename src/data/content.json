@@ -90,9 +90,32 @@
       "In 3 Wochen online",
       "Langfristige Betreuung"
     ],
-    "image": {
-      "src": "/images/google-suche.jpg",
-      "alt": "Hand hält Smartphone mit Google-Suchergebnis für lokale Unternehmen in einer deutschen Innenstadt"
+    "collage": {
+      "review": {
+        "text": "Super professionell und schnell. Endlich eine Website, die zu meinem Laden passt!",
+        "author": "Lisa M., Friseursalon"
+      },
+      "stats": {
+        "value": "+180%",
+        "label": "mehr Anfragen nach Launch"
+      },
+      "browser": {
+        "src": "/images/browser-screenshot.jpg",
+        "alt": "Website-Vorschau eines lokalen Unternehmens"
+      },
+      "phone": {
+        "src": "/images/phone-mockup.jpg",
+        "alt": "Smartphone zeigt moderne Website eines lokalen Unternehmens"
+      },
+      "customer": {
+        "src": "/images/barista.jpg",
+        "alt": "Zufriedener Cafébesitzer"
+      },
+      "notification": {
+        "title": "Neue Anfrage",
+        "text": "über deine Website eingegangen!",
+        "time": "Gerade eben"
+      }
     }
   },
   "marquee_items": [
