@@ -5,15 +5,15 @@
   "_comment4": "  Logo austauschen: public/logo.svg ersetzen (oder PNG → logo_svg ändern)  ",
   "_comment5": "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
   "meta": {
-    "title": "Tygar – Webdesign & Digitalisierung für kleine Betriebe",
-    "description": "Professionelle Websites, Buchungstools und KI-Lösungen für Handwerker, Gastronomen und Freiberufler im Raum Köln/Bonn. Fertig in 2–3 Wochen, faire Festpreise.",
+    "title": "Tygar – Professionelle Websites für lokale Unternehmen",
+    "description": "Dein professioneller Online-Auftritt zum fairen Fixpreis. Webdesign, Terminbuchung und laufende Betreuung für Cafés, Friseure, Handwerker und Dienstleister im Raum Köln/Bonn.",
     "og_image": "/images/og-image.jpg",
     "canonical": "https://tygar-digital.de"
   },
   "brand": {
     "name": "Tygar",
     "logo_svg": "/logo.svg",
-    "tagline": "Webdesign & Prozessoptimierung",
+    "tagline": "Websites für lokale Unternehmen",
     "email": "tygar-digital@gmail.com",
     "phone": "",
     "location": "Köln / Bonn",
@@ -46,123 +46,145 @@
       }
     ],
     "cta": {
-      "label": "Projekt starten →",
-      "href": "#kontakt"
+      "label": "Erstgespräch buchen →",
+      "href": "#termin"
     }
   },
   "hero": {
-    "badge": "Webdesign & Prozessoptimierung",
+    "badge": "Für lokale Unternehmen",
     "headline": [
-      "Digitale Lösungen,",
-      "die wirklich",
-      "funktionieren."
+      "Du kümmerst dich um",
+      "deine Kunden.",
+      "Wir um deinen",
+      "Online-Auftritt."
     ],
-    "subtext": "Moderne Websites, smarte Buchungstools und KI-gestützte Prozesse — damit dein Business effizienter, schneller und professioneller läuft.",
+    "subtext": "Es ist völlig normal, dass die eigene Website im stressigen Alltag auf der Strecke bleibt. Doch genau dort suchen über 80 % deiner neuen Kunden nach dir. Tygar ändert das — wir übernehmen die komplette Technik und Erstellung für dich.",
     "cta_primary": {
-      "label": "Projekt starten →",
-      "href": "#kontakt"
+      "label": "Kostenloses Erstgespräch →",
+      "href": "#termin"
     },
     "cta_secondary": {
-      "label": "Beispiel ansehen",
-      "href": "#beispiele"
+      "label": "Preise ansehen",
+      "href": "#preise"
     },
     "kpis": [
       {
-        "value": "2–3",
-        "label": "Wochen bis live",
+        "value": "490 €",
+        "label": "Festpreis",
         "color": "emerald"
       },
       {
-        "value": "1:1",
-        "label": "Persönliche Betreuung",
+        "value": "3",
+        "label": "Wochen bis online",
         "color": "cyan"
       },
       {
-        "value": "Fix",
-        "label": "Preise, keine Extras",
+        "value": "Null",
+        "label": "Technik-Stress",
         "color": "violet"
       }
+    ],
+    "trust_items": [
+      "Fairer Fixpreis",
+      "Minimaler Aufwand für dich",
+      "In 3 Wochen online",
+      "Langfristige Betreuung"
     ]
   },
+  "marquee_items": [
+    "Professionelle Website",
+    "Online gefunden werden",
+    "Mehr Anfragen",
+    "Terminbuchung",
+    "Google-Sichtbarkeit",
+    "Mobiloptimiert",
+    "Rundum-sorglos",
+    "Faire Preise",
+    "DSGVO-konform",
+    "Persönliche Betreuung",
+    "In 3 Wochen live",
+    "Lokale Unternehmen"
+  ],
   "mission": {
-    "label": "Unsere Mission",
+    "label": "Warum Tygar",
     "headline": [
-      "Digitalisierung für alle —",
-      "nicht nur für die Großen."
+      "Professionell online —",
+      "ohne den ganzen Stress."
     ],
-    "statement": "Deutschland digitalisiert sich — aber nicht überall gleich schnell. Während große Unternehmen Millionen in digitale Infrastruktur stecken, fehlen kleinen Betrieben oft Ressourcen, Zeit und Know-how. Wir schließen diese Lücke: mit Lösungen, die sofort wirken, kein technisches Vorwissen brauchen und Preise haben, die sich auch für den Mittelstand rechnen.",
+    "statement": "Wir glauben, dass jedes lokale Business einen professionellen Online-Auftritt verdient — ohne dafür wochenlang mit Agenturen zu diskutieren oder ein Vermögen auszugeben. Du kümmerst dich um deine Kunden, wir kümmern uns um den Rest.",
     "values": [
       {
         "accent": "emerald",
         "icon": "zap",
         "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
-        "title": "Sofort einsatzbereit",
-        "text": "Keine monatelangen Projekte. Ihr seid in kürzester Zeit live — und spürt den Unterschied vom ersten Tag an."
+        "title": "Schnell startklar",
+        "text": "In 3 Wochen ist deine neue Website live. Kein endloses Hin und Her — wir starten direkt nach dem Erstgespräch."
       },
       {
         "accent": "cyan",
         "icon": "check",
         "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>",
-        "title": "Fokus auf euer Kerngeschäft",
-        "text": "Ihr kennt euer Handwerk. Wir kümmern uns um die digitale Infrastruktur. So könnt ihr eure Zeit dort investieren, wo ihr wirklich gut seid."
+        "title": "Du machst dein Ding",
+        "text": "Null Technik-Stress. Wir kümmern uns um Design, Hosting, Updates und alles Technische. Du konzentrierst dich auf das, was du am besten kannst."
       },
       {
         "accent": "violet",
-        "icon": "brain",
-        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2a5 5 0 0 1 4.5 7.2A5 5 0 0 1 19 14a5 5 0 0 1-3 4.6V22h-2v-3.4A5 5 0 0 1 8 14a5 5 0 0 1 2.5-4.3A5 5 0 0 1 12 2Z'/></svg>",
-        "title": "Faire Preise, große Wirkung",
-        "text": "Professionelle Digitallösungen müssen keine Konzernbudgets voraussetzen. Wir bringen euch auf Augenhöhe mit der Konkurrenz — zu Konditionen, die Sinn ergeben."
+        "icon": "heart",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></svg>",
+        "title": "Faire Preise",
+        "text": "Kein Kleingedrucktes. Ein Preis, alles drin. Keine 5-stelligen Agenturprojekte — sondern eine professionelle Lösung, die sich rechnet."
       }
     ],
     "audience_label": "Für wen wir arbeiten",
     "audience": [
       {
+        "icon": "☕",
+        "label": "Cafés & Restaurants"
+      },
+      {
+        "icon": "✂️",
+        "label": "Friseure & Beauty"
+      },
+      {
         "icon": "🔨",
-        "label": "Handwerk & Gewerbe"
-      },
-      {
-        "icon": "🛍️",
-        "label": "Einzelhandel & Gastronomie"
-      },
-      {
-        "icon": "💼",
-        "label": "Freiberufler & Berater"
+        "label": "Handwerksbetriebe"
       },
       {
         "icon": "🏥",
-        "label": "Ärzte & Therapeuten"
+        "label": "Praxen & Therapeuten"
+      },
+      {
+        "icon": "💼",
+        "label": "Dienstleister & Berater"
       },
       {
         "icon": "🏗️",
-        "label": "Dienstleister & Agenturen"
-      },
-      {
-        "icon": "🌱",
-        "label": "Startups & Gründer"
+        "label": "Baugewerbe & Technik"
       }
     ]
   },
   "services": {
     "label": "Leistungen",
-    "heading": ["Was wir", "für dich tun"],
-    "subtext": "Von der ersten Idee bis zum fertigen Produkt — wir begleiten dich durch jeden Schritt.",
+    "heading": ["Das bekommst", "du von uns"],
+    "subtext": "Kein Tech-Talk, keine Buzzwords. Sondern konkrete Ergebnisse, die dein Business weiterbringen.",
     "items": [
       {
         "number": "01",
         "accent": "emerald",
         "icon": "monitor",
         "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>",
-        "title": "Webdesign & Development",
-        "text": "Performante Websites und Web-Apps — optimiert für Conversions, SEO und eine hervorragende User Experience. Gebaut mit modernem Tech-Stack.",
+        "title": "Der professionelle Auftritt",
+        "text": "Deine digitale Visitenkarte — ein moderner Online-Auftritt, der Vertrauen schafft und neue Kunden bringt. Rund um die Uhr, auf jedem Gerät.",
         "features": [
-          "Responsive Design für alle Geräte",
-          "SEO-optimiert für Google-Sichtbarkeit",
-          "Blitzschnelle Ladezeiten (Lighthouse 90+)"
+          "Präsentiert dein Geschäft rund um die Uhr",
+          "Nimmt Anfragen automatisch entgegen",
+          "Wird bei Google gefunden"
         ],
         "tags": [
-          "Astro",
-          "React",
-          "Tailwind"
+          "Webdesign",
+          "Responsive",
+          "SEO",
+          "Kontaktformular"
         ]
       },
       {
@@ -170,17 +192,17 @@
         "accent": "cyan",
         "icon": "zap",
         "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
-        "title": "Buchungstools & Automation",
-        "text": "Maßgeschneiderte Buchungssysteme und automatisierte Workflows, die Zeit sparen, Fehler eliminieren und dein Team entlasten.",
+        "title": "Zeit sparen",
+        "text": "Weniger Telefon, mehr Kunden. Mit einem Buchungssystem können deine Kunden selbstständig Termine buchen — du sparst Zeit für das, was zählt.",
         "features": [
-          "Online-Terminbuchung mit Kalender-Sync",
-          "Automatische E-Mail-Bestätigungen",
-          "Nahtlose CRM-Integration"
+          "Kunden buchen selbstständig Termine",
+          "Weniger Telefonklingeln & Rückrufe",
+          "Automatische Terminerinnerungen"
         ],
         "tags": [
-          "Cal.com",
-          "n8n",
-          "Make"
+          "Terminbuchung",
+          "Automatisierung",
+          "Kalender-Sync"
         ]
       },
       {
@@ -188,53 +210,53 @@
         "accent": "violet",
         "icon": "brain",
         "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2a5 5 0 0 1 4.5 7.2A5 5 0 0 1 19 14a5 5 0 0 1-3 4.6V22h-2v-3.4A5 5 0 0 1 8 14a5 5 0 0 1 2.5-4.3A5 5 0 0 1 12 2Z'/></svg>",
-        "title": "KI-Integration & Beratung",
-        "text": "Wir integrieren KI intelligent in deine Prozesse — von Chatbots über Content-Automation bis zu smarten Analyse-Dashboards.",
+        "title": "Digitale Assistenz",
+        "text": "Dein smarter Helfer im Hintergrund — beantwortet häufige Kundenfragen automatisch und hilft bei Texten & Inhalten.",
         "coming_soon": true,
         "features": [
-          "Chatbots für 24/7-Kundenservice",
-          "Automatisierte Content-Erstellung",
-          "Intelligente Datenanalyse"
+          "Beantwortet häufige Kundenfragen automatisch",
+          "Hilft bei Texten & Inhalten",
+          "Entlastet dich im Tagesgeschäft"
         ],
         "tags": [
-          "ChatGPT",
-          "Claude API",
-          "Pipedream"
+          "KI-Chatbot",
+          "Content",
+          "Automatisierung"
         ]
       }
     ]
   },
   "process": {
     "label": "Prozess",
-    "heading": ["So arbeiten", "wir"],
-    "subtext": "Vier klare Schritte — von der ersten Idee bis zum erfolgreichen Launch.",
+    "heading": ["So läuft's", "ab"],
+    "subtext": "Vier einfache Schritte — von der ersten Idee bis zu deiner fertigen Website.",
     "steps": [
       {
         "number": "01",
-        "phase": "ENTDECKEN",
-        "title": "Analyse & Ziele",
-        "text": "Wir tauchen tief in dein Business ein, verstehen deine Ziele und identifizieren die größten Hebel.",
-        "duration": "Woche 1"
+        "phase": "KENNENLERNEN",
+        "title": "Erstgespräch",
+        "text": "Wir lernen dein Business kennen, verstehen deine Ziele und besprechen, was du dir vorstellst. Kostenlos und unverbindlich.",
+        "duration": "30 Min"
       },
       {
         "number": "02",
         "phase": "PLANEN",
-        "title": "Konzept & Strategie",
-        "text": "Klare Roadmap, definiertes Ergebnis, realistischer Zeitplan. Keine Überraschungen.",
-        "duration": "Woche 1–2"
+        "title": "Konzept & Design",
+        "text": "Du bekommst einen konkreten Entwurf. Wir stimmen alles ab, bis es zu 100 % passt — erst dann bauen wir.",
+        "duration": "Woche 1"
       },
       {
         "number": "03",
         "phase": "BAUEN",
-        "title": "Design & Entwicklung",
-        "text": "Wir bauen schnell, iterativ und mit konstantem Feedback — du siehst Fortschritt von Tag 1.",
+        "title": "Umsetzung",
+        "text": "Wir setzen deine Website um — schnell, professionell und mit regelmäßigen Updates an dich.",
         "duration": "Woche 2–3"
       },
       {
         "number": "04",
         "phase": "STARTEN",
         "title": "Launch & Betreuung",
-        "text": "Reibungsloser Rollout und proaktive Betreuung nach Launch. Wir sind dabei, wenn es zählt.",
+        "text": "Deine Website geht live. Und wir bleiben dran — mit Hosting, Updates und persönlichem Support.",
         "duration": "Woche 3+"
       }
     ]
@@ -300,7 +322,7 @@
       "Lass uns reden —",
       "unverbindlich & kostenlos."
     ],
-    "subtext": "In 30 Minuten analysieren wir gemeinsam dein Projekt und du weißt danach genau, was der nächste Schritt ist.",
+    "subtext": "In 30 Minuten besprechen wir dein Projekt und du weißt danach genau, was der nächste Schritt ist. Kein Verkaufsdruck, versprochen.",
     "cal_link": "tygar/erstgesprach",
     "_cal_hint": "↑ Nur Username/Event eintragen, z.B. jan/erstgespraech – kein https://",
     "features": [
@@ -325,7 +347,7 @@
       {
         "icon": "monitor",
         "icon_svg": "<svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>",
-        "text": "Remote via Google Meet oder Zoom",
+        "text": "Bequem per Video-Call",
         "accent": "cyan"
       }
     ]
@@ -333,18 +355,18 @@
   "about": {
     "label": "Über Tygar",
     "headline": [
-      "Digitalisierung,",
-      "die wirklich ankommt."
+      "Der Mensch",
+      "hinter Tygar."
     ],
-    "bio": "Tygar steht für unkomplizierte Digitalisierung — mit akademischem Hintergrund in Wirtschaftsinformatik und Digital Consulting, aber ohne Agentur-Overhead und ohne unnötige Komplexität. Der Fokus liegt auf dem, was für kleine Betriebe wirklich zählt: ein professioneller Auftritt, der Kunden überzeugt.",
-    "bio2": "Viele kleine Betriebe werden von klassischen Agenturen nicht gut bedient — zu teuer, zu träge, zu weit weg von der Praxis. Tygar schließt diese Lücke: direkte Kommunikation, faire Preise und Ergebnisse, die in 1–2 Wochen live gehen. Für Handwerker, Gastronomen, Freiberufler und lokale Betriebe im Raum Köln/Bonn und darüber hinaus.",
+    "bio": "Ich weiß, wie stressig der Alltag als lokaler Unternehmer ist — da bleibt die eigene Website oft auf der Strecke. Genau deshalb habe ich Tygar gegründet: um Cafés, Friseuren, Handwerkern und Dienstleistern den Online-Auftritt zu geben, den sie verdienen. Ohne Technik-Stress, ohne Agentur-Bürokratie.",
+    "bio2": "Mit Hintergrund in Wirtschaftsinformatik und Digital Consulting bringe ich das technische Know-how mit — aber mein Fokus liegt immer auf dem, was für dich als Unternehmer zählt: mehr Sichtbarkeit, mehr Anfragen, weniger Aufwand. Persönlich, direkt und fair. Aus Köln/Bonn für die ganze Region.",
     "photo_placeholder": true,
     "tags": [
-      "Wirtschaftsinformatik",
-      "Digital Consulting",
       "Webdesign",
-      "Prozessautomatisierung",
-      "KI-Anwendungen"
+      "Lokale Unternehmen",
+      "Köln / Bonn",
+      "Persönliche Betreuung",
+      "Fairer Partner"
     ],
     "stats": []
   },
@@ -388,10 +410,10 @@
   "pricing": {
     "label": "Preise",
     "heading": [
-      "Transparent.",
+      "Klare Preise.",
       "Keine Überraschungen."
     ],
-    "subtext": "Ein Paket, klare Preise — du weißt von Anfang an, was dich was kostet.",
+    "subtext": "Keine 5-stelligen Agenturprojekte. Sondern eine professionelle Lösung zum fairen Fixpreis. Alles aus einer Hand.",
     "sections": [
       {
         "name": "Online Auftritt",
@@ -468,33 +490,33 @@
     "items": [
       {
         "q": "Wie lange dauert es, bis meine Website online ist?",
-        "a": "Deine Website ist in 3 Wochen live. Nach dem Erstgespräch starten wir direkt — du bekommst regelmäßig Zwischenstände und kannst jederzeit Feedback geben."
+        "a": "In der Regel 3 Wochen. Nach dem Erstgespräch legen wir direkt los — du bekommst regelmäßig Zwischenstände und kannst jederzeit Feedback geben. Kein endloses Hin und Her."
       },
       {
         "q": "Brauche ich technisches Know-how?",
-        "a": "Gar keines. Du bekommst eine komplett fertige Website. Um Technik, Hosting und Updates kümmern wir uns — du konzentrierst dich auf dein Business."
+        "a": "Überhaupt nicht. Du erzählst uns von deinem Business, wir kümmern uns um den Rest. Technik, Hosting, Updates — alles läuft über uns. Du musst dich um nichts kümmern."
       },
       {
-        "q": "Muss ich ein Wartungspaket dazu buchen?",
-        "a": "Ja — jede Website kommt mit einem Service-Paket. So stellen wir sicher, dass deine Seite dauerhaft schnell, sicher und aktuell bleibt. Hosting, Updates und Support sind inklusive."
+        "q": "Warum ist das Wartungspaket Pflicht?",
+        "a": "Weil wir sicherstellen wollen, dass deine Website dauerhaft schnell, sicher und aktuell bleibt. Hosting, Domain, Sicherheitsupdates und persönlicher Support — alles inklusive für 49 €/Monat."
       },
       {
         "q": "Kann ich Inhalte selbst ändern?",
-        "a": "Inhaltsänderungen laufen über uns — so stellen wir sicher, dass Design und Qualität deiner Website immer stimmen. Kleine Änderungen wie Öffnungszeiten oder Kontaktdaten sind im Service-Paket inklusive."
+        "a": "Kleine Änderungen wie Öffnungszeiten oder Kontaktdaten laufen über uns — so bleibt dein Design immer professionell. Schreib uns einfach, wir setzen das zeitnah um. Im Service-Paket inklusive."
       },
       {
-        "q": "Was ist im monatlichen Service-Paket enthalten?",
-        "a": "Hosting, Domain, Sicherheitsupdates, Support per E-Mail und kleine Inhaltsänderungen wie Öffnungszeiten oder Kontaktdaten. Alles für 49 € monatlich — keine versteckten Kosten."
+        "q": "Für wen ist Tygar das Richtige?",
+        "a": "Für lokale Unternehmen, die professionell online auftreten wollen, ohne sich mit Technik herumzuschlagen. Cafés, Friseure, Handwerker, Praxen, Dienstleister — alle, die im Alltag keine Zeit für Webdesign haben."
       }
     ]
   },
   "contact": {
     "label": "Kontakt",
     "heading": [
-      "Bereit für dein",
-      "nächstes Projekt?"
+      "Bereit für deinen",
+      "neuen Online-Auftritt?"
     ],
-    "subtext": "Erzähl uns von deiner Idee. Wir melden uns innerhalb von 24 Stunden — unkompliziert und auf Augenhöhe.",
+    "subtext": "Erzähl uns von deinem Business. Wir melden uns innerhalb von 24 Stunden — unkompliziert und auf Augenhöhe.",
     "info_boxes": [
       {
         "icon": "mail",
@@ -524,7 +546,7 @@
       "label_lastname": "Nachname",
       "label_email": "E-Mail",
       "label_service": "Leistung",
-      "label_message": "Dein Projekt",
+      "label_message": "Erzähl uns von deinem Business",
       "service_options": [
         "Neue Website",
         "Website-Relaunch",

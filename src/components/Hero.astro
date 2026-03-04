@@ -1,6 +1,6 @@
 ---
 const { data } = Astro.props;
-const { badge, headline, subtext, cta_primary, cta_secondary, kpis } = data;
+const { badge, headline, subtext, cta_primary, cta_secondary, kpis, trust_items } = data;
 ---
 
 <section id="hero" class="relative overflow-hidden pt-[calc(72px+100px)] pb-[120px]">
@@ -34,12 +34,12 @@ const { badge, headline, subtext, cta_primary, cta_secondary, kpis } = data;
 
       <!-- Headline -->
       <h1 class="font-heading font-black leading-[1.04] tracking-[-0.035em] mb-7"
-        style="font-size: clamp(2.8rem, 7vw, 5.25rem)">
+        style="font-size: clamp(2.4rem, 6vw, 4.5rem)">
         {headline.map((line: string, i: number) => (
-          i === 0
-            ? <span>{line} </span>
+          i < 2
+            ? <Fragment>{line}<br/></Fragment>
             : <span class="bg-clip-text text-transparent"
-                style="background-image: linear-gradient(90deg, #34D399, #22D3EE, #A78BFA)">{line}</span>
+                style="background-image: linear-gradient(90deg, #34D399, #22D3EE, #A78BFA)">{line}{i < headline.length - 1 ? <br/> : ''}</span>
         ))}
       </h1>
 
@@ -72,6 +72,17 @@ const { badge, headline, subtext, cta_primary, cta_secondary, kpis } = data;
           </div>
         ))}
       </div>
+
+      <!-- Trust-Leiste -->
+      {trust_items && trust_items.length > 0 && (
+        <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
+          {trust_items.map((item: string) => (
+            <span class="flex items-center gap-1.5 text-xs text-brand-secondary">
+              <span class="text-brand-emerald">✔</span>{item}
+            </span>
+          ))}
+        </div>
+      )}
 
     </div>
   </div>

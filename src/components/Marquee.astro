@@ -1,10 +1,11 @@
 ---
-const items = [
-  'Webdesign','SEO','Prozessautomatisierung','KI-Integration',
-  'Terminbuchung','Corporate Design','Vercel','Google Business',
-  'Conversion-Optimierung','Mobile-First','Schnelle Ladezeiten','DSGVO-konform'
+const { items } = Astro.props;
+const marqueeItems = items || [
+  'Professionelle Website','Online gefunden werden','Mehr Anfragen','Terminbuchung',
+  'Google-Sichtbarkeit','Mobiloptimiert','Rundum-sorglos','Faire Preise',
+  'DSGVO-konform','Persönliche Betreuung','In 3 Wochen live','Lokale Unternehmen'
 ];
-const doubled = [...items, ...items];
+const doubled = [...marqueeItems, ...marqueeItems];
 ---
 
 <div class="overflow-hidden border-y py-3.5 group"

@@ -16,6 +16,7 @@ export default {
           emerald:   '#34D399',
           cyan:      '#22D3EE',
           violet:    '#A78BFA',
+          warm:      '#F59E0B',
         },
       },
       fontFamily: {
