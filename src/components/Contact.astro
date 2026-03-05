@@ -2,26 +2,24 @@
 const { data } = Astro.props;
 const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ← hier deine Formspree-ID eintragen
 ---
-<section id="kontakt" class="border-t border-brand-border">
+<section id="kontakt" class="bg-brand-surface">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-secondary mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)"></span>
+    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#2D6A4F"></span>
       {data.label}
     </div>
-    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.03em] mb-4"
+    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
       {data.heading[0]}<br/>
-      <span class="bg-clip-text text-transparent"
-        style="background-image:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)">{data.heading[1]}</span>
+      <span style="color:#2D6A4F">{data.heading[1]}</span>
     </h2>
-    <p class="text-brand-secondary leading-[1.75] mb-12 max-w-[560px]">{data.subtext}</p>
+    <p class="text-brand-text leading-[1.75] mb-12 max-w-[560px]">{data.subtext}</p>
 
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 items-start">
 
       <!-- Kontaktformular (Formspree) -->
-      <div class="rounded-card border border-brand-border p-8"
-        style="background:rgba(39,39,42,0.55);backdrop-filter:blur(12px)">
+      <div class="rounded-card border border-brand-border p-8 bg-white shadow-card">
         <form id="contact-form" action={`https://formspree.io/f/${FORMSPREE_ID}`} method="POST"
           class="flex flex-col gap-5">
 
@@ -31,15 +29,14 @@ const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ← hier deine Formspree-ID eintrag
                 {data.form.label_firstname}
               </label>
               <input type="text" name="vorname" required
-                class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-cyan"
-                style="-webkit-autofill:0" />
+                class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-emerald" />
             </div>
             <div class="flex flex-col gap-1.5">
               <label class="text-[0.68rem] font-heading font-bold tracking-[0.1em] uppercase text-brand-muted">
                 {data.form.label_lastname}
               </label>
               <input type="text" name="nachname" required
-                class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-cyan" />
+                class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-emerald" />
             </div>
           </div>
 
@@ -48,7 +45,7 @@ const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ← hier deine Formspree-ID eintrag
               {data.form.label_email}
             </label>
             <input type="email" name="email" required
-              class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-cyan" />
+              class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-emerald" />
           </div>
 
           <div class="flex flex-col gap-1.5">
@@ -56,7 +53,7 @@ const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ← hier deine Formspree-ID eintrag
               {data.form.label_service}
             </label>
             <select name="service"
-              class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-cyan appearance-none">
+              class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-emerald appearance-none">
               {data.form.service_options.map((opt: string) => (
                 <option value={opt}>{opt}</option>
               ))}
@@ -68,7 +65,7 @@ const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ← hier deine Formspree-ID eintrag
               {data.form.label_message}
             </label>
             <textarea name="projekt" rows="5" required
-              class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-cyan resize-y min-h-[120px]">
+              class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-emerald resize-y min-h-[120px]">
             </textarea>
           </div>
 
@@ -83,8 +80,8 @@ const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ← hier deine Formspree-ID eintrag
           </p>
 
           <button type="submit" id="submit-btn"
-            class="w-full font-heading font-bold text-sm py-3.5 rounded-full text-white transition-all hover:-translate-y-0.5 hover:shadow-glow-cyan"
-            style="background:linear-gradient(135deg,#0e9488,#0e7490,#6d28d9)">
+            class="w-full font-heading font-bold text-sm py-3.5 rounded-lg text-white transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+            style="background:#2D6A4F">
             {data.form.submit_label}
           </button>
         </form>
@@ -93,11 +90,9 @@ const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ← hier deine Formspree-ID eintrag
       <!-- Info Boxes -->
       <div class="flex flex-col gap-4">
         {data.info_boxes.map((box: any) => (
-          <div class="rounded-card border border-brand-border p-5 flex items-center gap-4"
-            style="background:rgba(39,39,42,0.55);backdrop-filter:blur(12px)">
+          <div class="rounded-card border border-brand-border p-5 flex items-center gap-4 bg-white shadow-card">
             <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-              style={`background:${box.accent === 'emerald' ? 'rgba(52,211,153,.12)' : box.accent === 'cyan' ? 'rgba(34,211,238,.12)' : 'rgba(167,139,250,.12)'};
-                      color:${box.accent === 'emerald' ? '#34D399' : box.accent === 'cyan' ? '#22D3EE' : '#A78BFA'}`}
+              style="background:rgba(45,106,79,0.10);color:#2D6A4F"
               set:html={box.icon_svg}>
             </div>
             <div>

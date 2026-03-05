@@ -1,29 +1,27 @@
 ---
 const { data } = Astro.props;
 ---
-<section id="preise" class="border-t border-brand-border">
+<section id="preise" class="bg-brand-surface">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-secondary mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)"></span>
+    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#2D6A4F"></span>
       {data.label}
     </div>
-    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.03em] mb-4"
+    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} <span class="bg-clip-text text-transparent"
-        style="background-image:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)">{data.heading[1]}</span>
+      {data.heading[0]} <span style="color:#2D6A4F">{data.heading[1]}</span>
     </h2>
-    <p class="text-brand-secondary leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
+    <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
 
     <div class="flex flex-col gap-10">
       {data.sections.map((sec: any) => (
         <div>
           <div class="mb-4">
             <h3 class="font-heading font-bold text-brand-heading text-lg mb-1">{sec.name}</h3>
-            <p class="text-brand-secondary text-sm">{sec.description}</p>
+            <p class="text-brand-text text-sm">{sec.description}</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] rounded-card border border-brand-border overflow-hidden"
-            style="background:rgba(39,39,42,0.55);backdrop-filter:blur(12px)">
+          <div class="grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] rounded-card border border-brand-border overflow-hidden bg-white shadow-card">
 
             <!-- Einmalig -->
             <div class="p-8 md:p-9">
@@ -34,14 +32,14 @@ const { data } = Astro.props;
                 <>
                   <div class="font-heading font-black text-brand-heading leading-none mb-1"
                     style="font-size:2.8rem">
-                    {sec.onetime.base.price}<span class="text-base font-normal text-brand-muted"> einmalig</span>
+                    <span style="color:#2D6A4F">{sec.onetime.base.price}</span><span class="text-base font-normal text-brand-muted"> einmalig</span>
                   </div>
                   <div class="text-xs text-brand-muted mb-5">{sec.onetime.base.label}</div>
                   {sec.onetime.includes && (
                     <ul class="flex flex-col gap-2.5 list-none">
                       {sec.onetime.includes.map((f: string) => (
                         <li class="flex items-center gap-2 text-sm text-brand-text">
-                          <span class="text-brand-cyan text-xs">✓</span>{f}
+                          <span style="color:#2D6A4F" class="text-xs">✓</span>{f}
                         </li>
                       ))}
                     </ul>
@@ -52,7 +50,7 @@ const { data } = Astro.props;
                   {sec.onetime.items?.map((item: any) => (
                     <li class="flex justify-between items-center gap-3 text-sm text-brand-text">
                       <span>{item.label}</span>
-                      <span class="font-semibold text-brand-text whitespace-nowrap">{item.amount}</span>
+                      <span class="font-semibold text-brand-heading whitespace-nowrap">{item.amount}</span>
                     </li>
                   ))}
                 </ul>
@@ -72,13 +70,13 @@ const { data } = Astro.props;
                 <>
                   <div class="font-heading font-black text-brand-heading leading-none mb-1"
                     style="font-size:2.8rem">
-                    {sec.monthly.price}<span class="text-base font-normal text-brand-muted"> /Monat</span>
+                    <span style="color:#2D6A4F">{sec.monthly.price}</span><span class="text-base font-normal text-brand-muted"> /Monat</span>
                   </div>
                   <div class="text-xs text-brand-muted mb-5">{sec.monthly.note}</div>
                   <ul class="flex flex-col gap-2.5 list-none">
                     {sec.monthly.features?.map((f: string) => (
                       <li class="flex items-center gap-2 text-sm text-brand-text">
-                        <span class="text-brand-cyan text-xs">✓</span>{f}
+                        <span style="color:#2D6A4F" class="text-xs">✓</span>{f}
                       </li>
                     ))}
                   </ul>

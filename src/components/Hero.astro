@@ -5,21 +5,10 @@ const { badge, headline, subtext, cta_primary, cta_secondary, kpis, trust_items,
 
 <section id="hero" class="relative overflow-hidden pt-[calc(72px+100px)] pb-[120px]">
 
-  <!-- Dot-grid overlay -->
+  <!-- Subtle radial gradient accent -->
   <div class="absolute inset-0 pointer-events-none z-0"
-    style="background-image: radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px);
-           background-size: 36px 36px;
-           -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-           mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);">
+    style="background: radial-gradient(ellipse 60% 50% at 80% 20%, rgba(82,183,136,0.06), transparent)">
   </div>
-
-  <!-- Animated Orbs -->
-  <div class="absolute w-[700px] h-[700px] rounded-full pointer-events-none will-change-transform animate-orb-1"
-    style="top:-200px;right:-80px;filter:blur(80px);background:radial-gradient(circle,rgba(34,211,238,0.10) 0%,transparent 70%)"></div>
-  <div class="absolute w-[500px] h-[500px] rounded-full pointer-events-none will-change-transform animate-orb-2"
-    style="bottom:-100px;left:-80px;filter:blur(80px);background:radial-gradient(circle,rgba(52,211,153,0.09) 0%,transparent 70%)"></div>
-  <div class="absolute w-[400px] h-[400px] rounded-full pointer-events-none will-change-transform animate-orb-3"
-    style="top:30%;left:40%;filter:blur(80px);background:radial-gradient(circle,rgba(167,139,250,0.07) 0%,transparent 70%)"></div>
 
   <div class="max-w-[1160px] mx-auto px-8 relative z-10">
 
@@ -29,38 +18,37 @@ const { badge, headline, subtext, cta_primary, cta_secondary, kpis, trust_items,
       <!-- Text Column -->
       <div>
         <!-- Badge -->
-        <div class="inline-flex items-center gap-2 border rounded-full px-4 py-1.5 text-sm font-medium text-brand-cyan mb-7 animate-badge-in"
-          style="background:rgba(34,211,238,0.08);border-color:rgba(34,211,238,0.25)">
-          <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse-dot"
-            style="box-shadow:0 0 8px #22D3EE"></span>
+        <div class="inline-flex items-center gap-2 border rounded-full px-4 py-1.5 text-sm font-medium text-brand-emerald mb-7 animate-badge-in"
+          style="background:rgba(45,106,79,0.08);border-color:rgba(45,106,79,0.25)">
+          <span class="w-2 h-2 rounded-full bg-brand-emerald animate-pulse-dot"
+            style="box-shadow:0 0 8px #2D6A4F"></span>
           {badge}
         </div>
 
         <!-- Headline -->
-        <h1 class="font-heading font-black leading-[1.04] tracking-[-0.035em] mb-7"
+        <h1 class="font-heading font-black leading-[1.05] tracking-[-0.02em] mb-7"
           style="font-size: clamp(2.4rem, 5vw, 3.8rem)">
           {headline.map((line: string, i: number) => (
             i < 2
               ? <Fragment>{line}<br/></Fragment>
-              : <span class="bg-clip-text text-transparent"
-                  style="background-image: linear-gradient(90deg, #34D399, #22D3EE, #A78BFA)">{line}{i < headline.length - 1 ? <br/> : ''}</span>
+              : <span style="color:#2D6A4F">{line}{i < headline.length - 1 ? <br/> : ''}</span>
           ))}
         </h1>
 
-        <p class="text-brand-secondary leading-[1.8] mb-10 max-w-[520px]"
+        <p class="text-brand-text leading-[1.8] mb-10 max-w-[520px]"
           style="font-size: clamp(1rem, 2vw, 1.1rem)">
           {subtext}
         </p>
 
         <div class="flex gap-4 flex-wrap">
           <a href={cta_primary.href}
-            class="font-heading font-bold text-sm px-8 py-3.5 rounded-full text-white transition-all hover:-translate-y-0.5 hover:shadow-glow-cyan"
-            style="background:linear-gradient(135deg,#0e9488,#0e7490,#6d28d9);background-size:200%">
+            class="font-heading font-bold text-sm px-8 py-3.5 rounded-lg text-white transition-all hover:-translate-y-0.5 hover:opacity-90"
+            style="background:#2D6A4F">
             {cta_primary.label}
           </a>
           <a href={cta_secondary.href}
-            class="font-heading font-semibold text-sm px-8 py-3.5 rounded-full text-brand-text border transition-all hover:border-brand-cyan hover:text-brand-cyan hover:bg-cyan-500/10"
-            style="border-color:rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);backdrop-filter:blur(4px)">
+            class="font-heading font-semibold text-sm px-8 py-3.5 rounded-lg transition-all hover:bg-[#2D6A4F] hover:text-white"
+            style="border:2px solid #2D6A4F;color:#2D6A4F;background:transparent">
             {cta_secondary.label}
           </a>
         </div>
@@ -70,16 +58,16 @@ const { badge, headline, subtext, cta_primary, cta_secondary, kpis, trust_items,
       {collage && (
         <div class="hidden lg:block relative" style="height:520px">
 
-          <!-- Browser Screenshot (main, largest) -->
+          <!-- Browser Screenshot -->
           {collage.browser?.src ? (
-            <div class="absolute rounded-xl border border-brand-border overflow-hidden shadow-2xl"
-              style="top:30px;left:20px;width:300px;height:210px;transform:rotate(-2deg);z-index:2">
+            <div class="absolute rounded-xl border border-brand-border overflow-hidden"
+              style="top:30px;left:20px;width:300px;height:210px;transform:rotate(-2deg);z-index:2;box-shadow:0 8px 30px rgba(0,0,0,0.10)">
               <img src={collage.browser.src} alt={collage.browser.alt}
                 class="w-full h-full object-cover object-top" loading="eager" decoding="async" />
             </div>
           ) : (
-            <div class="absolute rounded-xl border border-brand-border overflow-hidden shadow-2xl"
-              style="top:30px;left:20px;width:300px;height:210px;transform:rotate(-2deg);z-index:2;background:rgba(39,39,42,0.7);backdrop-filter:blur(12px)">
+            <div class="absolute rounded-xl border border-brand-border overflow-hidden"
+              style="top:30px;left:20px;width:300px;height:210px;transform:rotate(-2deg);z-index:2;background:#FFFFFF;box-shadow:0 8px 30px rgba(0,0,0,0.10)">
               <div class="flex items-center gap-1.5 px-3 py-2 border-b border-brand-border">
                 <span class="w-2 h-2 rounded-full" style="background:#EF4444"></span>
                 <span class="w-2 h-2 rounded-full" style="background:#F59E0B"></span>
@@ -87,13 +75,13 @@ const { badge, headline, subtext, cta_primary, cta_secondary, kpis, trust_items,
                 <span class="text-[9px] text-brand-muted ml-2 font-mono">friseursalon-mueller.de</span>
               </div>
               <div class="p-4">
-                <div class="h-2 w-20 rounded-full mb-3" style="background:rgba(255,255,255,0.08)"></div>
-                <div class="h-6 w-40 rounded mb-2" style="background:rgba(255,255,255,0.06)"></div>
-                <div class="h-2 w-full rounded-full mb-1.5" style="background:rgba(255,255,255,0.05)"></div>
-                <div class="h-2 w-3/4 rounded-full mb-3" style="background:rgba(255,255,255,0.05)"></div>
+                <div class="h-2 w-20 rounded-full mb-3" style="background:rgba(0,0,0,0.06)"></div>
+                <div class="h-6 w-40 rounded mb-2" style="background:rgba(0,0,0,0.05)"></div>
+                <div class="h-2 w-full rounded-full mb-1.5" style="background:rgba(0,0,0,0.04)"></div>
+                <div class="h-2 w-3/4 rounded-full mb-3" style="background:rgba(0,0,0,0.04)"></div>
                 <div class="flex gap-2">
-                  <div class="h-5 w-20 rounded-full" style="background:rgba(52,211,153,0.15)"></div>
-                  <div class="h-5 w-16 rounded-full" style="background:rgba(255,255,255,0.06)"></div>
+                  <div class="h-5 w-20 rounded-full" style="background:rgba(45,106,79,0.12)"></div>
+                  <div class="h-5 w-16 rounded-full" style="background:rgba(0,0,0,0.04)"></div>
                 </div>
               </div>
             </div>
@@ -101,29 +89,29 @@ const { badge, headline, subtext, cta_primary, cta_secondary, kpis, trust_items,
 
           <!-- Phone Mockup -->
           {collage.phone?.src ? (
-            <div class="absolute rounded-2xl border-2 border-brand-border overflow-hidden shadow-2xl"
-              style="top:60px;right:0;width:150px;height:280px;transform:rotate(3deg);z-index:3">
+            <div class="absolute rounded-2xl border-2 border-brand-border overflow-hidden"
+              style="top:60px;right:0;width:150px;height:280px;transform:rotate(3deg);z-index:3;box-shadow:0 8px 30px rgba(0,0,0,0.10)">
               <img src={collage.phone.src} alt={collage.phone.alt}
                 class="w-full h-full object-cover" loading="eager" decoding="async" />
             </div>
           ) : (
-            <div class="absolute rounded-2xl border-2 border-brand-border overflow-hidden shadow-2xl"
-              style="top:60px;right:0;width:150px;height:280px;transform:rotate(3deg);z-index:3;background:rgba(39,39,42,0.8);backdrop-filter:blur(12px)">
-              <div class="w-8 h-1 rounded-full mx-auto mt-2" style="background:rgba(255,255,255,0.12)"></div>
+            <div class="absolute rounded-2xl border-2 border-brand-border overflow-hidden"
+              style="top:60px;right:0;width:150px;height:280px;transform:rotate(3deg);z-index:3;background:#FFFFFF;box-shadow:0 8px 30px rgba(0,0,0,0.10)">
+              <div class="w-8 h-1 rounded-full mx-auto mt-2" style="background:rgba(0,0,0,0.10)"></div>
               <div class="p-3 mt-2">
-                <div class="h-2 w-12 rounded-full mb-2" style="background:rgba(255,255,255,0.08)"></div>
-                <div class="h-4 w-full rounded mb-2" style="background:rgba(255,255,255,0.06)"></div>
-                <div class="h-16 w-full rounded mb-2" style="background:rgba(255,255,255,0.04)"></div>
-                <div class="h-2 w-full rounded-full mb-1" style="background:rgba(255,255,255,0.05)"></div>
-                <div class="h-2 w-3/4 rounded-full mb-3" style="background:rgba(255,255,255,0.05)"></div>
-                <div class="h-5 w-full rounded-full" style="background:rgba(52,211,153,0.12)"></div>
+                <div class="h-2 w-12 rounded-full mb-2" style="background:rgba(0,0,0,0.06)"></div>
+                <div class="h-4 w-full rounded mb-2" style="background:rgba(0,0,0,0.05)"></div>
+                <div class="h-16 w-full rounded mb-2" style="background:rgba(0,0,0,0.03)"></div>
+                <div class="h-2 w-full rounded-full mb-1" style="background:rgba(0,0,0,0.04)"></div>
+                <div class="h-2 w-3/4 rounded-full mb-3" style="background:rgba(0,0,0,0.04)"></div>
+                <div class="h-5 w-full rounded-full" style="background:rgba(45,106,79,0.10)"></div>
               </div>
             </div>
           )}
 
-          <!-- Google Review Card (floating, tilted) -->
-          <div class="absolute rounded-xl border border-brand-border p-3.5 shadow-xl"
-            style="bottom:140px;left:0;width:240px;transform:rotate(1.5deg);z-index:4;background:rgba(39,39,42,0.75);backdrop-filter:blur(16px)">
+          <!-- Google Review Card -->
+          <div class="absolute rounded-xl border border-brand-border p-3.5"
+            style="bottom:140px;left:0;width:240px;transform:rotate(1.5deg);z-index:4;background:#FFFFFF;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
             <div class="flex items-center gap-1.5 mb-1.5">
               <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
@@ -140,19 +128,19 @@ const { badge, headline, subtext, cta_primary, cta_secondary, kpis, trust_items,
                 </svg>
               ))}
             </div>
-            <p class="text-[11px] text-brand-secondary leading-relaxed italic">
+            <p class="text-[11px] text-brand-text leading-relaxed italic">
               "{collage.review.text}"
             </p>
             <span class="text-[9px] text-brand-muted font-heading mt-1 block">{collage.review.author}</span>
           </div>
 
-          <!-- Stats Card (floating) -->
-          <div class="absolute rounded-xl border border-brand-border px-4 py-3 shadow-lg"
-            style="top:0;left:140px;transform:rotate(-1deg);z-index:5;background:rgba(39,39,42,0.75);backdrop-filter:blur(16px)">
+          <!-- Stats Card -->
+          <div class="absolute rounded-xl border border-brand-border px-4 py-3"
+            style="top:0;left:140px;transform:rotate(-1deg);z-index:5;background:#FFFFFF;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
             <div class="flex items-center gap-2.5">
               <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                style="background:rgba(52,211,153,0.12)">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                style="background:rgba(45,106,79,0.10)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
                   <polyline points="16 7 22 7 22 13"/>
                 </svg>
@@ -164,12 +152,12 @@ const { badge, headline, subtext, cta_primary, cta_secondary, kpis, trust_items,
             </div>
           </div>
 
-          <!-- Notification Card (floating) -->
-          <div class="absolute rounded-xl border border-brand-border p-3 flex items-center gap-2.5 shadow-lg"
-            style="bottom:50px;right:20px;width:220px;transform:rotate(-1.5deg);z-index:4;background:rgba(39,39,42,0.75);backdrop-filter:blur(16px)">
+          <!-- Notification Card -->
+          <div class="absolute rounded-xl border border-brand-border p-3 flex items-center gap-2.5"
+            style="bottom:50px;right:20px;width:220px;transform:rotate(-1.5deg);z-index:4;background:#FFFFFF;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-              style="background:rgba(52,211,153,0.12)">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              style="background:rgba(45,106,79,0.10)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/>
               </svg>
             </div>
@@ -180,7 +168,7 @@ const { badge, headline, subtext, cta_primary, cta_secondary, kpis, trust_items,
             <span class="text-[8px] text-brand-emerald font-heading flex-shrink-0 ml-auto">{collage.notification.time}</span>
           </div>
 
-          <!-- Customer Photo (small, rounded, floating) -->
+          <!-- Customer Photo -->
           {collage.customer?.src && (
             <div class="absolute rounded-full overflow-hidden border-2 border-brand-border shadow-lg"
               style="bottom:80px;left:200px;width:70px;height:70px;z-index:5">
@@ -194,11 +182,11 @@ const { badge, headline, subtext, cta_primary, cta_secondary, kpis, trust_items,
 
     </div>
 
-    <!-- KPIs (full width, below split) -->
-    <div class="flex mt-14 border border-brand-border rounded-card overflow-hidden">
+    <!-- KPIs -->
+    <div class="flex mt-14 border border-brand-border rounded-card overflow-hidden bg-white shadow-card">
       {kpis.map((k: any, i: number) => (
         <div class:list={['flex-1 px-6 py-5 text-center', i < kpis.length - 1 ? 'border-r border-brand-border' : '']}>
-          <div class:list={['font-heading font-black text-2xl', k.color === 'emerald' ? 'text-brand-emerald' : k.color === 'cyan' ? 'text-brand-cyan' : 'text-brand-violet']}>
+          <div class="font-heading font-black text-2xl text-brand-emerald">
             {k.value}
           </div>
           <div class="text-xs text-brand-muted font-body mt-1">{k.label}</div>
@@ -210,7 +198,7 @@ const { badge, headline, subtext, cta_primary, cta_secondary, kpis, trust_items,
     {trust_items && trust_items.length > 0 && (
       <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
         {trust_items.map((item: string) => (
-          <span class="flex items-center gap-1.5 text-xs text-brand-secondary">
+          <span class="flex items-center gap-1.5 text-xs text-brand-text">
             <span class="text-brand-emerald">✔</span>{item}
           </span>
         ))}

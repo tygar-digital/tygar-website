@@ -1,29 +1,26 @@
 ---
 const { data } = Astro.props;
 ---
-<section id="termin" class="border-t border-brand-border">
+<section id="termin" class="bg-brand-bg">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-secondary mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)"></span>
+    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#2D6A4F"></span>
       {data.label}
     </div>
-    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.03em] mb-4"
+    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
       {data.heading[0]}<br/>
-      <span class="bg-clip-text text-transparent"
-        style="background-image:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)">{data.heading[1]}</span>
+      <span style="color:#2D6A4F">{data.heading[1]}</span>
     </h2>
-    <p class="text-brand-secondary leading-[1.75] mb-10 max-w-[560px]">{data.subtext}</p>
+    <p class="text-brand-text leading-[1.75] mb-10 max-w-[560px]">{data.subtext}</p>
 
     {data.features && data.features.length > 0 && (
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
         {data.features.map((feat: any) => (
-          <div class="flex items-center gap-3 rounded-card border border-brand-border p-4"
-            style="background:rgba(39,39,42,0.55);backdrop-filter:blur(12px)">
+          <div class="flex items-center gap-3 rounded-card border border-brand-border p-4 bg-white shadow-card">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-              style={`background:${feat.accent === 'emerald' ? 'rgba(52,211,153,.12)' : feat.accent === 'cyan' ? 'rgba(34,211,238,.12)' : 'rgba(167,139,250,.12)'};
-                      color:${feat.accent === 'emerald' ? '#34D399' : feat.accent === 'cyan' ? '#22D3EE' : '#A78BFA'}`}
+              style="background:rgba(45,106,79,0.10);color:#2D6A4F"
               set:html={feat.icon_svg}>
             </div>
             <span class="text-sm text-brand-text font-body">{feat.text}</span>
@@ -33,10 +30,9 @@ const { data } = Astro.props;
     )}
 
     <!-- Cal.com Inline Embed -->
-    <div class="rounded-card border border-brand-border overflow-hidden"
-      style="background:rgba(39,39,42,0.55)">
+    <div class="rounded-card border border-brand-border overflow-hidden bg-white shadow-card">
       <iframe
-        src={`https://cal.com/${data.cal_link}?embed&layout=month_view&theme=dark`}
+        src={`https://cal.com/${data.cal_link}?embed&layout=month_view&theme=light`}
         frameborder="0"
         style="width:100%;min-height:600px;border:none"
         loading="lazy"

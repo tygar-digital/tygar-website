@@ -48,10 +48,10 @@ import data from '../data/content.json';
     'section > div > div[class*="grid"] > *, .ps-section, h2, p.text-brand-secondary'
   );
   targets.forEach((el, i) => {
-    (el as HTMLElement).style.opacity = '0';
-    (el as HTMLElement).style.transform = 'translateY(28px)';
+    (el as HTMLElement).style.opacity = '0.3';
+    (el as HTMLElement).style.transform = 'translateY(20px)';
     (el as HTMLElement).style.transition =
-      `opacity 0.6s ease ${(i % 6) * 0.08}s, transform 0.6s ease ${(i % 6) * 0.08}s`;
+      `opacity 0.5s ease-out ${(i % 6) * 0.08}s, transform 0.5s ease-out ${(i % 6) * 0.08}s`;
   });
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -61,7 +61,7 @@ import data from '../data/content.json';
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
   targets.forEach(el => observer.observe(el));
 
   // Smooth Scroll

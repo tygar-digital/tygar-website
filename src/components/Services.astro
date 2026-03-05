@@ -1,42 +1,39 @@
 ---
 const { data } = Astro.props;
 ---
-<section id="leistungen" class="border-t border-brand-border">
+<section id="leistungen" class="bg-brand-bg">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-secondary mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)"></span>
+    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#2D6A4F"></span>
       {data.label}
     </div>
-    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.03em] mb-4"
+    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} <span class="bg-clip-text text-transparent"
-        style="background-image:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)">{data.heading[1]}</span>
+      {data.heading[0]} <span style="color:#2D6A4F">{data.heading[1]}</span>
     </h2>
-    <p class="text-brand-secondary leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
+    <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {data.items.map((item: any) => (
-        <div class={`rounded-card border p-8 flex flex-col gap-4 transition-all duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] ${item.coming_soon ? 'opacity-50 pointer-events-none' : 'hover:-translate-y-1.5 hover:shadow-card'} group relative`}
-          style={`background:rgba(39,39,42,0.55);backdrop-filter:blur(12px);
-                  border-color:${item.coming_soon ? 'rgba(113,113,122,.3)' : item.accent === 'emerald' ? 'rgba(52,211,153,.3)' : item.accent === 'cyan' ? 'rgba(34,211,238,.3)' : 'rgba(167,139,250,.3)'}`}>
+        <div class={`rounded-card border border-brand-border p-8 flex flex-col gap-4 transition-all duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] ${item.coming_soon ? 'opacity-50 pointer-events-none' : 'hover:-translate-y-1.5 hover:shadow-card-hover'} group relative bg-white shadow-card`}>
           {item.coming_soon && (
-            <span class="absolute top-4 right-4 text-[0.65rem] font-heading font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full border border-zinc-600 text-zinc-400 bg-zinc-800/60">
+            <span class="absolute top-4 right-4 text-[0.65rem] font-heading font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full border border-brand-border text-brand-muted bg-brand-surface">
               Coming Soon
             </span>
           )}
           <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-            style={`background:${item.coming_soon ? 'rgba(113,113,122,.12)' : item.accent === 'emerald' ? 'rgba(52,211,153,.12)' : item.accent === 'cyan' ? 'rgba(34,211,238,.12)' : 'rgba(167,139,250,.12)'};
-                    color:${item.coming_soon ? '#71717A' : item.accent === 'emerald' ? '#34D399' : item.accent === 'cyan' ? '#22D3EE' : '#A78BFA'}`}
+            style={`background:${item.coming_soon ? 'rgba(138,138,170,0.10)' : 'rgba(45,106,79,0.10)'};
+                    color:${item.coming_soon ? '#8A8AAA' : '#2D6A4F'}`}
             set:html={item.icon_svg}>
           </div>
-          <h3 class={`font-heading font-bold text-lg ${item.coming_soon ? 'text-zinc-500' : 'text-brand-heading'}`}>{item.title}</h3>
-          <p class={`text-sm leading-relaxed flex-1 ${item.coming_soon ? 'text-zinc-600' : 'text-brand-secondary'}`}>{item.text}</p>
+          <h3 class={`font-heading font-bold text-lg ${item.coming_soon ? 'text-brand-muted' : 'text-brand-heading'}`}>{item.title}</h3>
+          <p class={`text-sm leading-relaxed flex-1 ${item.coming_soon ? 'text-brand-muted' : 'text-brand-text'}`}>{item.text}</p>
           {item.features && (
             <ul class="flex flex-col gap-2 mt-1">
               {item.features.map((f: string) => (
-                <li class={`flex items-start gap-2 text-sm ${item.coming_soon ? 'text-zinc-600' : 'text-brand-text'}`}>
-                  <span style={`color:${item.coming_soon ? '#52525B' : item.accent === 'emerald' ? '#34D399' : item.accent === 'cyan' ? '#22D3EE' : '#A78BFA'}`}>✓</span>
+                <li class={`flex items-start gap-2 text-sm ${item.coming_soon ? 'text-brand-muted' : 'text-brand-text'}`}>
+                  <span style={`color:${item.coming_soon ? '#8A8AAA' : '#2D6A4F'}`}>✓</span>
                   {f}
                 </li>
               ))}
@@ -46,9 +43,9 @@ const { data } = Astro.props;
             <div class="flex flex-wrap gap-1.5 mt-2">
               {item.tags.map((tag: string) => (
                 <span class="text-[0.68rem] font-heading font-semibold px-2.5 py-1 rounded-full border"
-                  style={`background:${item.coming_soon ? 'rgba(113,113,122,0.08)' : item.accent === 'emerald' ? 'rgba(52,211,153,0.08)' : item.accent === 'cyan' ? 'rgba(34,211,238,0.08)' : 'rgba(167,139,250,0.08)'};
-                          border-color:${item.coming_soon ? 'rgba(113,113,122,0.2)' : item.accent === 'emerald' ? 'rgba(52,211,153,0.2)' : item.accent === 'cyan' ? 'rgba(34,211,238,0.2)' : 'rgba(167,139,250,0.2)'};
-                          color:${item.coming_soon ? '#52525B' : item.accent === 'emerald' ? '#34D399' : item.accent === 'cyan' ? '#22D3EE' : '#A78BFA'}`}>
+                  style={`background:${item.coming_soon ? 'rgba(138,138,170,0.06)' : 'rgba(45,106,79,0.08)'};
+                          border-color:${item.coming_soon ? 'rgba(138,138,170,0.15)' : 'rgba(45,106,79,0.20)'};
+                          color:${item.coming_soon ? '#8A8AAA' : '#2D6A4F'}`}>
                   {tag}
                 </span>
               ))}

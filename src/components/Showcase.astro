@@ -1,55 +1,36 @@
 ---
 const { data } = Astro.props;
-const accentBorder: Record<string,string> = {
-  emerald: 'rgba(52,211,153,.3)',
-  cyan:    'rgba(34,211,238,.3)',
-  violet:  'rgba(167,139,250,.3)',
-};
+const accentBorder: Record<string,string> = { emerald: '#E8E2DA', cyan: '#E8E2DA', violet: '#E8E2DA' };
 const accentGlow: Record<string,string> = {
-  emerald: '0 12px 48px rgba(52,211,153,.20),0 0 0 1px rgba(52,211,153,.2)',
-  cyan:    '0 12px 48px rgba(34,211,238,.20),0 0 0 1px rgba(34,211,238,.2)',
-  violet:  '0 12px 48px rgba(167,139,250,.20),0 0 0 1px rgba(167,139,250,.2)',
+  emerald: '0 8px 30px rgba(0,0,0,0.10)', cyan: '0 8px 30px rgba(0,0,0,0.10)', violet: '0 8px 30px rgba(0,0,0,0.10)',
 };
-const tagBg: Record<string,string> = {
-  emerald: 'rgba(52,211,153,0.10)',
-  cyan:    'rgba(34,211,238,0.10)',
-  violet:  'rgba(167,139,250,0.10)',
-};
-const tagBorder: Record<string,string> = {
-  emerald: 'rgba(52,211,153,0.30)',
-  cyan:    'rgba(34,211,238,0.30)',
-  violet:  'rgba(167,139,250,0.30)',
-};
-const tagColor: Record<string,string> = {
-  emerald: '#34D399', cyan: '#22D3EE', violet: '#A78BFA',
-};
+const tagBg: Record<string,string> = { emerald: 'rgba(45,106,79,0.08)', cyan: 'rgba(45,106,79,0.08)', violet: 'rgba(45,106,79,0.08)' };
+const tagBorder: Record<string,string> = { emerald: 'rgba(45,106,79,0.20)', cyan: 'rgba(45,106,79,0.20)', violet: 'rgba(45,106,79,0.20)' };
+const tagColor: Record<string,string> = { emerald: '#2D6A4F', cyan: '#2D6A4F', violet: '#2D6A4F' };
 ---
-<section id="beispiele" class="border-t border-brand-border">
+<section id="beispiele" class="bg-brand-bg">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-secondary mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)"></span>
+    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#2D6A4F"></span>
       {data.label}
     </div>
-    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.03em] mb-4"
+    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
       {data.heading[0]}<br/>
-      <span class="bg-clip-text text-transparent"
-        style="background-image:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)">{data.heading[1]}</span>
+      <span style="color:#2D6A4F">{data.heading[1]}</span>
     </h2>
-    <p class="text-brand-secondary leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
+    <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {data.items.map((item: any) => (
-        <div class="rounded-card border flex flex-col overflow-hidden transition-all duration-[280ms] hover:-translate-y-2"
-          style={`background:rgba(39,39,42,0.55);backdrop-filter:blur(12px);
-                  border-color:${accentBorder[item.accent]};`}
+        <div class="rounded-card border flex flex-col overflow-hidden transition-all duration-[280ms] hover:-translate-y-2 bg-white shadow-card"
+          style={`border-color:${accentBorder[item.accent]};`}
           onmouseenter={`this.style.boxShadow='${accentGlow[item.accent]}'`}
           onmouseleave={`this.style.boxShadow='none'`}>
 
-          <!-- Browser preview -->
-          <div class="relative bg-brand-bg overflow-hidden" style="height:200px">
-            <div class="flex items-center gap-1.5 px-3 py-2 border-b border-brand-border bg-brand-surface">
+          <div class="relative bg-brand-surface overflow-hidden" style="height:200px">
+            <div class="flex items-center gap-1.5 px-3 py-2 border-b border-brand-border bg-white">
               <span class="w-2.5 h-2.5 rounded-full bg-red-500/60"></span>
               <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/60"></span>
               <span class="w-2.5 h-2.5 rounded-full bg-green-500/60"></span>
@@ -57,8 +38,7 @@ const tagColor: Record<string,string> = {
                 <span class="text-[0.6rem] text-brand-muted truncate">{item.preview_url}</span>
               </div>
             </div>
-            <!-- Fallback placeholder -->
-            <div class="absolute inset-0 top-[33px] flex items-center justify-center bg-brand-bg">
+            <div class="absolute inset-0 top-[33px] flex items-center justify-center bg-brand-surface">
               <div class="text-center">
                 <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center"
                   style={`background:${tagBg[item.accent]};border:1px solid ${tagBorder[item.accent]}`}>
@@ -82,7 +62,7 @@ const tagColor: Record<string,string> = {
               {item.tag}
             </span>
             <h3 class="font-heading font-bold text-brand-heading text-lg">{item.title}</h3>
-            <p class="text-brand-secondary text-sm leading-relaxed flex-1">{item.text}</p>
+            <p class="text-brand-text text-sm leading-relaxed flex-1">{item.text}</p>
             <a href={item.preview_url} target="_blank" rel="noopener noreferrer"
               class="text-sm font-heading font-bold transition-colors mt-1"
               style={`color:${tagColor[item.accent]}`}>

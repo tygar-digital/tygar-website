@@ -1,33 +1,30 @@
 ---
 const { data } = Astro.props;
 ---
-<section id="prozess" class="border-t border-brand-border">
+<section id="prozess" class="bg-brand-surface">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-secondary mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)"></span>
+    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#2D6A4F"></span>
       {data.label}
     </div>
-    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.03em] mb-4"
+    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} <span class="bg-clip-text text-transparent"
-        style="background-image:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA)">{data.heading[1]}</span>
+      {data.heading[0]} <span style="color:#2D6A4F">{data.heading[1]}</span>
     </h2>
-    <p class="text-brand-secondary leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
+    <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {data.steps.map((step: any, i: number) => (
-        <div class="rounded-card border border-brand-border p-7 flex flex-col gap-3 relative"
-          style="background:rgba(39,39,42,0.55);backdrop-filter:blur(12px)">
-          <span class="text-4xl font-heading font-black leading-none"
-            style="background:linear-gradient(90deg,#34D399,#22D3EE,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+        <div class="rounded-card border border-brand-border p-7 flex flex-col gap-3 relative bg-white shadow-card">
+          <span class="text-4xl font-heading font-black leading-none" style="color:#2D6A4F">
             {String(i + 1).padStart(2, '0')}
           </span>
           <h3 class="font-heading font-bold text-brand-heading">{step.title}</h3>
-          <p class="text-brand-secondary text-sm leading-relaxed">{step.text}</p>
+          <p class="text-brand-text text-sm leading-relaxed">{step.text}</p>
           <div class="mt-2">
             <span class="inline-block text-[0.72rem] font-heading font-bold px-3 py-1 rounded-full"
-              style="background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.25);color:#22D3EE">
+              style="background:rgba(45,106,79,0.08);border:1px solid rgba(45,106,79,0.20);color:#2D6A4F">
               {step.duration}
             </span>
           </div>
