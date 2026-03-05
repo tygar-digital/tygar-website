@@ -29,8 +29,17 @@ const { data } = Astro.props;
       </div>
     )}
 
-    <!-- Cal.com Inline Embed -->
-    <div class="rounded-card border border-brand-border overflow-hidden bg-white shadow-card">
+    <!-- Mobile: Button statt Embed -->
+    <div class="block lg:hidden">
+      <a href={`https://cal.com/${data.cal_link}`} target="_blank" rel="noopener noreferrer"
+        class="booking-mobile-cta">
+        Termin vereinbaren →
+      </a>
+      <p class="text-brand-muted text-xs mt-3 text-center">Öffnet die Terminbuchung bei Cal.com</p>
+    </div>
+
+    <!-- Desktop: Cal.com Inline Embed -->
+    <div class="hidden lg:block rounded-card border border-brand-border overflow-hidden bg-white shadow-card">
       <iframe
         src={`https://cal.com/${data.cal_link}?embed&layout=month_view&theme=light`}
         frameborder="0"
@@ -40,3 +49,24 @@ const { data } = Astro.props;
     </div>
   </div>
 </section>
+
+<style>
+  .booking-mobile-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 16px 24px;
+    background: #102C26;
+    color: #F7E7CE;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .booking-mobile-cta:hover {
+    opacity: 0.9;
+  }
+</style>

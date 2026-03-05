@@ -15,84 +15,108 @@ const { data } = Astro.props;
     <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
 
     <div class="flex flex-col gap-10">
-      {data.sections.map((sec: any) => (
-        <div>
+      {data.sections.map((sec: any, idx: number) => (
+        <div class="relative">
           <div class="mb-4">
             <h3 class="font-heading font-bold text-brand-heading text-lg mb-1">{sec.name}</h3>
             <p class="text-brand-text text-sm">{sec.description}</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] rounded-card border border-brand-border overflow-hidden bg-white shadow-card">
+          {idx === 0 ? (
+            /* Hauptkarte: dunkelgrün */
+            <div class="pricing-card pricing-card-dark grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] rounded-card overflow-hidden relative">
+              <span class="pricing-intro-badge">Einführungspreis</span>
 
-            <!-- Einmalig -->
-            <div class="p-8 md:p-9">
-              <div class="text-[0.68rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-muted mb-5">
-                {sec.onetime.heading}
+              {/* Einmalig */}
+              <div class="p-8 md:p-10 pt-12 md:pt-14">
+                <div class="text-[0.68rem] font-heading font-bold tracking-[0.12em] uppercase mb-5" style="color:rgba(247,231,206,0.75)">
+                  {sec.onetime.heading}
+                </div>
+                {sec.onetime.base && (
+                  <>
+                    <div class="pricing-price-wrap mb-1">
+                      <span class="pricing-price-light">{sec.onetime.base.price}</span>
+                      <span class="text-base font-normal ml-2" style="color:rgba(247,231,206,0.75)">einmalig</span>
+                    </div>
+                    <div class="text-xs mb-6" style="color:rgba(247,231,206,0.75)">{sec.onetime.base.label}</div>
+                    {sec.onetime.includes && (
+                      <ul class="flex flex-col gap-2.5 list-none">
+                        {sec.onetime.includes.map((f: string) => (
+                          <li class="flex items-center gap-2.5 text-sm" style="color:rgba(247,231,206,0.85)">
+                            <span class="pricing-check-light">✓</span>{f}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                )}
               </div>
-              {sec.onetime.base ? (
-                <>
-                  <div class="font-heading font-black text-brand-heading leading-none mb-1"
-                    style="font-size:2.8rem">
-                    <span style="color:#102C26">{sec.onetime.base.price}</span><span class="text-base font-normal text-brand-muted"> einmalig</span>
-                  </div>
-                  <div class="text-xs text-brand-muted mb-5">{sec.onetime.base.label}</div>
-                  {sec.onetime.includes && (
+
+              {/* Divider */}
+              <div class="hidden md:block" style="background:rgba(247,231,206,0.15)"></div>
+              <div class="md:hidden h-px" style="background:rgba(247,231,206,0.15)"></div>
+
+              {/* Monatlich */}
+              <div class="p-8 md:p-10">
+                <div class="text-[0.68rem] font-heading font-bold tracking-[0.12em] uppercase mb-5" style="color:rgba(247,231,206,0.75)">
+                  {sec.monthly.heading}
+                </div>
+                {sec.monthly.price && (
+                  <>
+                    <div class="pricing-price-wrap mb-1">
+                      <span class="pricing-price-light">{sec.monthly.price}</span>
+                      <span class="text-base font-normal ml-2" style="color:rgba(247,231,206,0.75)">/Monat</span>
+                    </div>
+                    <div class="text-xs mb-6" style="color:rgba(247,231,206,0.75)">{sec.monthly.note}</div>
                     <ul class="flex flex-col gap-2.5 list-none">
-                      {sec.onetime.includes.map((f: string) => (
-                        <li class="flex items-center gap-2 text-sm text-brand-text">
-                          <span style="color:#102C26" class="text-xs">✓</span>{f}
+                      {sec.monthly.features?.map((f: string) => (
+                        <li class="flex items-center gap-2.5 text-sm" style="color:rgba(247,231,206,0.85)">
+                          <span class="pricing-check-light">✓</span>{f}
                         </li>
                       ))}
                     </ul>
-                  )}
-                </>
-              ) : (
+                  </>
+                )}
+              </div>
+            </div>
+          ) : (
+            /* Sekundärkarten: weiß */
+            <div class="pricing-card grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] rounded-card border border-brand-border overflow-hidden bg-white shadow-card">
+
+              {/* Einmalig */}
+              <div class="p-8 md:p-9">
+                <div class="text-[0.68rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-muted mb-5">
+                  {sec.onetime.heading}
+                </div>
                 <ul class="flex flex-col gap-3 list-none">
                   {sec.onetime.items?.map((item: any) => (
                     <li class="flex justify-between items-center gap-3 text-sm text-brand-text">
                       <span>{item.label}</span>
-                      <span class="font-semibold text-brand-heading whitespace-nowrap">{item.amount}</span>
+                      <span class="font-heading font-bold text-brand-heading whitespace-nowrap">{item.amount}</span>
                     </li>
                   ))}
                 </ul>
-              )}
-            </div>
-
-            <!-- Divider -->
-            <div class="hidden md:block bg-brand-border"></div>
-            <div class="md:hidden h-px bg-brand-border"></div>
-
-            <!-- Monatlich -->
-            <div class="p-8 md:p-9">
-              <div class="text-[0.68rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-muted mb-5">
-                {sec.monthly.heading}
               </div>
-              {sec.monthly.price ? (
-                <>
-                  <div class="font-heading font-black text-brand-heading leading-none mb-1"
-                    style="font-size:2.8rem">
-                    <span style="color:#102C26">{sec.monthly.price}</span><span class="text-base font-normal text-brand-muted"> /Monat</span>
-                  </div>
-                  <div class="text-xs text-brand-muted mb-5">{sec.monthly.note}</div>
-                  <ul class="flex flex-col gap-2.5 list-none">
-                    {sec.monthly.features?.map((f: string) => (
-                      <li class="flex items-center gap-2 text-sm text-brand-text">
-                        <span style="color:#102C26" class="text-xs">✓</span>{f}
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              ) : (
+
+              {/* Divider */}
+              <div class="hidden md:block bg-brand-border"></div>
+              <div class="md:hidden h-px bg-brand-border"></div>
+
+              {/* Monatlich */}
+              <div class="p-8 md:p-9">
+                <div class="text-[0.68rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-muted mb-5">
+                  {sec.monthly.heading}
+                </div>
                 <ul class="flex flex-col gap-3 list-none">
                   {sec.monthly.items?.map((item: any) => (
                     <li class="flex justify-between items-center gap-3 text-sm text-brand-text">
                       <span>{item.label}</span>
-                      <span class="font-semibold whitespace-nowrap">{item.amount}</span>
+                      <span class="font-heading font-bold whitespace-nowrap">{item.amount}</span>
                     </li>
                   ))}
                 </ul>
-              )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       ))}
     </div>
@@ -100,3 +124,67 @@ const { data } = Astro.props;
     <p class="text-center text-brand-muted text-xs mt-6">{data.note}</p>
   </div>
 </section>
+
+<style>
+  .pricing-intro-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 6px 14px;
+    background: #F7E7CE;
+    color: #102C26;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    border-radius: 100px;
+    z-index: 1;
+  }
+
+  .pricing-card-dark {
+    background: #102C26;
+    box-shadow: 0 8px 40px rgba(16, 44, 38, 0.35);
+  }
+
+  .pricing-price-light {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(2.8rem, 5vw, 3.5rem);
+    line-height: 1;
+    color: #F7E7CE;
+    letter-spacing: -0.02em;
+  }
+
+  .pricing-price-wrap {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .pricing-check-light {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(247, 231, 206, 0.12);
+    color: #F7E7CE;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .pricing-card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .pricing-card:hover {
+    box-shadow: 0 8px 32px rgba(16, 44, 38, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .pricing-card-dark:hover {
+    box-shadow: 0 12px 48px rgba(16, 44, 38, 0.45);
+    transform: translateY(-2px);
+  }
+</style>
