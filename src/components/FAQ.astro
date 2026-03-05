@@ -5,12 +5,12 @@ const { data } = Astro.props;
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
     <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#2D6A4F"></span>
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#102C26"></span>
       {data.label}
     </div>
     <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} <span style="color:#2D6A4F">{data.heading[1]}</span>
+      {data.heading[0]} <span style="color:#102C26">{data.heading[1]}</span>
     </h2>
 
     <div class="max-w-[760px] mt-12 flex flex-col gap-3">
@@ -41,7 +41,7 @@ const { data } = Astro.props;
     const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
     answer.style.maxHeight = isOpen ? '0px' : answer.scrollHeight + 'px';
     icon.style.transform   = isOpen ? '' : 'rotate(180deg)';
-    icon.style.color       = isOpen ? '' : '#2D6A4F';
+    icon.style.color       = isOpen ? '' : '#102C26';
   }
   (window as any).toggleFaq = toggleFaq;
 </script>

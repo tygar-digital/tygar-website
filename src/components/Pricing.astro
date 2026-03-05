@@ -5,12 +5,12 @@ const { data } = Astro.props;
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
     <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#2D6A4F"></span>
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#102C26"></span>
       {data.label}
     </div>
     <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} <span style="color:#2D6A4F">{data.heading[1]}</span>
+      {data.heading[0]} <span style="color:#102C26">{data.heading[1]}</span>
     </h2>
     <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
 
@@ -32,14 +32,14 @@ const { data } = Astro.props;
                 <>
                   <div class="font-heading font-black text-brand-heading leading-none mb-1"
                     style="font-size:2.8rem">
-                    <span style="color:#2D6A4F">{sec.onetime.base.price}</span><span class="text-base font-normal text-brand-muted"> einmalig</span>
+                    <span style="color:#102C26">{sec.onetime.base.price}</span><span class="text-base font-normal text-brand-muted"> einmalig</span>
                   </div>
                   <div class="text-xs text-brand-muted mb-5">{sec.onetime.base.label}</div>
                   {sec.onetime.includes && (
                     <ul class="flex flex-col gap-2.5 list-none">
                       {sec.onetime.includes.map((f: string) => (
                         <li class="flex items-center gap-2 text-sm text-brand-text">
-                          <span style="color:#2D6A4F" class="text-xs">✓</span>{f}
+                          <span style="color:#102C26" class="text-xs">✓</span>{f}
                         </li>
                       ))}
                     </ul>
@@ -70,13 +70,13 @@ const { data } = Astro.props;
                 <>
                   <div class="font-heading font-black text-brand-heading leading-none mb-1"
                     style="font-size:2.8rem">
-                    <span style="color:#2D6A4F">{sec.monthly.price}</span><span class="text-base font-normal text-brand-muted"> /Monat</span>
+                    <span style="color:#102C26">{sec.monthly.price}</span><span class="text-base font-normal text-brand-muted"> /Monat</span>
                   </div>
                   <div class="text-xs text-brand-muted mb-5">{sec.monthly.note}</div>
                   <ul class="flex flex-col gap-2.5 list-none">
                     {sec.monthly.features?.map((f: string) => (
                       <li class="flex items-center gap-2 text-sm text-brand-text">
-                        <span style="color:#2D6A4F" class="text-xs">✓</span>{f}
+                        <span style="color:#102C26" class="text-xs">✓</span>{f}
                       </li>
                     ))}
                   </ul>

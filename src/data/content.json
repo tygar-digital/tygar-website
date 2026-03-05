@@ -58,7 +58,8 @@
       "Wir uns um deinen",
       "Online-Auftritt."
     ],
-    "subtext": "Es ist völlig normal, dass die eigene Website im stressigen Alltag auf der Strecke bleibt. Doch genau dort suchen über 80 % deiner neuen Kunden nach dir. Tygar ändert das — wir übernehmen die komplette Technik und Erstellung für dich.",
+    "subtext": "Deine Website verdient mehr als \u201Egeht schon\u201C. Wir \u00fcbernehmen Technik, Design und Erstellung \u2014 du lehnst dich zur\u00fcck.",
+    "stat": { "number": "80 %", "label": "deiner neuen Kunden suchen online nach dir." },
     "cta_primary": {
       "label": "Kostenloses Erstgespräch →",
       "href": "#termin"

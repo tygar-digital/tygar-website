@@ -5,13 +5,13 @@ const { data } = Astro.props;
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
     <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#2D6A4F"></span>
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#102C26"></span>
       {data.label}
     </div>
     <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
       {data.heading[0]}<br/>
-      <span style="color:#2D6A4F">{data.heading[1]}</span>
+      <span style="color:#102C26">{data.heading[1]}</span>
     </h2>
     <p class="text-brand-text leading-[1.75] mb-10 max-w-[560px]">{data.subtext}</p>
 
@@ -20,7 +20,7 @@ const { data } = Astro.props;
         {data.features.map((feat: any) => (
           <div class="flex items-center gap-3 rounded-card border border-brand-border p-4 bg-white shadow-card">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-              style="background:rgba(45,106,79,0.10);color:#2D6A4F"
+              style="background:rgba(16,44,38,0.10);color:#102C26"
               set:html={feat.icon_svg}>
             </div>
             <span class="text-sm text-brand-text font-body">{feat.text}</span>

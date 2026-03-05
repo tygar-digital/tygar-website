@@ -1,24 +1,24 @@
 ---
 const { data } = Astro.props;
-const accentBorder: Record<string,string> = { emerald: '#E8E2DA', cyan: '#E8E2DA', violet: '#E8E2DA' };
+const accentBorder: Record<string,string> = { emerald: '#DDD5C8', cyan: '#DDD5C8', violet: '#DDD5C8' };
 const accentGlow: Record<string,string> = {
   emerald: '0 8px 30px rgba(0,0,0,0.10)', cyan: '0 8px 30px rgba(0,0,0,0.10)', violet: '0 8px 30px rgba(0,0,0,0.10)',
 };
-const tagBg: Record<string,string> = { emerald: 'rgba(45,106,79,0.08)', cyan: 'rgba(45,106,79,0.08)', violet: 'rgba(45,106,79,0.08)' };
-const tagBorder: Record<string,string> = { emerald: 'rgba(45,106,79,0.20)', cyan: 'rgba(45,106,79,0.20)', violet: 'rgba(45,106,79,0.20)' };
-const tagColor: Record<string,string> = { emerald: '#2D6A4F', cyan: '#2D6A4F', violet: '#2D6A4F' };
+const tagBg: Record<string,string> = { emerald: 'rgba(16,44,38,0.08)', cyan: 'rgba(16,44,38,0.08)', violet: 'rgba(16,44,38,0.08)' };
+const tagBorder: Record<string,string> = { emerald: 'rgba(16,44,38,0.20)', cyan: 'rgba(16,44,38,0.20)', violet: 'rgba(16,44,38,0.20)' };
+const tagColor: Record<string,string> = { emerald: '#102C26', cyan: '#102C26', violet: '#102C26' };
 ---
 <section id="beispiele" class="bg-brand-bg">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
     <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#2D6A4F"></span>
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#102C26"></span>
       {data.label}
     </div>
     <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
       {data.heading[0]}<br/>
-      <span style="color:#2D6A4F">{data.heading[1]}</span>
+      <span style="color:#102C26">{data.heading[1]}</span>
     </h2>
     <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
 

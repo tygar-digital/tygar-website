@@ -2,51 +2,54 @@
 const { brand, nav } = Astro.props;
 ---
 
-<nav id="main-nav" class="fixed top-0 left-0 right-0 z-[200] h-[72px] border-b border-brand-border"
-  style="background: rgba(253,250,246,0.92); backdrop-filter: blur(16px);">
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-[200] h-[72px]"
+  style="background: rgba(16,44,38,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(247,231,206,0.1);">
   <div class="max-w-[1160px] mx-auto px-8 h-full flex justify-between items-center">
 
-    <a href="#" class="flex items-center gap-2.5 no-underline text-brand-heading">
-      <img src={brand.logo_svg} alt={brand.name + ' Logo'} class="h-8 w-auto" />
-      <span class="font-heading font-black text-xl tracking-tight text-brand-heading">{brand.name}</span>
+    <a href="#" class="flex items-center gap-2.5 no-underline">
+      <img src={brand.logo_svg} alt={brand.name + ' Logo'} class="h-8 w-auto" style="filter: brightness(0) saturate(100%) invert(95%) sepia(10%) saturate(300%) hue-rotate(350deg) brightness(105%)" />
+      <span class="font-heading font-black text-xl tracking-tight" style="color:#F7E7CE">{brand.name}</span>
     </a>
 
     <ul class="hidden lg:flex gap-8 items-center list-none">
       {nav.links.map((link: any) => (
         <li>
           <a href={link.href}
-            class="text-[15px] text-brand-text font-body font-medium transition-colors hover:text-brand-emerald nav-link">
+            class="text-[15px] font-body font-medium transition-colors nav-link"
+            style="color:rgba(247,231,206,0.7)"
+            onmouseover="this.style.color='#F7E7CE'" onmouseout="this.style.color='rgba(247,231,206,0.7)'">
             {link.label}
           </a>
         </li>
       ))}
       <li>
         <a href={nav.cta.href}
-          class="font-heading font-bold text-sm px-5 py-2.5 rounded-lg text-white transition-all hover:-translate-y-0.5 hover:opacity-90"
-          style="background:#2D6A4F">
+          class="font-heading font-bold text-sm px-5 py-2.5 rounded-lg transition-all hover:-translate-y-0.5 hover:opacity-90"
+          style="background:#F7E7CE;color:#102C26">
           {nav.cta.label}
         </a>
       </li>
     </ul>
 
     <button id="hamburger" aria-label="Menü öffnen"
-      class="lg:hidden flex flex-col justify-center items-center w-11 h-11 gap-[5px] p-2 rounded-md transition-colors hover:bg-black/5">
-      <span class="block w-[22px] h-[2px] bg-brand-heading rounded transition-all origin-center"></span>
-      <span class="block w-[22px] h-[2px] bg-brand-heading rounded transition-all origin-center"></span>
-      <span class="block w-[22px] h-[2px] bg-brand-heading rounded transition-all origin-center"></span>
+      class="lg:hidden flex flex-col justify-center items-center w-11 h-11 gap-[5px] p-2 rounded-md transition-colors hover:bg-white/10">
+      <span class="block w-[22px] h-[2px] rounded transition-all origin-center" style="background:#F7E7CE"></span>
+      <span class="block w-[22px] h-[2px] rounded transition-all origin-center" style="background:#F7E7CE"></span>
+      <span class="block w-[22px] h-[2px] rounded transition-all origin-center" style="background:#F7E7CE"></span>
     </button>
   </div>
 </nav>
 
 <!-- Mobile overlay -->
 <div id="mobile-overlay"
-  class="hidden fixed inset-0 bg-brand-bg z-[150] flex-col px-8 overflow-y-auto"
-  style="padding-top: calc(72px + 32px); padding-bottom: 48px;">
+  class="hidden fixed inset-0 z-[150] flex-col px-8 overflow-y-auto"
+  style="background:#102C26; padding-top: calc(72px + 32px); padding-bottom: 48px;">
   <ul class="list-none flex flex-col gap-1 flex-1">
     {nav.links.map((link: any) => (
       <li>
         <a href={link.href}
-          class="flex items-center py-4 font-heading font-bold text-2xl text-brand-text border-b border-brand-border transition-colors hover:text-brand-heading nav-link">
+          class="flex items-center py-4 font-heading font-bold text-2xl transition-colors nav-link"
+          style="color:rgba(247,231,206,0.7);border-bottom:1px solid rgba(247,231,206,0.1)">
           {link.label}
         </a>
       </li>
@@ -54,8 +57,8 @@ const { brand, nav } = Astro.props;
   </ul>
   <div class="mt-8">
     <a href={nav.cta.href}
-      class="block w-full text-center font-heading font-bold text-base px-6 py-4 rounded-lg text-white"
-      style="background:#2D6A4F">
+      class="block w-full text-center font-heading font-bold text-base px-6 py-4 rounded-lg"
+      style="background:#F7E7CE;color:#102C26">
       {nav.cta.label}
     </a>
   </div>
@@ -87,7 +90,9 @@ const { brand, nav } = Astro.props;
       if (window.scrollY >= (s as HTMLElement).offsetTop - 130) current = s.id;
     });
     navLinks.forEach(l => {
-      l.classList.toggle('text-brand-heading', l.getAttribute('href') === '#' + current);
+      const isActive = l.getAttribute('href') === '#' + current;
+      if (isActive) (l as HTMLElement).style.color = '#F7E7CE';
+      else (l as HTMLElement).style.color = 'rgba(247,231,206,0.7)';
     });
   }
   window.addEventListener('scroll', updateActive, { passive: true });

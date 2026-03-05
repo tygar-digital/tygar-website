@@ -5,7 +5,7 @@ const { data } = Astro.props;
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
     <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#2D6A4F"></span>
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#102C26"></span>
       {data.label}
     </div>
 
@@ -14,14 +14,14 @@ const { data } = Astro.props;
         <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-6"
           style="font-size:clamp(2rem,4.5vw,3.25rem)">
           {data.headline[0]}<br/>
-          <span style="color:#2D6A4F">{data.headline[1]}</span>
+          <span style="color:#102C26">{data.headline[1]}</span>
         </h2>
         <p class="text-brand-text leading-[1.75] mb-5">{data.bio}</p>
         <p class="text-brand-text leading-[1.75] mb-8">{data.bio2}</p>
         <div class="flex flex-wrap gap-2">
           {data.tags.map((tag: string) => (
             <span class="text-xs font-heading font-semibold px-3 py-1.5 rounded-full border"
-              style="background:rgba(45,106,79,0.08);border-color:rgba(45,106,79,0.20);color:#2D6A4F">
+              style="background:rgba(16,44,38,0.08);border-color:rgba(16,44,38,0.20);color:#102C26">
               {tag}
             </span>
           ))}
@@ -43,8 +43,8 @@ const { data } = Astro.props;
         <div class="rounded-card overflow-hidden aspect-[3/4] flex items-center justify-center border border-brand-border bg-white shadow-card">
           <div class="text-center p-8">
             <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
-              style="background:rgba(45,106,79,0.08);border:1px solid rgba(45,106,79,0.20)">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="1.5">
+              style="background:rgba(16,44,38,0.08);border:1px solid rgba(16,44,38,0.20)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#102C26" stroke-width="1.5">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                 <circle cx="12" cy="7" r="4"/>
               </svg>

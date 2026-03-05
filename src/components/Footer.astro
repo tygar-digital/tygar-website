@@ -1,33 +1,33 @@
 ---
 const { brand, footer } = Astro.props;
 ---
-<footer style="background:#1A1A2E">
+<footer style="background:#102C26">
   <div class="max-w-[1160px] mx-auto px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
 
-    <a href="#" class="flex items-center gap-2 no-underline text-white">
+    <a href="#" class="flex items-center gap-2 no-underline">
       <img src={brand.logo_svg} alt={brand.name + ' Logo'} class="h-7 w-auto" />
     </a>
 
-    <span class="text-xs font-body" style="color:rgba(255,255,255,0.6)">{footer.copyright}</span>
+    <span class="text-xs font-body" style="color:rgba(247,231,206,0.5)">{footer.copyright}</span>
 
     <div class="flex gap-6 items-center">
       {footer.legal_links.map((l: any) => (
-        <a href={l.href} class="text-xs font-body transition-colors hover:text-[#52B788]"
-          style="color:rgba(255,255,255,0.6)">
+        <a href={l.href} class="text-xs font-body transition-colors hover:opacity-100"
+          style="color:rgba(247,231,206,0.5)">
           {l.label}
         </a>
       ))}
       {brand.social?.linkedin && brand.social.linkedin !== '#' && (
         <a href={brand.social.linkedin} target="_blank" rel="noopener noreferrer"
-          class="text-xs font-body transition-colors hover:text-[#52B788]"
-          style="color:rgba(255,255,255,0.6)">
+          class="text-xs font-body transition-colors hover:opacity-100"
+          style="color:rgba(247,231,206,0.5)">
           LinkedIn
         </a>
       )}
       {brand.social?.instagram && brand.social.instagram !== '#' && (
         <a href={brand.social.instagram} target="_blank" rel="noopener noreferrer"
-          class="text-xs font-body transition-colors hover:text-[#52B788]"
-          style="color:rgba(255,255,255,0.6)">
+          class="text-xs font-body transition-colors hover:opacity-100"
+          style="color:rgba(247,231,206,0.5)">
           Instagram
         </a>
       )}

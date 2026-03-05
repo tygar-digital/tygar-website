@@ -5,18 +5,17 @@ export default {
     extend: {
       colors: {
         brand: {
-          bg:        '#FDFAF6',
-          surface:   '#F2EDE6',
+          bg:        '#FAF6EF',
+          surface:   '#F0EAE0',
           glass:     '#FFFFFF',
-          border:    '#E8E2DA',
-          heading:   '#1A1A2E',
-          text:      '#4A4A6A',
-          muted:     '#8A8AAA',
-          secondary: '#4A4A6A',
-          emerald:   '#2D6A4F',
-          cyan:      '#2D6A4F',
-          violet:    '#2D6A4F',
-          warm:      '#E76F51',
+          border:    '#DDD5C8',
+          heading:   '#102C26',
+          text:      '#2A4A3E',
+          muted:     '#6B8C7E',
+          secondary: '#2A4A3E',
+          emerald:   '#102C26',
+          cyan:      '#102C26',
+          violet:    '#102C26',
         },
       },
       fontFamily: {
@@ -33,9 +32,9 @@ export default {
       boxShadow: {
         'card':         '0 2px 12px rgba(0,0,0,0.06)',
         'card-hover':   '0 8px 30px rgba(0,0,0,0.10)',
-        'glow-emerald': '0 4px 20px rgba(45,106,79,0.15)',
-        'glow-cyan':    '0 4px 20px rgba(45,106,79,0.15)',
-        'glow-violet':  '0 4px 20px rgba(45,106,79,0.15)',
+        'glow-emerald': '0 4px 20px rgba(16,44,38,0.12)',
+        'glow-cyan':    '0 4px 20px rgba(16,44,38,0.12)',
+        'glow-violet':  '0 4px 20px rgba(16,44,38,0.12)',
       },
       animation: {
         'marquee':  'marqueeScroll 32s linear infinite',
