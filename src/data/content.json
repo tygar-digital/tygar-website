@@ -51,7 +51,7 @@
     }
   },
   "hero": {
-    "badge": "Für lokale Unternehmen",
+    "badge": "Deutschland wird digital",
     "headline": [
       "Du kümmerst dich um",
       "deine Kunden.",
@@ -59,7 +59,7 @@
       "Online-Auftritt."
     ],
     "subtext": "Deine Website verdient mehr als \u201Egeht schon\u201C. Wir \u00fcbernehmen Technik, Design und Erstellung \u2014 du lehnst dich zur\u00fcck.",
-    "stat": { "number": "80 %", "label": "deiner neuen Kunden suchen online nach dir." },
+    "highlight": "Denn deine Kunden suchen online nach dir.",
     "cta_primary": {
       "label": "Kostenloses Erstgespräch →",
       "href": "#termin"

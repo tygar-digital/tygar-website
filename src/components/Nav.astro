@@ -1,5 +1,9 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 const { brand, nav } = Astro.props;
+const logoPath = path.join(process.cwd(), 'public', brand.logo_svg);
+const logoSvg = fs.readFileSync(logoPath, 'utf-8');
 ---
 
 <nav id="main-nav" class="fixed top-0 left-0 right-0 z-[200] h-[72px]"
@@ -7,7 +11,7 @@ const { brand, nav } = Astro.props;
   <div class="max-w-[1160px] mx-auto px-8 h-full flex justify-between items-center">
 
     <a href="#" class="flex items-center gap-2.5 no-underline">
-      <img src={brand.logo_svg} alt={brand.name + ' Logo'} class="h-8 w-auto" style="filter: brightness(0) saturate(100%) invert(95%) sepia(10%) saturate(300%) hue-rotate(350deg) brightness(105%)" />
+      <span class="nav-logo-svg" set:html={logoSvg} aria-label={brand.name + ' Logo'}></span>
       <span class="font-heading font-black text-xl tracking-tight" style="color:#F7E7CE">{brand.name}</span>
     </a>
 
@@ -98,3 +102,16 @@ const { brand, nav } = Astro.props;
   window.addEventListener('scroll', updateActive, { passive: true });
   updateActive();
 </script>
+
+<style>
+  .nav-logo-svg {
+    display: inline-flex;
+    color: #F7E7CE;
+    height: 32px;
+    width: auto;
+  }
+  .nav-logo-svg :global(svg) {
+    height: 32px;
+    width: auto;
+  }
+</style>
