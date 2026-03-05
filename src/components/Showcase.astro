@@ -49,7 +49,7 @@ const tagColor: Record<string,string> = { emerald: '#102C26', cyan: '#102C26', v
                 <p class="text-xs text-brand-muted">Vorschau demnächst verfügbar</p>
               </div>
             </div>
-            <iframe src={item.preview_url} loading="lazy" tabindex="-1" title={item.title}
+            <iframe src={new URL(item.preview_url).pathname + '/index.html'} loading="lazy" tabindex="-1" title={item.title}
               class="w-full border-0 pointer-events-none relative z-10"
               style="height:400px;transform:scale(0.5);transform-origin:top left;width:200%">
             </iframe>
