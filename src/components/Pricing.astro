@@ -23,8 +23,9 @@ const { data } = Astro.props;
           </div>
           {idx === 0 ? (
             /* Hauptkarte: dunkelgrün */
-            <div class="pricing-card pricing-card-dark grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] rounded-card overflow-hidden relative">
+            <div class="relative">
               <span class="pricing-intro-badge">Einführungspreis</span>
+            <div class="pricing-card pricing-card-dark grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] rounded-card overflow-hidden">
 
               {/* Einmalig */}
               <div class="p-8 md:p-10 pt-12 md:pt-14">
@@ -77,6 +78,7 @@ const { data } = Astro.props;
                   </>
                 )}
               </div>
+            </div>
             </div>
           ) : (
             /* Sekundärkarten: weiß */
