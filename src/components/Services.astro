@@ -12,11 +12,11 @@ const { data } = Astro.props;
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
       {data.heading[0]} <span style="color:#102C26">{data.heading[1]}</span>
     </h2>
-    <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
+    {data.subtext && <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>}
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {data.items.map((item: any) => (
-        <div class={`rounded-card border border-brand-border p-8 flex flex-col gap-4 transition-all duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] ${item.coming_soon ? 'opacity-50 pointer-events-none' : 'hover:-translate-y-1.5 hover:shadow-card-hover'} group relative bg-white shadow-card`}>
+        <div class={`rounded-card border border-brand-border p-8 flex flex-col gap-4 transition-all duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] ${item.coming_soon ? 'opacity-35 pointer-events-none grayscale-[30%]' : 'hover:-translate-y-1.5 hover:shadow-card-hover'} group relative bg-white shadow-card`}>
           {item.coming_soon && (
             <span class="absolute top-4 right-4 text-[0.65rem] font-heading font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full border border-brand-border text-brand-muted bg-brand-surface">
               Coming Soon
@@ -38,18 +38,6 @@ const { data } = Astro.props;
                 </li>
               ))}
             </ul>
-          )}
-          {item.tags && (
-            <div class="flex flex-wrap gap-1.5 mt-2">
-              {item.tags.map((tag: string) => (
-                <span class="text-[0.68rem] font-heading font-semibold px-2.5 py-1 rounded-full border"
-                  style={`background:${item.coming_soon ? 'rgba(138,138,170,0.06)' : 'rgba(16,44,38,0.08)'};
-                          border-color:${item.coming_soon ? 'rgba(138,138,170,0.15)' : 'rgba(16,44,38,0.20)'};
-                          color:${item.coming_soon ? '#6B8C7E' : '#102C26'}`}>
-                  {tag}
-                </span>
-              ))}
-            </div>
           )}
         </div>
       ))}

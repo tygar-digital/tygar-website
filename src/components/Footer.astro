@@ -1,11 +1,16 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 const { brand, footer } = Astro.props;
+const logoPath = path.join(process.cwd(), 'public', brand.logo_svg);
+const logoSvg = fs.readFileSync(logoPath, 'utf-8');
 ---
 <footer style="background:#102C26">
   <div class="max-w-[1160px] mx-auto px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
 
-    <a href="#" class="flex items-center gap-2 no-underline">
-      <img src={brand.logo_svg} alt={brand.name + ' Logo'} class="h-7 w-auto" />
+    <a href="#" class="flex items-center gap-2.5 no-underline">
+      <span class="footer-logo-svg" set:html={logoSvg} aria-label={brand.name + ' Logo'}></span>
+      <span class="font-heading font-black text-lg tracking-tight" style="color:#F7E7CE">{brand.name}</span>
     </a>
 
     <span class="text-xs font-body" style="color:rgba(247,231,206,0.5)">{footer.copyright}</span>
@@ -34,3 +39,14 @@ const { brand, footer } = Astro.props;
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-logo-svg {
+    display: flex;
+    align-items: center;
+  }
+  .footer-logo-svg :global(svg) {
+    height: 28px;
+    width: auto;
+  }
+</style>

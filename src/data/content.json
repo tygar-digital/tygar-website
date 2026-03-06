@@ -198,25 +198,19 @@
   "services": {
     "label": "Leistungen",
     "heading": ["Das bekommst", "du von uns"],
-    "subtext": "Kein Tech-Talk, keine Buzzwords. Sondern konkrete Ergebnisse, die dein Business weiterbringen.",
+    "subtext": "",
     "items": [
       {
         "number": "01",
         "accent": "emerald",
         "icon": "monitor",
         "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>",
-        "title": "Der professionelle Auftritt",
+        "title": "Professionelle Website",
         "text": "Deine digitale Visitenkarte — ein moderner Online-Auftritt, der Vertrauen schafft und neue Kunden bringt. Rund um die Uhr, auf jedem Gerät.",
         "features": [
           "Präsentiert dein Geschäft rund um die Uhr",
-          "Nimmt Anfragen automatisch entgegen",
+          "Stärkt die Glaubwürdigkeit deiner Marke",
           "Wird bei Google gefunden"
-        ],
-        "tags": [
-          "Webdesign",
-          "Responsive",
-          "SEO",
-          "Kontaktformular"
         ]
       },
       {
@@ -224,17 +218,12 @@
         "accent": "cyan",
         "icon": "zap",
         "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
-        "title": "Zeit sparen",
+        "title": "Tools für deine Kunden",
         "text": "Weniger Telefon, mehr Kunden. Mit einem Buchungssystem können deine Kunden selbstständig Termine buchen — du sparst Zeit für das, was zählt.",
         "features": [
           "Kunden buchen selbstständig Termine",
           "Weniger Telefonklingeln & Rückrufe",
           "Automatische Terminerinnerungen"
-        ],
-        "tags": [
-          "Terminbuchung",
-          "Automatisierung",
-          "Kalender-Sync"
         ]
       },
       {
@@ -249,11 +238,6 @@
           "Beantwortet häufige Kundenfragen automatisch",
           "Hilft bei Texten & Inhalten",
           "Entlastet dich im Tagesgeschäft"
-        ],
-        "tags": [
-          "KI-Chatbot",
-          "Content",
-          "Automatisierung"
         ]
       }
     ]
@@ -354,35 +338,10 @@
       "Lass uns reden —",
       "unverbindlich & kostenlos."
     ],
-    "subtext": "In 30 Minuten besprechen wir dein Projekt und du weißt danach genau, was der nächste Schritt ist. Kein Verkaufsdruck, versprochen.",
+    "subtext": "In 30 Minuten besprechen wir dein Projekt und du weißt danach genau, was der nächste Schritt ist.",
     "cal_link": "tygar/erstgesprach",
     "_cal_hint": "↑ Nur Username/Event eintragen, z.B. jan/erstgespraech – kein https://",
-    "features": [
-      {
-        "icon": "clock",
-        "icon_svg": "<svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>",
-        "text": "30 Minuten – fokussiert & effizient",
-        "accent": "cyan"
-      },
-      {
-        "icon": "zap",
-        "icon_svg": "<svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
-        "text": "Konkrete nächste Schritte für dein Projekt",
-        "accent": "emerald"
-      },
-      {
-        "icon": "check",
-        "icon_svg": "<svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>",
-        "text": "Keine Verpflichtung, kein Verkaufsdruck",
-        "accent": "violet"
-      },
-      {
-        "icon": "monitor",
-        "icon_svg": "<svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>",
-        "text": "Bequem per Video-Call",
-        "accent": "cyan"
-      }
-    ]
+    "features": []
   },
   "about": {
     "label": "Über Tygar",
