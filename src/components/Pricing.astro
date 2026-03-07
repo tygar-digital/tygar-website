@@ -35,6 +35,9 @@ const { data } = Astro.props;
                 {sec.onetime.base && (
                   <>
                     <div class="pricing-price-wrap mb-1">
+                      {sec.onetime.base.original_price && (
+                        <span class="pricing-price-old">{sec.onetime.base.original_price}</span>
+                      )}
                       <span class="pricing-price-light">{sec.onetime.base.price}</span>
                       <span class="text-base font-normal ml-2" style="color:rgba(247,231,206,0.75)">einmalig</span>
                     </div>
@@ -131,7 +134,7 @@ const { data } = Astro.props;
   .pricing-intro-badge {
     position: absolute;
     top: -10px;
-    right: 20px;
+    left: 20px;
     padding: 8px 18px;
     background: #E8443A;
     color: #fff;
@@ -149,6 +152,17 @@ const { data } = Astro.props;
   .pricing-card-dark {
     background: #102C26;
     box-shadow: 0 8px 40px rgba(16, 44, 38, 0.35);
+  }
+
+  .pricing-price-old {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    line-height: 1;
+    color: rgba(247, 231, 206, 0.45);
+    letter-spacing: -0.02em;
+    text-decoration: line-through;
+    margin-right: 12px;
   }
 
   .pricing-price-light {
