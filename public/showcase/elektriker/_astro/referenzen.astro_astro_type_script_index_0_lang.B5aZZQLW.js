@@ -1,0 +1,1 @@
+const r=document.querySelectorAll(".scroll-reveal");if(r.length>0){const t=new IntersectionObserver(e=>{e.forEach(s=>{s.isIntersecting&&s.target.classList.add("is-visible")})},{threshold:.1});r.forEach(e=>t.observe(e))}

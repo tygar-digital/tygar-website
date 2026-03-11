@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sosta-koeln.de/sitemap-index.xml

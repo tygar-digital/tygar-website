@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elektro-schuster.de/sitemap-index.xml

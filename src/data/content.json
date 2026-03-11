@@ -376,28 +376,28 @@
       {
         "accent": "emerald",
         "type": "website",
-        "tag": "Friseursalon",
-        "title": "Hairlounge Beispiel",
-        "text": "Moderner Auftritt für einen Salon — mit Leistungsübersicht, Preisliste und direkter Online-Terminbuchung.",
-        "preview_url": "https://tygar-website.vercel.app/showcase/friseur",
+        "tag": "Café",
+        "title": "Café Beispiel",
+        "text": "Eleganter Auftritt für ein Café — mit animierter Speisekarte, Bildergalerie und stilvollem Design.",
+        "preview_url": "https://tygar-digital.de/showcase/cafe",
         "cta": "Live ansehen →"
       },
       {
         "accent": "cyan",
         "type": "website",
-        "tag": "Café",
-        "title": "Café Beispiel",
-        "text": "Einladender Auftritt für ein Café — mit Speisekarte, Öffnungszeiten und Tisch-Reservierung.",
-        "preview_url": "https://tygar-website.vercel.app/showcase/cafe",
+        "tag": "Elektriker",
+        "title": "Elektro-Fachbetrieb Beispiel",
+        "text": "Professioneller Auftritt für einen Handwerksbetrieb — mit Leistungsübersicht, Referenzen und Notdienst-Kontakt.",
+        "preview_url": "https://tygar-digital.de/showcase/elektriker",
         "cta": "Live ansehen →"
       },
       {
         "accent": "violet",
         "type": "website",
-        "tag": "Physiopraxis",
-        "title": "Physiopraxis Beispiel",
-        "text": "Vertrauenswürdiger Auftritt für eine Praxis — mit Behandlungsangeboten, Team-Vorstellung und Online-Terminbuchung.",
-        "preview_url": "https://tygar-website.vercel.app/showcase/physio",
+        "tag": "Friseursalon",
+        "title": "Friseursalon Beispiel",
+        "text": "Moderner Auftritt für einen Salon — mit Preisliste, Team-Vorstellung, Galerie und Online-Terminbuchung.",
+        "preview_url": "https://tygar-digital.de/showcase/friseur",
         "cta": "Live ansehen →"
       }
     ]

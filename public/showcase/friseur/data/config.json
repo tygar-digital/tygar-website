@@ -11,12 +11,12 @@
   "theme": {
     "mode": "light",
     "colors": {
-      "primary": "#c8956c",
-      "secondary": "#2c1810",
-      "accent": "#f5ede5",
-      "background": "#faf8f5",
-      "text": "#2d2420",
-      "text_muted": "#6b6560"
+      "primary": "#e07850",
+      "secondary": "#3d2b22",
+      "accent": "#fde8e0",
+      "background": "#fffaf7",
+      "text": "#3d2b22",
+      "text_muted": "#7d6860"
     },
     "fonts": {
       "display": "Playfair Display",

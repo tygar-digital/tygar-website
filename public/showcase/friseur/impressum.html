@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <header class="site-header scrolled">
+    <nav class="nav-inner container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.svg" alt="Logo" width="36" height="36">
+        <span class="logo-name" id="logo-name"></span>
+      </a>
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-primary btn-sm">Zur Website</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section legal-page">
+      <div class="container container-narrow">
+        <h1>Impressum</h1>
+        <div id="impressum-content">
+          <p>Impressum wird geladen...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="padding-top: 0;">
+        <span class="footer-copyright" id="footer-copyright"></span>
+        <ul class="footer-legal-links">
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    'use strict';
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const [config, legal] = await Promise.all([
+          fetch('data/config.json').then(r => r.json()),
+          fetch('data/legal.json').then(r => r.json())
+        ]);
+
+        // Logo-Name
+        const logoName = document.getElementById('logo-name');
+        if (logoName) logoName.textContent = config.business_name || '';
+
+        // Page title
+        document.title = `Impressum | ${config.business_name || 'Salon'}`;
+
+        // Copyright
+        const year = new Date().getFullYear();
+        const copyright = document.getElementById('footer-copyright');
+        if (copyright) copyright.textContent = `\u00A9 ${year} ${config.business_name || ''}. Alle Rechte vorbehalten.`;
+
+        // Impressum content
+        const imp = legal.impressum || {};
+        const content = document.getElementById('impressum-content');
+        if (content) {
+          content.innerHTML = `
+            <h2>Angaben gem\u00e4\u00df \u00a7 5 TMG</h2>
+            <p>
+              ${imp.firma || ''}<br>
+              ${imp.inhaber || ''}<br>
+              ${imp.adresse || ''}
+            </p>
+
+            ${imp.rechtsform ? `<p><strong>Rechtsform:</strong> ${imp.rechtsform}</p>` : ''}
+
+            <h2>Kontakt</h2>
+            <p>
+              ${imp.telefon ? `Telefon: <a href="tel:${imp.telefon.replace(/\\s/g, '')}">${imp.telefon}</a><br>` : ''}
+              ${imp.email ? `E-Mail: <a href="mailto:${imp.email}">${imp.email}</a>` : ''}
+            </p>
+
+            ${imp.ust_id ? `
+            <h2>Umsatzsteuer-ID</h2>
+            <p>Umsatzsteuer-Identifikationsnummer gem\u00e4\u00df \u00a7 27a Umsatzsteuergesetz: ${imp.ust_id}</p>
+            ` : ''}
+
+            ${imp.handwerkskammer ? `
+            <h2>Aufsichtsbeh\u00f6rde / Kammerzugeh\u00f6rigkeit</h2>
+            <p>${imp.handwerkskammer}</p>
+            ` : ''}
+
+            ${imp.berufsbezeichnung ? `
+            <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
+            <p>
+              Berufsbezeichnung: ${imp.berufsbezeichnung}<br>
+              ${imp.berufsrecht ? `Berufsrechtliche Regelung: ${imp.berufsrecht}` : ''}
+            </p>
+            ` : ''}
+
+            <h2>Streitschlichtung</h2>
+            <p>Die Europ\u00e4ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>.</p>
+            <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+          `;
+        }
+      } catch (err) {
+        console.error('Fehler beim Laden der Impressum-Daten:', err);
+      }
+    });
+  </script>
+</body>
+</html>

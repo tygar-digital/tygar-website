@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutz</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <header class="site-header scrolled">
+    <nav class="nav-inner container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.svg" alt="Logo" width="36" height="36">
+        <span class="logo-name" id="logo-name"></span>
+      </a>
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-primary btn-sm">Zur Website</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section legal-page">
+      <div class="container container-narrow">
+        <h1>Datenschutzerkl&auml;rung</h1>
+        <div id="datenschutz-content">
+          <div class="legal-notice">
+            <p><strong>Hinweis:</strong> Diese Datenschutzerkl&auml;rung ist ein Platzhalter.
+            Bitte erstellen Sie eine rechtskonforme Datenschutzerkl&auml;rung &uuml;ber einen
+            spezialisierten Anbieter wie <a href="https://www.e-recht24.de/muster-datenschutzerklaerung.html" target="_blank" rel="noopener noreferrer">eRecht24</a>
+            oder die <a href="https://www.it-recht-kanzlei.de" target="_blank" rel="noopener noreferrer">IT-Recht Kanzlei</a>.</p>
+          </div>
+
+          <h2>1. Datenschutz auf einen Blick</h2>
+          <h3>Allgemeine Hinweise</h3>
+          <p>Die folgenden Hinweise geben einen einfachen &Uuml;berblick dar&uuml;ber, was mit Ihren personenbezogenen Daten passiert,
+          wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen.</p>
+
+          <h2>2. Verantwortliche Stelle</h2>
+          <p id="verantwortliche-stelle">Wird geladen...</p>
+
+          <h2>3. Hosting</h2>
+          <p id="hosting-info">Diese Website wird bei einem externen Dienstleister gehostet (Hoster).
+          Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert.</p>
+
+          <h2>4. Allgemeine Hinweise und Pflichtinformationen</h2>
+          <h3>Datenschutz</h3>
+          <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer pers&ouml;nlichen Daten sehr ernst.
+          Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen
+          Datenschutzvorschriften sowie dieser Datenschutzerkl&auml;rung.</p>
+
+          <h3>Hinweis zur verantwortlichen Stelle</h3>
+          <p>Die verantwortliche Stelle f&uuml;r die Datenverarbeitung auf dieser Website ist im Impressum angegeben.</p>
+
+          <h2>5. Datenerfassung auf dieser Website</h2>
+          <h3>Server-Log-Dateien</h3>
+          <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien,
+          die Ihr Browser automatisch an uns &uuml;bermittelt. Dies sind:</p>
+          <ul style="list-style: disc; padding-left: 24px; margin: 12px 0;">
+            <li>Browsertyp und Browserversion</li>
+            <li>Verwendetes Betriebssystem</li>
+            <li>Referrer URL</li>
+            <li>Hostname des zugreifenden Rechners</li>
+            <li>Uhrzeit der Serveranfrage</li>
+            <li>IP-Adresse</li>
+          </ul>
+
+          <h3>Kontaktformular / E-Mail-Kontakt</h3>
+          <p>Wenn Sie uns per Kontaktformular oder E-Mail Anfragen zukommen lassen, werden Ihre Angaben
+          zur Bearbeitung der Anfrage und f&uuml;r den Fall von Anschlussfragen bei uns gespeichert.</p>
+
+          <h2>6. Externe Dienste</h2>
+          <div id="externe-dienste">
+            <h3>Google Maps</h3>
+            <p>Diese Website nutzt Google Maps zur Darstellung des Standorts. Die Karte wird erst nach Ihrer
+            ausdr&uuml;cklichen Einwilligung (Klick auf &bdquo;Karte laden&ldquo;) geladen. Erst dann werden Daten an Google &uuml;bermittelt.</p>
+          </div>
+
+          <h2>7. Ihre Rechte</h2>
+          <p>Sie haben jederzeit das Recht auf unentgeltliche Auskunft &uuml;ber Ihre gespeicherten personenbezogenen Daten,
+          deren Herkunft und Empf&auml;nger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung oder L&ouml;schung dieser Daten.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="padding-top: 0;">
+        <span class="footer-copyright" id="footer-copyright"></span>
+        <ul class="footer-legal-links">
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    'use strict';
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const [config, legal] = await Promise.all([
+          fetch('data/config.json').then(r => r.json()),
+          fetch('data/legal.json').then(r => r.json())
+        ]);
+
+        // Logo-Name
+        const logoName = document.getElementById('logo-name');
+        if (logoName) logoName.textContent = config.business_name || '';
+
+        // Page title
+        document.title = `Datenschutz | ${config.business_name || 'Salon'}`;
+
+        // Copyright
+        const year = new Date().getFullYear();
+        const copyright = document.getElementById('footer-copyright');
+        if (copyright) copyright.textContent = `\u00A9 ${year} ${config.business_name || ''}. Alle Rechte vorbehalten.`;
+
+        // Verantwortliche Stelle
+        const imp = legal.impressum || {};
+        const stelle = document.getElementById('verantwortliche-stelle');
+        if (stelle) {
+          stelle.innerHTML = `
+            ${imp.firma || ''}<br>
+            ${imp.inhaber || ''}<br>
+            ${imp.adresse || ''}<br>
+            ${imp.email ? `E-Mail: <a href="mailto:${imp.email}">${imp.email}</a>` : ''}
+          `;
+        }
+
+        // Hosting Info
+        const hosting = document.getElementById('hosting-info');
+        const auftragsverarbeiter = legal.datenschutz?.auftragsverarbeiter || [];
+        if (hosting && auftragsverarbeiter.length) {
+          hosting.innerHTML += `<br><br><strong>Eingesetzte Dienste:</strong><br>` +
+            auftragsverarbeiter.map(a => `&bull; ${a}`).join('<br>');
+        }
+      } catch (err) {
+        console.error('Fehler beim Laden der Datenschutz-Daten:', err);
+      }
+    });
+  </script>
+</body>
+</html>

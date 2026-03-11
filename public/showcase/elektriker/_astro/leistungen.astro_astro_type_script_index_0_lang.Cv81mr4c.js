@@ -1,0 +1,1 @@
+import"./referenzen.astro_astro_type_script_index_0_lang.B5aZZQLW.js";document.querySelectorAll(".service-image").forEach(e=>{const r=()=>{e.style.display="none"};e.complete&&e.naturalWidth===0&&r(),e.addEventListener("error",r)});

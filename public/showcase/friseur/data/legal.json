@@ -16,17 +16,15 @@
   "datenschutz": {
     "_hinweis": "Datenschutzerklärung von eRecht24.de oder IT-Recht Kanzlei generieren — KEIN KI-Text!",
     "anbieter": "erecht24",
-    "text_url": "/datenschutz-text.html",
-    "auftragsverarbeiter": ["Netlify (Hosting)", "Google Maps (Karten)", "Treatwell (Buchungssystem)"]
+    "text_url": "/datenschutz.html",
+    "auftragsverarbeiter": ["Hosting-Provider", "Google Maps (Karten, 2-Klick-Lösung)", "Treatwell (Buchungssystem)"]
   },
   "cookie_consent": {
-    "_hinweis": "Cookiebot oder Usercentrics für TTDSG-konformen Cookie-Banner nutzen",
-    "anbieter": "cookiebot",
-    "id": "DEINE-COOKIEBOT-ID-HIER",
-    "kategorien": ["notwendig", "analyse", "marketing"]
+    "_hinweis": "Kein Cookie-Banner nötig: Fonts lokal, Maps per 2-Klick, kein Analytics. Nur einbauen wenn Drittanbieter-Cookies hinzukommen (z.B. Google Analytics, YouTube Embeds).",
+    "aktiv": false
   },
   "ssl": {
     "aktiv": true,
-    "anbieter": "Netlify (automatisch Let's Encrypt)"
+    "anbieter": "Hosting-Provider (automatisch Let's Encrypt)"
   }
 }

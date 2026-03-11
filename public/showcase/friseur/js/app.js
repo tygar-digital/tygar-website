@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════════════════════════
    FRISEUR TEMPLATE — app.js · Rendering Engine
-   volt Digitalagentur · Vanilla JS · Kein Build-Step
+   Vanilla JS · Kein Build-Step
 
    WICHTIG: Diese Datei nicht editieren!
    Alle Inhalte über data/*.json anpassen.
@@ -93,6 +93,7 @@ function iconFor(name) {
 function renderMeta() {
   const s = DATA.seo?.global || {};
   const cfg = DATA.config;
+  const siteUrl = cfg?.domain ? `https://${cfg.domain}` : '';
 
   document.title = s.site_title || `${cfg?.business_name || 'Salon'} | Friseur`;
   const desc = s.site_description || '';
@@ -100,16 +101,34 @@ function renderMeta() {
   document.getElementById('og-title')?.setAttribute('content', s.site_title || '');
   document.getElementById('og-description')?.setAttribute('content', desc);
   document.getElementById('og-image')?.setAttribute('content', s.og_image || '');
+  document.getElementById('og-url')?.setAttribute('content', siteUrl);
+  document.getElementById('canonical-url')?.setAttribute('href', siteUrl);
 
-  // JSON-LD LocalBusiness
-  const k = DATA.config?.kontakt || {};
+  // JSON-LD HairSalon (erweitertes Schema)
+  const k = cfg?.kontakt || {};
   const seoSchema = DATA.seo?.schema || {};
+  const hours = DATA.hours?.regulaer || {};
+  const rating = DATA.reviews?.google_rating || {};
+
+  // Öffnungszeiten für Schema.org formatieren
+  const dayMap = { montag: 'Mo', dienstag: 'Tu', mittwoch: 'We', donnerstag: 'Th', freitag: 'Fr', samstag: 'Sa', sonntag: 'Su' };
+  const openingHours = [];
+  Object.entries(dayMap).forEach(([de, en]) => {
+    const time = hours[de];
+    if (time && time !== 'geschlossen') {
+      const [open, close] = time.replace(/\s/g, '').split('–');
+      if (open && close) openingHours.push(`${en} ${open}-${close}`);
+    }
+  });
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'HairSalon',
-    name: DATA.config?.business_name,
+    name: cfg?.business_name,
     telephone: k.telefon,
     email: k.email,
+    url: siteUrl || undefined,
+    image: DATA.content?.hero?.background_image || undefined,
     address: {
       '@type': 'PostalAddress',
       streetAddress: k.adresse?.strasse,
@@ -117,9 +136,27 @@ function renderMeta() {
       addressLocality: k.adresse?.stadt,
       addressCountry: k.adresse?.land || 'DE'
     },
+    geo: k.geo ? {
+      '@type': 'GeoCoordinates',
+      latitude: k.geo.lat,
+      longitude: k.geo.lng
+    } : undefined,
+    openingHours: openingHours.length ? openingHours : undefined,
     priceRange: seoSchema.priceRange || '€€',
-    url: DATA.config?.domain ? `https://${DATA.config.domain}` : undefined
+    paymentAccepted: seoSchema.paymentAccepted?.join(', ') || undefined,
+    currenciesAccepted: seoSchema.currenciesAccepted || undefined
   };
+
+  // Aggregate Rating hinzufügen wenn vorhanden
+  if (rating.durchschnitt && rating.anzahl) {
+    schema.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: rating.durchschnitt,
+      reviewCount: rating.anzahl,
+      bestRating: 5
+    };
+  }
+
   const script = document.createElement('script');
   script.type = 'application/ld+json';
   script.textContent = JSON.stringify(schema);
@@ -187,13 +224,14 @@ function renderHero() {
     bg.style.backgroundImage = `url('${hero.background_image}')`;
   }
 
-  // Overlay opacity
+  // Overlay opacity – warm peach light overlay
   const overlay = $('hero-overlay');
   if (overlay && hero.overlay_opacity !== undefined) {
+    const op = hero.overlay_opacity;
     overlay.style.background = `linear-gradient(135deg,
-      rgba(28,16,8,${Math.min(hero.overlay_opacity + 0.2, 0.9)}) 0%,
-      rgba(28,16,8,${hero.overlay_opacity}) 60%,
-      rgba(28,16,8,${Math.max(hero.overlay_opacity - 0.15, 0.15)}) 100%)`;
+      rgba(255,245,238,${Math.min(op + 0.4, 0.92)}) 0%,
+      rgba(255,245,238,${Math.min(op + 0.25, 0.8)}) 50%,
+      rgba(255,240,230,${Math.min(op + 0.1, 0.65)}) 100%)`;
   }
 
   // Badge
@@ -271,7 +309,7 @@ function renderServiceGrid(cats, tabIndex) {
       <div class="service-meta">
         ${item.dauer_min ? `<span class="service-meta-item">${ICONS.clock.replace('viewBox', 'width="13" height="13" viewBox')} ${item.dauer_min} Min.</span>` : ''}
       </div>
-      ${item.buchbar ? `<a href="${DATA.booking?.embed_url || '#termin'}" class="btn btn-primary service-book-btn" target="_blank" rel="noopener">Buchen</a>` : ''}
+      ${item.buchbar ? `<a href="${DATA.booking?.embed_url || '#termin'}" class="btn btn-primary service-book-btn" target="_blank" rel="noopener noreferrer">Buchen</a>` : ''}
     </article>
   `).join(''));
 
@@ -309,7 +347,7 @@ function renderTeam() {
               ${m.spezialgebiete.map(tag => `<span class="team-tag">${tag}</span>`).join('')}
             </div>` : ''}
           ${m.instagram ? `
-            <a href="https://instagram.com/${m.instagram.replace('@','')}" class="team-instagram" target="_blank" rel="noopener">
+            <a href="https://instagram.com/${m.instagram.replace('@','')}" class="team-instagram" target="_blank" rel="noopener noreferrer">
               ${ICONS.instagram.replace('viewBox', 'width="14" height="14" viewBox')}
               ${m.instagram}
             </a>` : ''}
@@ -377,12 +415,10 @@ function renderReviews() {
   if (rating.durchschnitt) {
     html('google-rating', `
       <div class="google-logo">Google</div>
-      <div>
-        <div class="google-score">${rating.durchschnitt}</div>
-        <div class="google-stars">${stars(Math.round(rating.durchschnitt), 20)}</div>
-        <div class="google-count">${rating.anzahl || ''} Bewertungen</div>
-      </div>
-      ${rating.link ? `<a href="${rating.link}" class="google-link" target="_blank" rel="noopener">Alle lesen →</a>` : ''}
+      <div class="google-score">${rating.durchschnitt}</div>
+      <div class="google-stars">${stars(Math.round(rating.durchschnitt), 18)}</div>
+      <div class="google-count">${rating.anzahl || ''} Bewertungen</div>
+      ${rating.link ? `<a href="${rating.link}" class="google-link" target="_blank" rel="noopener noreferrer">Alle lesen →</a>` : ''}
     `);
   }
 
@@ -419,12 +455,6 @@ function renderReviews() {
 function renderAbout() {
   const about = DATA.content?.about || {};
   const cfg = DATA.config || {};
-
-  // Image
-  const imgHtml = about.bild
-    ? `<img src="${about.bild}" alt="${about.headline || 'Salon'}" loading="lazy">`
-    : `<div class="about-image-placeholder">✂️</div>`;
-  html('about-image', imgHtml);
 
   // Content
   const besonderheiten = about.besonderheiten || [];
@@ -535,23 +565,37 @@ function renderHoursContact() {
         </div>` : ''}
     </div>
     ${kontakt.whatsapp ? `
-      <a href="https://wa.me/${kontakt.whatsapp.replace(/[^0-9]/g,'')}" class="whatsapp-btn" target="_blank" rel="noopener">
+      <a href="https://wa.me/${kontakt.whatsapp.replace(/[^0-9]/g,'')}" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
         ${ICONS.whatsapp.replace('viewBox', 'width="16" height="16" viewBox')}
         WhatsApp schreiben
       </a>` : ''}
   `);
 
-  // Map
+  // Map (2-Klick-Lösung für DSGVO-Konformität)
   const geo = kontakt.geo;
   if (geo && geo.lat && geo.lng) {
     html('map-block', `
-      <iframe
-        src="https://maps.google.com/maps?q=${geo.lat},${geo.lng}&hl=de&z=15&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Salon Standort">
-      </iframe>
+      <div class="map-consent" id="map-consent">
+        <div class="map-consent-inner">
+          ${ICONS.mapPin.replace('viewBox', 'width="32" height="32" viewBox')}
+          <p class="map-consent-text">Beim Laden der Karte werden Daten an Google übermittelt.</p>
+          <button class="btn btn-primary btn-sm map-consent-btn" id="map-load-btn">Karte laden</button>
+          <a href="https://maps.google.com/maps?q=${geo.lat},${geo.lng}" class="map-external-link" target="_blank" rel="noopener noreferrer">
+            In Google Maps öffnen
+          </a>
+        </div>
+      </div>
     `);
+    $('map-load-btn')?.addEventListener('click', () => {
+      html('map-block', `
+        <iframe
+          src="https://maps.google.com/maps?q=${geo.lat},${geo.lng}&hl=de&z=15&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Salon Standort">
+        </iframe>
+      `);
+    });
   } else {
     html('map-block', `
       <div class="map-placeholder">
@@ -621,7 +665,7 @@ function renderBookingCta() {
     <p class="booking-cta-sub">${b.subline || 'Einfach, schnell und bequem online buchen.'}</p>
     <div class="booking-cta-actions">
       ${b.embed_url
-        ? `<a href="${b.embed_url}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+        ? `<a href="${b.embed_url}" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
             ${cta.label || 'Termin buchen'}
           </a>`
         : `<a href="mailto:${cfg.kontakt?.email || '#'}" class="btn btn-primary btn-lg">
@@ -638,47 +682,6 @@ function renderBookingCta() {
       ? `<p class="booking-fallback">ℹ️ ${b.stornierung.text}</p>`
       : ''}
   `);
-}
-
-/* ─────────────────────────────────────────
-   NEWS / BLOG
-   ───────────────────────────────────────── */
-function renderNews() {
-  const n = DATA.news || {};
-  const posts = (n.beitraege || []).slice(0, 3);
-  if (!posts.length) {
-    const newsSection = document.getElementById('news');
-    if (newsSection) newsSection.style.display = 'none';
-    return;
-  }
-
-  html('news-header', `
-    <span class="section-label">Neuigkeiten</span>
-    <h2 class="section-title">Aktuelles & Angebote</h2>
-  `);
-
-  const typeEmoji = { angebot: '🎁', blog: '📝', news: '📣', stellenangebot: '👋' };
-
-  html('news-grid', posts.map(post => {
-    const imgHtml = post.bild
-      ? `<img src="${post.bild}" alt="${post.titel}" loading="lazy">`
-      : `<div class="news-card-img-placeholder">${typeEmoji[post.typ] || '📰'}</div>`;
-
-    return `
-      <article class="news-card anim-up">
-        <div class="news-card-img">${imgHtml}</div>
-        <div class="news-card-body">
-          <span class="news-type-badge news-type-${post.typ || 'news'}">${post.typ || 'news'}</span>
-          <h3 class="news-card-title">${post.titel}</h3>
-          <p class="news-card-text">${(post.text || '').slice(0, 120)}...</p>
-          <div class="news-card-footer">
-            <span class="news-card-date">${formatDate(post.datum)}</span>
-            ${post.cta ? `<a href="${post.cta.href}" class="news-card-cta">${post.cta.label} →</a>` : ''}
-          </div>
-        </div>
-      </article>
-    `;
-  }).join(''));
 }
 
 /* ─────────────────────────────────────────
@@ -704,7 +707,7 @@ function renderFooter() {
     .filter(([,url]) => url)
     .map(([platform, url]) => {
       const icon = ICONS[platform] || ICONS.instagram;
-      return `<a href="${url}" class="footer-social-link" target="_blank" rel="noopener" aria-label="${platform}">
+      return `<a href="${url}" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="${platform}">
         ${icon.replace('viewBox', 'width="18" height="18" viewBox')}
       </a>`;
     }).join('');
@@ -932,7 +935,7 @@ function setupFaq() {
 }
 
 /* ─────────────────────────────────────────
-   SCROLL ANIMATIONS
+   SCROLL ANIMATIONS (Enhanced)
    ───────────────────────────────────────── */
 function setupScrollAnimations() {
   const observer = new IntersectionObserver(entries => {
@@ -944,15 +947,22 @@ function setupScrollAnimations() {
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.anim-up').forEach((el, i) => {
-    if (i % 3 === 1) el.classList.add('anim-delay-1');
-    else if (i % 3 === 2) el.classList.add('anim-delay-2');
-    observer.observe(el);
+  // Observe all animation types
+  const animClasses = ['.anim-up', '.anim-blur', '.anim-scale', '.anim-left', '.anim-right', '.anim-clip'];
+  animClasses.forEach(cls => {
+    document.querySelectorAll(cls).forEach(el => observer.observe(el));
+  });
+
+  // Add stagger delays to grid children
+  document.querySelectorAll('.services-grid, .team-grid, .reviews-grid, .gallery-grid').forEach(grid => {
+    const items = grid.children;
+    Array.from(items).forEach((item, i) => {
+      item.classList.add(`anim-stagger-${Math.min(i + 1, 8)}`);
+    });
   });
 }
 
 function triggerAnimations() {
-  // Re-observe newly added elements
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -962,7 +972,138 @@ function triggerAnimations() {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.anim-up:not(.visible)').forEach(el => observer.observe(el));
+  const selectors = '.anim-up:not(.visible), .anim-blur:not(.visible), .anim-scale:not(.visible), .anim-left:not(.visible), .anim-right:not(.visible), .anim-clip:not(.visible)';
+  document.querySelectorAll(selectors).forEach(el => observer.observe(el));
+}
+
+/* ─────────────────────────────────────────
+   HERO PARALLAX
+   ───────────────────────────────────────── */
+function setupHeroParallax() {
+  const heroBg = $('hero-bg');
+  const heroSection = document.querySelector('.hero');
+  if (!heroBg || !heroSection) return;
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        const heroHeight = heroSection.offsetHeight;
+        if (scrollY < heroHeight) {
+          heroBg.style.transform = `translateY(${scrollY * 0.3}px) scale(1.05)`;
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+/* ─────────────────────────────────────────
+   HERO DECORATIVE ELEMENTS
+   ───────────────────────────────────────── */
+function setupHeroDecor() {
+  const hero = document.querySelector('.hero');
+  if (!hero || window.innerWidth < 768) return;
+
+  const decor1 = document.createElement('div');
+  decor1.className = 'hero-decor hero-decor-circle';
+  decor1.style.cssText = 'top: 10%; right: -5%;';
+  hero.appendChild(decor1);
+
+  const decor2 = document.createElement('div');
+  decor2.className = 'hero-decor hero-decor-circle-2';
+  decor2.style.cssText = 'bottom: 15%; right: 20%;';
+  hero.appendChild(decor2);
+
+  const decor3 = document.createElement('div');
+  decor3.className = 'hero-decor hero-decor-dots';
+  decor3.style.cssText = 'top: 25%; right: 10%;';
+  hero.appendChild(decor3);
+}
+
+/* ─────────────────────────────────────────
+   CUSTOM CURSOR FOLLOWER
+   ───────────────────────────────────────── */
+function setupCursorFollower() {
+  if (window.matchMedia('(hover: none)').matches) return;
+
+  const cursor = document.createElement('div');
+  cursor.className = 'cursor-dot';
+  document.body.appendChild(cursor);
+
+  let mouseX = 0, mouseY = 0;
+  let cursorX = 0, cursorY = 0;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (!cursor.classList.contains('visible')) {
+      cursor.classList.add('visible');
+    }
+  });
+
+  // Smooth follow with lerp
+  function animateCursor() {
+    cursorX += (mouseX - cursorX) * 0.15;
+    cursorY += (mouseY - cursorY) * 0.15;
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  // Hover effect on interactive elements
+  const hoverTargets = 'a, button, .gallery-item, .service-card, .team-card, .review-card, .faq-question';
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest(hoverTargets)) cursor.classList.add('hover');
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest(hoverTargets)) cursor.classList.remove('hover');
+  });
+}
+
+/* ─────────────────────────────────────────
+   SCROLL PROGRESS BAR
+   ───────────────────────────────────────── */
+function setupScrollProgress() {
+  const bar = document.createElement('div');
+  bar.className = 'scroll-progress';
+  document.body.appendChild(bar);
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+    bar.style.transform = `scaleX(${progress})`;
+  }, { passive: true });
+}
+
+/* ─────────────────────────────────────────
+   ENHANCED SECTION LABEL ANIMATIONS
+   ───────────────────────────────────────── */
+function enhanceSectionLabels() {
+  // Add blur animation to section headers
+  document.querySelectorAll('.section-label-group').forEach(group => {
+    const label = group.querySelector('.section-label');
+    const title = group.querySelector('.section-title, h2');
+    const subtitle = group.querySelector('.section-subtitle');
+
+    if (label) label.classList.add('anim-blur');
+    if (title) title.classList.add('anim-blur');
+    if (subtitle) { subtitle.classList.add('anim-blur'); subtitle.style.transitionDelay = '0.15s'; }
+  });
+
+  // Add blur animation to about content children
+  const aboutContent = $('about-content');
+  if (aboutContent) {
+    const children = aboutContent.querySelectorAll('.section-label, .about-title, .about-text, .about-philosophy, .about-badges, .brand-logos');
+    children.forEach((child, i) => {
+      child.classList.add('anim-blur');
+      child.style.transitionDelay = `${i * 0.1}s`;
+    });
+  }
 }
 
 /* ─────────────────────────────────────────
@@ -984,7 +1125,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderHoursContact();
     renderFaq();
     renderBookingCta();
-    renderNews();
     renderFooter();
 
     // Setup interactions
@@ -992,7 +1132,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupServiceTabs();
     setupGallery();
     setupFaq();
+
+    // Enhanced polish
+    enhanceSectionLabels();
     setupScrollAnimations();
+    setupHeroParallax();
+    setupHeroDecor();
+    setupCursorFollower();
+    setupScrollProgress();
 
   } catch (err) {
     console.error('[Friseur Template] Fehler beim Laden:', err);
