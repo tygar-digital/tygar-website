@@ -11,9 +11,9 @@ import data from '../data/content.json';
   <nav class="fixed top-0 left-0 right-0 z-[200] h-[72px] border-b border-brand-border"
     style="background: rgba(16,44,38,0.92); backdrop-filter: blur(16px);">
     <div class="max-w-[1160px] mx-auto px-8 h-full flex items-center">
-      <a href="/" class="flex items-center gap-2.5 no-underline text-brand-heading">
-        <img src={data.brand.logo_svg} alt={data.brand.name + ' Logo'} class="h-8 w-auto" />
-        <span class="font-heading font-black text-xl tracking-tight text-brand-heading">{data.brand.name}</span>
+      <a href="/" class="flex items-center gap-2.5 no-underline">
+        <img src={data.brand.logo_svg} alt={data.brand.name + ' Logo'} class="h-8 w-auto" style="filter: brightness(0) invert(91%) sepia(12%) saturate(497%) hue-rotate(345deg) brightness(104%) contrast(92%)" />
+        <span class="font-heading font-black text-xl tracking-tight" style="color:#F7E7CE">{data.brand.name}</span>
       </a>
     </div>
   </nav>

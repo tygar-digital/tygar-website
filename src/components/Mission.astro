@@ -40,15 +40,5 @@ const { data } = Astro.props;
       ))}
     </div>
 
-    <div class="text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-4">
-      {data.audience_label}
-    </div>
-    <div class="flex flex-wrap gap-3">
-      {data.audience.map((a: any) => (
-        <span class="inline-flex items-center gap-2 text-sm font-body text-brand-heading px-4 py-2 rounded-full border border-brand-border bg-white">
-          <span>{a.icon}</span> {a.label}
-        </span>
-      ))}
-    </div>
   </div>
 </section>
