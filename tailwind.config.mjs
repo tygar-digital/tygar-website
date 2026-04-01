@@ -2,39 +2,87 @@
 export default {
   content: ['./src/**/*.{astro,html,js,ts,jsx,tsx}'],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       colors: {
         brand: {
-          bg:        '#FAF6EF',
-          surface:   '#F0EAE0',
+          bg:        '#FFFFFF',
+          surface:   '#F9FAFB',
           glass:     '#FFFFFF',
-          border:    '#DDD5C8',
-          heading:   '#102C26',
-          text:      '#2A4A3E',
-          muted:     '#6B8C7E',
-          secondary: '#2A4A3E',
-          emerald:   '#102C26',
-          cyan:      '#102C26',
-          violet:    '#102C26',
+          border:    '#E5E7EB',
+          heading:   '#111827',
+          text:      '#374151',
+          muted:     '#6B7280',
+          secondary: '#374151',
+          primary:   '#059669',
+          'primary-light': '#ECFDF5',
+          dark:      '#111827',
+          navy:      '#0F172A',
+          'navy-light': '#1E293B',
+          emerald:   '#059669',
+          'emerald-light': '#34D399',
+        },
+        border:      "hsl(var(--border))",
+        input:       "hsl(var(--input))",
+        ring:        "hsl(var(--ring))",
+        background:  "hsl(var(--background))",
+        foreground:  "hsl(var(--foreground))",
+        primary: {
+          DEFAULT:    "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT:    "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT:    "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT:    "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT:    "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT:    "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT:    "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
       },
       fontFamily: {
-        heading: ['Fraunces', 'Georgia', 'serif'],
-        body:    ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        heading: ['Cormorant', 'serif'],
+        body:    ['DM Sans', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'display': ['clamp(3rem, 7vw, 6rem)',    { lineHeight: '1.05', letterSpacing: '-0.02em' }],
         'h2':      ['clamp(2rem, 4vw, 3.25rem)', { lineHeight: '1.1',  letterSpacing: '-0.02em' }],
       },
       borderRadius: {
-        'card': '16px',
+        'card': '12px',
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        'card':         '0 2px 12px rgba(0,0,0,0.06)',
-        'card-hover':   '0 8px 30px rgba(0,0,0,0.10)',
-        'glow-emerald': '0 4px 20px rgba(16,44,38,0.12)',
-        'glow-cyan':    '0 4px 20px rgba(16,44,38,0.12)',
-        'glow-violet':  '0 4px 20px rgba(16,44,38,0.12)',
+        'card':         '0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03)',
+        'card-hover':   '0 10px 25px rgba(0,0,0,0.08)',
+        'glow-emerald': '0 4px 20px rgba(5,150,105,0.15)',
+        'glow-cyan':    '0 4px 20px rgba(5,150,105,0.15)',
+        'glow-violet':  '0 4px 20px rgba(5,150,105,0.15)',
+        'glow-green':   '0 4px 20px rgba(5,150,105,0.15)',
       },
       animation: {
         'marquee':  'marqueeScroll 32s linear infinite',
@@ -54,8 +102,22 @@ export default {
           from: { opacity: '0', transform: 'translateY(12px)' },
           to:   { opacity: '1', transform: 'translateY(0)' },
         },
+        fadeInUp: {
+          from: { opacity: '0', transform: 'translateY(24px)' },
+          to:   { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeInScale: {
+          from: { opacity: '0', transform: 'scale(0.95)' },
+          to:   { opacity: '1', transform: 'scale(1)' },
+        },
+        drawLine: {
+          from: { 'stroke-dashoffset': '100%' },
+          to:   { 'stroke-dashoffset': '0' },
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-animate"),
+  ],
 };

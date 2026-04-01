@@ -2,26 +2,65 @@
 const { data } = Astro.props;
 ---
 <section id="ueber-mich" class="bg-brand-surface">
-  <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
+  <div class="max-w-[1160px] mx-auto px-8 py-20 md:py-28">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#102C26"></span>
+    <!-- Mission / Values -->
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-12 items-center mb-12">
+      <div>
+        <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
+          <span class="flex-shrink-0 gradient-divider rounded-full"></span>
+          {data.mission_label}
+        </div>
+        <h2 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+          style="font-size:clamp(2rem,4.5vw,3.25rem)">
+          {data.mission_headline[0]}<br/>
+          <span class="text-brand-primary font-body font-bold not-italic">{data.mission_headline[1]}</span>
+        </h2>
+        <p class="text-brand-text leading-[1.75]">{data.mission_statement}</p>
+      </div>
+
+      {data.mission_image && (
+        <div class="hidden lg:block rounded-xl overflow-hidden border border-brand-border relative shadow-sm"
+          style="aspect-ratio:4/3">
+          <img src={data.mission_image.src} alt={data.mission_image.alt} class="w-full h-full object-cover" loading="lazy" decoding="async" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+        </div>
+      )}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      {data.values.map((val: any) => (
+        <div class="rounded-xl border border-brand-border p-7 flex flex-col gap-4 bg-white shadow-sm hover:shadow-md transition-shadow gradient-border-hover">
+          <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+            style="background:#ECFDF5;color:#059669"
+            set:html={val.icon_svg}>
+          </div>
+          <h3 class="font-heading text-brand-heading">{val.title}</h3>
+          <p class="text-brand-text text-sm leading-relaxed">{val.text}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Personal Bio -->
+    <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
+      <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 items-start">
       <div>
-        <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-6"
+        <h2 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-2"
           style="font-size:clamp(2rem,4.5vw,3.25rem)">
           {data.headline[0]}<br/>
-          <span style="color:#102C26">{data.headline[1]}</span>
+          <span class="text-brand-primary font-body font-bold not-italic">{data.headline[1]}</span>
         </h2>
+        <span class="inline-block font-body text-brand-primary text-sm -rotate-2 mb-6" data-handwriting="400">persönlich. immer.</span>
         <p class="text-brand-text leading-[1.75] mb-5">{data.bio}</p>
         <p class="text-brand-text leading-[1.75] mb-8">{data.bio2}</p>
         <div class="flex flex-wrap gap-2">
           {data.tags.map((tag: string) => (
-            <span class="text-xs font-heading font-semibold px-3 py-1.5 rounded-full border"
-              style="background:rgba(16,44,38,0.08);border-color:rgba(16,44,38,0.20);color:#102C26">
+            <span class="text-xs font-body px-3 py-1.5 rounded-full"
+              style="background:#ECFDF5;color:#059669">
               {tag}
             </span>
           ))}
@@ -29,7 +68,7 @@ const { data } = Astro.props;
       </div>
 
       {data.image ? (
-        <div class="rounded-card overflow-hidden aspect-[3/4] border border-brand-border relative shadow-card">
+        <div class="rounded-xl overflow-hidden aspect-[3/4] border border-brand-border relative shadow-sm">
           <img
             src={data.image.src}
             alt={data.image.alt}
@@ -40,11 +79,11 @@ const { data } = Astro.props;
           <div class="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent pointer-events-none"></div>
         </div>
       ) : (
-        <div class="rounded-card overflow-hidden aspect-[3/4] flex items-center justify-center border border-brand-border bg-white shadow-card">
+        <div class="rounded-xl overflow-hidden aspect-[3/4] flex items-center justify-center border border-brand-border bg-white shadow-sm">
           <div class="text-center p-8">
             <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
-              style="background:rgba(16,44,38,0.08);border:1px solid rgba(16,44,38,0.20)">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#102C26" stroke-width="1.5">
+              style="background:#ECFDF5;border:1px solid rgba(5,150,105,0.20)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.5">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                 <circle cx="12" cy="7" r="4"/>
               </svg>

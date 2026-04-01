@@ -1,48 +1,40 @@
 ---
 const { data } = Astro.props;
-const accentBorder: Record<string,string> = { emerald: '#DDD5C8', cyan: '#DDD5C8', violet: '#DDD5C8' };
-const accentGlow: Record<string,string> = {
-  emerald: '0 8px 30px rgba(0,0,0,0.10)', cyan: '0 8px 30px rgba(0,0,0,0.10)', violet: '0 8px 30px rgba(0,0,0,0.10)',
-};
-const tagBg: Record<string,string> = { emerald: 'rgba(16,44,38,0.08)', cyan: 'rgba(16,44,38,0.08)', violet: 'rgba(16,44,38,0.08)' };
-const tagBorder: Record<string,string> = { emerald: 'rgba(16,44,38,0.20)', cyan: 'rgba(16,44,38,0.20)', violet: 'rgba(16,44,38,0.20)' };
-const tagColor: Record<string,string> = { emerald: '#102C26', cyan: '#102C26', violet: '#102C26' };
 ---
 <section id="beispiele" class="bg-brand-bg">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#102C26"></span>
+    <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
+      <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
+    <h2 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
       {data.heading[0]}<br/>
-      <span style="color:#102C26">{data.heading[1]}</span>
+      <span class="font-body font-bold not-italic" style="color:#059669">{data.heading[1]}</span>
     </h2>
     <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {data.items.map((item: any) => (
         <a href={item.preview_url} target="_blank" rel="noopener noreferrer"
-          class="showcase-card rounded-card border flex flex-col overflow-hidden transition-all duration-[280ms] hover:-translate-y-2 bg-white shadow-card no-underline"
-          style={`border-color:${accentBorder[item.accent]};`}>
+          class="showcase-card rounded-xl border border-[#E5E7EB] flex flex-col overflow-hidden bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)] no-underline">
 
-          <div class="relative bg-brand-surface overflow-hidden" style="height:200px">
-            <div class="flex items-center gap-1.5 px-3 py-2 border-b border-brand-border bg-white">
+          <div class="relative overflow-hidden" style="height:200px;background:#F9FAFB">
+            <div class="flex items-center gap-1.5 px-3 py-2 border-b border-[#E5E7EB]" style="background:#F9FAFB">
               <span class="w-2.5 h-2.5 rounded-full bg-red-500/60"></span>
               <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/60"></span>
               <span class="w-2.5 h-2.5 rounded-full bg-green-500/60"></span>
-              <div class="ml-2 flex-1 h-5 rounded bg-brand-border/50 flex items-center px-2">
+              <div class="ml-2 flex-1 h-5 rounded bg-white flex items-center px-2 border border-[#E5E7EB]">
                 <span class="text-[0.6rem] text-brand-muted truncate">{item.preview_url}</span>
               </div>
             </div>
-            <div class="absolute inset-0 top-[33px] flex items-center justify-center bg-brand-surface">
+            <div class="absolute inset-0 top-[33px] flex items-center justify-center" style="background:#F9FAFB">
               <div class="text-center">
                 <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center"
-                  style={`background:${tagBg[item.accent]};border:1px solid ${tagBorder[item.accent]}`}>
+                  style="background:#ECFDF5;border:1px solid rgba(5,150,105,0.20)">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                    style={`stroke:${tagColor[item.accent]}`}>
+                    style="stroke:#059669">
                     <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
                   </svg>
                 </div>
@@ -56,14 +48,13 @@ const tagColor: Record<string,string> = { emerald: '#102C26', cyan: '#102C26', v
           </div>
 
           <div class="p-6 flex flex-col gap-3 flex-1">
-            <span class="inline-block text-[0.72rem] font-heading font-semibold px-3 py-1 rounded-full border self-start"
-              style={`background:${tagBg[item.accent]};border-color:${tagBorder[item.accent]};color:${tagColor[item.accent]}`}>
+            <span class="inline-block text-[0.72rem] font-body px-3 py-1 rounded-full self-start"
+              style="background:#ECFDF5;color:#059669">
               {item.tag}
             </span>
-            <h3 class="font-heading font-bold text-brand-heading text-lg">{item.title}</h3>
+            <h3 class="font-heading text-brand-heading text-lg">{item.title}</h3>
             <p class="text-brand-text text-sm leading-relaxed flex-1">{item.text}</p>
-            <span class="text-sm font-heading font-bold mt-1"
-              style={`color:${tagColor[item.accent]}`}>
+            <span class="text-sm font-body mt-1" style="color:#059669">
               {item.cta}
             </span>
           </div>
@@ -78,9 +69,11 @@ const tagColor: Record<string,string> = { emerald: '#102C26', cyan: '#102C26', v
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+    transition: transform 280ms cubic-bezier(.4,0,.2,1), box-shadow 280ms cubic-bezier(.4,0,.2,1);
   }
 
   .showcase-card:hover {
-    box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   }
 </style>

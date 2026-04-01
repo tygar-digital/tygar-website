@@ -4,36 +4,36 @@ const { data } = Astro.props;
 <section id="leistungen" class="bg-brand-bg">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#102C26"></span>
+    <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
+      <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
+    <h2 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} <span style="color:#102C26">{data.heading[1]}</span>
+      {data.heading[0]} <span class="font-body font-bold not-italic" style="color:#059669">{data.heading[1]}</span>
     </h2>
     {data.subtext && <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>}
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {data.items.map((item: any) => (
-        <div class={`rounded-card border border-brand-border p-8 flex flex-col gap-4 transition-all duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] ${item.coming_soon ? 'opacity-35 pointer-events-none grayscale-[30%]' : 'hover:-translate-y-1.5 hover:shadow-card-hover'} group relative bg-white shadow-card`}>
+        <div class={`rounded-[12px] border border-[#E5E7EB] p-8 flex flex-col gap-4 transition-all duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] ${item.coming_soon ? 'opacity-35 pointer-events-none grayscale-[30%]' : 'hover:-translate-y-1.5 hover:shadow-[0_10px_25px_rgba(0,0,0,0.08)] gradient-border-hover'} group relative bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)]`}>
           {item.coming_soon && (
-            <span class="absolute top-4 right-4 text-[0.65rem] font-heading font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full border border-brand-border text-brand-muted bg-brand-surface">
+            <span class="absolute top-4 right-4 text-[0.65rem] font-body font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full border border-[#E5E7EB] text-brand-muted bg-[#F9FAFB]">
               Coming Soon
             </span>
           )}
           <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-            style={`background:${item.coming_soon ? 'rgba(138,138,170,0.10)' : 'rgba(16,44,38,0.10)'};
-                    color:${item.coming_soon ? '#6B8C7E' : '#102C26'}`}
+            style={`background:${item.coming_soon ? 'rgba(138,138,170,0.10)' : '#ECFDF5'};
+                    color:${item.coming_soon ? '#6B7280' : '#059669'}`}
             set:html={item.icon_svg}>
           </div>
-          <h3 class={`font-heading font-bold text-lg ${item.coming_soon ? 'text-brand-muted' : 'text-brand-heading'}`}>{item.title}</h3>
+          <h3 class={`font-heading text-lg ${item.coming_soon ? 'text-brand-muted' : 'text-brand-heading'}`}>{item.title}</h3>
           <p class={`text-sm leading-relaxed flex-1 ${item.coming_soon ? 'text-brand-muted' : 'text-brand-text'}`}>{item.text}</p>
           {item.features && (
             <ul class="flex flex-col gap-2 mt-1">
               {item.features.map((f: string) => (
                 <li class={`flex items-start gap-2 text-sm ${item.coming_soon ? 'text-brand-muted' : 'text-brand-text'}`}>
-                  <span style={`color:${item.coming_soon ? '#6B8C7E' : '#102C26'}`}>✓</span>
+                  <span style={`color:${item.coming_soon ? '#6B7280' : '#059669'}`}>✓</span>
                   {f}
                 </li>
               ))}
@@ -41,6 +41,37 @@ const { data } = Astro.props;
           )}
         </div>
       ))}
+    </div>
+
+    <!-- Process Timeline -->
+    <div class="pt-24">
+      <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
+        <span class="flex-shrink-0 gradient-divider rounded-full"></span>
+        {data.process_label}
+      </div>
+      <h2 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+        style="font-size:clamp(2rem,4.5vw,3.25rem)">
+        {data.process_heading[0]} <span class="font-body font-bold not-italic" style="color:#059669">{data.process_heading[1]}</span>
+      </h2>
+      <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.process_subtext}</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {data.steps.map((step: any, i: number) => (
+          <div class="rounded-[12px] border border-[#E5E7EB] p-7 flex flex-col gap-3 relative bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)]">
+            <span class="text-4xl font-heading leading-none" style="color:#059669">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3 class="font-heading text-brand-heading">{step.title}</h3>
+            <p class="text-brand-text text-sm leading-relaxed">{step.text}</p>
+            <div class="mt-2">
+              <span class="inline-block text-[0.72rem] font-body px-3 py-1 rounded-full"
+                style="background:#ECFDF5;border:1px solid rgba(5,150,105,0.20);color:#059669">
+                {step.duration}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>

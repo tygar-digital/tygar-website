@@ -3,57 +3,98 @@ const { data } = Astro.props;
 const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ← hier deine Formspree-ID eintragen
 ---
 <section id="kontakt" class="bg-brand-surface">
-  <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
+  <div class="max-w-[1160px] mx-auto px-8 py-20 md:py-28">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#102C26"></span>
+    <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
+      <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
+    <h2 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
       {data.heading[0]}<br/>
-      <span style="color:#102C26">{data.heading[1]}</span>
+      <span class="text-brand-primary font-body font-bold not-italic">{data.heading[1]}</span>
     </h2>
     <p class="text-brand-text leading-[1.75] mb-12 max-w-[560px]">{data.subtext}</p>
+
+    <!-- Booking CTA -->
+    {data.cal_link && (
+      <div class="rounded-xl border-2 border-brand-primary/20 p-8 bg-[#ECFDF5] mb-12">
+        <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-primary mb-3">
+          <span class="flex-shrink-0 gradient-divider rounded-full"></span>
+          {data.booking_label}
+        </div>
+        <h3 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-3"
+          style="font-size:clamp(1.5rem,3vw,2.25rem)">
+          {data.booking_heading[0]}<br/>
+          <span class="text-brand-primary font-body font-bold not-italic">{data.booking_heading[1]}</span>
+        </h3>
+        <p class="text-brand-text leading-[1.75] mb-6 max-w-[560px]">{data.booking_subtext}</p>
+
+        <!-- Mobile: Button only -->
+        <div class="block lg:hidden">
+          <a href={`https://cal.com/${data.cal_link}`} target="_blank" rel="noopener noreferrer"
+            class="block w-full text-center py-4 px-6 bg-brand-primary text-white font-body font-bold text-[1.05rem] rounded-lg no-underline transition-opacity hover:opacity-90">
+            Termin vereinbaren &rarr;
+          </a>
+          <p class="text-brand-muted text-xs mt-3 text-center">Öffnet die Terminbuchung bei Cal.com</p>
+        </div>
+
+        <!-- Desktop: Button + Cal.com Embed -->
+        <div class="hidden lg:block">
+          <a href={`https://cal.com/${data.cal_link}`} target="_blank" rel="noopener noreferrer"
+            class="inline-block font-body font-bold text-sm py-3.5 px-8 rounded-lg text-white bg-brand-primary transition-all hover:-translate-y-0.5 hover:shadow-lg mb-6">
+            Termin vereinbaren &rarr;
+          </a>
+          <div class="rounded-xl border border-brand-border overflow-hidden bg-white">
+            <iframe
+              src={`https://cal.com/${data.cal_link}?embed&layout=month_view&theme=light`}
+              frameborder="0"
+              style="width:100%;min-height:600px;border:none"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    )}
 
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 items-start">
 
       <!-- Kontaktformular (Formspree) -->
-      <div class="rounded-card border border-brand-border p-8 bg-white shadow-card">
+      <div class="rounded-xl border border-brand-border p-8 bg-white shadow-sm">
         <form id="contact-form" action={`https://formspree.io/f/${FORMSPREE_ID}`} method="POST"
           class="flex flex-col gap-5">
 
           <div class="grid grid-cols-2 gap-4">
             <div class="flex flex-col gap-1.5">
-              <label class="text-[0.68rem] font-heading font-bold tracking-[0.1em] uppercase text-brand-muted">
+              <label class="text-[0.68rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted">
                 {data.form.label_firstname}
               </label>
               <input type="text" name="vorname" required
-                class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-emerald" />
+                class="bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-all focus:ring-2 focus:ring-brand-primary/40 focus:border-brand-primary" />
             </div>
             <div class="flex flex-col gap-1.5">
-              <label class="text-[0.68rem] font-heading font-bold tracking-[0.1em] uppercase text-brand-muted">
+              <label class="text-[0.68rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted">
                 {data.form.label_lastname}
               </label>
               <input type="text" name="nachname" required
-                class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-emerald" />
+                class="bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-all focus:ring-2 focus:ring-brand-primary/40 focus:border-brand-primary" />
             </div>
           </div>
 
           <div class="flex flex-col gap-1.5">
-            <label class="text-[0.68rem] font-heading font-bold tracking-[0.1em] uppercase text-brand-muted">
+            <label class="text-[0.68rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted">
               {data.form.label_email}
             </label>
             <input type="email" name="email" required
-              class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-emerald" />
+              class="bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-all focus:ring-2 focus:ring-brand-primary/40 focus:border-brand-primary" />
           </div>
 
           <div class="flex flex-col gap-1.5">
-            <label class="text-[0.68rem] font-heading font-bold tracking-[0.1em] uppercase text-brand-muted">
+            <label class="text-[0.68rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted">
               {data.form.label_service}
             </label>
             <select name="service"
-              class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-emerald appearance-none">
+              class="bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-all focus:ring-2 focus:ring-brand-primary/40 focus:border-brand-primary appearance-none">
               {data.form.service_options.map((opt: string) => (
                 <option value={opt}>{opt}</option>
               ))}
@@ -61,11 +102,11 @@ const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ← hier deine Formspree-ID eintrag
           </div>
 
           <div class="flex flex-col gap-1.5">
-            <label class="text-[0.68rem] font-heading font-bold tracking-[0.1em] uppercase text-brand-muted">
+            <label class="text-[0.68rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted">
               {data.form.label_message}
             </label>
             <textarea name="projekt" rows="5" required
-              class="bg-brand-bg border border-brand-border rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-colors focus:border-brand-emerald resize-y min-h-[120px]">
+              class="bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-all focus:ring-2 focus:ring-brand-primary/40 focus:border-brand-primary resize-y min-h-[120px]">
             </textarea>
           </div>
 
@@ -80,8 +121,7 @@ const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ← hier deine Formspree-ID eintrag
           </p>
 
           <button type="submit" id="submit-btn"
-            class="w-full font-heading font-bold text-sm py-3.5 rounded-lg text-white transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
-            style="background:#102C26">
+            class="w-full font-body font-bold text-sm py-3.5 rounded-lg text-white bg-brand-primary transition-all hover:-translate-y-0.5 hover:shadow-lg">
             {data.form.submit_label}
           </button>
         </form>
@@ -90,13 +130,13 @@ const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ← hier deine Formspree-ID eintrag
       <!-- Info Boxes -->
       <div class="flex flex-col gap-4">
         {data.info_boxes.map((box: any) => (
-          <div class="rounded-card border border-brand-border p-5 flex items-center gap-4 bg-white shadow-card">
-            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-              style="background:rgba(16,44,38,0.10);color:#102C26"
+          <div class="rounded-xl border border-brand-border p-5 flex items-center gap-4 bg-white shadow-sm">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+              style="background:#ECFDF5;color:#059669"
               set:html={box.icon_svg}>
             </div>
             <div>
-              <div class="text-[0.68rem] font-heading font-bold tracking-[0.08em] uppercase text-brand-muted mb-0.5">
+              <div class="text-[0.68rem] font-body font-bold tracking-[0.08em] uppercase text-brand-muted mb-0.5">
                 {box.label}
               </div>
               <div class="text-brand-text text-sm font-body">

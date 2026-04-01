@@ -2,31 +2,31 @@
 const { data } = Astro.props;
 ---
 <section id="faq" class="bg-brand-bg">
-  <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
+  <div class="max-w-[1160px] mx-auto px-8 py-20 md:py-28">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#102C26"></span>
+    <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
+      <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
+    <h2 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} <span style="color:#102C26">{data.heading[1]}</span>
+      {data.heading[0]} <span class="text-brand-primary font-body font-bold not-italic">{data.heading[1]}</span>
     </h2>
 
-    <div class="max-w-[760px] mt-12 flex flex-col gap-3">
+    <div class="max-w-[760px] mt-10 flex flex-col gap-2">
       {data.items.map((item: any, i: number) => (
-        <div class="rounded-card overflow-hidden bg-white shadow-card border border-brand-border" id={`faq-${i}`}>
+        <div class="rounded-xl overflow-hidden bg-white border border-brand-border" id={`faq-${i}`}>
           <button
-            class="w-full flex justify-between items-center gap-4 px-7 py-5 text-left font-heading font-semibold text-base text-brand-heading cursor-pointer bg-transparent border-none"
+            class="w-full flex justify-between items-center gap-4 px-6 py-4 text-left font-body font-semibold text-[0.95rem] text-brand-heading cursor-pointer bg-transparent border-none"
             onclick={`toggleFaq(${i})`}>
             {item.q}
-            <svg class="flex-shrink-0 w-5 h-5 text-brand-muted transition-transform duration-300" id={`faq-icon-${i}`}
+            <svg class="flex-shrink-0 w-5 h-5 text-brand-muted transition-all duration-300" id={`faq-icon-${i}`}
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="overflow-hidden transition-all duration-300 max-h-0" id={`faq-answer-${i}`}>
-            <p class="px-7 pb-5 text-brand-text leading-[1.7] text-sm">{item.a}</p>
+            <p class="px-6 pb-4 text-brand-text leading-[1.7] text-sm">{item.a}</p>
           </div>
         </div>
       ))}
@@ -41,7 +41,7 @@ const { data } = Astro.props;
     const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
     answer.style.maxHeight = isOpen ? '0px' : answer.scrollHeight + 'px';
     icon.style.transform   = isOpen ? '' : 'rotate(180deg)';
-    icon.style.color       = isOpen ? '' : '#102C26';
+    icon.style.color       = isOpen ? '' : '#059669';
   }
   (window as any).toggleFaq = toggleFaq;
 </script>
