@@ -1,10 +1,11 @@
 ---
 const { data } = Astro.props;
-const accentColors: Record<string, { main: string; light: string }> = {
-  emerald: { main: '#059669', light: '#ECFDF5' },
-  cyan:    { main: '#0891B2', light: '#ECFEFF' },
-  violet:  { main: '#7C3AED', light: '#F5F3FF' },
+const accentColors: Record<string, { main: string; light: string; gradient: string }> = {
+  emerald: { main: '#059669', light: '#ECFDF5', gradient: 'linear-gradient(180deg, #059669, #34D399)' },
+  cyan:    { main: '#0891B2', light: '#ECFEFF', gradient: 'linear-gradient(180deg, #0891B2, #22D3EE)' },
+  violet:  { main: '#7C3AED', light: '#F5F3FF', gradient: 'linear-gradient(180deg, #7C3AED, #A78BFA)' },
 };
+const stepColors = ['#059669', '#0891B2', '#0891B2', '#7C3AED'];
 ---
 <section id="leistungen" class="bg-brand-bg">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
@@ -13,70 +14,168 @@ const accentColors: Record<string, { main: string; light: string }> = {
       <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+    <h2 class="font-heading font-medium leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} <span class="font-body font-bold not-italic" style="color:#059669">{data.heading[1]}</span>
+      {data.heading[0]} <span class="font-heading font-medium not-italic" style="color:#0F172A">{data.heading[1]}</span>
     </h2>
     {data.subtext && <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>}
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {data.items.map((item: any) => (
-        <div class={`rounded-[12px] border border-[#E5E7EB] p-8 flex flex-col gap-4 transition-all duration-[280ms] ease-[cubic-bezier(.4,0,.2,1)] ${item.coming_soon ? 'opacity-35 pointer-events-none grayscale-[30%]' : 'hover:-translate-y-1.5 hover:shadow-[0_10px_25px_rgba(0,0,0,0.08)] gradient-border-hover'} group relative bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)]`}>
-          {item.coming_soon && (
-            <span class="absolute top-4 right-4 text-[0.65rem] font-body font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full border border-[#E5E7EB] text-brand-muted bg-[#F9FAFB]">
-              Coming Soon
-            </span>
-          )}
-          <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-            style={`background:${item.coming_soon ? 'rgba(138,138,170,0.10)' : (accentColors[item.accent]?.light || '#ECFDF5')};
-                    color:${item.coming_soon ? '#6B7280' : (accentColors[item.accent]?.main || '#059669')}`}
-            set:html={item.icon_svg}>
+    <!-- Horizontal Service Cards -->
+    <div class="flex flex-col gap-4">
+      {data.items.map((item: any) => {
+        const colors = accentColors[item.accent] || accentColors.emerald;
+        return (
+          <div class={`service-card rounded-[12px] border border-[#E5E7EB] flex overflow-hidden bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)] ${item.coming_soon ? 'opacity-35 pointer-events-none grayscale-[30%]' : ''}`}>
+            {/* Accent side stripe */}
+            <div class="hidden sm:block w-[3px] flex-shrink-0 rounded-l-[12px]"
+              style={`background:${item.coming_soon ? '#D1D5DB' : colors.gradient}`}></div>
+
+            {/* Mobile: top stripe */}
+            <div class="sm:hidden absolute top-0 left-0 right-0 h-[3px]"
+              style={`background:${item.coming_soon ? '#D1D5DB' : colors.gradient}`}></div>
+
+            <div class="flex flex-col sm:flex-row gap-5 p-7 sm:p-8 flex-1 relative">
+              {item.coming_soon && (
+                <span class="absolute top-4 right-4 text-[0.65rem] font-body font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full border border-[#E5E7EB] text-brand-muted bg-[#F9FAFB]">
+                  Coming Soon
+                </span>
+              )}
+
+              <div class="w-14 h-14 rounded-[14px] flex items-center justify-center flex-shrink-0"
+                style={`background:${item.coming_soon ? 'rgba(138,138,170,0.10)' : colors.light};
+                        color:${item.coming_soon ? '#6B7280' : colors.main}`}
+                set:html={item.icon_svg}>
+              </div>
+
+              <div class="flex-1">
+                <h3 class={`font-heading text-lg mb-1.5 ${item.coming_soon ? 'text-brand-muted' : 'text-brand-heading'}`}>{item.title}</h3>
+                <p class={`text-sm leading-relaxed mb-4 ${item.coming_soon ? 'text-brand-muted' : 'text-brand-text'}`}>{item.text}</p>
+                {item.features && (
+                  <div class="flex flex-wrap gap-2">
+                    {item.features.map((f: string) => (
+                      <span class="text-[0.75rem] font-body px-3 py-1 rounded-full"
+                        style={`background:${item.coming_soon ? '#F3F4F6' : colors.light};color:${item.coming_soon ? '#6B7280' : colors.main}`}>
+                        ✓ {f}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
-          <h3 class={`font-heading text-lg ${item.coming_soon ? 'text-brand-muted' : 'text-brand-heading'}`}>{item.title}</h3>
-          <p class={`text-sm leading-relaxed flex-1 ${item.coming_soon ? 'text-brand-muted' : 'text-brand-text'}`}>{item.text}</p>
-          {item.features && (
-            <ul class="flex flex-col gap-2 mt-1">
-              {item.features.map((f: string) => (
-                <li class={`flex items-start gap-2 text-sm ${item.coming_soon ? 'text-brand-muted' : 'text-brand-text'}`}>
-                  <span style={`color:${item.coming_soon ? '#6B7280' : (accentColors[item.accent]?.main || '#059669')}`}>✓</span>
-                  {f}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      ))}
+        );
+      })}
+    </div>
+
+    <!-- Inline CTA -->
+    <div class="text-center pt-10 pb-2 border-t border-brand-border mt-10">
+      <span class="font-heading italic text-brand-heading" style="font-size:1.1rem">Klingt gut?</span>
+      <a href="#kontakt" class="text-brand-primary font-body font-bold text-sm ml-3 hover:underline">Erstgespräch buchen →</a>
     </div>
 
     <!-- Process Timeline -->
-    <div class="pt-24">
+    <div class="pt-20">
       <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
         <span class="flex-shrink-0 gradient-divider rounded-full"></span>
         {data.process_label}
       </div>
-      <h3 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+      <h3 class="font-heading font-medium leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
         style="font-size:clamp(2rem,4.5vw,3.25rem)">
-        {data.process_heading[0]} <span class="font-body font-bold not-italic" style="color:#059669">{data.process_heading[1]}</span>
+        {data.process_heading[0]} <span class="font-heading font-medium not-italic" style="color:#0F172A">{data.process_heading[1]}</span>
       </h3>
       <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.process_subtext}</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {data.steps.map((step: any) => (
-          <div class="rounded-[12px] border border-[#E5E7EB] p-7 flex flex-col gap-3 relative bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)]">
-            <span class="text-4xl font-heading leading-none" style="color:#059669">
-              {step.number}
-            </span>
-            <h3 class="font-heading text-brand-heading">{step.title}</h3>
-            <p class="text-brand-text text-sm leading-relaxed">{step.text}</p>
-            <div class="mt-2">
+      <!-- Desktop: horizontal timeline -->
+      <div class="hidden lg:block">
+        <div class="timeline-container relative flex">
+          {data.steps.map((step: any, i: number) => (
+            <div class="flex-1 text-center relative z-10">
+              <div class="timeline-dot mx-auto mb-4"
+                style={`background:${stepColors[i] || '#059669'};box-shadow:0 2px 8px ${stepColors[i] || '#059669'}40`}>
+                {step.number}
+              </div>
+              <div class="text-[0.6rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted mb-1">{step.phase}</div>
+              <div class="font-heading text-brand-heading mb-1">{step.title}</div>
+              <p class="text-brand-text text-sm leading-relaxed mx-auto max-w-[200px] mb-3">{step.text}</p>
               <span class="inline-block text-[0.72rem] font-body px-3 py-1 rounded-full"
-                style="background:#ECFDF5;border:1px solid rgba(5,150,105,0.20);color:#059669">
+                style={`background:${accentColors[Object.keys(accentColors)[Math.min(i, 2)]]?.light || '#ECFDF5'};color:${stepColors[i] || '#059669'}`}>
                 {step.duration}
               </span>
             </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Mobile: vertical timeline -->
+      <div class="lg:hidden flex flex-col gap-0 relative pl-14">
+        <div class="absolute left-[27px] top-[14px] bottom-[14px] w-[2px]"
+          style="background:linear-gradient(180deg, #059669, #0891B2, #7C3AED)"></div>
+        {data.steps.map((step: any, i: number) => (
+          <div class="relative pb-8 last:pb-0">
+            <div class="absolute left-[-42px] top-0 timeline-dot-sm"
+              style={`background:${stepColors[i] || '#059669'};box-shadow:0 2px 6px ${stepColors[i] || '#059669'}40`}>
+              {step.number}
+            </div>
+            <div class="text-[0.6rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted mb-1">{step.phase}</div>
+            <div class="font-heading text-brand-heading mb-1">{step.title}</div>
+            <p class="text-brand-text text-sm leading-relaxed mb-2">{step.text}</p>
+            <span class="inline-block text-[0.72rem] font-body px-3 py-1 rounded-full"
+              style={`background:${accentColors[Object.keys(accentColors)[Math.min(i, 2)]]?.light || '#ECFDF5'};color:${stepColors[i] || '#059669'}`}>
+              {step.duration}
+            </span>
           </div>
         ))}
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .service-card {
+    position: relative;
+    transition: transform 280ms cubic-bezier(.4,0,.2,1), box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  }
+  .service-card:not([class*="opacity"]):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  }
+
+  .timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 2px;
+    background: linear-gradient(90deg, #059669, #34D399, #0891B2, #7C3AED);
+    border-radius: 2px;
+  }
+
+  .timeline-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #fff;
+  }
+
+  .timeline-dot-sm {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #fff;
+  }
+</style>

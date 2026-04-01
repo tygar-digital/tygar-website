@@ -2,13 +2,15 @@
 import Base     from '../layouts/Base.astro';
 import Nav      from '../components/Nav.astro';
 import Hero     from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
 import Showcase from '../components/Showcase.astro';
 import Services from '../components/Services.astro';
 import Pricing  from '../components/Pricing.astro';
 import About    from '../components/About.astro';
 import FAQ      from '../components/FAQ.astro';
 import Contact  from '../components/Contact.astro';
-import Footer   from '../components/Footer.astro';
+import Footer         from '../components/Footer.astro';
+import SectionDivider from '../components/SectionDivider.astro';
 
 import data from '../data/content.json';
 ---
@@ -22,11 +24,17 @@ import data from '../data/content.json';
   <Nav brand={data.brand} nav={data.nav} />
   <main>
     <Hero      data={data.hero} />
+    <TrustBar  items={data.hero.trust_badges} />
     <Showcase  data={data.showcase} />
+    <SectionDivider from="white" to="white" wave />
     <Services  data={data.services} />
+    <SectionDivider from="white" to="surface" wave />
     <Pricing   data={data.pricing} />
+    <SectionDivider from="surface" to="surface" />
     <About     data={data.about} />
+    <SectionDivider from="surface" to="white" wave />
     <FAQ       data={data.faq} />
+    <SectionDivider from="white" to="surface" />
     <Contact   data={data.contact} />
   </main>
   <Footer brand={data.brand} footer={data.footer} />

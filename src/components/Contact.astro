@@ -15,10 +15,10 @@ const accentColors: Record<string, { main: string; light: string }> = {
       <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+    <h2 class="font-heading font-medium leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
       {data.heading[0]}<br/>
-      <span class="text-brand-primary font-body font-bold not-italic">{data.heading[1]}</span>
+      <span class="font-heading font-medium not-italic" style="color:#0F172A">{data.heading[1]}</span>
     </h2>
     <p class="text-brand-text leading-[1.75] mb-12 max-w-[560px]">{data.subtext}</p>
 
@@ -29,10 +29,10 @@ const accentColors: Record<string, { main: string; light: string }> = {
           <span class="flex-shrink-0 gradient-divider rounded-full"></span>
           {data.booking_label}
         </div>
-        <h3 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-3"
+        <h3 class="font-heading font-medium leading-[1.08] tracking-[-0.02em] text-brand-heading mb-3"
           style="font-size:clamp(1.5rem,3vw,2.25rem)">
           {data.booking_heading[0]}<br/>
-          <span class="text-brand-primary font-body font-bold not-italic">{data.booking_heading[1]}</span>
+          <span class="font-heading font-medium not-italic" style="color:#0F172A">{data.booking_heading[1]}</span>
         </h3>
         <p class="text-brand-text leading-[1.75] mb-6 max-w-[560px]">{data.booking_subtext}</p>
 

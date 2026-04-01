@@ -8,9 +8,9 @@ const { data } = Astro.props;
       <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+    <h2 class="font-heading font-medium leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} <span class="font-body font-bold not-italic" style="color:#059669">{data.heading[1]}</span>
+      {data.heading[0]} <span class="font-heading font-medium not-italic" style="color:#0F172A">{data.heading[1]}</span>
     </h2>
     <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
 
@@ -52,6 +52,15 @@ const { data } = Astro.props;
                       </ul>
                     )}
                   </>
+                )}
+
+                {/* CTA Button */}
+                {data.cta && (
+                  <a href={data.cta.href}
+                    class="inline-flex items-center justify-center mt-8 px-7 py-3.5 rounded-full font-body font-bold text-sm no-underline"
+                    style="background:#059669;color:#fff;box-shadow:0 4px 14px rgba(5,150,105,0.35);transition:background 200ms ease,transform 200ms ease">
+                    {data.cta.label}
+                  </a>
                 )}
               </div>
 
@@ -127,6 +136,12 @@ const { data } = Astro.props;
     </div>
 
     <p class="text-center text-brand-muted text-xs mt-6">{data.note}</p>
+
+    <!-- Inline CTA -->
+    <div class="text-center pt-10 pb-2 border-t border-brand-border mt-10">
+      <span class="font-heading italic text-brand-heading" style="font-size:1.1rem">Überzeugt?</span>
+      <a href="#kontakt" class="text-brand-primary font-body font-bold text-sm ml-3 hover:underline">Erstgespräch buchen →</a>
+    </div>
   </div>
 </section>
 

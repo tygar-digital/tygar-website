@@ -8,10 +8,10 @@ const { data } = Astro.props;
       <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+    <h2 class="font-heading font-medium leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
       {data.heading[0]}<br/>
-      <span class="font-body font-bold not-italic" style="color:#059669">{data.heading[1]}</span>
+      <span class="font-heading font-medium not-italic" style="color:#0F172A">{data.heading[1]}</span>
     </h2>
     <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
 
@@ -60,6 +60,12 @@ const { data } = Astro.props;
           </div>
         </a>
       ))}
+    </div>
+
+    <!-- Inline CTA -->
+    <div class="text-center pt-10 pb-2 border-t border-brand-border mt-10">
+      <span class="font-heading italic text-brand-heading" style="font-size:1.1rem">Gefällt dir, was du siehst?</span>
+      <a href="#kontakt" class="text-brand-primary font-body font-bold text-sm ml-3 hover:underline">Erstgespräch buchen →</a>
     </div>
   </div>
 </section>
