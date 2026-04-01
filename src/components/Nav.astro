@@ -93,6 +93,8 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
   const hamburgerLines = nav.querySelectorAll('.hamburger-line');
   const heroSection = document.getElementById('hero');
   const heroHeight = heroSection ? heroSection.offsetHeight * 0.4 : 300;
+  const sections = document.querySelectorAll('section[id]');
+  let current = '';
 
   function updateNav() {
     const scrolled = window.scrollY > heroHeight;
@@ -120,8 +122,6 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
   }
 
   // Scroll spy
-  const sections = document.querySelectorAll('section[id]');
-  let current = '';
   function updateActive() {
     current = '';
     sections.forEach(s => {

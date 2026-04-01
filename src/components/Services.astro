@@ -1,5 +1,10 @@
 ---
 const { data } = Astro.props;
+const accentColors: Record<string, { main: string; light: string }> = {
+  emerald: { main: '#059669', light: '#ECFDF5' },
+  cyan:    { main: '#0891B2', light: '#ECFEFF' },
+  violet:  { main: '#7C3AED', light: '#F5F3FF' },
+};
 ---
 <section id="leistungen" class="bg-brand-bg">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
@@ -23,8 +28,8 @@ const { data } = Astro.props;
             </span>
           )}
           <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-            style={`background:${item.coming_soon ? 'rgba(138,138,170,0.10)' : '#ECFDF5'};
-                    color:${item.coming_soon ? '#6B7280' : '#059669'}`}
+            style={`background:${item.coming_soon ? 'rgba(138,138,170,0.10)' : (accentColors[item.accent]?.light || '#ECFDF5')};
+                    color:${item.coming_soon ? '#6B7280' : (accentColors[item.accent]?.main || '#059669')}`}
             set:html={item.icon_svg}>
           </div>
           <h3 class={`font-heading text-lg ${item.coming_soon ? 'text-brand-muted' : 'text-brand-heading'}`}>{item.title}</h3>
@@ -33,7 +38,7 @@ const { data } = Astro.props;
             <ul class="flex flex-col gap-2 mt-1">
               {item.features.map((f: string) => (
                 <li class={`flex items-start gap-2 text-sm ${item.coming_soon ? 'text-brand-muted' : 'text-brand-text'}`}>
-                  <span style={`color:${item.coming_soon ? '#6B7280' : '#059669'}`}>✓</span>
+                  <span style={`color:${item.coming_soon ? '#6B7280' : (accentColors[item.accent]?.main || '#059669')}`}>✓</span>
                   {f}
                 </li>
               ))}
@@ -49,17 +54,17 @@ const { data } = Astro.props;
         <span class="flex-shrink-0 gradient-divider rounded-full"></span>
         {data.process_label}
       </div>
-      <h2 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+      <h3 class="font-heading leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
         style="font-size:clamp(2rem,4.5vw,3.25rem)">
         {data.process_heading[0]} <span class="font-body font-bold not-italic" style="color:#059669">{data.process_heading[1]}</span>
-      </h2>
+      </h3>
       <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.process_subtext}</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {data.steps.map((step: any, i: number) => (
+        {data.steps.map((step: any) => (
           <div class="rounded-[12px] border border-[#E5E7EB] p-7 flex flex-col gap-3 relative bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)]">
             <span class="text-4xl font-heading leading-none" style="color:#059669">
-              {String(i + 1).padStart(2, '0')}
+              {step.number}
             </span>
             <h3 class="font-heading text-brand-heading">{step.title}</h3>
             <p class="text-brand-text text-sm leading-relaxed">{step.text}</p>

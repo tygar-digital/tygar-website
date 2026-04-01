@@ -1,5 +1,14 @@
 ---
+import { Image } from 'astro:assets';
+import handwerkerImg from '../assets/handwerker.webp';
+import janImg from '../assets/jan.webp';
+
 const { data } = Astro.props;
+const accentColors: Record<string, { main: string; light: string }> = {
+  emerald: { main: '#059669', light: '#ECFDF5' },
+  cyan:    { main: '#0891B2', light: '#ECFEFF' },
+  violet:  { main: '#7C3AED', light: '#F5F3FF' },
+};
 ---
 <section id="ueber-mich" class="bg-brand-surface">
   <div class="max-w-[1160px] mx-auto px-8 py-20 md:py-28">
@@ -22,7 +31,7 @@ const { data } = Astro.props;
       {data.mission_image && (
         <div class="hidden lg:block rounded-xl overflow-hidden border border-brand-border relative shadow-sm"
           style="aspect-ratio:4/3">
-          <img src={data.mission_image.src} alt={data.mission_image.alt} class="w-full h-full object-cover" loading="lazy" decoding="async" />
+          <Image src={handwerkerImg} alt={data.mission_image.alt} class="w-full h-full object-cover" loading="lazy" decoding="async" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
         </div>
       )}
@@ -32,7 +41,7 @@ const { data } = Astro.props;
       {data.values.map((val: any) => (
         <div class="rounded-xl border border-brand-border p-7 flex flex-col gap-4 bg-white shadow-sm hover:shadow-md transition-shadow gradient-border-hover">
           <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-            style="background:#ECFDF5;color:#059669"
+            style={`background:${accentColors[val.accent]?.light || '#ECFDF5'};color:${accentColors[val.accent]?.main || '#059669'}`}
             set:html={val.icon_svg}>
           </div>
           <h3 class="font-heading text-brand-heading">{val.title}</h3>
@@ -69,8 +78,8 @@ const { data } = Astro.props;
 
       {data.image ? (
         <div class="rounded-xl overflow-hidden aspect-[3/4] border border-brand-border relative shadow-sm">
-          <img
-            src={data.image.src}
+          <Image
+            src={janImg}
             alt={data.image.alt}
             class="w-full h-full object-cover object-[center_15%]"
             loading="lazy"
@@ -83,7 +92,7 @@ const { data } = Astro.props;
           <div class="text-center p-8">
             <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
               style="background:#ECFDF5;border:1px solid rgba(5,150,105,0.20)">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.5">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.5" aria-hidden="true">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                 <circle cx="12" cy="7" r="4"/>
               </svg>

@@ -70,8 +70,8 @@
     },
     "kpis": [
       {
-        "value": "490 €",
-        "label": "Festpreis",
+        "value": "0 €",
+        "label": "Einführungspreis",
         "color": "emerald"
       },
       {
@@ -114,17 +114,33 @@
         "value": "+180%",
         "label": "mehr Anfragen nach Launch"
       },
-      "browser": {
-        "src": "/images/browser-screenshot.jpg",
-        "alt": "Website-Vorschau eines lokalen Unternehmens"
-      },
-      "phone": {
-        "src": "/images/phone-mockup.jpg",
-        "alt": "Smartphone zeigt moderne Website eines lokalen Unternehmens"
-      },
       "customer": {
-        "src": "/images/barista.jpg",
         "alt": "Zufriedener Cafébesitzer"
+      },
+      "mockup": {
+        "domain": "hairlounge-koeln.de",
+        "brand_name": "Hairlounge",
+        "tagline_label": "Friseursalon Köln",
+        "tagline_line1": "Dein Style.",
+        "tagline_line2": "Unsere Leidenschaft.",
+        "subtitle": "Modernes Haarstyling im Herzen von Köln — professionell, entspannt & immer auf Augenhöhe.",
+        "cta_primary": "Termin vereinbaren →",
+        "cta_secondary": "Preise ansehen",
+        "nav_cta": "Termin buchen",
+        "nav_links": ["Leistungen", "Team", "Preise", "Kontakt"],
+        "services": [
+          { "name": "Schnitt & Styling", "price": "ab 35 €" },
+          { "name": "Färben & Strähnen", "price": "ab 65 €" },
+          { "name": "Bartpflege", "price": "ab 20 €" },
+          { "name": "Brautstyling", "price": "auf Anfrage" }
+        ],
+        "phone_heading": "Termin buchen",
+        "phone_services": [
+          { "name": "Schnitt & Styling", "detail": "45 Min · 42 €", "selected": true },
+          { "name": "Färben & Strähnen", "detail": "90 Min · 85 €", "selected": false }
+        ],
+        "phone_month": "März 2026",
+        "phone_cta": "Termin bestätigen"
       },
       "notification": {
         "title": "Neue Anfrage",
@@ -142,7 +158,7 @@
         "number": "01",
         "accent": "emerald",
         "icon": "monitor",
-        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='2' y='3' width='20' height='14' rx='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>",
         "title": "Professionelle Website",
         "text": "Deine digitale Visitenkarte — ein moderner Online-Auftritt, der Vertrauen schafft und neue Kunden bringt. Rund um die Uhr, auf jedem Gerät.",
         "features": [
@@ -155,7 +171,7 @@
         "number": "02",
         "accent": "cyan",
         "icon": "zap",
-        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
         "title": "Tools für deine Kunden",
         "text": "Weniger Telefon, mehr Kunden. Mit einem Buchungssystem können deine Kunden selbstständig Termine buchen — du sparst Zeit für das, was zählt.",
         "features": [
@@ -168,7 +184,7 @@
         "number": "03",
         "accent": "violet",
         "icon": "brain",
-        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2a5 5 0 0 1 4.5 7.2A5 5 0 0 1 19 14a5 5 0 0 1-3 4.6V22h-2v-3.4A5 5 0 0 1 8 14a5 5 0 0 1 2.5-4.3A5 5 0 0 1 12 2Z'/></svg>",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M12 2a5 5 0 0 1 4.5 7.2A5 5 0 0 1 19 14a5 5 0 0 1-3 4.6V22h-2v-3.4A5 5 0 0 1 8 14a5 5 0 0 1 2.5-4.3A5 5 0 0 1 12 2Z'/></svg>",
         "title": "Digitale Assistenz",
         "text": "Dein smarter Helfer im Hintergrund — beantwortet häufige Kundenfragen automatisch und hilft bei Texten & Inhalten.",
         "coming_soon": true,
@@ -224,7 +240,7 @@
       {
         "accent": "emerald",
         "icon": "monitor",
-        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='2' y='3' width='20' height='14' rx='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>",
         "bg_label": "WEB",
         "tags": [
           "Webdesign",
@@ -239,7 +255,7 @@
       {
         "accent": "cyan",
         "icon": "zap",
-        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
         "bg_label": "AUTO",
         "tags": [
           "Buchungssystem",
@@ -254,7 +270,7 @@
       {
         "accent": "violet",
         "icon": "brain",
-        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2a5 5 0 0 1 4.5 7.2A5 5 0 0 1 19 14a5 5 0 0 1-3 4.6V22h-2v-3.4A5 5 0 0 1 8 14a5 5 0 0 1 2.5-4.3A5 5 0 0 1 12 2Z'/></svg>",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M12 2a5 5 0 0 1 4.5 7.2A5 5 0 0 1 19 14a5 5 0 0 1-3 4.6V22h-2v-3.4A5 5 0 0 1 8 14a5 5 0 0 1 2.5-4.3A5 5 0 0 1 12 2Z'/></svg>",
         "bg_label": "KI",
         "tags": [
           "KI",
@@ -281,28 +297,27 @@
     ],
     "mission_statement": "Wir glauben, dass jedes lokale Business einen professionellen Online-Auftritt verdient — ohne dafür wochenlang mit Agenturen zu diskutieren oder ein Vermögen auszugeben. Du kümmerst dich um deine Kunden, wir kümmern uns um den Rest.",
     "mission_image": {
-      "src": "/images/handwerker.jpg",
       "alt": "Handwerker in seiner Werkstatt schaut auf sein Smartphone bei einer Tasse Kaffee"
     },
     "values": [
       {
         "accent": "emerald",
         "icon": "zap",
-        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
         "title": "Schnell startklar",
         "text": "In 3 Wochen ist deine neue Website live. Kein endloses Hin und Her — wir starten direkt nach dem Erstgespräch."
       },
       {
         "accent": "cyan",
         "icon": "check",
-        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><polyline points='20 6 9 17 4 12'/></svg>",
         "title": "Du machst dein Ding",
         "text": "Null Technik-Stress. Wir kümmern uns um Design, Hosting, Updates und alles Technische. Du konzentrierst dich auf das, was du am besten kannst."
       },
       {
         "accent": "violet",
         "icon": "heart",
-        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></svg>",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></svg>",
         "title": "Faire Preise",
         "text": "Kein Kleingedrucktes. Ein Preis, alles drin. Keine 5-stelligen Agenturprojekte — sondern eine professionelle Lösung, die sich rechnet."
       }
@@ -312,7 +327,6 @@
     "bio": "Ich weiß, wie stressig der Alltag als lokaler Unternehmer ist — da bleibt die eigene Website oft auf der Strecke. Genau deshalb habe ich Tygar gegründet: um Cafés, Friseuren, Handwerkern und Dienstleistern den Online-Auftritt zu geben, den sie verdienen. Ohne Technik-Stress, ohne Agentur-Bürokratie.",
     "bio2": "Mit Hintergrund in Wirtschaftsinformatik und Digital Consulting bringe ich das technische Know-how mit — aber mein Fokus liegt immer auf dem, was für dich als Unternehmer zählt: mehr Sichtbarkeit, mehr Anfragen, weniger Aufwand. Persönlich, direkt und fair. Aus Köln/Bonn für die ganze Region.",
     "image": {
-      "src": "/images/jan.jpg",
       "alt": "Jan de Martin, Gründer von Tygar"
     },
     "photo_placeholder": false,
@@ -479,7 +493,7 @@
     "info_boxes": [
       {
         "icon": "mail",
-        "icon_svg": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='4' width='20' height='16' rx='2'/><path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/></svg>",
+        "icon_svg": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='2' y='4' width='20' height='16' rx='2'/><path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/></svg>",
         "label": "E-Mail",
         "value": "tygar-digital@gmail.com",
         "href": "mailto:tygar-digital@gmail.com",
@@ -487,14 +501,14 @@
       },
       {
         "icon": "clock",
-        "icon_svg": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>",
+        "icon_svg": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>",
         "label": "Antwortzeit",
         "value": "Innerhalb von 24 Stunden",
         "accent": "cyan"
       },
       {
         "icon": "map-pin",
-        "icon_svg": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z'/><circle cx='12' cy='10' r='3'/></svg>",
+        "icon_svg": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z'/><circle cx='12' cy='10' r='3'/></svg>",
         "label": "Standort",
         "value": "Köln / Bonn",
         "accent": "violet"
