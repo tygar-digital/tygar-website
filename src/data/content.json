@@ -42,12 +42,12 @@
       },
       {
         "label": "Termin",
-        "href": "#termin"
+        "href": "#kontakt"
       }
     ],
     "cta": {
       "label": "Erstgespräch buchen →",
-      "href": "#termin"
+      "href": "#kontakt"
     }
   },
   "hero": {
@@ -58,11 +58,11 @@
       "Wir uns um deinen",
       "Online-Auftritt."
     ],
-    "subtext": "Deine Website verdient mehr als \u201Egeht schon\u201C. Wir \u00fcbernehmen Technik, Design und Erstellung \u2014 du lehnst dich zur\u00fcck.",
+    "subtext": "",
     "highlight": "Denn deine Kunden suchen online nach dir.",
     "cta_primary": {
       "label": "Kostenloses Erstgespräch →",
-      "href": "#termin"
+      "href": "#kontakt"
     },
     "cta_secondary": {
       "label": "Preise ansehen",
@@ -91,6 +91,20 @@
       "Minimaler Aufwand für dich",
       "Langfristige Betreuung"
     ],
+    "marquee_items": [
+      "Professionelle Website",
+      "Online gefunden werden",
+      "Mehr Anfragen",
+      "Terminbuchung",
+      "Google-Sichtbarkeit",
+      "Mobiloptimiert",
+      "Rundum-sorglos",
+      "Faire Preise",
+      "DSGVO-konform",
+      "Persönliche Betreuung",
+      "In 3 Wochen live",
+      "Lokale Unternehmen"
+    ],
     "collage": {
       "review": {
         "text": "Super professionell und schnell. Endlich eine Website, die zu meinem Laden passt!",
@@ -118,82 +132,6 @@
         "time": "Gerade eben"
       }
     }
-  },
-  "marquee_items": [
-    "Professionelle Website",
-    "Online gefunden werden",
-    "Mehr Anfragen",
-    "Terminbuchung",
-    "Google-Sichtbarkeit",
-    "Mobiloptimiert",
-    "Rundum-sorglos",
-    "Faire Preise",
-    "DSGVO-konform",
-    "Persönliche Betreuung",
-    "In 3 Wochen live",
-    "Lokale Unternehmen"
-  ],
-  "mission": {
-    "label": "Warum Tygar",
-    "image": {
-      "src": "/images/handwerker.jpg",
-      "alt": "Handwerker in seiner Werkstatt schaut auf sein Smartphone bei einer Tasse Kaffee"
-    },
-    "headline": [
-      "Professionell online —",
-      "ohne den ganzen Stress."
-    ],
-    "statement": "Wir glauben, dass jedes lokale Business einen professionellen Online-Auftritt verdient — ohne dafür wochenlang mit Agenturen zu diskutieren oder ein Vermögen auszugeben. Du kümmerst dich um deine Kunden, wir kümmern uns um den Rest.",
-    "values": [
-      {
-        "accent": "emerald",
-        "icon": "zap",
-        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
-        "title": "Schnell startklar",
-        "text": "In 3 Wochen ist deine neue Website live. Kein endloses Hin und Her — wir starten direkt nach dem Erstgespräch."
-      },
-      {
-        "accent": "cyan",
-        "icon": "check",
-        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>",
-        "title": "Du machst dein Ding",
-        "text": "Null Technik-Stress. Wir kümmern uns um Design, Hosting, Updates und alles Technische. Du konzentrierst dich auf das, was du am besten kannst."
-      },
-      {
-        "accent": "violet",
-        "icon": "heart",
-        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></svg>",
-        "title": "Faire Preise",
-        "text": "Kein Kleingedrucktes. Ein Preis, alles drin. Keine 5-stelligen Agenturprojekte — sondern eine professionelle Lösung, die sich rechnet."
-      }
-    ],
-    "audience_label": "Für wen wir arbeiten",
-    "audience": [
-      {
-        "icon": "☕",
-        "label": "Cafés & Restaurants"
-      },
-      {
-        "icon": "✂️",
-        "label": "Friseure & Beauty"
-      },
-      {
-        "icon": "🔨",
-        "label": "Handwerksbetriebe"
-      },
-      {
-        "icon": "🏥",
-        "label": "Praxen & Therapeuten"
-      },
-      {
-        "icon": "💼",
-        "label": "Dienstleister & Berater"
-      },
-      {
-        "icon": "🏗️",
-        "label": "Baugewerbe & Technik"
-      }
-    ]
   },
   "services": {
     "label": "Leistungen",
@@ -240,12 +178,10 @@
           "Entlastet dich im Tagesgeschäft"
         ]
       }
-    ]
-  },
-  "process": {
-    "label": "Prozess",
-    "heading": ["So läuft's", "ab"],
-    "subtext": "Vier einfache Schritte — von der ersten Idee bis zu deiner fertigen Website.",
+    ],
+    "process_label": "Prozess",
+    "process_heading": ["So läuft's", "ab"],
+    "process_subtext": "Vier einfache Schritte — von der ersten Idee bis zu deiner fertigen Website.",
     "steps": [
       {
         "number": "01",
@@ -332,23 +268,47 @@
       }
     ]
   },
-  "booking": {
-    "label": "Kostenloses Erstgespräch",
-    "heading": [
-      "Lass uns reden —",
-      "unverbindlich & kostenlos."
-    ],
-    "subtext": "In 30 Minuten besprechen wir dein Projekt und du weißt danach genau, was der nächste Schritt ist.",
-    "cal_link": "tygar/erstgesprach",
-    "_cal_hint": "↑ Nur Username/Event eintragen, z.B. jan/erstgespraech – kein https://",
-    "features": []
-  },
   "about": {
     "label": "Über Tygar",
     "headline": [
       "Der Mensch",
       "hinter Tygar."
     ],
+    "mission_label": "Warum Tygar",
+    "mission_headline": [
+      "Professionell online —",
+      "ohne den ganzen Stress."
+    ],
+    "mission_statement": "Wir glauben, dass jedes lokale Business einen professionellen Online-Auftritt verdient — ohne dafür wochenlang mit Agenturen zu diskutieren oder ein Vermögen auszugeben. Du kümmerst dich um deine Kunden, wir kümmern uns um den Rest.",
+    "mission_image": {
+      "src": "/images/handwerker.jpg",
+      "alt": "Handwerker in seiner Werkstatt schaut auf sein Smartphone bei einer Tasse Kaffee"
+    },
+    "values": [
+      {
+        "accent": "emerald",
+        "icon": "zap",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>",
+        "title": "Schnell startklar",
+        "text": "In 3 Wochen ist deine neue Website live. Kein endloses Hin und Her — wir starten direkt nach dem Erstgespräch."
+      },
+      {
+        "accent": "cyan",
+        "icon": "check",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>",
+        "title": "Du machst dein Ding",
+        "text": "Null Technik-Stress. Wir kümmern uns um Design, Hosting, Updates und alles Technische. Du konzentrierst dich auf das, was du am besten kannst."
+      },
+      {
+        "accent": "violet",
+        "icon": "heart",
+        "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></svg>",
+        "title": "Faire Preise",
+        "text": "Kein Kleingedrucktes. Ein Preis, alles drin. Keine 5-stelligen Agenturprojekte — sondern eine professionelle Lösung, die sich rechnet."
+      }
+    ],
+    "audience_label": "",
+    "audience": [],
     "bio": "Ich weiß, wie stressig der Alltag als lokaler Unternehmer ist — da bleibt die eigene Website oft auf der Strecke. Genau deshalb habe ich Tygar gegründet: um Cafés, Friseuren, Handwerkern und Dienstleistern den Online-Auftritt zu geben, den sie verdienen. Ohne Technik-Stress, ohne Agentur-Bürokratie.",
     "bio2": "Mit Hintergrund in Wirtschaftsinformatik und Digital Consulting bringe ich das technische Know-how mit — aber mein Fokus liegt immer auf dem, was für dich als Unternehmer zählt: mehr Sichtbarkeit, mehr Anfragen, weniger Aufwand. Persönlich, direkt und fair. Aus Köln/Bonn für die ganze Region.",
     "image": {
@@ -508,6 +468,13 @@
       "Bereit für deinen",
       "neuen Online-Auftritt?"
     ],
+    "booking_label": "Kostenloses Erstgespräch",
+    "booking_heading": [
+      "Lass uns reden —",
+      "unverbindlich & kostenlos."
+    ],
+    "booking_subtext": "In 30 Minuten besprechen wir dein Projekt und du weißt danach genau, was der nächste Schritt ist.",
+    "cal_link": "tygar/erstgesprach",
     "subtext": "Erzähl uns von deinem Business. Wir melden uns innerhalb von 24 Stunden — unkompliziert und auf Augenhöhe.",
     "info_boxes": [
       {

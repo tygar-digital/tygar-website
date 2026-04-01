@@ -9,25 +9,25 @@ import data from '../data/content.json';
   canonical={data.meta.canonical + '/impressum'}
 >
   <nav class="fixed top-0 left-0 right-0 z-[200] h-[72px] border-b border-brand-border"
-    style="background: rgba(16,44,38,0.92); backdrop-filter: blur(16px);">
+    style="background: rgba(255,255,255,0.90); backdrop-filter: blur(16px);">
     <div class="max-w-[1160px] mx-auto px-8 h-full flex items-center">
       <a href="/" class="flex items-center gap-2.5 no-underline">
-        <img src={data.brand.logo_svg} alt={data.brand.name + ' Logo'} class="h-8 w-auto" style="filter: brightness(0) invert(91%) sepia(12%) saturate(497%) hue-rotate(345deg) brightness(104%) contrast(92%)" />
-        <span class="font-heading font-black text-xl tracking-tight" style="color:#F7E7CE">{data.brand.name}</span>
+        <img src={data.brand.logo_svg} alt={data.brand.name + ' Logo'} class="h-8 w-auto" />
+        <span class="font-body font-extrabold text-xl tracking-tight text-brand-heading">{data.brand.name}</span>
       </a>
     </div>
   </nav>
 
   <main class="max-w-[720px] mx-auto px-8 pb-24" style="padding-top: calc(72px + 64px)">
     <a href="/" class="inline-flex items-center gap-1.5 text-sm no-underline mb-12 transition-colors hover:opacity-70"
-      style="color:#102C26">
+      style="color:#059669">
       ← Zurück zur Startseite
     </a>
 
-    <h1 class="font-heading font-black text-4xl text-brand-heading mb-1.5">Impressum</h1>
+    <h1 class="font-body font-extrabold text-4xl text-brand-heading mb-1.5">Impressum</h1>
     <p class="text-brand-muted text-sm mb-10 pb-10 border-b border-brand-border">Angaben gemäß § 5 TMG</p>
 
-    <h2 class="text-sm font-heading font-bold text-brand-heading tracking-wide mt-10 mb-2.5 pt-2 border-t border-brand-border">Anbieter</h2>
+    <h2 class="text-sm font-body font-bold text-brand-heading tracking-wide mt-10 mb-2.5 pt-2 border-t border-brand-border">Anbieter</h2>
     <p class="text-brand-text text-sm leading-[1.8] mb-2.5">
       Jan DeMartín<br/>
       Tygar (Einzelgewerbe)<br/>
@@ -36,21 +36,21 @@ import data from '../data/content.json';
       Deutschland
     </p>
 
-    <h2 class="text-sm font-heading font-bold text-brand-heading tracking-wide mt-10 mb-2.5 pt-2 border-t border-brand-border">Kontakt</h2>
+    <h2 class="text-sm font-body font-bold text-brand-heading tracking-wide mt-10 mb-2.5 pt-2 border-t border-brand-border">Kontakt</h2>
     <p class="text-brand-text text-sm leading-[1.8] mb-2.5">
-      E-Mail: <a href="mailto:tygar-digital@gmail.com" class="transition-colors hover:opacity-70" style="color:#102C26">tygar-digital@gmail.com</a>
+      E-Mail: <a href="mailto:tygar-digital@gmail.com" class="transition-colors hover:opacity-70" style="color:#059669">tygar-digital@gmail.com</a>
     </p>
 
-    <h2 class="text-sm font-heading font-bold text-brand-heading tracking-wide mt-10 mb-2.5 pt-2 border-t border-brand-border">Umsatzsteuer</h2>
+    <h2 class="text-sm font-body font-bold text-brand-heading tracking-wide mt-10 mb-2.5 pt-2 border-t border-brand-border">Umsatzsteuer</h2>
     <p class="text-brand-text text-sm leading-[1.8] mb-2.5">
       Als Kleinunternehmer im Sinne von § 19 Abs. 1 UStG wird keine Umsatzsteuer berechnet und ausgewiesen.
       Eine Umsatzsteuer-Identifikationsnummer liegt nicht vor.
     </p>
 
-    <h2 class="text-sm font-heading font-bold text-brand-heading tracking-wide mt-10 mb-2.5 pt-2 border-t border-brand-border">Berufsbezeichnung</h2>
+    <h2 class="text-sm font-body font-bold text-brand-heading tracking-wide mt-10 mb-2.5 pt-2 border-t border-brand-border">Berufsbezeichnung</h2>
     <p class="text-brand-text text-sm leading-[1.8] mb-2.5">Webdesigner / Digital Consultant (Dienstleistung nach § 18 EStG)</p>
 
-    <h2 class="text-sm font-heading font-bold text-brand-heading tracking-wide mt-10 mb-2.5 pt-2 border-t border-brand-border">Haftung für Inhalte</h2>
+    <h2 class="text-sm font-body font-bold text-brand-heading tracking-wide mt-10 mb-2.5 pt-2 border-t border-brand-border">Haftung für Inhalte</h2>
     <p class="text-brand-text text-sm leading-[1.8] mb-2.5">
       Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den
       allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
@@ -64,7 +64,7 @@ import data from '../data/content.json';
       Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
     </p>
 
-    <h2 class="text-sm font-heading font-bold text-brand-heading tracking-wide mt-10 mb-2.5 pt-2 border-t border-brand-border">Haftung für Links</h2>
+    <h2 class="text-sm font-body font-bold text-brand-heading tracking-wide mt-10 mb-2.5 pt-2 border-t border-brand-border">Haftung für Links</h2>
     <p class="text-brand-text text-sm leading-[1.8] mb-2.5">
       Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss
       haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte
@@ -76,7 +76,7 @@ import data from '../data/content.json';
       Links umgehend entfernen.
     </p>
 
-    <h2 class="text-sm font-heading font-bold text-brand-heading tracking-wide mt-10 mb-2.5 pt-2 border-t border-brand-border">Urheberrecht</h2>
+    <h2 class="text-sm font-body font-bold text-brand-heading tracking-wide mt-10 mb-2.5 pt-2 border-t border-brand-border">Urheberrecht</h2>
     <p class="text-brand-text text-sm leading-[1.8] mb-2.5">
       Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
       deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung

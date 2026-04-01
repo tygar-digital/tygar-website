@@ -5,34 +5,31 @@ const { brand, footer } = Astro.props;
 const logoPath = path.join(process.cwd(), 'public', brand.logo_svg);
 const logoSvg = fs.readFileSync(logoPath, 'utf-8');
 ---
-<footer style="background:#102C26">
+<footer class="bg-[#111827]">
   <div class="max-w-[1160px] mx-auto px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
 
     <a href="#" class="flex items-center gap-2.5 no-underline">
       <span class="footer-logo-svg" set:html={logoSvg} aria-label={brand.name + ' Logo'}></span>
-      <span class="font-heading font-black text-lg tracking-tight" style="color:#F7E7CE">{brand.name}</span>
+      <span class="font-heading text-lg tracking-tight text-white">{brand.name}</span>
     </a>
 
-    <span class="text-xs font-body" style="color:rgba(247,231,206,0.5)">{footer.copyright}</span>
+    <span class="text-xs font-body text-white/50">{footer.copyright}</span>
 
     <div class="flex gap-6 items-center">
       {footer.legal_links.map((l: any) => (
-        <a href={l.href} class="text-xs font-body transition-colors hover:opacity-100"
-          style="color:rgba(247,231,206,0.5)">
+        <a href={l.href} class="text-xs font-body text-white/50 transition-colors hover:text-white">
           {l.label}
         </a>
       ))}
       {brand.social?.linkedin && brand.social.linkedin !== '#' && (
         <a href={brand.social.linkedin} target="_blank" rel="noopener noreferrer"
-          class="text-xs font-body transition-colors hover:opacity-100"
-          style="color:rgba(247,231,206,0.5)">
+          class="text-xs font-body text-white/50 transition-colors hover:text-white">
           LinkedIn
         </a>
       )}
       {brand.social?.instagram && brand.social.instagram !== '#' && (
         <a href={brand.social.instagram} target="_blank" rel="noopener noreferrer"
-          class="text-xs font-body transition-colors hover:opacity-100"
-          style="color:rgba(247,231,206,0.5)">
+          class="text-xs font-body text-white/50 transition-colors hover:text-white">
           Instagram
         </a>
       )}
@@ -43,7 +40,7 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
 <style>
   .footer-logo-svg {
     display: inline-flex;
-    color: #F7E7CE;
+    color: #FFFFFF;
     height: 32px;
     width: auto;
   }

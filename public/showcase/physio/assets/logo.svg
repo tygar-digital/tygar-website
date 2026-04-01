@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 48" fill="none">
+  <!-- Puls-Linie als Icon -->
+  <polyline
+    points="4,24 18,24 24,10 30,38 36,18 42,28 52,28"
+    stroke="#92c557" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"
+  />
+  <!-- Wordmark -->
+  <text x="62" y="21" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="400" fill="#0F1D1C" letter-spacing="-0.3">Nebel</text>
+  <text x="62" y="35" font-family="Helvetica, Arial, sans-serif" font-size="7.5" font-weight="600" fill="#92c557" letter-spacing="2.2">PHYSIOTHERAPIE</text>
+</svg>

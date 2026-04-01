@@ -6,13 +6,13 @@ const logoPath = path.join(process.cwd(), 'public', brand.logo_svg);
 const logoSvg = fs.readFileSync(logoPath, 'utf-8');
 ---
 
-<nav id="main-nav" class="fixed top-0 left-0 right-0 z-[200] h-[72px]"
-  style="background: rgba(16,44,38,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(247,231,206,0.1);">
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-[200] h-[72px] transition-all duration-300"
+  style="background: transparent; backdrop-filter: blur(16px); border-bottom: 1px solid transparent;">
   <div class="max-w-[1160px] mx-auto px-8 h-full flex justify-between items-center">
 
     <a href="#" class="flex items-center gap-2.5 no-underline">
       <span class="nav-logo-svg" set:html={logoSvg} aria-label={brand.name + ' Logo'}></span>
-      <span class="font-heading font-black text-xl tracking-tight" style="color:#F7E7CE">{brand.name}</span>
+      <span class="font-heading text-xl tracking-tight nav-brand-text" style="color:#FFFFFF">{brand.name}</span>
     </a>
 
     <ul class="hidden lg:flex gap-8 items-center list-none">
@@ -20,26 +20,26 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
         <li>
           <a href={link.href}
             class="text-[15px] font-body font-medium transition-colors nav-link"
-            style="color:rgba(247,231,206,0.7)"
-            onmouseover="this.style.color='#F7E7CE'" onmouseout="this.style.color='rgba(247,231,206,0.7)'">
+            style="color:rgba(255,255,255,0.7)"
+            >
             {link.label}
           </a>
         </li>
       ))}
       <li>
         <a href={nav.cta.href}
-          class="font-heading font-bold text-sm px-5 py-2.5 rounded-lg transition-all hover:-translate-y-0.5 hover:opacity-90"
-          style="background:#F7E7CE;color:#102C26">
+          class="font-body font-bold text-sm px-5 py-2.5 transition-all hover:-translate-y-0.5 hover:opacity-90"
+          style="background:#059669;color:#FFFFFF;border-radius:50px">
           {nav.cta.label}
         </a>
       </li>
     </ul>
 
     <button id="hamburger" aria-label="Menü öffnen"
-      class="lg:hidden flex flex-col justify-center items-center w-11 h-11 gap-[5px] p-2 rounded-md transition-colors hover:bg-white/10">
-      <span class="block w-[22px] h-[2px] rounded transition-all origin-center" style="background:#F7E7CE"></span>
-      <span class="block w-[22px] h-[2px] rounded transition-all origin-center" style="background:#F7E7CE"></span>
-      <span class="block w-[22px] h-[2px] rounded transition-all origin-center" style="background:#F7E7CE"></span>
+      class="lg:hidden flex flex-col justify-center items-center w-11 h-11 gap-[5px] p-2 rounded-md transition-colors hover:bg-black/5">
+      <span class="block w-[22px] h-[2px] rounded transition-all origin-center hamburger-line" style="background:#FFFFFF"></span>
+      <span class="block w-[22px] h-[2px] rounded transition-all origin-center hamburger-line" style="background:#FFFFFF"></span>
+      <span class="block w-[22px] h-[2px] rounded transition-all origin-center hamburger-line" style="background:#FFFFFF"></span>
     </button>
   </div>
 </nav>
@@ -47,13 +47,13 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
 <!-- Mobile overlay -->
 <div id="mobile-overlay"
   class="hidden fixed inset-0 z-[150] flex-col px-8 overflow-y-auto"
-  style="background:#102C26; padding-top: calc(72px + 32px); padding-bottom: 48px;">
+  style="background:#FFFFFF; padding-top: calc(72px + 32px); padding-bottom: 48px;">
   <ul class="list-none flex flex-col gap-1 flex-1">
     {nav.links.map((link: any) => (
       <li>
         <a href={link.href}
-          class="flex items-center py-4 font-heading font-bold text-2xl transition-colors nav-link"
-          style="color:rgba(247,231,206,0.7);border-bottom:1px solid rgba(247,231,206,0.1)">
+          class="flex items-center py-4 font-body font-bold text-2xl transition-colors nav-link"
+          style="color:#6B7280;border-bottom:1px solid #E5E7EB">
           {link.label}
         </a>
       </li>
@@ -61,8 +61,8 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
   </ul>
   <div class="mt-8">
     <a href={nav.cta.href}
-      class="block w-full text-center font-heading font-bold text-base px-6 py-4 rounded-lg"
-      style="background:#F7E7CE;color:#102C26">
+      class="block w-full text-center font-body font-bold text-base px-6 py-4"
+      style="background:#059669;color:#FFFFFF;border-radius:50px">
       {nav.cta.label}
     </a>
   </div>
@@ -86,18 +86,48 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
     hamburger.classList.remove('is-open');
   }));
 
+  // Nav scroll: transparent on dark hero → white bg when scrolled
+  const nav = document.getElementById('main-nav')!;
+  const brandText = nav.querySelector('.nav-brand-text') as HTMLElement;
+  const logoSvg = nav.querySelector('.nav-logo-svg') as HTMLElement;
+  const hamburgerLines = nav.querySelectorAll('.hamburger-line');
+  const heroSection = document.getElementById('hero');
+  const heroHeight = heroSection ? heroSection.offsetHeight * 0.4 : 300;
+
+  function updateNav() {
+    const scrolled = window.scrollY > heroHeight;
+    if (scrolled) {
+      nav.style.background = 'rgba(255,255,255,0.90)';
+      nav.style.borderBottomColor = '#E5E7EB';
+      if (brandText) brandText.style.color = '#111827';
+      if (logoSvg) logoSvg.style.color = '#111827';
+      hamburgerLines.forEach(l => (l as HTMLElement).style.background = '#111827');
+      navLinks.forEach(l => {
+        const isActive = l.getAttribute('href') === '#' + current;
+        (l as HTMLElement).style.color = isActive ? '#111827' : '#6B7280';
+      });
+    } else {
+      nav.style.background = 'transparent';
+      nav.style.borderBottomColor = 'transparent';
+      if (brandText) brandText.style.color = '#FFFFFF';
+      if (logoSvg) logoSvg.style.color = '#FFFFFF';
+      hamburgerLines.forEach(l => (l as HTMLElement).style.background = '#FFFFFF');
+      navLinks.forEach(l => {
+        const isActive = l.getAttribute('href') === '#' + current;
+        (l as HTMLElement).style.color = isActive ? '#FFFFFF' : 'rgba(255,255,255,0.7)';
+      });
+    }
+  }
+
   // Scroll spy
   const sections = document.querySelectorAll('section[id]');
+  let current = '';
   function updateActive() {
-    let current = '';
+    current = '';
     sections.forEach(s => {
       if (window.scrollY >= (s as HTMLElement).offsetTop - 130) current = s.id;
     });
-    navLinks.forEach(l => {
-      const isActive = l.getAttribute('href') === '#' + current;
-      if (isActive) (l as HTMLElement).style.color = '#F7E7CE';
-      else (l as HTMLElement).style.color = 'rgba(247,231,206,0.7)';
-    });
+    updateNav();
   }
   window.addEventListener('scroll', updateActive, { passive: true });
   updateActive();
@@ -106,7 +136,7 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
 <style>
   .nav-logo-svg {
     display: inline-flex;
-    color: #F7E7CE;
+    color: #111827;
     height: 32px;
     width: auto;
   }
