@@ -44,7 +44,7 @@ const accentColors: Record<string, { main: string; light: string }> = {
             style={`background:${accentColors[val.accent]?.light || '#ECFDF5'};color:${accentColors[val.accent]?.main || '#059669'}`}
             set:html={val.icon_svg}>
           </div>
-          <h3 class="font-heading text-brand-heading">{val.title}</h3>
+          <h3 class="font-heading font-medium text-brand-heading">{val.title}</h3>
           <p class="text-brand-text text-sm leading-relaxed">{val.text}</p>
         </div>
       ))}

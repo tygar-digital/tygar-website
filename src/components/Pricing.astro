@@ -18,7 +18,7 @@ const { data } = Astro.props;
       {data.sections.map((sec: any, idx: number) => (
         <div class="relative">
           <div class="mb-4">
-            <h3 class="font-heading text-brand-heading text-lg mb-1">{sec.name}</h3>
+            <h3 class="font-heading font-medium text-brand-heading text-lg mb-1">{sec.name}</h3>
             <p class="text-brand-text text-sm">{sec.description}</p>
           </div>
           {idx === 0 ? (

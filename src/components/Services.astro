@@ -48,7 +48,7 @@ const stepColors = ['#059669', '#0891B2', '#0891B2', '#7C3AED'];
               </div>
 
               <div class="flex-1">
-                <h3 class={`font-heading text-lg mb-1.5 ${item.coming_soon ? 'text-brand-muted' : 'text-brand-heading'}`}>{item.title}</h3>
+                <h3 class={`font-heading font-medium text-lg mb-1.5 ${item.coming_soon ? 'text-brand-muted' : 'text-brand-heading'}`}>{item.title}</h3>
                 <p class={`text-sm leading-relaxed mb-4 ${item.coming_soon ? 'text-brand-muted' : 'text-brand-text'}`}>{item.text}</p>
                 {item.features && (
                   <div class="flex flex-wrap gap-2">
@@ -95,7 +95,7 @@ const stepColors = ['#059669', '#0891B2', '#0891B2', '#7C3AED'];
                 {step.number}
               </div>
               <div class="text-[0.6rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted mb-1">{step.phase}</div>
-              <div class="font-heading text-brand-heading mb-1">{step.title}</div>
+              <div class="font-heading font-medium text-brand-heading mb-1">{step.title}</div>
               <p class="text-brand-text text-sm leading-relaxed mx-auto max-w-[200px] mb-3">{step.text}</p>
               <span class="inline-block text-[0.72rem] font-body px-3 py-1 rounded-full"
                 style={`background:${accentColors[Object.keys(accentColors)[Math.min(i, 2)]]?.light || '#ECFDF5'};color:${stepColors[i] || '#059669'}`}>
@@ -117,7 +117,7 @@ const stepColors = ['#059669', '#0891B2', '#0891B2', '#7C3AED'];
               {step.number}
             </div>
             <div class="text-[0.6rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted mb-1">{step.phase}</div>
-            <div class="font-heading text-brand-heading mb-1">{step.title}</div>
+            <div class="font-heading font-medium text-brand-heading mb-1">{step.title}</div>
             <p class="text-brand-text text-sm leading-relaxed mb-2">{step.text}</p>
             <span class="inline-block text-[0.72rem] font-body px-3 py-1 rounded-full"
               style={`background:${accentColors[Object.keys(accentColors)[Math.min(i, 2)]]?.light || '#ECFDF5'};color:${stepColors[i] || '#059669'}`}>
