@@ -39,15 +39,11 @@
       {
         "label": "FAQ",
         "href": "#faq"
-      },
-      {
-        "label": "Termin",
-        "href": "#kontakt"
       }
     ],
     "cta": {
-      "label": "Erstgespräch buchen →",
-      "href": "#kontakt"
+      "label": "Kostenloser Entwurf →",
+      "href": "mailto:tygar-digital@gmail.com"
     }
   },
   "hero": {
@@ -61,8 +57,8 @@
     "subtext": "",
     "highlight": "Denn deine Kunden suchen online nach dir.",
     "cta_primary": {
-      "label": "Kostenloses Erstgespräch →",
-      "href": "#kontakt"
+      "label": "Kostenlosen Entwurf anfordern →",
+      "href": "mailto:tygar-digital@gmail.com"
     },
     "cta_secondary": {
       "label": "Preise ansehen",
@@ -70,8 +66,8 @@
     },
     "kpis": [
       {
-        "value": "0 €",
-        "label": "Einführungspreis",
+        "value": "Gratis",
+        "label": "Entwurf vorab",
         "color": "emerald"
       },
       {
@@ -86,7 +82,7 @@
       }
     ],
     "trust_items": [
-      "Fairer Preis",
+      "Erst sehen, dann entscheiden",
       "In 2–3 Wochen umgesetzt",
       "Minimaler Aufwand für dich",
       "Langfristige Betreuung"
@@ -103,7 +99,8 @@
       "DSGVO-konform",
       "Persönliche Betreuung",
       "In 3 Wochen live",
-      "Lokale Unternehmen"
+      "Lokale Unternehmen",
+      "Kostenloser Entwurf"
     ],
     "trust_badges": [
       {
@@ -111,8 +108,8 @@
         "label": "DSGVO-konform"
       },
       {
-        "icon_svg": "<svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='11' width='18' height='11' rx='2'/><path d='M7 11V7a5 5 0 0 1 10 0v4'/></svg>",
-        "label": "SSL-verschlüsselt"
+        "icon_svg": "<svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/><polyline points='9 12 11 14 15 10'/></svg>",
+        "label": "Kein Risiko"
       },
       {
         "icon_svg": "<svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z'/><circle cx='12' cy='10' r='3'/></svg>",
@@ -231,8 +228,8 @@
       {
         "number": "02",
         "phase": "PLANEN",
-        "title": "Konzept & Design",
-        "text": "Du bekommst einen konkreten Entwurf. Wir stimmen alles ab, bis es zu 100 % passt — erst dann bauen wir.",
+        "title": "Kostenloser Entwurf",
+        "text": "Du bekommst einen kostenlosen Live-Entwurf deiner Website — zum Anschauen und Feedback geben. Gefällt's dir? Dann geht's weiter. Wenn nicht — keine Kosten.",
         "duration": "Woche 1"
       },
       {
@@ -256,7 +253,7 @@
     "heading": ["Ausgewählte", "Projekte"],
     "cta": {
       "label": "Alle Projekte →",
-      "href": "#kontakt"
+      "href": "mailto:tygar-digital@gmail.com"
     },
     "items": [
       {
@@ -408,13 +405,13 @@
     "sections": [
       {
         "name": "Online Auftritt",
-        "description": "Deine professionelle Website. Fertig in 3 Wochen.",
+        "description": "Deine professionelle Website. Fertig in 3 Wochen. Du bekommst vorab einen kostenlosen Entwurf — erst wenn du zufrieden bist, geht's los.",
         "onetime": {
           "heading": "Einmalig",
           "base": {
             "label": "Deine Website",
-            "original_price": "490 €",
-            "price": "0 €"
+            "original_price": "",
+            "price": "500 €"
           },
           "includes": [
             "Individuelles Design",
@@ -430,7 +427,7 @@
           "features": [
             "Hosting & Domain",
             "Sicherheit & Updates",
-            "Kleine Änderungen inklusive (Öffnungszeiten etc.)",
+            "Änderungen inklusive (Öffnungszeiten etc.)",
             "Support per E-Mail"
           ]
         }
@@ -477,7 +474,7 @@
     "note": "Alle Preise zzgl. MwSt.",
     "cta": {
       "label": "Jetzt kostenlos starten →",
-      "href": "#kontakt"
+      "href": "mailto:tygar-digital@gmail.com"
     }
   },
   "faq": {
@@ -487,6 +484,10 @@
       {
         "q": "Wie lange dauert es, bis meine Website online ist?",
         "a": "In der Regel 3 Wochen. Nach dem Erstgespräch legen wir direkt los — du bekommst regelmäßig Zwischenstände und kannst jederzeit Feedback geben. Kein endloses Hin und Her."
+      },
+      {
+        "q": "Was, wenn mir der Entwurf nicht gefällt?",
+        "a": "Dann zahlst du nichts. Du bekommst vorab einen kostenlosen Live-Entwurf deiner Website. Erst wenn du zufrieden bist, starten wir mit der Umsetzung. Kein Risiko, kein Kleingedrucktes."
       },
       {
         "q": "Brauche ich technisches Know-how?",
@@ -502,65 +503,11 @@
       }
     ]
   },
-  "contact": {
-    "label": "Kontakt",
-    "heading": [
-      "Bereit für deinen",
-      "neuen Online-Auftritt?"
-    ],
-    "booking_label": "Kostenloses Erstgespräch",
-    "booking_heading": [
-      "Lass uns reden —",
-      "unverbindlich & kostenlos."
-    ],
-    "booking_subtext": "In 30 Minuten besprechen wir dein Projekt und du weißt danach genau, was der nächste Schritt ist.",
-    "cal_link": "tygar/erstgesprach",
-    "subtext": "Erzähl uns von deinem Business. Wir melden uns innerhalb von 24 Stunden — unkompliziert und auf Augenhöhe.",
-    "info_boxes": [
-      {
-        "icon": "mail",
-        "icon_svg": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='2' y='4' width='20' height='16' rx='2'/><path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/></svg>",
-        "label": "E-Mail",
-        "value": "tygar-digital@gmail.com",
-        "href": "mailto:tygar-digital@gmail.com",
-        "accent": "emerald"
-      },
-      {
-        "icon": "clock",
-        "icon_svg": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>",
-        "label": "Antwortzeit",
-        "value": "Innerhalb von 24 Stunden",
-        "accent": "cyan"
-      },
-      {
-        "icon": "map-pin",
-        "icon_svg": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z'/><circle cx='12' cy='10' r='3'/></svg>",
-        "label": "Standort",
-        "value": "Köln / Bonn",
-        "accent": "violet"
-      }
-    ],
-    "form": {
-      "label_firstname": "Vorname",
-      "label_lastname": "Nachname",
-      "label_email": "E-Mail",
-      "label_service": "Leistung",
-      "label_message": "Erzähl uns von deinem Business",
-      "service_options": [
-        "Neue Website",
-        "Website-Relaunch",
-        "Komplettpaket mit Design",
-        "Etwas anderes"
-      ],
-      "submit_label": "Nachricht senden →",
-      "success_label": "✓ Nachricht gesendet!"
-    }
-  },
   "footer": {
     "cta": {
       "heading": "Bereit für deinen neuen Online-Auftritt?",
-      "label": "Kostenloses Erstgespräch →",
-      "href": "#kontakt"
+      "label": "Kostenlosen Entwurf anfordern →",
+      "href": "mailto:tygar-digital@gmail.com"
     },
     "legal_links": [
       {

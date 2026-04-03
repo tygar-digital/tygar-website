@@ -8,7 +8,6 @@ import Services from '../components/Services.astro';
 import Pricing  from '../components/Pricing.astro';
 import About    from '../components/About.astro';
 import FAQ      from '../components/FAQ.astro';
-import Contact  from '../components/Contact.astro';
 import Footer         from '../components/Footer.astro';
 import SectionDivider from '../components/SectionDivider.astro';
 
@@ -35,7 +34,6 @@ import data from '../data/content.json';
     <SectionDivider from="surface" to="white" wave />
     <FAQ       data={data.faq} />
     <SectionDivider from="white" to="surface" />
-    <Contact   data={data.contact} />
   </main>
   <Footer brand={data.brand} footer={data.footer} />
 </Base>

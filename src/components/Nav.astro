@@ -46,8 +46,8 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
 
 <!-- Mobile overlay -->
 <div id="mobile-overlay"
-  class="hidden fixed inset-0 z-[150] flex-col px-8 overflow-y-auto"
-  style="background:#FFFFFF; padding-top: calc(72px + 32px); padding-bottom: 48px;">
+  class="fixed inset-0 z-[199] flex-col px-8 overflow-y-auto"
+  style="background:#FFFFFF; padding-top: calc(72px + 32px); padding-bottom: 48px; display:none;">
   <ul class="list-none flex flex-col gap-1 flex-1">
     {nav.links.map((link: any) => (
       <li>
@@ -73,18 +73,27 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
   const overlay     = document.getElementById('mobile-overlay')!;
   const navLinks    = document.querySelectorAll('.nav-link');
 
+  function openMenu() {
+    overlay.style.display = 'flex';
+    overlay.classList.add('is-open');
+    hamburger.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    updateNav();
+  }
+
+  function closeMenu() {
+    overlay.style.display = 'none';
+    overlay.classList.remove('is-open');
+    hamburger.classList.remove('is-open');
+    document.body.style.overflow = '';
+    updateNav();
+  }
+
   hamburger.addEventListener('click', () => {
-    const isOpen = overlay.classList.contains('is-open');
-    overlay.classList.toggle('is-open', !isOpen);
-    overlay.style.display = isOpen ? 'none' : 'flex';
-    hamburger.classList.toggle('is-open', !isOpen);
+    overlay.classList.contains('is-open') ? closeMenu() : openMenu();
   });
 
-  navLinks.forEach(l => l.addEventListener('click', () => {
-    overlay.classList.remove('is-open');
-    overlay.style.display = 'none';
-    hamburger.classList.remove('is-open');
-  }));
+  navLinks.forEach(l => l.addEventListener('click', closeMenu));
 
   // Nav scroll: transparent on dark hero → white bg when scrolled
   const nav = document.getElementById('main-nav')!;
@@ -97,7 +106,8 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
   let current = '';
 
   function updateNav() {
-    const scrolled = window.scrollY > heroHeight;
+    const menuOpen = hamburger.classList.contains('is-open');
+    const scrolled = window.scrollY > heroHeight || menuOpen;
     if (scrolled) {
       nav.style.background = 'rgba(255,255,255,0.90)';
       nav.style.borderBottomColor = '#E5E7EB';
@@ -143,5 +153,16 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
   .nav-logo-svg :global(svg) {
     height: 32px;
     width: auto;
+  }
+
+  /* Hamburger → X animation */
+  #hamburger.is-open .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  #hamburger.is-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  #hamburger.is-open .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 </style>
