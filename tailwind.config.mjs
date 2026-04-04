@@ -63,8 +63,8 @@ export default {
         },
       },
       fontFamily: {
-        heading: ['Cormorant', 'serif'],
-        body:    ['DM Sans', 'system-ui', 'sans-serif'],
+        heading: ['Instrument Serif', 'serif'],
+        body:    ['Inter Variable', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'display': ['clamp(3rem, 7vw, 6rem)',    { lineHeight: '1.05', letterSpacing: '-0.02em' }],
