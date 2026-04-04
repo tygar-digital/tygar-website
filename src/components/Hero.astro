@@ -29,13 +29,13 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
         {badge}
       </div>
 
-      <!-- Headline -->
-      <h1 class="font-heading leading-[1.08] tracking-[-0.02em] text-white mt-4 mb-8 lg:mt-6 lg:mb-10"
-        style="font-size: clamp(2.2rem, 5vw, 3.6rem); --italic-scale: 1.3em;">
+      <!-- Headline — mixed font style: sans-serif bold uppercase + serif italic -->
+      <h1 class="leading-[1.08] tracking-[-0.02em] text-white mt-4 mb-8 lg:mt-6 lg:mb-10"
+        style="font-size: clamp(2.2rem, 5vw, 3.6rem);">
         {headline.map((line: string, i: number) => (
-          i < 2
-            ? <span class="hero-italic-line" style="font-weight:600">{line}<br/></span>
-            : <span class="font-body font-bold not-italic" style="color:#34D399">{line}{i < headline.length - 1 ? <br/> : ''}</span>
+          i % 2 === 0
+            ? <span class="font-body font-bold not-italic uppercase tracking-[0.05em] text-white">{line}<br/></span>
+            : <span class="font-heading italic font-normal hero-serif-line">{line}<br/></span>
         ))}
       </h1>
 
@@ -273,17 +273,12 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  .hero-italic-line {
-    font-size: 1.1em;
+  .hero-serif-line {
+    font-size: 1.15em;
   }
   @media (min-width: 640px) {
-    .hero-italic-line {
-      font-size: 1.25em;
-    }
-  }
-  @media (min-width: 1024px) {
-    .hero-italic-line {
-      font-size: 1.15em;
+    .hero-serif-line {
+      font-size: 1.3em;
     }
   }
   .mockup-nav-link {

@@ -33,6 +33,8 @@
   .font-heading {
     font-weight: 400;
     font-style: italic;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
