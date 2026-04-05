@@ -4,20 +4,20 @@ const { data } = Astro.props;
 <section id="faq" class="bg-brand-bg">
   <div class="max-w-[1160px] mx-auto px-8 py-20 md:py-28">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
+    <div class="flex items-center gap-2 text-[0.72rem] font-sans font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
       <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-heading font-medium leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+    <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} <span class="font-heading font-medium italic" style="color:#0F172A">{data.heading[1]}</span>
+      {data.heading[0]} <span class="font-serif-accent italic" style="color:#1A2B3C">{data.heading[1]}</span>
     </h2>
 
     <div class="max-w-[760px] mt-10 flex flex-col gap-2">
       {data.items.map((item: any, i: number) => (
         <div class="rounded-xl overflow-hidden bg-white border border-brand-border" id={`faq-${i}`}>
           <button
-            class="w-full flex justify-between items-center gap-4 px-6 py-4 text-left font-body font-semibold text-[0.95rem] text-brand-heading cursor-pointer bg-transparent border-none"
+            class="w-full flex justify-between items-center gap-4 px-6 py-4 text-left font-sans font-semibold text-[0.95rem] text-brand-heading cursor-pointer bg-transparent border-none"
             aria-expanded="false"
             aria-controls={`faq-answer-${i}`}
             data-faq-toggle={i}>
@@ -51,7 +51,7 @@ const { data } = Astro.props;
     answer.style.maxHeight = isOpen ? '0px' : answer.scrollHeight + 'px';
     if (icon) {
       icon.style.transform = isOpen ? '' : 'rotate(180deg)';
-      icon.style.color = isOpen ? '' : '#059669';
+      icon.style.color = isOpen ? '' : '#7EFFDA';
     }
   });
 </script>

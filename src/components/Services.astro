@@ -1,22 +1,22 @@
 ---
 const { data } = Astro.props;
 const accentColors: Record<string, { main: string; light: string; gradient: string }> = {
-  emerald: { main: '#059669', light: '#ECFDF5', gradient: 'linear-gradient(180deg, #059669, #34D399)' },
+  emerald: { main: '#7EFFDA', light: '#E6FFF8', gradient: 'linear-gradient(180deg, #5AD4B5, #7EFFDA)' },
   cyan:    { main: '#0891B2', light: '#ECFEFF', gradient: 'linear-gradient(180deg, #0891B2, #22D3EE)' },
   violet:  { main: '#7C3AED', light: '#F5F3FF', gradient: 'linear-gradient(180deg, #7C3AED, #A78BFA)' },
 };
-const stepColors = ['#059669', '#0891B2', '#0891B2', '#7C3AED'];
+const stepColors = ['#7EFFDA', '#0891B2', '#0891B2', '#7C3AED'];
 ---
 <section id="leistungen" class="bg-brand-bg">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
+    <div class="flex items-center gap-2 text-[0.72rem] font-sans font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
       <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-heading font-medium leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+    <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} <span class="font-heading font-medium italic" style="color:#0F172A">{data.heading[1]}</span>
+      {data.heading[0]} <span class="font-serif-accent italic" style="color:#1A2B3C">{data.heading[1]}</span>
     </h2>
     {data.subtext && <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>}
 
@@ -36,7 +36,7 @@ const stepColors = ['#059669', '#0891B2', '#0891B2', '#7C3AED'];
 
             <div class="flex flex-col sm:flex-row gap-5 p-7 sm:p-8 flex-1 relative">
               {item.coming_soon && (
-                <span class="absolute top-4 right-4 text-[0.65rem] font-body font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full border border-[#E5E7EB] text-brand-muted bg-[#F9FAFB]">
+                <span class="absolute top-4 right-4 text-[0.65rem] font-sans font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full border border-[#E5E7EB] text-brand-muted bg-[#F9FAFB]">
                   Coming Soon
                 </span>
               )}
@@ -48,12 +48,12 @@ const stepColors = ['#059669', '#0891B2', '#0891B2', '#7C3AED'];
               </div>
 
               <div class="flex-1">
-                <h3 class={`font-heading font-medium text-lg mb-1.5 ${item.coming_soon ? 'text-brand-muted' : 'text-brand-heading'}`}>{item.title}</h3>
+                <h3 class={`font-sans font-semibold text-lg mb-1.5 ${item.coming_soon ? 'text-brand-muted' : 'text-brand-heading'}`}>{item.title}</h3>
                 <p class={`text-sm leading-relaxed mb-4 ${item.coming_soon ? 'text-brand-muted' : 'text-brand-text'}`}>{item.text}</p>
                 {item.features && (
                   <div class="flex flex-wrap gap-2">
                     {item.features.map((f: string) => (
-                      <span class="text-[0.75rem] font-body px-3 py-1 rounded-full"
+                      <span class="text-[0.75rem] font-sans px-3 py-1 rounded-full"
                         style={`background:${item.coming_soon ? '#F3F4F6' : colors.light};color:${item.coming_soon ? '#6B7280' : colors.main}`}>
                         ✓ {f}
                       </span>
@@ -69,19 +69,19 @@ const stepColors = ['#059669', '#0891B2', '#0891B2', '#7C3AED'];
 
     <!-- Inline CTA -->
     <div class="text-center pt-10 pb-2 border-t border-brand-border mt-10">
-      <span class="font-heading italic text-brand-heading" style="font-size:1.1rem">Klingt gut?</span>
-      <a href="mailto:tygar-digital@gmail.com" class="text-brand-primary font-body font-bold text-sm ml-3 hover:underline">Kostenlosen Entwurf anfordern →</a>
+      <span class="font-handwritten text-brand-heading" style="font-size:1.1rem">Klingt gut?</span>
+      <a href="mailto:tygar-digital@gmail.com" class="text-brand-primary font-sans font-bold text-sm ml-3 hover:underline">Kostenlosen Entwurf anfordern →</a>
     </div>
 
     <!-- Process Timeline -->
     <div class="pt-20">
-      <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
+      <div class="flex items-center gap-2 text-[0.72rem] font-sans font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
         <span class="flex-shrink-0 gradient-divider rounded-full"></span>
         {data.process_label}
       </div>
-      <h3 class="font-heading font-medium leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+      <h3 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
         style="font-size:clamp(2rem,4.5vw,3.25rem)">
-        {data.process_heading[0]} <span class="font-heading font-medium italic" style="color:#0F172A">{data.process_heading[1]}</span>
+        {data.process_heading[0]} <span class="font-serif-accent italic" style="color:#1A2B3C">{data.process_heading[1]}</span>
       </h3>
       <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.process_subtext}</p>
 
@@ -91,14 +91,14 @@ const stepColors = ['#059669', '#0891B2', '#0891B2', '#7C3AED'];
           {data.steps.map((step: any, i: number) => (
             <div class="flex-1 text-center relative z-10">
               <div class="timeline-dot mx-auto mb-4"
-                style={`background:${stepColors[i] || '#059669'};box-shadow:0 2px 8px ${stepColors[i] || '#059669'}40`}>
+                style={`background:${stepColors[i] || '#7EFFDA'};box-shadow:0 2px 8px ${stepColors[i] || '#7EFFDA'}40`}>
                 {step.number}
               </div>
-              <div class="text-[0.6rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted mb-1">{step.phase}</div>
-              <div class="font-heading font-medium text-brand-heading mb-1">{step.title}</div>
+              <div class="text-[0.6rem] font-sans font-bold tracking-[0.1em] uppercase text-brand-muted mb-1">{step.phase}</div>
+              <div class="font-sans font-semibold text-brand-heading mb-1">{step.title}</div>
               <p class="text-brand-text text-sm leading-relaxed mx-auto max-w-[200px] mb-3">{step.text}</p>
-              <span class="inline-block text-[0.72rem] font-body px-3 py-1 rounded-full"
-                style={`background:${accentColors[Object.keys(accentColors)[Math.min(i, 2)]]?.light || '#ECFDF5'};color:${stepColors[i] || '#059669'}`}>
+              <span class="inline-block text-[0.72rem] font-sans px-3 py-1 rounded-full"
+                style={`background:${accentColors[Object.keys(accentColors)[Math.min(i, 2)]]?.light || '#E6FFF8'};color:${stepColors[i] || '#7EFFDA'}`}>
                 {step.duration}
               </span>
             </div>
@@ -109,18 +109,18 @@ const stepColors = ['#059669', '#0891B2', '#0891B2', '#7C3AED'];
       <!-- Mobile: vertical timeline -->
       <div class="lg:hidden flex flex-col gap-0 relative pl-14">
         <div class="absolute left-[27px] top-[14px] bottom-[14px] w-[2px]"
-          style="background:linear-gradient(180deg, #059669, #0891B2, #7C3AED)"></div>
+          style="background:linear-gradient(180deg, #7EFFDA, #0891B2, #7C3AED)"></div>
         {data.steps.map((step: any, i: number) => (
           <div class="relative pb-8 last:pb-0">
             <div class="absolute left-[-42px] top-0 timeline-dot-sm"
-              style={`background:${stepColors[i] || '#059669'};box-shadow:0 2px 6px ${stepColors[i] || '#059669'}40`}>
+              style={`background:${stepColors[i] || '#7EFFDA'};box-shadow:0 2px 6px ${stepColors[i] || '#7EFFDA'}40`}>
               {step.number}
             </div>
-            <div class="text-[0.6rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted mb-1">{step.phase}</div>
-            <div class="font-heading font-medium text-brand-heading mb-1">{step.title}</div>
+            <div class="text-[0.6rem] font-sans font-bold tracking-[0.1em] uppercase text-brand-muted mb-1">{step.phase}</div>
+            <div class="font-sans font-semibold text-brand-heading mb-1">{step.title}</div>
             <p class="text-brand-text text-sm leading-relaxed mb-2">{step.text}</p>
-            <span class="inline-block text-[0.72rem] font-body px-3 py-1 rounded-full"
-              style={`background:${accentColors[Object.keys(accentColors)[Math.min(i, 2)]]?.light || '#ECFDF5'};color:${stepColors[i] || '#059669'}`}>
+            <span class="inline-block text-[0.72rem] font-sans px-3 py-1 rounded-full"
+              style={`background:${accentColors[Object.keys(accentColors)[Math.min(i, 2)]]?.light || '#E6FFF8'};color:${stepColors[i] || '#7EFFDA'}`}>
               {step.duration}
             </span>
           </div>
@@ -147,7 +147,7 @@ const stepColors = ['#059669', '#0891B2', '#0891B2', '#7C3AED'];
     left: 12.5%;
     right: 12.5%;
     height: 2px;
-    background: linear-gradient(90deg, #059669, #34D399, #0891B2, #7C3AED);
+    background: linear-gradient(90deg, #7EFFDA, #5AD4B5, #0891B2, #7C3AED);
     border-radius: 2px;
   }
 
@@ -158,7 +158,7 @@ const stepColors = ['#059669', '#0891B2', '#0891B2', '#7C3AED'];
     color: #fff;
     font-size: 0.65rem;
     font-weight: 700;
-    font-family: 'Inter Variable', system-ui, sans-serif;
+    font-family: 'Plus Jakarta Sans Variable', system-ui, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -172,7 +172,7 @@ const stepColors = ['#059669', '#0891B2', '#0891B2', '#7C3AED'];
     color: #fff;
     font-size: 0.65rem;
     font-weight: 700;
-    font-family: 'Inter Variable', system-ui, sans-serif;
+    font-family: 'Plus Jakarta Sans Variable', system-ui, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;

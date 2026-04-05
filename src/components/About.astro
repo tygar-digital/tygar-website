@@ -5,7 +5,7 @@ import janImg from '../assets/jan.webp';
 
 const { data } = Astro.props;
 const accentColors: Record<string, { main: string; light: string }> = {
-  emerald: { main: '#059669', light: '#ECFDF5' },
+  emerald: { main: '#7EFFDA', light: '#E6FFF8' },
   cyan:    { main: '#0891B2', light: '#ECFEFF' },
   violet:  { main: '#7C3AED', light: '#F5F3FF' },
 };
@@ -16,14 +16,14 @@ const accentColors: Record<string, { main: string; light: string }> = {
     <!-- Mission / Values -->
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-12 items-center mb-12">
       <div>
-        <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
+        <div class="flex items-center gap-2 text-[0.72rem] font-sans font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
           <span class="flex-shrink-0 gradient-divider rounded-full"></span>
           {data.mission_label}
         </div>
-        <h2 class="font-heading font-medium leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+        <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
           style="font-size:clamp(2rem,4.5vw,3.25rem)">
           {data.mission_headline[0]}<br/>
-          <span class="font-heading font-medium italic" style="color:#0F172A">{data.mission_headline[1]}</span>
+          <span class="font-serif-accent italic" style="color:#1A2B3C">{data.mission_headline[1]}</span>
         </h2>
         <p class="text-brand-text leading-[1.75]">{data.mission_statement}</p>
       </div>
@@ -41,35 +41,35 @@ const accentColors: Record<string, { main: string; light: string }> = {
       {data.values.map((val: any) => (
         <div class="rounded-xl border border-brand-border p-7 flex flex-col gap-4 bg-white shadow-sm hover:shadow-md transition-shadow gradient-border-hover">
           <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-            style={`background:${accentColors[val.accent]?.light || '#ECFDF5'};color:${accentColors[val.accent]?.main || '#059669'}`}
+            style={`background:${accentColors[val.accent]?.light || '#E6FFF8'};color:${accentColors[val.accent]?.main || '#7EFFDA'}`}
             set:html={val.icon_svg}>
           </div>
-          <h3 class="font-heading font-medium text-brand-heading">{val.title}</h3>
+          <h3 class="font-sans font-semibold text-brand-heading">{val.title}</h3>
           <p class="text-brand-text text-sm leading-relaxed">{val.text}</p>
         </div>
       ))}
     </div>
 
     <!-- Personal Bio -->
-    <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
+    <div class="flex items-center gap-2 text-[0.72rem] font-sans font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
       <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 items-start">
       <div>
-        <h2 class="font-heading font-medium leading-[1.08] tracking-[-0.02em] text-brand-heading mb-2"
+        <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-2"
           style="font-size:clamp(2rem,4.5vw,3.25rem)">
           {data.headline[0]}<br/>
-          <span class="font-heading font-medium italic" style="color:#0F172A">{data.headline[1]}</span>
+          <span class="font-serif-accent italic" style="color:#1A2B3C">{data.headline[1]}</span>
         </h2>
-        <span class="inline-block font-body text-brand-primary text-sm -rotate-2 mb-6" data-handwriting="400">persönlich. immer.</span>
+        <span class="inline-block font-sans text-brand-primary text-sm -rotate-2 mb-6" data-handwriting="400">persönlich. immer.</span>
         <p class="text-brand-text leading-[1.75] mb-5">{data.bio}</p>
         <p class="text-brand-text leading-[1.75] mb-8">{data.bio2}</p>
         <div class="flex flex-wrap gap-2">
           {data.tags.map((tag: string) => (
-            <span class="text-xs font-body px-3 py-1.5 rounded-full"
-              style="background:#ECFDF5;color:#059669">
+            <span class="text-xs font-sans px-3 py-1.5 rounded-full"
+              style="background:#E6FFF8;color:#7EFFDA">
               {tag}
             </span>
           ))}
@@ -91,13 +91,13 @@ const accentColors: Record<string, { main: string; light: string }> = {
         <div class="rounded-xl overflow-hidden aspect-[3/4] flex items-center justify-center border border-brand-border bg-white shadow-sm">
           <div class="text-center p-8">
             <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
-              style="background:#ECFDF5;border:1px solid rgba(5,150,105,0.20)">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.5" aria-hidden="true">
+              style="background:#E6FFF8;border:1px solid rgba(126,255,218,0.20)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7EFFDA" stroke-width="1.5" aria-hidden="true">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                 <circle cx="12" cy="7" r="4"/>
               </svg>
             </div>
-            <p class="text-brand-muted text-sm font-body">Foto folgt</p>
+            <p class="text-brand-muted text-sm font-sans">Foto folgt</p>
           </div>
         </div>
       )}

@@ -6,14 +6,14 @@ const { data } = Astro.props;
 
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-12 items-center mb-12">
       <div>
-        <div class="flex items-center gap-2 text-[0.72rem] font-heading font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
-          <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#111827"></span>
+        <div class="flex items-center gap-2 text-[0.72rem] font-sans font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
+          <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#1A2B3C"></span>
           {data.label}
         </div>
-        <h2 class="font-heading font-black leading-[1.08] tracking-[-0.02em] mb-4"
+        <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] mb-4"
           style="font-size:clamp(2rem,4.5vw,3.25rem)">
           {data.headline[0]}<br/>
-          <span style="color:#059669">{data.headline[1]}</span>
+          <span style="color:#7EFFDA">{data.headline[1]}</span>
         </h2>
         <p class="text-brand-text leading-[1.75]">{data.statement}</p>
       </div>
@@ -31,10 +31,10 @@ const { data } = Astro.props;
       {data.values.map((val: any) => (
         <div class="rounded-card border border-brand-border p-7 flex flex-col gap-4 bg-white shadow-card">
           <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-            style="background:rgba(5,150,105,0.10);color:#059669"
+            style="background:rgba(126,255,218,0.15);color:#7EFFDA"
             set:html={val.icon_svg}>
           </div>
-          <h3 class="font-heading font-bold text-brand-heading">{val.title}</h3>
+          <h3 class="font-sans font-bold text-brand-heading">{val.title}</h3>
           <p class="text-brand-text text-sm leading-relaxed">{val.text}</p>
         </div>
       ))}

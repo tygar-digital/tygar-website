@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 13% 10%;
-    --card: 210 20% 98%;
-    --card-foreground: 220 13% 10%;
+    --background: 210 20% 98%;
+    --foreground: 207 40% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 207 40% 17%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 10%;
-    --primary: 160 90% 33%;
-    --primary-foreground: 0 0% 100%;
+    --popover-foreground: 207 40% 17%;
+    --primary: 163 100% 75%;
+    --primary-foreground: 207 40% 17%;
     --secondary: 220 9% 46%;
     --secondary-foreground: 0 0% 100%;
     --muted: 210 20% 98%;
     --muted-foreground: 220 9% 46%;
-    --accent: 160 90% 33%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 163 100% 75%;
+    --accent-foreground: 207 40% 17%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 160 90% 33%;
+    --ring: 163 100% 75%;
     --radius: 0.5rem;
   }
 
@@ -30,8 +30,7 @@
     @apply border-border;
   }
 
-  .font-heading {
-    font-weight: 400;
+  .font-serif-accent {
     font-style: italic;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -40,7 +39,7 @@
 
 /* Gradient accent utilities — subtle, tone-on-tone */
 .gradient-divider {
-  background: linear-gradient(90deg, #059669, #34D399);
+  background: linear-gradient(90deg, #5AD4B5, #7EFFDA);
   width: 48px;
   height: 2px;
 }
@@ -49,7 +48,7 @@
   transition: background 0.3s ease;
 }
 .gradient-btn-hover:hover {
-  background: linear-gradient(135deg, #059669, #047857) !important;
+  background: linear-gradient(135deg, #5AD4B5, #4AC4A5) !important;
 }
 
 .gradient-border-hover {
@@ -62,7 +61,7 @@
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, #059669, #34D399);
+  background: linear-gradient(135deg, #5AD4B5, #7EFFDA);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;

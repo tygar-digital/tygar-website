@@ -4,13 +4,13 @@ const { data } = Astro.props;
 <section id="preise" class="bg-brand-surface">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
-    <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
+    <div class="flex items-center gap-2 text-[0.72rem] font-sans font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
       <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-heading font-medium leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+    <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} <span class="font-heading font-medium italic" style="color:#0F172A">{data.heading[1]}</span>
+      {data.heading[0]} <span class="font-serif-accent italic" style="color:#1A2B3C">{data.heading[1]}</span>
     </h2>
     <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
 
@@ -18,18 +18,18 @@ const { data } = Astro.props;
       {data.sections.map((sec: any, idx: number) => (
         <div class="relative">
           <div class="mb-4">
-            <h3 class="font-heading font-medium text-brand-heading text-lg mb-1">{sec.name}</h3>
+            <h3 class="font-sans font-semibold text-brand-heading text-lg mb-1">{sec.name}</h3>
             <p class="text-brand-text text-sm">{sec.description}</p>
           </div>
           {idx === 0 ? (
             /* Hauptkarte: dunkles Slate */
             <div class="relative">
-              <span class="pricing-intro-badge font-body" data-handwriting="300">Kostenloser Entwurf inklusive!</span>
+              <span class="pricing-intro-badge font-sans" data-handwriting="300">Kostenloser Entwurf inklusive!</span>
             <div class="pricing-card pricing-card-dark grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] rounded-[12px] overflow-hidden">
 
               {/* Einmalig */}
               <div class="p-8 md:p-10 pt-12 md:pt-14">
-                <div class="text-[0.68rem] font-body font-bold tracking-[0.12em] uppercase mb-5" style="color:rgba(255,255,255,0.75)">
+                <div class="text-[0.68rem] font-sans font-bold tracking-[0.12em] uppercase mb-5" style="color:rgba(255,255,255,0.75)">
                   {sec.onetime.heading}
                 </div>
                 {sec.onetime.base && (
@@ -57,8 +57,8 @@ const { data } = Astro.props;
                 {/* CTA Button */}
                 {data.cta && (
                   <a href={data.cta.href}
-                    class="inline-flex items-center justify-center mt-8 px-7 py-3.5 rounded-full font-body font-bold text-sm no-underline"
-                    style="background:#059669;color:#fff;box-shadow:0 4px 14px rgba(5,150,105,0.35);transition:background 200ms ease,transform 200ms ease">
+                    class="inline-flex items-center justify-center mt-8 px-7 py-3.5 rounded-full font-sans font-bold text-sm no-underline"
+                    style="background:#1A2B3C;color:#fff;box-shadow:0 4px 14px rgba(26,43,60,0.35);transition:background 200ms ease,transform 200ms ease">
                     {data.cta.label}
                   </a>
                 )}
@@ -70,7 +70,7 @@ const { data } = Astro.props;
 
               {/* Monatlich */}
               <div class="p-8 md:p-10 pt-12 md:pt-14">
-                <div class="text-[0.68rem] font-body font-bold tracking-[0.12em] uppercase mb-5" style="color:rgba(255,255,255,0.75)">
+                <div class="text-[0.68rem] font-sans font-bold tracking-[0.12em] uppercase mb-5" style="color:rgba(255,255,255,0.75)">
                   {sec.monthly.heading}
                 </div>
                 {sec.monthly.price && (
@@ -98,14 +98,14 @@ const { data } = Astro.props;
 
               {/* Einmalig */}
               <div class="p-8 md:p-9">
-                <div class="text-[0.68rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-5">
+                <div class="text-[0.68rem] font-sans font-bold tracking-[0.12em] uppercase text-brand-muted mb-5">
                   {sec.onetime.heading}
                 </div>
                 <ul class="flex flex-col gap-3 list-none">
                   {sec.onetime.items?.map((item: any) => (
                     <li class="flex justify-between items-center gap-3 text-sm text-brand-text">
                       <span>{item.label}</span>
-                      <span class="font-body font-bold text-brand-heading whitespace-nowrap">{item.amount}</span>
+                      <span class="font-sans font-bold text-brand-heading whitespace-nowrap">{item.amount}</span>
                     </li>
                   ))}
                 </ul>
@@ -117,14 +117,14 @@ const { data } = Astro.props;
 
               {/* Monatlich */}
               <div class="p-8 md:p-9">
-                <div class="text-[0.68rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-5">
+                <div class="text-[0.68rem] font-sans font-bold tracking-[0.12em] uppercase text-brand-muted mb-5">
                   {sec.monthly.heading}
                 </div>
                 <ul class="flex flex-col gap-3 list-none">
                   {sec.monthly.items?.map((item: any) => (
                     <li class="flex justify-between items-center gap-3 text-sm text-brand-text">
                       <span>{item.label}</span>
-                      <span class="font-body font-bold whitespace-nowrap">{item.amount}</span>
+                      <span class="font-sans font-bold whitespace-nowrap">{item.amount}</span>
                     </li>
                   ))}
                 </ul>
@@ -139,8 +139,8 @@ const { data } = Astro.props;
 
     <!-- Inline CTA -->
     <div class="text-center pt-10 pb-2 border-t border-brand-border mt-10">
-      <span class="font-heading italic text-brand-heading" style="font-size:1.1rem">Überzeugt?</span>
-      <a href="mailto:tygar-digital@gmail.com" class="text-brand-primary font-body font-bold text-sm ml-3 hover:underline">Kostenlosen Entwurf anfordern →</a>
+      <span class="font-handwritten text-brand-heading" style="font-size:1.1rem">Überzeugt?</span>
+      <a href="mailto:tygar-digital@gmail.com" class="text-brand-primary font-sans font-bold text-sm ml-3 hover:underline">Kostenlosen Entwurf anfordern →</a>
     </div>
   </div>
 </section>
@@ -163,12 +163,12 @@ const { data } = Astro.props;
   }
 
   .pricing-card-dark {
-    background: #111827;
-    box-shadow: 0 8px 40px rgba(17, 24, 39, 0.35);
+    background: #1A2B3C;
+    box-shadow: 0 8px 40px rgba(26, 43, 60, 0.35);
   }
 
   .pricing-price-old {
-    font-family: 'Inter Variable', system-ui, sans-serif;
+    font-family: 'Plus Jakarta Sans Variable', system-ui, sans-serif;
     font-weight: 700;
     font-size: clamp(1.4rem, 2.5vw, 1.8rem);
     line-height: 1;
@@ -179,7 +179,7 @@ const { data } = Astro.props;
   }
 
   .pricing-price-light {
-    font-family: 'Inter Variable', system-ui, sans-serif;
+    font-family: 'Plus Jakarta Sans Variable', system-ui, sans-serif;
     font-weight: 800;
     font-size: clamp(2.8rem, 5vw, 3.5rem);
     line-height: 1;
@@ -216,7 +216,7 @@ const { data } = Astro.props;
   }
 
   .pricing-card-dark:hover {
-    box-shadow: 0 12px 48px rgba(17, 24, 39, 0.45);
+    box-shadow: 0 12px 48px rgba(26, 43, 60, 0.45);
     transform: translateY(-2px);
   }
 </style>
