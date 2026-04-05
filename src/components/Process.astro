@@ -8,7 +8,7 @@ const { data } = Astro.props;
       <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#7EFFDA"></span>
       {data.label}
     </div>
-    <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] mb-4"
+    <h2 class="font-sans font-bold italic leading-[1.08] tracking-[-0.02em] mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
       {data.heading[0]} <span style="color:#7EFFDA">{data.heading[1]}</span>
     </h2>
@@ -17,7 +17,7 @@ const { data } = Astro.props;
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {data.steps.map((step: any, i: number) => (
         <div class="rounded-card border border-brand-border p-7 flex flex-col gap-3 relative bg-white shadow-card">
-          <span class="text-4xl font-sans font-black leading-none" style="color:#7EFFDA">
+          <span class="text-4xl font-sans font-bold leading-none" style="color:#7EFFDA">
             {String(i + 1).padStart(2, '0')}
           </span>
           <h3 class="font-sans font-bold text-brand-heading">{step.title}</h3>

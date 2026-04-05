@@ -22,7 +22,7 @@ const accentGlow: Record<string,string> = {
       <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#7EFFDA,#22D3EE,#A78BFA)"></span>
       {data.label}
     </div>
-    <h2 class="font-sans font-extrabold leading-[1.08] tracking-[-0.03em] mb-4"
+    <h2 class="font-sans font-bold italic leading-[1.08] tracking-[-0.03em] mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
       {data.heading[0]} <span class="bg-clip-text text-transparent"
         style="background-image:linear-gradient(90deg,#7EFFDA,#22D3EE,#A78BFA)">{data.heading[1]}</span>
@@ -36,7 +36,7 @@ const accentGlow: Record<string,string> = {
           onmouseleave={`this.style.boxShadow='none'`}>
 
           <!-- Background label -->
-          <span class="absolute top-4 right-4 text-5xl font-sans font-black opacity-[0.04] select-none pointer-events-none"
+          <span class="absolute top-4 right-4 text-5xl font-sans font-bold opacity-[0.04] select-none pointer-events-none"
             style={`color:${accentColor[item.accent]}`}>
             {item.bg_label}
           </span>

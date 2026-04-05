@@ -34,8 +34,8 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
         style="font-size: clamp(2.2rem, 5vw, 3.6rem);">
         {headline.map((line: string, i: number) => (
           i % 2 === 0
-            ? <span class="font-sans font-extrabold not-italic uppercase text-white">{line}<br/></span>
-            : <span class="font-serif-accent italic font-normal hero-serif-line">{line}<br/></span>
+            ? <span class="font-sans font-bold italic text-white">{line}<br/></span>
+            : <span class="font-sans font-bold italic text-white">{line}<br/></span>
         ))}
       </h1>
 
@@ -67,7 +67,7 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
 
       <!-- Highlight text -->
       {highlight && (
-        <p class="font-serif-accent italic text-white"
+        <p class="font-sans italic text-white"
           style="font-size:clamp(1.05rem, 2vw, 1.2rem);font-weight:400">
           {highlight}
         </p>
@@ -272,14 +272,6 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
   @keyframes heroReveal {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
-  }
-  .hero-serif-line {
-    font-size: 1.15em;
-  }
-  @media (min-width: 640px) {
-    .hero-serif-line {
-      font-size: 1.3em;
-    }
   }
   .mockup-nav-link {
     font-size: 8px;
