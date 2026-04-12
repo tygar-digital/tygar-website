@@ -5,19 +5,19 @@
 @layer base {
   :root {
     --background: 210 20% 98%;
-    --foreground: 207 40% 17%;
+    --foreground: 220 26% 14%;
     --card: 0 0% 100%;
-    --card-foreground: 207 40% 17%;
+    --card-foreground: 220 26% 14%;
     --popover: 0 0% 100%;
-    --popover-foreground: 207 40% 17%;
+    --popover-foreground: 220 26% 14%;
     --primary: 163 100% 75%;
-    --primary-foreground: 207 40% 17%;
+    --primary-foreground: 220 26% 14%;
     --secondary: 220 9% 46%;
     --secondary-foreground: 0 0% 100%;
     --muted: 210 20% 98%;
     --muted-foreground: 220 9% 46%;
     --accent: 163 100% 75%;
-    --accent-foreground: 207 40% 17%;
+    --accent-foreground: 220 26% 14%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 220 13% 91%;
@@ -31,7 +31,6 @@
   }
 
   .font-serif-accent {
-    font-style: italic;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

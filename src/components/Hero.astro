@@ -5,15 +5,14 @@ import baristaImg from '../assets/barista.webp';
 const { data } = Astro.props;
 const { badge, headline, subtext, highlight, cta_primary, cta_secondary, trust_items, collage, kpis } = data;
 const mockup = collage?.mockup;
-const marqueeItems = data.marquee_items || [];
-const doubledMarquee = [...marqueeItems, ...marqueeItems];
+const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-sans font-extrabold text-brand-mint">$1</span>');
 ---
 
 <section id="hero" class="relative overflow-hidden pt-[calc(72px+60px)] pb-0">
 
   <!-- Dark navy gradient background -->
   <div class="absolute inset-0 pointer-events-none z-0"
-    style="background: radial-gradient(ellipse 60% 40% at 50% 65%, rgba(126,255,218,0.08), transparent), linear-gradient(135deg, #1A2B3C 0%, #1A2B3C 100%)">
+    style="background: radial-gradient(ellipse 60% 40% at 50% 65%, rgba(126,255,218,0.08), transparent), linear-gradient(135deg, #0C1425 0%, #0C1425 100%)">
   </div>
 
   <div class="max-w-[1160px] mx-auto px-8 relative z-10 text-left flex flex-col lg:flex-row lg:items-center lg:gap-12">
@@ -29,13 +28,11 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
         {badge}
       </div>
 
-      <!-- Headline — mixed font style: sans-serif bold uppercase + serif italic -->
-      <h1 class="leading-[1.08] tracking-[-0.02em] text-white mt-4 mb-8 lg:mt-6 lg:mb-10"
+      <!-- Headline — Jakarta 800 Extra Bold -->
+      <h1 class="font-sans font-extrabold leading-[1.08] tracking-[-0.02em] text-white mt-4 mb-8 lg:mt-6 lg:mb-10"
         style="font-size: clamp(2.2rem, 5vw, 3.6rem);">
         {headline.map((line: string, i: number) => (
-          i % 2 === 0
-            ? <span class="font-sans font-bold italic text-white">{line}<br/></span>
-            : <span class="font-sans font-bold italic text-white">{line}<br/></span>
+          <span set:html={accent(line) + '<br/>'} />
         ))}
       </h1>
 
@@ -43,7 +40,7 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
       <div class="relative flex gap-4 flex-wrap justify-start mb-6">
         <a href={cta_primary.href}
           class="font-sans font-bold text-sm px-8 py-3.5 rounded-xl text-white transition-all hover:-translate-y-0.5 gradient-btn-hover"
-          style="background:#1A2B3C">
+          style="background:#0C1425">
           {cta_primary.label}
         </a>
         <a href={cta_secondary.href}
@@ -67,8 +64,8 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
 
       <!-- Highlight text -->
       {highlight && (
-        <p class="font-sans italic text-white"
-          style="font-size:clamp(1.05rem, 2vw, 1.2rem);font-weight:400">
+        <p class="font-handwritten text-white/80"
+          style="font-size:clamp(1.05rem, 2vw, 1.2rem)">
           {highlight}
         </p>
       )}
@@ -101,14 +98,14 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
             <!-- Nav -->
             <div class="flex items-center justify-between px-6 py-3 border-b" style="border-color:rgba(0,0,0,0.06)">
               <div class="flex items-center gap-2">
-                <div class="w-5 h-5 rounded-full" style="background:#1A2B3C"></div>
-                <span class="text-[11px] font-sans font-bold" style="color:#1A2B3C">{mockup?.brand_name}</span>
+                <div class="w-5 h-5 rounded-full" style="background:#0C1425"></div>
+                <span class="text-[11px] font-sans font-bold" style="color:#0C1425">{mockup?.brand_name}</span>
               </div>
               <div class="hidden sm:flex items-center gap-5">
                 {mockup?.nav_links?.map((link: string) => (
                   <span class="mockup-nav-link">{link}</span>
                 ))}
-                <span class="text-[8px] font-sans font-bold text-white px-2.5 py-1 rounded" style="background:#1A2B3C">{mockup?.nav_cta}</span>
+                <span class="text-[8px] font-sans font-bold text-white px-2.5 py-1 rounded" style="background:#0C1425">{mockup?.nav_cta}</span>
               </div>
             </div>
 
@@ -121,16 +118,16 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
                 <div class="absolute" style="width:160px;height:160px;border-radius:50%;background:rgba(126,255,218,0.04);bottom:20px;left:30px"></div>
 
                 <div class="relative z-10 px-6 py-8 max-w-[55%]">
-                  <span class="text-[7px] uppercase tracking-[0.15em] font-sans font-semibold" style="color:#1A2B3C">{mockup?.tagline_label}</span>
-                  <div class="mt-2 font-sans font-black leading-[1.1]" style="font-size:clamp(14px, 2.5vw, 22px);color:#1A2B3C">
+                  <span class="text-[7px] uppercase tracking-[0.15em] font-sans font-semibold" style="color:#0C1425">{mockup?.tagline_label}</span>
+                  <div class="mt-2 font-sans font-black leading-[1.1]" style="font-size:clamp(14px, 2.5vw, 22px);color:#0C1425">
                     {mockup?.tagline_line1}<br/>{mockup?.tagline_line2}
                   </div>
                   <div class="mt-2 text-[8px] leading-relaxed" style="color:#374151">
                     {mockup?.subtitle}
                   </div>
                   <div class="flex gap-2 mt-3">
-                    <span class="text-[7px] font-sans font-bold text-white px-2.5 py-1.5 rounded" style="background:#1A2B3C">{mockup?.cta_primary}</span>
-                    <span class="text-[7px] font-sans font-semibold px-2.5 py-1.5 rounded" style="border:1px solid #1A2B3C;color:#1A2B3C">{mockup?.cta_secondary}</span>
+                    <span class="text-[7px] font-sans font-bold text-white px-2.5 py-1.5 rounded" style="background:#0C1425">{mockup?.cta_primary}</span>
+                    <span class="text-[7px] font-sans font-semibold px-2.5 py-1.5 rounded" style="border:1px solid #0C1425;color:#0C1425">{mockup?.cta_secondary}</span>
                   </div>
                 </div>
               </div>
@@ -145,7 +142,7 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
                     <div class="absolute bottom-8 left-6 w-12 h-12 rounded-full" style="background:rgba(255,255,255,0.4)"></div>
                     <!-- Scissors icon -->
                     <div class="absolute inset-0 flex items-center justify-center">
-                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1A2B3C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" aria-hidden="true">
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0C1425" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" aria-hidden="true">
                         <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/>
                       </svg>
                     </div>
@@ -158,7 +155,7 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
             <div class="flex border-t" style="border-color:rgba(0,0,0,0.06)">
               {mockup?.services?.map((svc: any, idx: number) => (
                 <div class={`flex-1 px-4 py-3 text-center ${idx < (mockup.services.length - 1) ? 'border-r' : ''} ${idx === 3 ? 'hidden sm:block' : ''}`} style="border-color:rgba(0,0,0,0.06)">
-                  <div class="text-[8px] font-sans font-bold" style="color:#1A2B3C">{svc.name}</div>
+                  <div class="text-[8px] font-sans font-bold" style="color:#0C1425">{svc.name}</div>
                   <div class="text-[7px] mt-0.5" style="color:#6B7280">{svc.price}</div>
                 </div>
               ))}
@@ -171,31 +168,31 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
           style="box-shadow:0 12px 40px rgba(0,0,0,0.4), 0 0 20px rgba(126,255,218,0.06);border:2px solid rgba(255,255,255,0.15);animation-delay:0.3s;z-index:2">
           <!-- Phone status bar -->
           <div class="flex items-center justify-between px-2.5 py-1" style="background:#F9FAFB">
-            <span class="text-[6px] font-sans font-semibold" style="color:#1A2B3C">9:41</span>
+            <span class="text-[6px] font-sans font-semibold" style="color:#0C1425">9:41</span>
             <div class="flex gap-0.5">
               <div class="w-2 h-1.5 rounded-sm" style="background:rgba(0,0,0,0.2)"></div>
               <div class="w-2 h-1.5 rounded-sm" style="background:rgba(0,0,0,0.2)"></div>
-              <div class="w-3 h-1.5 rounded-sm" style="background:#1A2B3C"></div>
+              <div class="w-3 h-1.5 rounded-sm" style="background:#0C1425"></div>
             </div>
           </div>
           <!-- Phone content: booking view -->
           <div class="px-2.5 pb-3">
             <!-- Mini logo -->
             <div class="flex items-center gap-1 py-2">
-              <div class="w-3 h-3 rounded-full" style="background:#1A2B3C"></div>
-              <span class="text-[7px] font-sans font-bold" style="color:#1A2B3C">{mockup?.brand_name}</span>
+              <div class="w-3 h-3 rounded-full" style="background:#0C1425"></div>
+              <span class="text-[7px] font-sans font-bold" style="color:#0C1425">{mockup?.brand_name}</span>
             </div>
             <!-- Booking heading -->
-            <div class="text-[8px] font-sans font-bold mb-1.5" style="color:#1A2B3C">{mockup?.phone_heading}</div>
+            <div class="text-[8px] font-sans font-bold mb-1.5" style="color:#0C1425">{mockup?.phone_heading}</div>
             <!-- Service selection -->
             {mockup?.phone_services?.map((svc: any) => (
               <div class="rounded-md p-1.5 mb-1.5" style={svc.selected ? 'background:rgba(126,255,218,0.06);border:1px solid rgba(126,255,218,0.15)' : 'background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.06)'}>
-                <div class="text-[6px] font-sans font-semibold" style={`color:${svc.selected ? '#1A2B3C' : '#374151'}`}>{svc.selected ? '✓ ' : ''}{svc.name}</div>
+                <div class="text-[6px] font-sans font-semibold" style={`color:${svc.selected ? '#0C1425' : '#374151'}`}>{svc.selected ? '✓ ' : ''}{svc.name}</div>
                 <div class="text-[5px] mt-0.5" style="color:#6B7280">{svc.detail}</div>
               </div>
             ))}
             <!-- Mini calendar -->
-            <div class="text-[6px] font-sans font-semibold mb-1" style="color:#1A2B3C">{mockup?.phone_month}</div>
+            <div class="text-[6px] font-sans font-semibold mb-1" style="color:#0C1425">{mockup?.phone_month}</div>
             <div class="grid grid-cols-7 gap-px mb-2">
               <span class="mockup-cal-head">Mo</span><span class="mockup-cal-head">Di</span><span class="mockup-cal-head">Mi</span><span class="mockup-cal-head">Do</span><span class="mockup-cal-head">Fr</span><span class="mockup-cal-head">Sa</span><span class="mockup-cal-head">So</span>
               <span class="mockup-cal-day" style="color:#ccc">23</span><span class="mockup-cal-day" style="color:#ccc">24</span><span class="mockup-cal-day" style="color:#ccc">25</span><span class="mockup-cal-day" style="color:#ccc">26</span><span class="mockup-cal-day" style="color:#ccc">27</span><span class="mockup-cal-day" style="color:#ccc">28</span><span class="mockup-cal-day"></span>
@@ -203,7 +200,7 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
               <span class="mockup-cal-day">8</span><span class="mockup-cal-day">9</span><span class="mockup-cal-day">10</span><span class="mockup-cal-day">11</span><span class="mockup-cal-day">12</span><span class="mockup-cal-day">13</span><span class="mockup-cal-day">14</span>
             </div>
             <!-- CTA -->
-            <div class="text-[6px] font-sans font-bold text-white text-center py-1.5 rounded" style="background:#1A2B3C">{mockup?.phone_cta}</div>
+            <div class="text-[6px] font-sans font-bold text-white text-center py-1.5 rounded" style="background:#0C1425">{mockup?.phone_cta}</div>
           </div>
         </div>
 
@@ -243,22 +240,6 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
 
   </div>
 
-  <!-- Marquee (sits on dark hero, no transition needed) -->
-  {doubledMarquee.length > 0 && (
-    <div class="overflow-hidden py-3.5 group mt-12"
-      style="background:#1A2B3C;color:white;
-             -webkit-mask-image:linear-gradient(90deg,transparent 0%,black 8%,black 92%,transparent 100%);
-             mask-image:linear-gradient(90deg,transparent 0%,black 8%,black 92%,transparent 100%);">
-      <div class="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
-        {doubledMarquee.map(item => (
-          <span class="inline-flex items-center gap-4 font-sans text-sm text-white/80 px-4 whitespace-nowrap transition-colors hover:text-white cursor-default">
-            {item}
-            <span class="text-white/40 text-[0.55rem]">✦</span>
-          </span>
-        ))}
-      </div>
-    </div>
-  )}
 
 
 </section>
@@ -292,7 +273,7 @@ const doubledMarquee = [...marqueeItems, ...marqueeItems];
     font-family: 'Plus Jakarta Sans Variable', system-ui, sans-serif;
   }
   .mockup-cal-today {
-    background: #1A2B3C;
+    background: #0C1425;
     color: white !important;
     border-radius: 50%;
     width: 12px;

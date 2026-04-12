@@ -1,5 +1,6 @@
 ---
 const { data } = Astro.props;
+const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-sans font-extrabold">$1</span>');
 ---
 <section id="preise" class="bg-brand-surface">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
@@ -8,9 +9,9 @@ const { data } = Astro.props;
       <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-sans font-bold italic leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
-      style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} {data.heading[1]}
+    <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+      style="font-size:clamp(2rem,4.5vw,3.25rem)"
+      set:html={accent(data.heading[0]) + ' ' + accent(data.heading[1])}>
     </h2>
     <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
 
@@ -24,7 +25,7 @@ const { data } = Astro.props;
           {idx === 0 ? (
             /* Hauptkarte: dunkles Slate */
             <div class="relative">
-              <span class="pricing-intro-badge font-sans" data-handwriting="300">Kostenloser Entwurf inklusive!</span>
+              <span class="pricing-intro-badge font-handwritten" data-handwriting="300">Kostenloser Entwurf inklusive!</span>
             <div class="pricing-card pricing-card-dark grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] rounded-[12px] overflow-hidden">
 
               {/* Einmalig */}
@@ -58,7 +59,7 @@ const { data } = Astro.props;
                 {data.cta && (
                   <a href={data.cta.href}
                     class="inline-flex items-center justify-center mt-8 px-7 py-3.5 rounded-full font-sans font-bold text-sm no-underline"
-                    style="background:#1A2B3C;color:#fff;box-shadow:0 4px 14px rgba(26,43,60,0.35);transition:background 200ms ease,transform 200ms ease">
+                    style="background:#0C1425;color:#fff;box-shadow:0 4px 14px rgba(26,43,60,0.35);transition:background 200ms ease,transform 200ms ease">
                     {data.cta.label}
                   </a>
                 )}
@@ -163,7 +164,7 @@ const { data } = Astro.props;
   }
 
   .pricing-card-dark {
-    background: #1A2B3C;
+    background: #0C1425;
     box-shadow: 0 8px 40px rgba(26, 43, 60, 0.35);
   }
 

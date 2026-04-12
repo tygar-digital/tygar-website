@@ -1,5 +1,6 @@
 ---
 const { data } = Astro.props;
+const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-sans font-extrabold">$1</span>');
 const accentColors: Record<string, { main: string; light: string; gradient: string }> = {
   emerald: { main: '#7EFFDA', light: '#E6FFF8', gradient: 'linear-gradient(180deg, #5AD4B5, #7EFFDA)' },
   cyan:    { main: '#0891B2', light: '#ECFEFF', gradient: 'linear-gradient(180deg, #0891B2, #22D3EE)' },
@@ -14,9 +15,9 @@ const stepColors = ['#7EFFDA', '#0891B2', '#0891B2', '#7C3AED'];
       <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-sans font-bold italic leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
-      style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} {data.heading[1]}
+    <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+      style="font-size:clamp(2rem,4.5vw,3.25rem)"
+      set:html={accent(data.heading[0]) + ' ' + accent(data.heading[1])}>
     </h2>
     {data.subtext && <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>}
 
@@ -79,9 +80,9 @@ const stepColors = ['#7EFFDA', '#0891B2', '#0891B2', '#7C3AED'];
         <span class="flex-shrink-0 gradient-divider rounded-full"></span>
         {data.process_label}
       </div>
-      <h3 class="font-sans font-bold italic leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
-        style="font-size:clamp(2rem,4.5vw,3.25rem)">
-        {data.process_heading[0]} {data.process_heading[1]}
+      <h3 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+        style="font-size:clamp(2rem,4.5vw,3.25rem)"
+        set:html={accent(data.process_heading[0]) + ' ' + accent(data.process_heading[1])}>
       </h3>
       <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.process_subtext}</p>
 
@@ -97,7 +98,7 @@ const stepColors = ['#7EFFDA', '#0891B2', '#0891B2', '#7C3AED'];
               <div class="text-[0.6rem] font-sans font-bold tracking-[0.1em] uppercase text-brand-muted mb-1">{step.phase}</div>
               <div class="font-sans font-semibold text-brand-heading mb-1">{step.title}</div>
               <p class="text-brand-text text-sm leading-relaxed mx-auto max-w-[200px] mb-3">{step.text}</p>
-              <span class="inline-block text-[0.72rem] font-sans px-3 py-1 rounded-full"
+              <span class="inline-block text-[0.72rem] font-handwritten px-3 py-1 rounded-full"
                 style={`background:${accentColors[Object.keys(accentColors)[Math.min(i, 2)]]?.light || '#E6FFF8'};color:${stepColors[i] || '#7EFFDA'}`}>
                 {step.duration}
               </span>
@@ -119,7 +120,7 @@ const stepColors = ['#7EFFDA', '#0891B2', '#0891B2', '#7C3AED'];
             <div class="text-[0.6rem] font-sans font-bold tracking-[0.1em] uppercase text-brand-muted mb-1">{step.phase}</div>
             <div class="font-sans font-semibold text-brand-heading mb-1">{step.title}</div>
             <p class="text-brand-text text-sm leading-relaxed mb-2">{step.text}</p>
-            <span class="inline-block text-[0.72rem] font-sans px-3 py-1 rounded-full"
+            <span class="inline-block text-[0.72rem] font-handwritten px-3 py-1 rounded-full"
               style={`background:${accentColors[Object.keys(accentColors)[Math.min(i, 2)]]?.light || '#E6FFF8'};color:${stepColors[i] || '#7EFFDA'}`}>
               {step.duration}
             </span>

@@ -1,0 +1,167 @@
+---
+const { data } = Astro.props;
+const FORMSPREE_ID = import.meta.env.PUBLIC_FORMSPREE_ID || '';
+const isDev = import.meta.env.DEV;
+const accentColors: Record<string, { main: string; light: string }> = {
+  emerald: { main: '#059669', light: '#ECFDF5' },
+  cyan:    { main: '#0891B2', light: '#ECFEFF' },
+  violet:  { main: '#7C3AED', light: '#F5F3FF' },
+};
+---
+<section id="kontakt" class="bg-brand-surface">
+  <div class="max-w-[1160px] mx-auto px-8 py-20 md:py-28">
+
+    <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-muted mb-3">
+      <span class="flex-shrink-0 gradient-divider rounded-full"></span>
+      {data.label}
+    </div>
+    <h2 class="font-heading font-medium leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+      style="font-size:clamp(2rem,4.5vw,3.25rem)">
+      {data.heading[0]}<br/>
+      <span class="font-heading font-medium" style="color:#0F172A">{data.heading[1]}</span>
+    </h2>
+    <p class="text-brand-text leading-[1.75] mb-12 max-w-[560px]">{data.subtext}</p>
+
+    <!-- Booking CTA -->
+    {data.cal_link && (
+      <div class="rounded-xl border-2 border-brand-primary/20 p-8 bg-[#ECFDF5] mb-12">
+        <div class="flex items-center gap-2 text-[0.72rem] font-body font-bold tracking-[0.12em] uppercase text-brand-primary mb-3">
+          <span class="flex-shrink-0 gradient-divider rounded-full"></span>
+          {data.booking_label}
+        </div>
+        <h3 class="font-heading font-medium leading-[1.08] tracking-[-0.02em] text-brand-heading mb-3"
+          style="font-size:clamp(1.5rem,3vw,2.25rem)">
+          {data.booking_heading[0]}<br/>
+          <span class="font-heading font-medium" style="color:#0F172A">{data.booking_heading[1]}</span>
+        </h3>
+        <p class="text-brand-text leading-[1.75] mb-6 max-w-[560px]">{data.booking_subtext}</p>
+
+        <!-- Mobile: Button only -->
+        <div class="block lg:hidden">
+          <a href={`https://cal.com/${data.cal_link}`} target="_blank" rel="noopener noreferrer"
+            class="block w-full text-center py-4 px-6 bg-brand-primary text-white font-body font-bold text-[1.05rem] rounded-lg no-underline transition-opacity hover:opacity-90">
+            Termin vereinbaren &rarr;
+          </a>
+          <p class="text-brand-muted text-xs mt-3 text-center">Öffnet die Terminbuchung bei Cal.com</p>
+        </div>
+
+        <!-- Desktop: Button + Cal.com Embed -->
+        <div class="hidden lg:block">
+          <a href={`https://cal.com/${data.cal_link}`} target="_blank" rel="noopener noreferrer"
+            class="inline-block font-body font-bold text-sm py-3.5 px-8 rounded-lg text-white bg-brand-primary transition-all hover:-translate-y-0.5 hover:shadow-lg mb-6">
+            Termin vereinbaren &rarr;
+          </a>
+          <div class="rounded-xl border border-brand-border overflow-hidden bg-white">
+            <iframe
+              src={`https://cal.com/${data.cal_link}?embed&layout=month_view&theme=light`}
+              frameborder="0"
+              style="width:100%;min-height:600px;border:none"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    )}
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 items-start">
+
+      <!-- Kontaktformular (Formspree) -->
+      {isDev && !FORMSPREE_ID && (
+        <div class="rounded-lg border-2 border-amber-400 bg-amber-50 p-4 mb-4 text-sm text-amber-800 font-body">
+          <strong>⚠ Dev-Hinweis:</strong> Formspree-ID fehlt. Setze <code>PUBLIC_FORMSPREE_ID</code> in <code>.env</code> — das Formular funktioniert ohne nicht.
+        </div>
+      )}
+      <div class="rounded-xl border border-brand-border p-8 bg-white shadow-sm">
+        <form id="contact-form" action={`https://formspree.io/f/${FORMSPREE_ID}`} method="POST"
+          class="flex flex-col gap-5">
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1.5">
+              <label for="vorname" class="text-[0.68rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted">
+                {data.form.label_firstname}
+              </label>
+              <input type="text" name="vorname" id="vorname" required
+                class="bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-all focus:ring-2 focus:ring-brand-primary/40 focus:border-brand-primary" />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="nachname" class="text-[0.68rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted">
+                {data.form.label_lastname}
+              </label>
+              <input type="text" name="nachname" id="nachname" required
+                class="bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-all focus:ring-2 focus:ring-brand-primary/40 focus:border-brand-primary" />
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="email" class="text-[0.68rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted">
+              {data.form.label_email}
+            </label>
+            <input type="email" name="email" id="email" required
+              class="bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-all focus:ring-2 focus:ring-brand-primary/40 focus:border-brand-primary" />
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="service" class="text-[0.68rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted">
+              {data.form.label_service}
+            </label>
+            <select name="service" id="service"
+              class="bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-all focus:ring-2 focus:ring-brand-primary/40 focus:border-brand-primary appearance-none">
+              <option value="" disabled selected>Bitte wählen</option>
+              {data.form.service_options.map((opt: string) => (
+                <option value={opt}>{opt}</option>
+              ))}
+            </select>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="projekt" class="text-[0.68rem] font-body font-bold tracking-[0.1em] uppercase text-brand-muted">
+              {data.form.label_message}
+            </label>
+            <textarea name="projekt" id="projekt" rows="5" required
+              class="bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-base text-brand-heading font-body outline-none transition-all focus:ring-2 focus:ring-brand-primary/40 focus:border-brand-primary resize-y min-h-[120px]">
+            </textarea>
+          </div>
+
+          <!-- Honeypot -->
+          <input type="text" name="_gotcha" class="hidden" />
+          <!-- Redirect nach Submit -->
+          <input type="hidden" name="_next" value="https://tygar-digital.de/?sent=1" />
+
+          <p class="text-xs text-brand-muted">
+            Mit dem Absenden stimmst du unserer
+            <a href="/datenschutz" class="underline hover:text-brand-text transition-colors">Datenschutzerklärung</a> zu.
+          </p>
+
+          <button type="submit" id="submit-btn"
+            class="w-full font-body font-bold text-sm py-3.5 rounded-lg text-white bg-brand-primary transition-all hover:-translate-y-0.5 hover:shadow-lg">
+            {data.form.submit_label}
+          </button>
+        </form>
+      </div>
+
+      <!-- Info Boxes -->
+      <div class="flex flex-col gap-4">
+        {data.info_boxes.map((box: any) => (
+          <div class="rounded-xl border border-brand-border p-5 flex items-center gap-4 bg-white shadow-sm">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+              style={`background:${accentColors[box.accent]?.light || '#ECFDF5'};color:${accentColors[box.accent]?.main || '#059669'}`}
+              set:html={box.icon_svg}>
+            </div>
+            <div>
+              <div class="text-[0.68rem] font-body font-bold tracking-[0.08em] uppercase text-brand-muted mb-0.5">
+                {box.label}
+              </div>
+              <div class="text-brand-text text-sm font-body">
+                {box.href
+                  ? <a href={box.href} class="border-b border-current hover:opacity-80 transition-opacity">{box.value}</a>
+                  : box.value
+                }
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -29,7 +29,7 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
       <li>
         <a href={nav.cta.href}
           class="font-sans font-bold text-sm px-5 py-2.5 transition-all hover:-translate-y-0.5 hover:opacity-90"
-          style="background:#1A2B3C;color:#FFFFFF;border-radius:50px">
+          style="background:#0C1425;color:#FFFFFF;border-radius:50px">
           {nav.cta.label}
         </a>
       </li>
@@ -62,7 +62,7 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
   <div class="mt-8">
     <a href={nav.cta.href}
       class="block w-full text-center font-sans font-bold text-base px-6 py-4"
-      style="background:#1A2B3C;color:#FFFFFF;border-radius:50px">
+      style="background:#0C1425;color:#FFFFFF;border-radius:50px">
       {nav.cta.label}
     </a>
   </div>
@@ -111,12 +111,12 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
     if (scrolled) {
       nav.style.background = 'rgba(255,255,255,0.90)';
       nav.style.borderBottomColor = '#E5E7EB';
-      if (brandText) brandText.style.color = '#1A2B3C';
-      if (logoSvg) logoSvg.style.color = '#1A2B3C';
-      hamburgerLines.forEach(l => (l as HTMLElement).style.background = '#1A2B3C');
+      if (brandText) brandText.style.color = '#0C1425';
+      if (logoSvg) logoSvg.style.color = '#0C1425';
+      hamburgerLines.forEach(l => (l as HTMLElement).style.background = '#0C1425');
       navLinks.forEach(l => {
         const isActive = l.getAttribute('href') === '#' + current;
-        (l as HTMLElement).style.color = isActive ? '#1A2B3C' : '#6B7280';
+        (l as HTMLElement).style.color = isActive ? '#0C1425' : '#6B7280';
       });
     } else {
       nav.style.background = 'transparent';
@@ -146,7 +146,7 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
 <style>
   .nav-logo-svg {
     display: inline-flex;
-    color: #1A2B3C;
+    color: #0C1425;
     height: 32px;
     width: auto;
   }
