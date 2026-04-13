@@ -1,6 +1,6 @@
 ---
 const { data } = Astro.props;
-const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-sans font-extrabold">$1</span>');
+const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-extrabold">$1</span>');
 ---
 <section id="preise" class="bg-brand-surface">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
@@ -9,11 +9,11 @@ const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font
       <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+    <h2 class="font-handwritten font-normal leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)"
       set:html={accent(data.heading[0]) + ' ' + accent(data.heading[1])}>
     </h2>
-    <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
+    <p class="text-brand-heading leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
 
     <div class="flex flex-col gap-10">
       {data.sections.map((sec: any, idx: number) => (

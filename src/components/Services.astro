@@ -1,6 +1,6 @@
 ---
 const { data } = Astro.props;
-const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-sans font-extrabold">$1</span>');
+const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-extrabold">$1</span>');
 const accentColors: Record<string, { main: string; light: string; gradient: string }> = {
   emerald: { main: '#7EFFDA', light: '#E6FFF8', gradient: 'linear-gradient(180deg, #5AD4B5, #7EFFDA)' },
   cyan:    { main: '#0891B2', light: '#ECFEFF', gradient: 'linear-gradient(180deg, #0891B2, #22D3EE)' },
@@ -15,11 +15,11 @@ const stepColors = ['#7EFFDA', '#0891B2', '#0891B2', '#7C3AED'];
       <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+    <h2 class="font-handwritten font-normal leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)"
       set:html={accent(data.heading[0]) + ' ' + accent(data.heading[1])}>
     </h2>
-    {data.subtext && <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>}
+    {data.subtext && <p class="text-brand-heading leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>}
 
     <!-- Horizontal Service Cards -->
     <div class="flex flex-col gap-4">
@@ -80,11 +80,11 @@ const stepColors = ['#7EFFDA', '#0891B2', '#0891B2', '#7C3AED'];
         <span class="flex-shrink-0 gradient-divider rounded-full"></span>
         {data.process_label}
       </div>
-      <h3 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+      <h3 class="font-handwritten font-normal leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
         style="font-size:clamp(2rem,4.5vw,3.25rem)"
         set:html={accent(data.process_heading[0]) + ' ' + accent(data.process_heading[1])}>
       </h3>
-      <p class="text-brand-text leading-[1.75] mb-12 max-w-[580px]">{data.process_subtext}</p>
+      <p class="text-brand-heading leading-[1.75] mb-12 max-w-[580px]">{data.process_subtext}</p>
 
       <!-- Desktop: horizontal timeline -->
       <div class="hidden lg:block">

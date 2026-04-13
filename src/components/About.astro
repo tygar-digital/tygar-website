@@ -4,7 +4,7 @@ import handwerkerImg from '../assets/handwerker.webp';
 import janImg from '../assets/jan.webp';
 
 const { data } = Astro.props;
-const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-sans font-extrabold">$1</span>');
+const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-extrabold">$1</span>');
 const accentColors: Record<string, { main: string; light: string }> = {
   emerald: { main: '#7EFFDA', light: '#E6FFF8' },
   cyan:    { main: '#0891B2', light: '#ECFEFF' },
@@ -21,11 +21,11 @@ const accentColors: Record<string, { main: string; light: string }> = {
           <span class="flex-shrink-0 gradient-divider rounded-full"></span>
           {data.mission_label}
         </div>
-        <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+        <h2 class="font-handwritten font-normal leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
           style="font-size:clamp(2rem,4.5vw,3.25rem)"
           set:html={accent(data.mission_headline[0]) + '<br/>' + accent(data.mission_headline[1])}>
         </h2>
-        <p class="text-brand-text leading-[1.75]">{data.mission_statement}</p>
+        <p class="text-brand-heading leading-[1.75]">{data.mission_statement}</p>
       </div>
 
       {data.mission_image && (
@@ -58,13 +58,13 @@ const accentColors: Record<string, { main: string; light: string }> = {
 
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 items-start">
       <div>
-        <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-2"
+        <h2 class="font-handwritten font-normal leading-[1.08] tracking-[-0.02em] text-brand-heading mb-2"
           style="font-size:clamp(2rem,4.5vw,3.25rem)"
           set:html={accent(data.headline[0]) + '<br/>' + accent(data.headline[1])}>
         </h2>
         <span class="inline-block font-handwritten text-brand-primary text-sm -rotate-2 mb-6" data-handwriting="400">persönlich. immer.</span>
-        <p class="text-brand-text leading-[1.75] mb-5">{data.bio}</p>
-        <p class="text-brand-text leading-[1.75] mb-8">{data.bio2}</p>
+        <p class="text-brand-heading leading-[1.75] mb-5">{data.bio}</p>
+        <p class="text-brand-heading leading-[1.75] mb-8">{data.bio2}</p>
         <div class="flex flex-wrap gap-2">
           {data.tags.map((tag: string) => (
             <span class="text-xs font-sans px-3 py-1.5 rounded-full"
