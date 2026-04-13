@@ -49,10 +49,9 @@
   "hero": {
     "badge": "Deutschland wird digital",
     "headline": [
-      "Du kümmerst dich um",
-      "Deine Kunden.",
-      "Wir uns um",
-      "Deine Website."
+      "Du kümmerst dich",
+      "um Deine Kunden.",
+      "Wir um Deine *Website.*"
     ],
     "subtext": "",
     "highlight": "Denn deine Kunden suchen online nach dir.",
@@ -170,7 +169,7 @@
   },
   "services": {
     "label": "Leistungen",
-    "heading": ["Das bekommst", "du von uns"],
+    "heading": ["Das *bekommst*", "du von uns"],
     "subtext": "",
     "items": [
       {
@@ -215,7 +214,7 @@
       }
     ],
     "process_label": "Prozess",
-    "process_heading": ["So läuft's", "ab"],
+    "process_heading": ["So *läuft's*", "ab"],
     "process_subtext": "Vier einfache Schritte — von der ersten Idee bis zu deiner fertigen Website.",
     "steps": [
       {
@@ -306,12 +305,12 @@
   "about": {
     "label": "Über Tygar",
     "headline": [
-      "Der Mensch",
+      "Der *Mensch*",
       "hinter Tygar."
     ],
     "mission_label": "Warum Tygar",
     "mission_headline": [
-      "Professionell online —",
+      "*Professionell* online —",
       "ohne den ganzen Stress."
     ],
     "mission_statement": "Wir glauben, dass jedes lokale Business einen professionellen Online-Auftritt verdient — ohne dafür wochenlang mit Agenturen zu diskutieren oder ein Vermögen auszugeben. Du kümmerst dich um deine Kunden, wir kümmern uns um den Rest.",
@@ -362,7 +361,7 @@
     "label": "Live-Beispiele",
     "heading": [
       "Schau selbst —",
-      "so könnte das Ergebnis aussehen."
+      "so könnte das *Ergebnis* aussehen."
     ],
     "subtext": "Keine Mockups, keine Screenshots. Echte Websites, die du direkt ausprobieren kannst.",
     "items": [
@@ -398,7 +397,7 @@
   "pricing": {
     "label": "Preise",
     "heading": [
-      "Klare Preise.",
+      "*Klare* Preise.",
       "Keine \u00dcberraschungen."
     ],
     "subtext": "Keine 5-stelligen Agenturprojekte. Sondern eine professionelle L\u00f6sung zum fairen Fixpreis. Alles aus einer Hand.",
@@ -479,7 +478,7 @@
   },
   "faq": {
     "label": "FAQ",
-    "heading": ["Häufige", "Fragen"],
+    "heading": ["Häufige", "*Fragen*"],
     "items": [
       {
         "q": "Wie lange dauert es, bis meine Website online ist?",

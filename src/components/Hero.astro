@@ -8,7 +8,7 @@ const mockup = collage?.mockup;
 const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-sans font-extrabold text-brand-mint">$1</span>');
 ---
 
-<section id="hero" class="relative overflow-hidden pt-[calc(72px+60px)] pb-0">
+<section id="hero" class="relative overflow-hidden min-h-screen flex flex-col justify-center pt-[72px] pb-16 lg:pb-0">
 
   <!-- Dark navy gradient background -->
   <div class="absolute inset-0 pointer-events-none z-0"
@@ -39,13 +39,13 @@ const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font
       <!-- CTAs -->
       <div class="relative flex gap-4 flex-wrap justify-start mb-6">
         <a href={cta_primary.href}
-          class="font-sans font-bold text-sm px-8 py-3.5 rounded-xl text-white transition-all hover:-translate-y-0.5 gradient-btn-hover"
-          style="background:#0C1425">
+          class="font-sans font-bold text-sm px-8 py-3.5 rounded-xl transition-all hover:-translate-y-0.5"
+          style="background:#7EFFDA;color:#0C1425;box-shadow:0 4px 14px rgba(126,255,218,0.35)">
           {cta_primary.label}
         </a>
         <a href={cta_secondary.href}
-          class="font-sans font-semibold text-sm px-8 py-3.5 rounded-xl transition-all hover:bg-white/5"
-          style="border:1px solid rgba(255,255,255,0.2);color:#FFFFFF;background:transparent">
+          class="font-sans font-semibold text-sm px-8 py-3.5 rounded-xl transition-all hover:bg-white/10"
+          style="border:1px solid rgba(255,255,255,0.35);color:#FFFFFF;background:transparent">
           {cta_secondary.label}
         </a>
       </div>
@@ -56,7 +56,7 @@ const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font
           {kpis.map((kpi: any) => (
             <div class="flex flex-col">
               <span class="font-sans font-bold text-xl text-white">{kpi.value}</span>
-              <span class="text-xs text-white/60 font-sans">{kpi.label}</span>
+              <span class="text-xs text-white/70 font-sans">{kpi.label}</span>
             </div>
           ))}
         </div>
