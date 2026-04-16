@@ -49,12 +49,12 @@ const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font
 
           <div class="p-6 flex flex-col gap-3 flex-1">
             <span class="inline-block text-[0.72rem] font-sans px-3 py-1 rounded-full self-start"
-              style="background:#E6FFF8;color:#7EFFDA">
+              style="background:#E6FFF8;color:#059669">
               {item.tag}
             </span>
             <h3 class="font-sans font-semibold text-brand-heading text-lg">{item.title}</h3>
             <p class="text-brand-text text-sm leading-relaxed flex-1">{item.text}</p>
-            <span class="text-sm font-sans mt-1" style="color:#7EFFDA">
+            <span class="text-sm font-sans mt-1" style="color:#059669">
               {item.cta}
             </span>
           </div>
@@ -65,7 +65,7 @@ const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font
     <!-- Inline CTA -->
     <div class="text-center pt-10 pb-2 border-t border-brand-border mt-10">
       <span class="font-handwritten text-brand-heading" style="font-size:1.1rem">Gefällt dir, was du siehst?</span>
-      <a href="mailto:tygar-digital@gmail.com" class="text-brand-primary font-sans font-bold text-sm ml-3 hover:underline">Erstgespräch buchen →</a>
+      <a href="mailto:tygar-digital@gmail.com" class="font-sans font-bold text-sm ml-3 hover:underline" style="color:#059669">Erstgespräch buchen →</a>
     </div>
   </div>
 </section>
