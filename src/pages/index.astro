@@ -8,8 +8,7 @@ import Services from '../components/Services.astro';
 import Pricing  from '../components/Pricing.astro';
 import About    from '../components/About.astro';
 import FAQ      from '../components/FAQ.astro';
-import Footer         from '../components/Footer.astro';
-import SectionDivider from '../components/SectionDivider.astro';
+import Footer from '../components/Footer.astro';
 
 import data from '../data/content.json';
 ---
@@ -25,15 +24,10 @@ import data from '../data/content.json';
     <Hero      data={data.hero} />
     <TrustBar  items={data.hero.trust_badges} />
     <Showcase  data={data.showcase} />
-    <SectionDivider from="white" to="white" wave />
     <Services  data={data.services} />
-    <SectionDivider from="white" to="surface" wave />
     <Pricing   data={data.pricing} />
-    <SectionDivider from="surface" to="surface" />
     <About     data={data.about} />
-    <SectionDivider from="surface" to="white" wave />
     <FAQ       data={data.faq} />
-    <SectionDivider from="white" to="surface" />
   </main>
   <Footer brand={data.brand} footer={data.footer} />
 </Base>

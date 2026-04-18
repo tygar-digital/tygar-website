@@ -12,10 +12,10 @@ export default {
     extend: {
       colors: {
         brand: {
-          bg:        '#F8F9FA',
-          surface:   '#FFFFFF',
+          bg:        '#FAF8F2',
+          surface:   '#FAF8F2',
           glass:     '#FFFFFF',
-          border:    '#E5E7EB',
+          border:    '#EAE6DC',
           heading:   '#0C1425',
           text:      '#374151',
           muted:     '#6B7280',

@@ -20,7 +20,7 @@ const { data } = Astro.props;
         {data.features.map((feat: any) => (
           <div class="flex items-center gap-3 rounded-card border border-brand-border p-4 bg-white shadow-card">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-              style="background:rgba(126,255,218,0.15);color:#7EFFDA"
+              style="background:rgba(126,255,218,0.25);color:#0F766E"
               set:html={feat.icon_svg}>
             </div>
             <span class="text-sm text-brand-text font-sans">{feat.text}</span>

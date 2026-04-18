@@ -2,11 +2,11 @@
 const { data } = Astro.props;
 const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-extrabold">$1</span>');
 const accentColors: Record<string, { main: string; light: string; gradient: string }> = {
-  emerald: { main: '#7EFFDA', light: '#E6FFF8', gradient: 'linear-gradient(180deg, #5AD4B5, #7EFFDA)' },
+  emerald: { main: '#0F766E', light: '#E6FFF8', gradient: 'linear-gradient(180deg, #5AD4B5, #7EFFDA)' },
   cyan:    { main: '#0891B2', light: '#ECFEFF', gradient: 'linear-gradient(180deg, #0891B2, #22D3EE)' },
   violet:  { main: '#7C3AED', light: '#F5F3FF', gradient: 'linear-gradient(180deg, #7C3AED, #A78BFA)' },
 };
-const stepColors = ['#7EFFDA', '#0891B2', '#0891B2', '#7C3AED'];
+const stepColors = ['#0F766E', '#0891B2', '#0891B2', '#7C3AED'];
 ---
 <section id="leistungen" class="bg-brand-bg">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
