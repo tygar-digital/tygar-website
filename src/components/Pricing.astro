@@ -59,7 +59,7 @@ const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font
                 {data.cta && (
                   <a href={data.cta.href}
                     class="inline-flex items-center justify-center mt-8 px-7 py-3.5 rounded-full font-sans font-bold text-sm no-underline"
-                    style="background:#7EFFDA;color:#0C1425;box-shadow:0 4px 14px rgba(126,255,218,0.35);transition:background 200ms ease,transform 200ms ease">
+                    style="background:#0F766E;color:#FFFFFF;box-shadow:0 4px 14px rgba(15,118,110,0.45);transition:background 200ms ease,transform 200ms ease">
                     {data.cta.label}
                   </a>
                 )}
@@ -77,6 +77,9 @@ const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font
                 {sec.monthly.price && (
                   <>
                     <div class="pricing-price-wrap mb-1">
+                      {sec.monthly.original_price && (
+                        <span class="pricing-price-old">{sec.monthly.original_price}</span>
+                      )}
                       <span class="pricing-price-light">{sec.monthly.price}</span>
                       <span class="text-base font-normal ml-2" style="color:rgba(255,255,255,0.90)">/Monat</span>
                     </div>
@@ -95,7 +98,7 @@ const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font
             </div>
           ) : (
             /* Sekundärkarten: weiß */
-            <div class="pricing-card grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] rounded-[12px] border border-[#E5E7EB] overflow-hidden bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)]">
+            <div class="pricing-card grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] rounded-[12px] border border-brand-border overflow-hidden bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)]">
 
               {/* Einmalig */}
               <div class="p-8 md:p-9">
@@ -113,8 +116,8 @@ const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font
               </div>
 
               {/* Divider */}
-              <div class="hidden md:block bg-[#E5E7EB]"></div>
-              <div class="md:hidden h-px bg-[#E5E7EB]"></div>
+              <div class="hidden md:block bg-brand-border"></div>
+              <div class="md:hidden h-px bg-brand-border"></div>
 
               {/* Monatlich */}
               <div class="p-8 md:p-9">
@@ -141,7 +144,7 @@ const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font
     <!-- Inline CTA -->
     <div class="text-center pt-10 pb-2 border-t border-brand-border mt-10">
       <span class="font-handwritten text-brand-heading" style="font-size:1.1rem">Überzeugt?</span>
-      <a href="mailto:tygar-digital@gmail.com" class="font-sans font-bold text-sm ml-3 hover:underline" style="color:#059669">Kostenlosen Entwurf anfordern →</a>
+      <a href="mailto:tygar-digital@gmail.com" class="font-sans font-bold text-sm ml-3 hover:underline" style="color:#0F766E">Kostenlosen Entwurf anfordern →</a>
     </div>
   </div>
 </section>

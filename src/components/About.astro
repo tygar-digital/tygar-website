@@ -6,9 +6,9 @@ import janImg from '../assets/jan.webp';
 const { data } = Astro.props;
 const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-extrabold">$1</span>');
 const accentColors: Record<string, { main: string; light: string }> = {
-  emerald: { main: '#0F766E', light: '#E6FFF8' },
-  cyan:    { main: '#0891B2', light: '#ECFEFF' },
-  violet:  { main: '#7C3AED', light: '#F5F3FF' },
+  emerald: { main: '#0F766E', light: '#CCFBF1' },
+  cyan:    { main: '#0D9488', light: '#CCFBF1' },
+  violet:  { main: '#134E4A', light: '#CCFBF1' },
 };
 ---
 <section id="ueber-mich" class="bg-brand-surface">
@@ -41,7 +41,7 @@ const accentColors: Record<string, { main: string; light: string }> = {
       {data.values.map((val: any) => (
         <div class="rounded-xl border border-brand-border p-7 flex flex-col gap-4 bg-white shadow-sm hover:shadow-md transition-shadow gradient-border-hover">
           <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-            style={`background:${accentColors[val.accent]?.light || '#E6FFF8'};color:${accentColors[val.accent]?.main || '#0F766E'}`}
+            style={`background:${accentColors[val.accent]?.light || '#CCFBF1'};color:${accentColors[val.accent]?.main || '#0F766E'}`}
             set:html={val.icon_svg}>
           </div>
           <h3 class="font-sans font-semibold text-brand-heading">{val.title}</h3>
@@ -62,13 +62,13 @@ const accentColors: Record<string, { main: string; light: string }> = {
           style="font-size:clamp(2rem,4.5vw,3.25rem)"
           set:html={accent(data.headline[0]) + '<br/>' + accent(data.headline[1])}>
         </h2>
-        <span class="inline-block font-handwritten text-sm -rotate-2 mb-6" style="color:#059669" data-handwriting="400">persönlich. immer.</span>
+        <span class="inline-block font-handwritten text-sm -rotate-2 mb-6" style="color:#0F766E" data-handwriting="400">persönlich. immer.</span>
         <p class="text-brand-heading leading-[1.75] mb-5">{data.bio}</p>
         <p class="text-brand-heading leading-[1.75] mb-8">{data.bio2}</p>
         <div class="flex flex-wrap gap-2">
           {data.tags.map((tag: string) => (
             <span class="text-xs font-sans px-3 py-1.5 rounded-full"
-              style="background:#E6FFF8;color:#0F766E">
+              style="background:#CCFBF1;color:#0F766E">
               {tag}
             </span>
           ))}
@@ -90,7 +90,7 @@ const accentColors: Record<string, { main: string; light: string }> = {
         <div class="rounded-xl overflow-hidden aspect-[3/4] flex items-center justify-center border border-brand-border bg-white shadow-sm">
           <div class="text-center p-8">
             <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
-              style="background:#E6FFF8;border:1px solid rgba(126,255,218,0.20)">
+              style="background:#CCFBF1;border:1px solid rgba(15,118,110,0.25)">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="1.5" aria-hidden="true">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                 <circle cx="12" cy="7" r="4"/>

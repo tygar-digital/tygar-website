@@ -409,8 +409,8 @@
           "heading": "Einmalig",
           "base": {
             "label": "Deine Website",
-            "original_price": "",
-            "price": "500 €"
+            "original_price": "990 €",
+            "price": "490 €"
           },
           "includes": [
             "Individuelles Design",
@@ -421,7 +421,8 @@
         },
         "monthly": {
           "heading": "Monatlich",
-          "price": "49 €",
+          "original_price": "49 €",
+          "price": "29 €",
           "note": "Pflicht — im Paket enthalten",
           "features": [
             "Hosting & Domain",

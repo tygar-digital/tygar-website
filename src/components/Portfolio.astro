@@ -1,31 +1,31 @@
 ---
 const { data } = Astro.props;
 const accentBg: Record<string,string> = {
-  emerald: 'rgba(126,255,218,.12)', cyan: 'rgba(34,211,238,.12)', violet: 'rgba(167,139,250,.12)',
+  emerald: 'rgba(94,234,212,.12)', cyan: 'rgba(13,148,136,.12)', violet: 'rgba(19,78,74,.12)',
 };
 const accentColor: Record<string,string> = {
-  emerald: '#7EFFDA', cyan: '#22D3EE', violet: '#A78BFA',
+  emerald: '#5EEAD4', cyan: '#0D9488', violet: '#0F766E',
 };
 const accentBorder: Record<string,string> = {
-  emerald: 'rgba(126,255,218,.3)', cyan: 'rgba(34,211,238,.3)', violet: 'rgba(167,139,250,.3)',
+  emerald: 'rgba(94,234,212,.3)', cyan: 'rgba(13,148,136,.3)', violet: 'rgba(19,78,74,.3)',
 };
 const accentGlow: Record<string,string> = {
-  emerald: '0 12px 48px rgba(126,255,218,.20),0 0 0 1px rgba(126,255,218,.2)',
-  cyan:    '0 12px 48px rgba(34,211,238,.20),0 0 0 1px rgba(34,211,238,.2)',
-  violet:  '0 12px 48px rgba(167,139,250,.20),0 0 0 1px rgba(167,139,250,.2)',
+  emerald: '0 12px 48px rgba(94,234,212,.20),0 0 0 1px rgba(94,234,212,.2)',
+  cyan:    '0 12px 48px rgba(13,148,136,.20),0 0 0 1px rgba(13,148,136,.2)',
+  violet:  '0 12px 48px rgba(19,78,74,.20),0 0 0 1px rgba(19,78,74,.2)',
 };
 ---
 <section id="portfolio" class="border-t border-brand-border">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
     <div class="flex items-center gap-2 text-[0.72rem] font-sans font-bold tracking-[0.12em] uppercase text-brand-secondary mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#7EFFDA,#22D3EE,#A78BFA)"></span>
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:linear-gradient(90deg,#0D9488,#0F766E,#134E4A)"></span>
       {data.label}
     </div>
     <h2 class="font-handwritten font-normal leading-[1.08] tracking-[-0.03em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
       {data.heading[0]} <span class="bg-clip-text text-transparent"
-        style="background-image:linear-gradient(90deg,#7EFFDA,#22D3EE,#A78BFA)">{data.heading[1]}</span>
+        style="background-image:linear-gradient(90deg,#0D9488,#0F766E,#134E4A)">{data.heading[1]}</span>
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
@@ -72,7 +72,7 @@ const accentGlow: Record<string,string> = {
       <div class="text-center mt-10">
         <a href={data.cta.href}
           class="font-sans font-bold text-sm transition-colors hover:underline"
-          style={`color:#7EFFDA`}>
+          style={`color:#0F766E`}>
           {data.cta.label}
         </a>
       </div>

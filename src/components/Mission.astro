@@ -13,7 +13,7 @@ const { data } = Astro.props;
         <h2 class="font-handwritten font-normal leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
           style="font-size:clamp(2rem,4.5vw,3.25rem)">
           {data.headline[0]}<br/>
-          <span style="color:#059669">{data.headline[1]}</span>
+          <span style="color:#0F766E">{data.headline[1]}</span>
         </h2>
         <p class="text-brand-heading leading-[1.75]">{data.statement}</p>
       </div>
@@ -31,7 +31,7 @@ const { data } = Astro.props;
       {data.values.map((val: any) => (
         <div class="rounded-card border border-brand-border p-7 flex flex-col gap-4 bg-white shadow-card">
           <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-            style="background:rgba(126,255,218,0.25);color:#0F766E"
+            style="background:#CCFBF1;color:#0F766E"
             set:html={val.icon_svg}>
           </div>
           <h3 class="font-sans font-bold text-brand-heading">{val.title}</h3>

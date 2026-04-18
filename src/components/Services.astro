@@ -2,11 +2,11 @@
 const { data } = Astro.props;
 const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-extrabold">$1</span>');
 const accentColors: Record<string, { main: string; light: string; gradient: string }> = {
-  emerald: { main: '#0F766E', light: '#E6FFF8', gradient: 'linear-gradient(180deg, #5AD4B5, #7EFFDA)' },
-  cyan:    { main: '#0891B2', light: '#ECFEFF', gradient: 'linear-gradient(180deg, #0891B2, #22D3EE)' },
-  violet:  { main: '#7C3AED', light: '#F5F3FF', gradient: 'linear-gradient(180deg, #7C3AED, #A78BFA)' },
+  emerald: { main: '#0F766E', light: '#CCFBF1', gradient: 'linear-gradient(180deg, #0D9488, #0F766E)' },
+  cyan:    { main: '#0F766E', light: '#CCFBF1', gradient: 'linear-gradient(180deg, #0D9488, #0F766E)' },
+  violet:  { main: '#134E4A', light: '#CCFBF1', gradient: 'linear-gradient(180deg, #134E4A, #0F766E)' },
 };
-const stepColors = ['#0F766E', '#0891B2', '#0891B2', '#7C3AED'];
+const stepColors = ['#0F766E', '#0D9488', '#0F766E', '#134E4A'];
 ---
 <section id="leistungen" class="bg-brand-bg">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
@@ -26,7 +26,7 @@ const stepColors = ['#0F766E', '#0891B2', '#0891B2', '#7C3AED'];
       {data.items.map((item: any) => {
         const colors = accentColors[item.accent] || accentColors.emerald;
         return (
-          <div class={`service-card rounded-[12px] border border-[#E5E7EB] flex overflow-hidden bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)] ${item.coming_soon ? 'opacity-35 pointer-events-none grayscale-[30%]' : ''}`}>
+          <div class={`service-card rounded-[12px] border border-brand-border flex overflow-hidden bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)] ${item.coming_soon ? 'opacity-35 pointer-events-none grayscale-[30%]' : ''}`}>
             {/* Accent side stripe */}
             <div class="hidden sm:block w-[3px] flex-shrink-0 rounded-l-[12px]"
               style={`background:${item.coming_soon ? '#D1D5DB' : colors.gradient}`}></div>
@@ -37,7 +37,7 @@ const stepColors = ['#0F766E', '#0891B2', '#0891B2', '#7C3AED'];
 
             <div class="flex flex-col sm:flex-row gap-5 p-7 sm:p-8 flex-1 relative">
               {item.coming_soon && (
-                <span class="absolute top-4 right-4 text-[0.65rem] font-sans font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full border border-[#E5E7EB] text-brand-muted bg-[#F9FAFB]">
+                <span class="absolute top-4 right-4 text-[0.65rem] font-sans font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full border border-brand-border text-brand-muted bg-[#F9FAFB]">
                   Coming Soon
                 </span>
               )}
@@ -71,7 +71,7 @@ const stepColors = ['#0F766E', '#0891B2', '#0891B2', '#7C3AED'];
     <!-- Inline CTA -->
     <div class="text-center pt-10 pb-2 border-t border-brand-border mt-10">
       <span class="font-handwritten text-brand-heading" style="font-size:1.1rem">Klingt gut?</span>
-      <a href="mailto:tygar-digital@gmail.com" class="font-sans font-bold text-sm ml-3 hover:underline" style="color:#059669">Kostenlosen Entwurf anfordern →</a>
+      <a href="mailto:tygar-digital@gmail.com" class="font-sans font-bold text-sm ml-3 hover:underline" style="color:#0F766E">Kostenlosen Entwurf anfordern →</a>
     </div>
 
     <!-- Process Timeline -->
@@ -92,14 +92,14 @@ const stepColors = ['#0F766E', '#0891B2', '#0891B2', '#7C3AED'];
           {data.steps.map((step: any, i: number) => (
             <div class="flex-1 text-center relative z-10">
               <div class="timeline-dot mx-auto mb-4"
-                style={`background:${stepColors[i] || '#7EFFDA'};box-shadow:0 2px 8px ${stepColors[i] || '#7EFFDA'}40`}>
+                style={`background:${stepColors[i] || '#0F766E'};box-shadow:0 2px 8px ${stepColors[i] || '#0F766E'}40`}>
                 {step.number}
               </div>
               <div class="text-[0.6rem] font-sans font-bold tracking-[0.1em] uppercase text-brand-muted mb-1">{step.phase}</div>
               <div class="font-sans font-semibold text-brand-heading mb-1">{step.title}</div>
               <p class="text-brand-text text-sm leading-relaxed mx-auto max-w-[200px] mb-3">{step.text}</p>
               <span class="inline-block text-[0.72rem] font-handwritten px-3 py-1 rounded-full"
-                style={`background:${accentColors[Object.keys(accentColors)[Math.min(i, 2)]]?.light || '#E6FFF8'};color:${stepColors[i] || '#7EFFDA'}`}>
+                style={`background:${accentColors[Object.keys(accentColors)[Math.min(i, 2)]]?.light || '#CCFBF1'};color:${stepColors[i] || '#0F766E'}`}>
                 {step.duration}
               </span>
             </div>
@@ -110,18 +110,18 @@ const stepColors = ['#0F766E', '#0891B2', '#0891B2', '#7C3AED'];
       <!-- Mobile: vertical timeline -->
       <div class="lg:hidden flex flex-col gap-0 relative pl-14">
         <div class="absolute left-[27px] top-[14px] bottom-[14px] w-[2px]"
-          style="background:linear-gradient(180deg, #7EFFDA, #0891B2, #7C3AED)"></div>
+          style="background:linear-gradient(180deg, #0D9488, #0F766E, #134E4A)"></div>
         {data.steps.map((step: any, i: number) => (
           <div class="relative pb-8 last:pb-0">
             <div class="absolute left-[-42px] top-0 timeline-dot-sm"
-              style={`background:${stepColors[i] || '#7EFFDA'};box-shadow:0 2px 6px ${stepColors[i] || '#7EFFDA'}40`}>
+              style={`background:${stepColors[i] || '#0F766E'};box-shadow:0 2px 6px ${stepColors[i] || '#0F766E'}40`}>
               {step.number}
             </div>
             <div class="text-[0.6rem] font-sans font-bold tracking-[0.1em] uppercase text-brand-muted mb-1">{step.phase}</div>
             <div class="font-sans font-semibold text-brand-heading mb-1">{step.title}</div>
             <p class="text-brand-text text-sm leading-relaxed mb-2">{step.text}</p>
             <span class="inline-block text-[0.72rem] font-handwritten px-3 py-1 rounded-full"
-              style={`background:${accentColors[Object.keys(accentColors)[Math.min(i, 2)]]?.light || '#E6FFF8'};color:${stepColors[i] || '#7EFFDA'}`}>
+              style={`background:${accentColors[Object.keys(accentColors)[Math.min(i, 2)]]?.light || '#CCFBF1'};color:${stepColors[i] || '#0F766E'}`}>
               {step.duration}
             </span>
           </div>
@@ -148,7 +148,7 @@ const stepColors = ['#0F766E', '#0891B2', '#0891B2', '#7C3AED'];
     left: 12.5%;
     right: 12.5%;
     height: 2px;
-    background: linear-gradient(90deg, #7EFFDA, #5AD4B5, #0891B2, #7C3AED);
+    background: linear-gradient(90deg, #0D9488, #0F766E, #134E4A);
     border-radius: 2px;
   }
 

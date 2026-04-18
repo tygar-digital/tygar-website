@@ -53,7 +53,7 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
       <li>
         <a href={link.href}
           class="flex items-center py-4 font-sans font-bold text-2xl transition-colors nav-link"
-          style="color:#6B7280;border-bottom:1px solid #E5E7EB">
+          style="color:#6B7280;border-bottom:1px solid #EAE6DC">
           {link.label}
         </a>
       </li>
@@ -110,7 +110,7 @@ const logoSvg = fs.readFileSync(logoPath, 'utf-8');
     const scrolled = window.scrollY > heroHeight || menuOpen;
     if (scrolled) {
       nav.style.background = 'rgba(255,255,255,0.90)';
-      nav.style.borderBottomColor = '#E5E7EB';
+      nav.style.borderBottomColor = '#EAE6DC';
       if (brandText) brandText.style.color = '#0C1425';
       if (logoSvg) logoSvg.style.color = '#0C1425';
       hamburgerLines.forEach(l => (l as HTMLElement).style.background = '#0C1425');

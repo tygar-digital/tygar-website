@@ -5,12 +5,12 @@ const { data } = Astro.props;
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
 
     <div class="flex items-center gap-2 text-[0.72rem] font-sans font-bold tracking-[0.12em] uppercase text-brand-text mb-3">
-      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#7EFFDA"></span>
+      <span class="w-[18px] h-[2px] flex-shrink-0" style="background:#0F766E"></span>
       {data.label}
     </div>
     <h2 class="font-handwritten font-normal leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)">
-      {data.heading[0]} <span style="color:#059669">{data.heading[1]}</span>
+      {data.heading[0]} <span style="color:#0F766E">{data.heading[1]}</span>
     </h2>
     <p class="text-brand-heading leading-[1.75] mb-12 max-w-[580px]">{data.subtext}</p>
 
@@ -24,7 +24,7 @@ const { data } = Astro.props;
           <p class="text-brand-text text-sm leading-relaxed">{step.text}</p>
           <div class="mt-2">
             <span class="inline-block text-[0.72rem] font-sans font-bold px-3 py-1 rounded-full"
-              style="background:rgba(126,255,218,0.25);border:1px solid rgba(126,255,218,0.35);color:#0F766E">
+              style="background:#CCFBF1;border:1px solid rgba(15,118,110,0.25);color:#0F766E">
               {step.duration}
             </span>
           </div>
