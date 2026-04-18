@@ -8,12 +8,12 @@ import data from '../data/content.json';
   description="Impressum der Tygar Digitalagentur – Angaben gemäß § 5 TMG."
   canonical={data.meta.canonical + '/impressum'}
 >
-  <nav class="fixed top-0 left-0 right-0 z-[200] h-[72px] border-b border-brand-border"
-    style="background: rgba(255,255,255,0.90); backdrop-filter: blur(16px);">
+  <nav class="fixed top-0 left-0 right-0 z-[200] h-[72px]"
+    style="background: rgba(12,20,37,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.08); box-shadow: 0 2px 12px rgba(12,20,37,0.15);">
     <div class="max-w-[1160px] mx-auto px-8 h-full flex items-center">
       <a href="/" class="flex items-center gap-2.5 no-underline">
-        <img src={data.brand.logo_svg} alt={data.brand.name + ' Logo'} class="h-8 w-auto" />
-        <span class="font-sans font-extrabold text-xl tracking-tight text-brand-heading">{data.brand.name}</span>
+        <img src={data.brand.logo_svg} alt={data.brand.name + ' Logo'} class="h-8 w-auto" style="filter:invert(1) brightness(1.5)" />
+        <span class="font-sans font-extrabold text-xl tracking-tight text-white">{data.brand.name}</span>
       </a>
     </div>
   </nav>

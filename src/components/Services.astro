@@ -1,6 +1,6 @@
 ---
 const { data } = Astro.props;
-const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-extrabold">$1</span>');
+const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '$1');
 const accentColors: Record<string, { main: string; light: string; gradient: string }> = {
   emerald: { main: '#0F766E', light: '#CCFBF1', gradient: 'linear-gradient(180deg, #0D9488, #0F766E)' },
   cyan:    { main: '#0F766E', light: '#CCFBF1', gradient: 'linear-gradient(180deg, #0D9488, #0F766E)' },
@@ -15,7 +15,7 @@ const stepColors = ['#0F766E', '#0D9488', '#0F766E', '#134E4A'];
       <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-handwritten font-normal leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+    <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)"
       set:html={accent(data.heading[0]) + ' ' + accent(data.heading[1])}>
     </h2>
@@ -80,7 +80,7 @@ const stepColors = ['#0F766E', '#0D9488', '#0F766E', '#134E4A'];
         <span class="flex-shrink-0 gradient-divider rounded-full"></span>
         {data.process_label}
       </div>
-      <h3 class="font-handwritten font-normal leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+      <h3 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
         style="font-size:clamp(2rem,4.5vw,3.25rem)"
         set:html={accent(data.process_heading[0]) + ' ' + accent(data.process_heading[1])}>
       </h3>

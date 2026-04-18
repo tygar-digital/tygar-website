@@ -1,6 +1,6 @@
 ---
 const { data } = Astro.props;
-const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font-extrabold">$1</span>');
+const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '$1');
 ---
 <section id="preise" class="bg-brand-surface">
   <div class="max-w-[1160px] mx-auto px-8 py-[108px]">
@@ -9,7 +9,7 @@ const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font
       <span class="flex-shrink-0 gradient-divider rounded-full"></span>
       {data.label}
     </div>
-    <h2 class="font-handwritten font-normal leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
+    <h2 class="font-handwritten font-bold leading-[1.08] tracking-[-0.02em] text-brand-heading mb-4"
       style="font-size:clamp(2rem,4.5vw,3.25rem)"
       set:html={accent(data.heading[0]) + ' ' + accent(data.heading[1])}>
     </h2>
@@ -59,7 +59,7 @@ const accent = (text: string) => text.replace(/\*([^*]+)\*/g, '<span class="font
                 {data.cta && (
                   <a href={data.cta.href}
                     class="inline-flex items-center justify-center mt-8 px-7 py-3.5 rounded-full font-sans font-bold text-sm no-underline"
-                    style="background:#0F766E;color:#FFFFFF;box-shadow:0 4px 14px rgba(15,118,110,0.45);transition:background 200ms ease,transform 200ms ease">
+                    style="background:#5EEAD4;color:#0C1425;box-shadow:0 4px 14px rgba(94,234,212,0.35);transition:background 200ms ease,transform 200ms ease">
                     {data.cta.label}
                   </a>
                 )}

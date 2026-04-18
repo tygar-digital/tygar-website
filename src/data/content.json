@@ -305,8 +305,7 @@
   "about": {
     "label": "Über Tygar",
     "headline": [
-      "Der *Mensch*",
-      "hinter Tygar."
+      "Der *Mensch* hinter Tygar."
     ],
     "mission_label": "Warum Tygar",
     "mission_headline": [
@@ -428,7 +427,7 @@
             "Hosting & Domain",
             "Sicherheit & Updates",
             "Änderungen inklusive (Öffnungszeiten etc.)",
-            "Support per E-Mail"
+            "Support per Mail oder WhatsApp"
           ]
         }
       },
